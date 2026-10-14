@@ -2,54 +2,279 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=1920, height=1080" />
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>Skinny Fat Reel</title>
+    <script src="assets/gsap.min.js"></script>
     <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-      html,
-      body {
-        margin: 0;
-        width: 1920px;
-        height: 1080px;
-        overflow: hidden;
-        background: #0a0a0a;
-      }
-      #root {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-family: Inter, ui-sans-serif, system-ui, sans-serif;
-      }
-      #title {
-        color: #f4f4f5;
-        font-size: 72px;
-        font-weight: 600;
-        letter-spacing: -0.03em;
-      }
+      @font-face { font-family: "Poppins"; font-weight: 500; src: url("assets/fonts/poppins-latin-500-normal.woff2") format("woff2"); }
+      @font-face { font-family: "Poppins"; font-weight: 700; src: url("assets/fonts/poppins-latin-700-normal.woff2") format("woff2"); }
+      @font-face { font-family: "Poppins"; font-weight: 800; src: url("assets/fonts/poppins-latin-800-normal.woff2") format("woff2"); }
+      @font-face { font-family: "DM Serif Display"; font-style: italic; font-weight: 400; src: url("assets/fonts/dm-serif-display-latin-400-italic.woff2") format("woff2"); }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1080px; height: 1920px; overflow: hidden; background: #000; }
+      #root { position: relative; width: 100%; height: 100%; overflow: hidden; font-family: "Poppins", sans-serif; }
+      #push, #cam { position: absolute; inset: 0; transform-origin: 50% 32%; }
+      #cam video { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; object-fit: cover; }
+      #vignette { position: absolute; inset: 0; pointer-events: none;
+        background: linear-gradient(to bottom, rgba(0,0,0,0) 55%, rgba(0,0,0,0.38) 100%); }
+      .cap { position: absolute; left: 60px; right: 60px; top: 1330px; text-align: center; }
+      .cap .l1, .cap .l2 { display: block; font-weight: 700; line-height: 1.22; letter-spacing: -0.01em;
+        text-shadow: 0 3px 10px rgba(0,0,0,0.85), 0 0 2px rgba(0,0,0,0.9); }
+      .cap .l1 { color: #ffffff; font-size: 50px; }
+      .cap .l2 { color: #f8e71c; font-size: 46px; margin-top: 4px; }
+      .g { position: absolute; }
+      .badge { left: 56px; top: 150px; display: flex; align-items: center; gap: 18px; }
+      .badge .num { position: relative; width: 118px; height: 118px; display: flex; align-items: center; justify-content: center;
+        color: #fff; font-weight: 800; font-size: 84px; }
+      .badge .num svg { position: absolute; inset: -8px; width: 134px; height: 134px; }
+      .badge .lbl { color: #fff; font-weight: 800; font-size: 36px; letter-spacing: 0.04em;
+        text-shadow: 0 3px 12px rgba(0,0,0,0.7); }
+      .chipwrap { left: 0; right: 0; top: 1150px; display: flex; justify-content: center; gap: 18px; }
+      .chip { padding: 14px 30px; border-radius: 16px; font-weight: 800; font-size: 44px; letter-spacing: 0.02em; color: #111;
+        background: #f8e71c; box-shadow: 0 10px 30px rgba(0,0,0,0.35); }
+      .chip.serif { background: none; box-shadow: none; padding: 0; color: #fff; font-family: "DM Serif Display", serif;
+        font-style: italic; font-weight: 400; font-size: 92px; letter-spacing: 0; text-shadow: 0 4px 18px rgba(0,0,0,0.65); }
+      .chips .chip { font-size: 36px; padding: 12px 24px; background: #fff; }
+      .stat { left: 0; right: 0; top: 1080px; display: flex; justify-content: center; }
+      .stat .box { display: flex; align-items: center; gap: 22px; padding: 18px 34px; border-radius: 18px; background: #fff;
+        box-shadow: 0 12px 34px rgba(0,0,0,0.35); }
+      .stat.pink .box { background: #e5007e; }
+      .stat .big { font-weight: 800; font-size: 76px; color: #111; letter-spacing: -0.02em; }
+      .stat .small { font-weight: 700; font-size: 28px; color: #111; letter-spacing: 0.05em; max-width: 300px; line-height: 1.15; }
+      .stat.pink .big, .stat.pink .small { color: #fff; }
+      .follow { left: 0; right: 0; top: 1130px; display: flex; justify-content: center; }
+      .follow .card { display: flex; align-items: center; gap: 20px; padding: 16px 18px 16px 18px; border-radius: 22px; background: #fff;
+        box-shadow: 0 12px 34px rgba(0,0,0,0.35); }
+      .follow .av { width: 72px; height: 72px; border-radius: 50%; background: linear-gradient(135deg, #f8e71c, #e5007e); }
+      .follow .txt { font-weight: 700; font-size: 32px; color: #111; }
+      .follow .btn { position: relative; width: 210px; height: 64px; border-radius: 14px; overflow: hidden; }
+      .follow .btn span { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+        font-weight: 700; font-size: 30px; border-radius: 14px; }
+      .follow .b1 { background: #0095f6; color: #fff; }
+      .follow .b2 { background: #efefef; color: #111; }
     </style>
   </head>
   <body>
-    <div
-      id="root"
-      data-composition-id="main"
-      data-start="0"
-      data-duration="10"
-      data-width="1920"
-      data-height="1080"
-    >
-      <h1 id="title" class="clip" data-start="0" data-duration="10" data-track-index="0">Title</h1>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="138.0667" data-width="1080" data-height="1920" data-fps="30">
+      <div id="push"><div id="cam">
+        <video id="v0" class="clip" src="assets/footage.mp4" data-start="0.0" data-duration="19.6667" data-media-start="7.2667" data-track-index="0" playsinline data-has-audio="true"></video>
+        <video id="v1" class="clip" src="assets/footage.mp4" data-start="19.6667" data-duration="8.0333" data-media-start="46.2333" data-track-index="1" playsinline data-has-audio="true"></video>
+        <video id="v2" class="clip" src="assets/footage.mp4" data-start="27.7" data-duration="12.4667" data-media-start="70.7" data-track-index="0" playsinline data-has-audio="true"></video>
+        <video id="v3" class="clip" src="assets/footage.mp4" data-start="40.1667" data-duration="3.1667" data-media-start="91.2" data-track-index="1" playsinline data-has-audio="true"></video>
+        <video id="v4" class="clip" src="assets/footage.mp4" data-start="43.3333" data-duration="11.8333" data-media-start="100.1667" data-track-index="0" playsinline data-has-audio="true"></video>
+        <video id="v5" class="clip" src="assets/footage.mp4" data-start="55.1667" data-duration="0.9667" data-media-start="123.3" data-track-index="1" playsinline data-has-audio="true"></video>
+        <video id="v6" class="clip" src="assets/footage.mp4" data-start="56.1333" data-duration="8.2667" data-media-start="124.4667" data-track-index="0" playsinline data-has-audio="true"></video>
+        <video id="v7" class="clip" src="assets/footage.mp4" data-start="64.4" data-duration="6.9333" data-media-start="183.9333" data-track-index="1" playsinline data-has-audio="true"></video>
+        <video id="v8" class="clip" src="assets/footage.mp4" data-start="71.3333" data-duration="6.1667" data-media-start="206.9" data-track-index="0" playsinline data-has-audio="true"></video>
+        <video id="v9" class="clip" src="assets/footage.mp4" data-start="77.5" data-duration="5.8333" data-media-start="224.9" data-track-index="1" playsinline data-has-audio="true"></video>
+        <video id="v10" class="clip" src="assets/footage.mp4" data-start="83.3333" data-duration="4.2333" data-media-start="239.0" data-track-index="0" playsinline data-has-audio="true"></video>
+        <video id="v11" class="clip" src="assets/footage.mp4" data-start="87.5667" data-duration="0.7667" data-media-start="243.4667" data-track-index="1" playsinline data-has-audio="true"></video>
+        <video id="v12" class="clip" src="assets/footage.mp4" data-start="88.3333" data-duration="1.2333" data-media-start="262.2667" data-track-index="0" playsinline data-has-audio="true"></video>
+        <video id="v13" class="clip" src="assets/footage.mp4" data-start="89.5667" data-duration="6.5333" data-media-start="264.5" data-track-index="1" playsinline data-has-audio="true"></video>
+        <video id="v14" class="clip" src="assets/footage.mp4" data-start="96.1" data-duration="13.9" data-media-start="284.6667" data-track-index="0" playsinline data-has-audio="true"></video>
+        <video id="v15" class="clip" src="assets/footage.mp4" data-start="110.0" data-duration="8.8667" data-media-start="315.9667" data-track-index="1" playsinline data-has-audio="true"></video>
+        <video id="v16" class="clip" src="assets/footage.mp4" data-start="118.8667" data-duration="3.5667" data-media-start="332.5667" data-track-index="0" playsinline data-has-audio="true"></video>
+        <video id="v17" class="clip" src="assets/footage.mp4" data-start="122.4333" data-duration="7.9" data-media-start="341.9667" data-track-index="1" playsinline data-has-audio="true"></video>
+        <video id="v18" class="clip" src="assets/footage.mp4" data-start="130.3333" data-duration="7.1667" data-media-start="355.8" data-track-index="0" playsinline data-has-audio="true"></video>
+        <video id="v19" class="clip" src="assets/footage.mp4" data-start="137.5" data-duration="0.5667" data-media-start="363.3" data-track-index="1" playsinline data-has-audio="true"></video>
+      </div></div>
+      <div id="vignette"></div>
+      <div id="cap0" class="cap clip" data-start="0.0" data-duration="4.8667" data-track-index="5"><span class="l1">If you&#x27;re stuck in a skinny fat body type,</span><span class="l2">don&#x27;t skip this video.</span></div>
+      <div id="cap1" class="cap clip" data-start="4.8667" data-duration="3.6" data-track-index="5"><span class="l1">There are two main reasons</span><span class="l2">for being skinny fat.</span></div>
+      <div id="cap2" class="cap clip" data-start="8.4667" data-duration="2.9667" data-track-index="5"><span class="l1">Number one:</span><span class="l2">lack of resistance training.</span></div>
+      <div id="cap3" class="cap clip" data-start="11.4333" data-duration="4.8" data-track-index="5"><span class="l1">Doing more cardio or sports</span><span class="l2">won&#x27;t improve your body composition.</span></div>
+      <div id="cap4" class="cap clip" data-start="16.2333" data-duration="3.4333" data-track-index="5"><span class="l1">Instead, you need to focus</span><span class="l2">on building muscle.</span></div>
+      <div id="cap5" class="cap clip" data-start="19.6667" data-duration="4.6667" data-track-index="5"><span class="l1">Train to increase your strength,</span><span class="l2">and your muscle building improves,</span></div>
+      <div id="cap6" class="cap clip" data-start="24.3333" data-duration="3.3667" data-track-index="5"><span class="l1">and your body composition</span><span class="l2">improves along with it.</span></div>
+      <div id="cap7" class="cap clip" data-start="27.7" data-duration="4.0333" data-track-index="5"><span class="l1">Focus on building muscle and your</span><span class="l2">body composition improves,</span></div>
+      <div id="cap8" class="cap clip" data-start="31.7333" data-duration="2.1333" data-track-index="5"><span class="l1">and you&#x27;ll gain</span><span class="l2">more confidence.</span></div>
+      <div id="cap9" class="cap clip" data-start="33.8667" data-duration="3.7" data-track-index="5"><span class="l1">My suggestion: follow a</span><span class="l2">3–4 day workout split per week.</span></div>
+      <div id="cap10" class="cap clip" data-start="37.5667" data-duration="2.6" data-track-index="5"><span class="l1">It gives you plenty</span><span class="l2">of time to recover.</span></div>
+      <div id="cap11" class="cap clip" data-start="40.1667" data-duration="3.1667" data-track-index="5"><span class="l1">Also, don&#x27;t forget</span><span class="l2">progressive overload every week.</span></div>
+      <div id="cap12" class="cap clip" data-start="43.3333" data-duration="2.8667" data-track-index="5"><span class="l1">Add compound lifts</span><span class="l2">to your workout.</span></div>
+      <div id="cap13" class="cap clip" data-start="46.2" data-duration="3.9667" data-track-index="5"><span class="l1">Bench press, squat, deadlift —</span><span class="l2">lifts like these.</span></div>
+      <div id="cap14" class="cap clip" data-start="50.1667" data-duration="5.0" data-track-index="5"><span class="l1">They let you activate and target</span><span class="l2">more muscle groups at once.</span></div>
+      <div id="cap15" class="cap clip" data-start="55.1667" data-duration="1.8" data-track-index="5"><span class="l1">Reason number two:</span><span class="l2">poor diet.</span></div>
+      <div id="cap16" class="cap clip" data-start="56.9667" data-duration="2.9667" data-track-index="5"><span class="l1">Too much processed and</span><span class="l2">sugary food in your diet</span></div>
+      <div id="cap17" class="cap clip" data-start="59.9333" data-duration="4.4667" data-track-index="5"><span class="l1">means you can&#x27;t build muscle, and your</span><span class="l2">body composition won&#x27;t improve.</span></div>
+      <div id="cap18" class="cap clip" data-start="64.4" data-duration="3.6667" data-track-index="5"><span class="l1">Instead of processed and</span><span class="l2">sugary foods,</span></div>
+      <div id="cap19" class="cap clip" data-start="68.0667" data-duration="3.2667" data-track-index="5"><span class="l1">focus on</span><span class="l2">protein-rich whole foods.</span></div>
+      <div id="cap20" class="cap clip" data-start="71.3333" data-duration="4.0667" data-track-index="5"><span class="l1">Protein-rich whole foods help</span><span class="l2">your muscle building</span></div>
+      <div id="cap21" class="cap clip" data-start="75.4" data-duration="2.1" data-track-index="5"><span class="l1">and your</span><span class="l2">hormonal balance.</span></div>
+      <div id="cap22" class="cap clip" data-start="77.5" data-duration="5.8333" data-track-index="5"><span class="l1">Good fat sources like nuts</span><span class="l2">also help your hormonal balance.</span></div>
+      <div id="cap23" class="cap clip" data-start="83.3333" data-duration="5.0" data-track-index="5"><span class="l1">If you&#x27;re skinny fat, knowing your</span><span class="l2">maintenance calories is key.</span></div>
+      <div id="cap24" class="cap clip" data-start="88.3333" data-duration="4.7667" data-track-index="5"><span class="l1">If you&#x27;re above 15% body fat,</span><span class="l2">eat 100–200 calories</span></div>
+      <div id="cap25" class="cap clip" data-start="93.1" data-duration="3.0" data-track-index="5"><span class="l1">below your</span><span class="l2">maintenance calories.</span></div>
+      <div id="cap26" class="cap clip" data-start="96.1" data-duration="5.1" data-track-index="5"><span class="l1">If you&#x27;re below 15% body fat,</span><span class="l2">eat a small surplus</span></div>
+      <div id="cap27" class="cap clip" data-start="101.2" data-duration="3.2667" data-track-index="5"><span class="l1">above your</span><span class="l2">maintenance calories.</span></div>
+      <div id="cap28" class="cap clip" data-start="104.4667" data-duration="5.5333" data-track-index="5"><span class="l1">That helps you build muscle</span><span class="l2">without gaining much fat.</span></div>
+      <div id="cap29" class="cap clip" data-start="110.0" data-duration="4.0" data-track-index="5"><span class="l1">One last important thing:</span><span class="l2">if you&#x27;re skinny fat,</span></div>
+      <div id="cap30" class="cap clip" data-start="114.0" data-duration="4.8667" data-track-index="5"><span class="l1">patience is everything.</span><span class="l2">Stick with this for the long run.</span></div>
+      <div id="cap31" class="cap clip" data-start="118.8667" data-duration="3.5667" data-track-index="5"><span class="l1">If you&#x27;re impatient, you&#x27;ll get</span><span class="l2">demotivated and give up.</span></div>
+      <div id="cap32" class="cap clip" data-start="122.4333" data-duration="4.2667" data-track-index="5"><span class="l1">So lower your expectations,</span><span class="l2">focus on progressive overload</span></div>
+      <div id="cap33" class="cap clip" data-start="126.7" data-duration="3.6333" data-track-index="5"><span class="l1">and your diet, and you&#x27;ll</span><span class="l2">definitely get results.</span></div>
+      <div id="cap34" class="cap clip" data-start="130.3333" data-duration="3.5667" data-track-index="5"><span class="l1">For more useful fitness tips,</span><span class="l2">hit follow.</span></div>
+      <div id="cap35" class="cap clip" data-start="133.9" data-duration="4.1667" data-track-index="5"><span class="l1">If you liked this video,</span><span class="l2">drop a like. Thank you!</span></div>
+      <div id="g0" class="g chipwrap clip" data-start="0.1" data-duration="4.7333" data-track-index="7"><div class="chip serif">SKINNY FAT?</div></div>
+      <div id="g1" class="g badge clip" data-start="4.9667" data-duration="6.4" data-track-index="6"><div class="num"><svg viewBox="0 0 134 134"><path class="draw" d="M67 8 C 104 6, 128 32, 126 68 C 124 104, 98 128, 64 126 C 30 124, 8 100, 9 66 C 10 34, 34 12, 72 10" fill="none" stroke="#f8e71c" stroke-width="7" stroke-linecap="round"/></svg><span>2</span></div><div class="lbl">REASONS</div></div>
+      <div id="g2" class="g badge clip" data-start="8.5667" data-duration="11.0333" data-track-index="6"><div class="num"><svg viewBox="0 0 134 134"><path class="draw" d="M67 8 C 104 6, 128 32, 126 68 C 124 104, 98 128, 64 126 C 30 124, 8 100, 9 66 C 10 34, 34 12, 72 10" fill="none" stroke="#f8e71c" stroke-width="7" stroke-linecap="round"/></svg><span>1</span></div><div class="lbl">RESISTANCE TRAINING</div></div>
+      <div id="g3" class="g chipwrap clip" data-start="16.3333" data-duration="3.3" data-track-index="7"><div class="chip accent">BUILD MUSCLE</div></div>
+      <div id="g4" class="g chipwrap clip" data-start="31.8333" data-duration="2.0" data-track-index="7"><div class="chip accent">+ CONFIDENCE</div></div>
+      <div id="g5" class="g stat  clip" data-start="33.9667" data-duration="6.1333" data-track-index="7"><div class="box"><div class="big">3–4</div><div class="small">DAYS / WEEK</div></div></div>
+      <div id="g6" class="g chipwrap clip" data-start="40.2667" data-duration="3.0" data-track-index="7"><div class="chip accent">PROGRESSIVE OVERLOAD ↑</div></div>
+      <div id="g7" class="g chipwrap chips clip" data-start="46.3" data-duration="8.8333" data-track-index="7"><div class="chip">BENCH PRESS</div><div class="chip">SQUAT</div><div class="chip">DEADLIFT</div></div>
+      <div id="g8" class="g badge clip" data-start="55.2667" data-duration="9.0667" data-track-index="6"><div class="num"><svg viewBox="0 0 134 134"><path class="draw" d="M67 8 C 104 6, 128 32, 126 68 C 124 104, 98 128, 64 126 C 30 124, 8 100, 9 66 C 10 34, 34 12, 72 10" fill="none" stroke="#f8e71c" stroke-width="7" stroke-linecap="round"/></svg><span>2</span></div><div class="lbl">POOR DIET</div></div>
+      <div id="g9" class="g chipwrap clip" data-start="68.1667" data-duration="3.1" data-track-index="7"><div class="chip accent">PROTEIN-RICH WHOLE FOODS</div></div>
+      <div id="g10" class="g chipwrap clip" data-start="75.5" data-duration="1.9333" data-track-index="7"><div class="chip serif">HORMONAL BALANCE</div></div>
+      <div id="g11" class="g chipwrap clip" data-start="77.6" data-duration="5.6667" data-track-index="7"><div class="chip accent">HEALTHY FATS · NUTS</div></div>
+      <div id="g12" class="g chipwrap clip" data-start="83.4333" data-duration="4.8333" data-track-index="7"><div class="chip serif">MAINTENANCE CALORIES</div></div>
+      <div id="g13" class="g stat pink clip" data-start="88.4333" data-duration="7.6333" data-track-index="7"><div class="box"><div class="big">−100–200</div><div class="small">KCAL · ABOVE 15% BODY FAT</div></div></div>
+      <div id="g14" class="g stat pink clip" data-start="96.2" data-duration="8.2333" data-track-index="7"><div class="box"><div class="big">+ SMALL</div><div class="small">SURPLUS · BELOW 15% BODY FAT</div></div></div>
+      <div id="g15" class="g chipwrap clip" data-start="114.1" data-duration="4.7333" data-track-index="7"><div class="chip serif">PATIENCE</div></div>
+      <div id="g16" class="g follow clip" data-start="130.4333" data-duration="7.6" data-track-index="7"><div class="card"><div class="av"></div><div class="txt">Follow for more fitness tips</div><div class="btn"><span class="b2">Following</span><span class="b1">Follow</span></div></div></div>
+      <audio id="pop0" src="assets/pop.wav" data-start="0.1" data-duration="0.09" data-track-index="20" data-volume="0.5"></audio>
+      <audio id="pop1" src="assets/pop.wav" data-start="4.9667" data-duration="0.09" data-track-index="20" data-volume="0.5"></audio>
+      <audio id="pop2" src="assets/pop.wav" data-start="8.5667" data-duration="0.09" data-track-index="20" data-volume="0.5"></audio>
+      <audio id="pop3" src="assets/pop.wav" data-start="16.3333" data-duration="0.09" data-track-index="20" data-volume="0.5"></audio>
+      <audio id="pop4" src="assets/pop.wav" data-start="31.8333" data-duration="0.09" data-track-index="20" data-volume="0.5"></audio>
+      <audio id="pop5" src="assets/pop.wav" data-start="33.9667" data-duration="0.09" data-track-index="20" data-volume="0.5"></audio>
+      <audio id="pop6" src="assets/pop.wav" data-start="40.2667" data-duration="0.09" data-track-index="20" data-volume="0.5"></audio>
+      <audio id="pop7" src="assets/pop.wav" data-start="46.3" data-duration="0.09" data-track-index="20" data-volume="0.5"></audio>
+      <audio id="pop8" src="assets/pop.wav" data-start="55.2667" data-duration="0.09" data-track-index="20" data-volume="0.5"></audio>
+      <audio id="pop9" src="assets/pop.wav" data-start="68.1667" data-duration="0.09" data-track-index="20" data-volume="0.5"></audio>
+      <audio id="pop10" src="assets/pop.wav" data-start="75.5" data-duration="0.09" data-track-index="20" data-volume="0.5"></audio>
+      <audio id="pop11" src="assets/pop.wav" data-start="77.6" data-duration="0.09" data-track-index="20" data-volume="0.5"></audio>
+      <audio id="pop12" src="assets/pop.wav" data-start="83.4333" data-duration="0.09" data-track-index="20" data-volume="0.5"></audio>
+      <audio id="pop13" src="assets/pop.wav" data-start="88.4333" data-duration="0.09" data-track-index="20" data-volume="0.5"></audio>
+      <audio id="pop14" src="assets/pop.wav" data-start="96.2" data-duration="0.09" data-track-index="20" data-volume="0.5"></audio>
+      <audio id="pop15" src="assets/pop.wav" data-start="114.1" data-duration="0.09" data-track-index="20" data-volume="0.5"></audio>
+      <audio id="pop16" src="assets/pop.wav" data-start="130.4333" data-duration="0.09" data-track-index="20" data-volume="0.5"></audio>
+      <audio id="whoosh0" src="assets/whoosh.wav" data-start="54.9667" data-duration="0.45" data-track-index="21" data-volume="0.7"></audio>
     </div>
     <script>
       const tl = gsap.timeline({ paused: true });
-      // Example: tl.fromTo("#title", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.6 }, 0);
+      tl.set("#cam", { scale: 1.16 }, 0.0);
+      tl.set("#cam", { scale: 1.0 }, 19.6667);
+      tl.set("#cam", { scale: 1.16 }, 27.7);
+      tl.set("#cam", { scale: 1.0 }, 40.1667);
+      tl.set("#cam", { scale: 1.16 }, 43.3333);
+      tl.set("#cam", { scale: 1.0 }, 55.1667);
+      tl.set("#cam", { scale: 1.16 }, 56.1333);
+      tl.set("#cam", { scale: 1.0 }, 64.4);
+      tl.set("#cam", { scale: 1.16 }, 71.3333);
+      tl.set("#cam", { scale: 1.0 }, 77.5);
+      tl.set("#cam", { scale: 1.16 }, 83.3333);
+      tl.set("#cam", { scale: 1.16 }, 87.5667);
+      tl.set("#cam", { scale: 1.0 }, 88.3333);
+      tl.set("#cam", { scale: 1.16 }, 89.5667);
+      tl.set("#cam", { scale: 1.0 }, 96.1);
+      tl.set("#cam", { scale: 1.16 }, 110.0);
+      tl.set("#cam", { scale: 1.0 }, 118.8667);
+      tl.set("#cam", { scale: 1.16 }, 122.4333);
+      tl.set("#cam", { scale: 1.0 }, 130.3333);
+      tl.set("#cam", { scale: 1.0 }, 137.5);
+      tl.fromTo("#push", { scale: 1.0 }, { scale: 1.08, duration: 4.8667, ease: "none" }, 0);
+      tl.fromTo("#push", { filter: "blur(18px)", y: -60 }, { filter: "blur(0px)", y: 0, duration: 0.28, ease: "power2.out" }, 55.1667);
+      tl.to("#push", { filter: "grayscale(1) contrast(1.08)", duration: 0.2 }, 59.9333);
+      tl.to("#push", { filter: "grayscale(0) contrast(1)", duration: 0.2 }, 64.2);
+      tl.fromTo("#cap0 .l1", { y: 16, opacity: 0 }, { y: 0, opacity: 1, duration: 0.18, ease: "power2.out" }, 0.0);
+      tl.fromTo("#cap0 .l2", { y: 16, opacity: 0 }, { y: 0, opacity: 1, duration: 0.18, ease: "power2.out" }, 0.0667);
+      tl.fromTo("#cap1 .l1", { y: 16, opacity: 0 }, { y: 0, opacity: 1, duration: 0.18, ease: "power2.out" }, 4.8667);
+      tl.fromTo("#cap1 .l2", { y: 16, opacity: 0 }, { y: 0, opacity: 1, duration: 0.18, ease: "power2.out" }, 4.9333);
+      tl.fromTo("#cap2 .l1", { y: 16, opacity: 0 }, { y: 0, opacity: 1, duration: 0.18, ease: "power2.out" }, 8.4667);
+      tl.fromTo("#cap2 .l2", { y: 16, opacity: 0 }, { y: 0, opacity: 1, duration: 0.18, ease: "power2.out" }, 8.5333);
+      tl.fromTo("#cap3 .l1", { y: 16, opacity: 0 }, { y: 0, opacity: 1, duration: 0.18, ease: "power2.out" }, 11.4333);
+      tl.fromTo("#cap3 .l2", { y: 16, opacity: 0 }, { y: 0, opacity: 1, duration: 0.18, ease: "power2.out" }, 11.5);
+      tl.fromTo("#cap4 .l1", { y: 16, opacity: 0 }, { y: 0, opacity: 1, duration: 0.18, ease: "power2.out" }, 16.2333);
+      tl.fromTo("#cap4 .l2", { y: 16, opacity: 0 }, { y: 0, opacity: 1, duration: 0.18, ease: "power2.out" }, 16.3);
+      tl.fromTo("#cap5 .l1", { y: 16, opacity: 0 }, { y: 0, opacity: 1, duration: 0.18, ease: "power2.out" }, 19.6667);
+      tl.fromTo("#cap5 .l2", { y: 16, opacity: 0 }, { y: 0, opacity: 1, duration: 0.18, ease: "power2.out" }, 19.7333);
+      tl.fromTo("#cap6 .l1", { y: 16, opacity: 0 }, { y: 0, opacity: 1, duration: 0.18, ease: "power2.out" }, 24.3333);
+      tl.fromTo("#cap6 .l2", { y: 16, opacity: 0 }, { y: 0, opacity: 1, duration: 0.18, ease: "power2.out" }, 24.4);
+      tl.fromTo("#cap7 .l1", { y: 16, opacity: 0 }, { y: 0, opacity: 1, duration: 0.18, ease: "power2.out" }, 27.7);
+      tl.fromTo("#cap7 .l2", { y: 16, opacity: 0 }, { y: 0, opacity: 1, duration: 0.18, ease: "power2.out" }, 27.7667);
+      tl.fromTo("#cap8 .l1", { y: 16, opacity: 0 }, { y: 0, opacity: 1, duration: 0.18, ease: "power2.out" }, 31.7333);
+      tl.fromTo("#cap8 .l2", { y: 16, opacity: 0 }, { y: 0, opacity: 1, duration: 0.18, ease: "power2.out" }, 31.8);
+      tl.fromTo("#cap9 .l1", { y: 16, opacity: 0 }, { y: 0, opacity: 1, duration: 0.18, ease: "power2.out" }, 33.8667);
+      tl.fromTo("#cap9 .l2", { y: 16, opacity: 0 }, { y: 0, opacity: 1, duration: 0.18, ease: "power2.out" }, 33.9333);
+      tl.fromTo("#cap10 .l1", { y: 16, opacity: 0 }, { y: 0, opacity: 1, duration: 0.18, ease: "power2.out" }, 37.5667);
+      tl.fromTo("#cap10 .l2", { y: 16, opacity: 0 }, { y: 0, opacity: 1, duration: 0.18, ease: "power2.out" }, 37.6333);
+      tl.fromTo("#cap11 .l1", { y: 16, opacity: 0 }, { y: 0, opacity: 1, duration: 0.18, ease: "power2.out" }, 40.1667);
+      tl.fromTo("#cap11 .l2", { y: 16, opacity: 0 }, { y: 0, opacity: 1, duration: 0.18, ease: "power2.out" }, 40.2333);
+      tl.fromTo("#cap12 .l1", { y: 16, opacity: 0 }, { y: 0, opacity: 1, duration: 0.18, ease: "power2.out" }, 43.3333);
+      tl.fromTo("#cap12 .l2", { y: 16, opacity: 0 }, { y: 0, opacity: 1, duration: 0.18, ease: "power2.out" }, 43.4);
+      tl.fromTo("#cap13 .l1", { y: 16, opacity: 0 }, { y: 0, opacity: 1, duration: 0.18, ease: "power2.out" }, 46.2);
+      tl.fromTo("#cap13 .l2", { y: 16, opacity: 0 }, { y: 0, opacity: 1, duration: 0.18, ease: "power2.out" }, 46.2667);
+      tl.fromTo("#cap14 .l1", { y: 16, opacity: 0 }, { y: 0, opacity: 1, duration: 0.18, ease: "power2.out" }, 50.1667);
+      tl.fromTo("#cap14 .l2", { y: 16, opacity: 0 }, { y: 0, opacity: 1, duration: 0.18, ease: "power2.out" }, 50.2333);
+      tl.fromTo("#cap15 .l1", { y: 16, opacity: 0 }, { y: 0, opacity: 1, duration: 0.18, ease: "power2.out" }, 55.1667);
+      tl.fromTo("#cap15 .l2", { y: 16, opacity: 0 }, { y: 0, opacity: 1, duration: 0.18, ease: "power2.out" }, 55.2333);
+      tl.fromTo("#cap16 .l1", { y: 16, opacity: 0 }, { y: 0, opacity: 1, duration: 0.18, ease: "power2.out" }, 56.9667);
+      tl.fromTo("#cap16 .l2", { y: 16, opacity: 0 }, { y: 0, opacity: 1, duration: 0.18, ease: "power2.out" }, 57.0333);
+      tl.fromTo("#cap17 .l1", { y: 16, opacity: 0 }, { y: 0, opacity: 1, duration: 0.18, ease: "power2.out" }, 59.9333);
+      tl.fromTo("#cap17 .l2", { y: 16, opacity: 0 }, { y: 0, opacity: 1, duration: 0.18, ease: "power2.out" }, 60.0);
+      tl.fromTo("#cap18 .l1", { y: 16, opacity: 0 }, { y: 0, opacity: 1, duration: 0.18, ease: "power2.out" }, 64.4);
+      tl.fromTo("#cap18 .l2", { y: 16, opacity: 0 }, { y: 0, opacity: 1, duration: 0.18, ease: "power2.out" }, 64.4667);
+      tl.fromTo("#cap19 .l1", { y: 16, opacity: 0 }, { y: 0, opacity: 1, duration: 0.18, ease: "power2.out" }, 68.0667);
+      tl.fromTo("#cap19 .l2", { y: 16, opacity: 0 }, { y: 0, opacity: 1, duration: 0.18, ease: "power2.out" }, 68.1333);
+      tl.fromTo("#cap20 .l1", { y: 16, opacity: 0 }, { y: 0, opacity: 1, duration: 0.18, ease: "power2.out" }, 71.3333);
+      tl.fromTo("#cap20 .l2", { y: 16, opacity: 0 }, { y: 0, opacity: 1, duration: 0.18, ease: "power2.out" }, 71.4);
+      tl.fromTo("#cap21 .l1", { y: 16, opacity: 0 }, { y: 0, opacity: 1, duration: 0.18, ease: "power2.out" }, 75.4);
+      tl.fromTo("#cap21 .l2", { y: 16, opacity: 0 }, { y: 0, opacity: 1, duration: 0.18, ease: "power2.out" }, 75.4667);
+      tl.fromTo("#cap22 .l1", { y: 16, opacity: 0 }, { y: 0, opacity: 1, duration: 0.18, ease: "power2.out" }, 77.5);
+      tl.fromTo("#cap22 .l2", { y: 16, opacity: 0 }, { y: 0, opacity: 1, duration: 0.18, ease: "power2.out" }, 77.5667);
+      tl.fromTo("#cap23 .l1", { y: 16, opacity: 0 }, { y: 0, opacity: 1, duration: 0.18, ease: "power2.out" }, 83.3333);
+      tl.fromTo("#cap23 .l2", { y: 16, opacity: 0 }, { y: 0, opacity: 1, duration: 0.18, ease: "power2.out" }, 83.4);
+      tl.fromTo("#cap24 .l1", { y: 16, opacity: 0 }, { y: 0, opacity: 1, duration: 0.18, ease: "power2.out" }, 88.3333);
+      tl.fromTo("#cap24 .l2", { y: 16, opacity: 0 }, { y: 0, opacity: 1, duration: 0.18, ease: "power2.out" }, 88.4);
+      tl.fromTo("#cap25 .l1", { y: 16, opacity: 0 }, { y: 0, opacity: 1, duration: 0.18, ease: "power2.out" }, 93.1);
+      tl.fromTo("#cap25 .l2", { y: 16, opacity: 0 }, { y: 0, opacity: 1, duration: 0.18, ease: "power2.out" }, 93.1667);
+      tl.fromTo("#cap26 .l1", { y: 16, opacity: 0 }, { y: 0, opacity: 1, duration: 0.18, ease: "power2.out" }, 96.1);
+      tl.fromTo("#cap26 .l2", { y: 16, opacity: 0 }, { y: 0, opacity: 1, duration: 0.18, ease: "power2.out" }, 96.1667);
+      tl.fromTo("#cap27 .l1", { y: 16, opacity: 0 }, { y: 0, opacity: 1, duration: 0.18, ease: "power2.out" }, 101.2);
+      tl.fromTo("#cap27 .l2", { y: 16, opacity: 0 }, { y: 0, opacity: 1, duration: 0.18, ease: "power2.out" }, 101.2667);
+      tl.fromTo("#cap28 .l1", { y: 16, opacity: 0 }, { y: 0, opacity: 1, duration: 0.18, ease: "power2.out" }, 104.4667);
+      tl.fromTo("#cap28 .l2", { y: 16, opacity: 0 }, { y: 0, opacity: 1, duration: 0.18, ease: "power2.out" }, 104.5333);
+      tl.fromTo("#cap29 .l1", { y: 16, opacity: 0 }, { y: 0, opacity: 1, duration: 0.18, ease: "power2.out" }, 110.0);
+      tl.fromTo("#cap29 .l2", { y: 16, opacity: 0 }, { y: 0, opacity: 1, duration: 0.18, ease: "power2.out" }, 110.0667);
+      tl.fromTo("#cap30 .l1", { y: 16, opacity: 0 }, { y: 0, opacity: 1, duration: 0.18, ease: "power2.out" }, 114.0);
+      tl.fromTo("#cap30 .l2", { y: 16, opacity: 0 }, { y: 0, opacity: 1, duration: 0.18, ease: "power2.out" }, 114.0667);
+      tl.fromTo("#cap31 .l1", { y: 16, opacity: 0 }, { y: 0, opacity: 1, duration: 0.18, ease: "power2.out" }, 118.8667);
+      tl.fromTo("#cap31 .l2", { y: 16, opacity: 0 }, { y: 0, opacity: 1, duration: 0.18, ease: "power2.out" }, 118.9333);
+      tl.fromTo("#cap32 .l1", { y: 16, opacity: 0 }, { y: 0, opacity: 1, duration: 0.18, ease: "power2.out" }, 122.4333);
+      tl.fromTo("#cap32 .l2", { y: 16, opacity: 0 }, { y: 0, opacity: 1, duration: 0.18, ease: "power2.out" }, 122.5);
+      tl.fromTo("#cap33 .l1", { y: 16, opacity: 0 }, { y: 0, opacity: 1, duration: 0.18, ease: "power2.out" }, 126.7);
+      tl.fromTo("#cap33 .l2", { y: 16, opacity: 0 }, { y: 0, opacity: 1, duration: 0.18, ease: "power2.out" }, 126.7667);
+      tl.fromTo("#cap34 .l1", { y: 16, opacity: 0 }, { y: 0, opacity: 1, duration: 0.18, ease: "power2.out" }, 130.3333);
+      tl.fromTo("#cap34 .l2", { y: 16, opacity: 0 }, { y: 0, opacity: 1, duration: 0.18, ease: "power2.out" }, 130.4);
+      tl.fromTo("#cap35 .l1", { y: 16, opacity: 0 }, { y: 0, opacity: 1, duration: 0.18, ease: "power2.out" }, 133.9);
+      tl.fromTo("#cap35 .l2", { y: 16, opacity: 0 }, { y: 0, opacity: 1, duration: 0.18, ease: "power2.out" }, 133.9667);
+      tl.fromTo("#g0 .chip", { scale: 0.75, opacity: 0, y: 24 }, { scale: 1, opacity: 1, y: 0, duration: 0.3, ease: "back.out(2)" }, 0.1);
+      tl.fromTo("#g1 .num", { scale: 0.4, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.35, ease: "back.out(2.2)" }, 4.9667);
+      tl.fromTo("#g1 .draw", { strokeDasharray: 420, strokeDashoffset: 420 }, { strokeDashoffset: 0, duration: 0.5, ease: "power2.inOut" }, 5.0667);
+      tl.fromTo("#g1 .lbl", { x: -24, opacity: 0 }, { x: 0, opacity: 1, duration: 0.3, ease: "power2.out" }, 5.1667);
+      tl.fromTo("#g2 .num", { scale: 0.4, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.35, ease: "back.out(2.2)" }, 8.5667);
+      tl.fromTo("#g2 .draw", { strokeDasharray: 420, strokeDashoffset: 420 }, { strokeDashoffset: 0, duration: 0.5, ease: "power2.inOut" }, 8.6667);
+      tl.fromTo("#g2 .lbl", { x: -24, opacity: 0 }, { x: 0, opacity: 1, duration: 0.3, ease: "power2.out" }, 8.7667);
+      tl.fromTo("#g3 .chip", { scale: 0.75, opacity: 0, y: 24 }, { scale: 1, opacity: 1, y: 0, duration: 0.3, ease: "back.out(2)" }, 16.3333);
+      tl.fromTo("#g4 .chip", { scale: 0.75, opacity: 0, y: 24 }, { scale: 1, opacity: 1, y: 0, duration: 0.3, ease: "back.out(2)" }, 31.8333);
+      tl.fromTo("#g5 .box", { scale: 0.7, opacity: 0, y: 30 }, { scale: 1, opacity: 1, y: 0, duration: 0.35, ease: "back.out(1.8)" }, 33.9667);
+      tl.fromTo("#g6 .chip", { scale: 0.75, opacity: 0, y: 24 }, { scale: 1, opacity: 1, y: 0, duration: 0.3, ease: "back.out(2)" }, 40.2667);
+      tl.fromTo("#g7 .chip", { scale: 0.6, opacity: 0, y: 20 }, { scale: 1, opacity: 1, y: 0, duration: 0.3, stagger: 0.18, ease: "back.out(2)" }, 46.3);
+      tl.fromTo("#g8 .num", { scale: 0.4, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.35, ease: "back.out(2.2)" }, 55.2667);
+      tl.fromTo("#g8 .draw", { strokeDasharray: 420, strokeDashoffset: 420 }, { strokeDashoffset: 0, duration: 0.5, ease: "power2.inOut" }, 55.3667);
+      tl.fromTo("#g8 .lbl", { x: -24, opacity: 0 }, { x: 0, opacity: 1, duration: 0.3, ease: "power2.out" }, 55.4667);
+      tl.fromTo("#g9 .chip", { scale: 0.75, opacity: 0, y: 24 }, { scale: 1, opacity: 1, y: 0, duration: 0.3, ease: "back.out(2)" }, 68.1667);
+      tl.fromTo("#g10 .chip", { scale: 0.75, opacity: 0, y: 24 }, { scale: 1, opacity: 1, y: 0, duration: 0.3, ease: "back.out(2)" }, 75.5);
+      tl.fromTo("#g11 .chip", { scale: 0.75, opacity: 0, y: 24 }, { scale: 1, opacity: 1, y: 0, duration: 0.3, ease: "back.out(2)" }, 77.6);
+      tl.fromTo("#g12 .chip", { scale: 0.75, opacity: 0, y: 24 }, { scale: 1, opacity: 1, y: 0, duration: 0.3, ease: "back.out(2)" }, 83.4333);
+      tl.fromTo("#g13 .box", { scale: 0.7, opacity: 0, y: 30 }, { scale: 1, opacity: 1, y: 0, duration: 0.35, ease: "back.out(1.8)" }, 88.4333);
+      tl.fromTo("#g14 .box", { scale: 0.7, opacity: 0, y: 30 }, { scale: 1, opacity: 1, y: 0, duration: 0.35, ease: "back.out(1.8)" }, 96.2);
+      tl.fromTo("#g15 .chip", { scale: 0.75, opacity: 0, y: 24 }, { scale: 1, opacity: 1, y: 0, duration: 0.3, ease: "back.out(2)" }, 114.1);
+      tl.fromTo("#g16 .card", { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.35, ease: "power3.out" }, 130.4333);
+      tl.to("#g16 .b1", { opacity: 0, duration: 0.15 }, 131.8333);
+      tl.fromTo("#g16 .btn", { scale: 1 }, { scale: 0.92, duration: 0.08, yoyo: true, repeat: 1 }, 131.7333);
       window.__timelines["main"] = tl;
-      tl.seek(0);
     </script>
   </body>
 </html>
