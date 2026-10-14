@@ -88,7 +88,7 @@ G = [
     {"kind": "chip", "at": (8, 0), "text": "HEALTHY FATS · NUTS", "style": "accent"},
     {"kind": "chip", "at": (9, 0), "text": "MAINTENANCE CALORIES", "style": "serif"},
     {"kind": "stat", "at": (10, 0), "big": "−100–200", "small": "KCAL · ABOVE 15% BODY FAT", "span": 2, "pink": True},
-    {"kind": "stat", "at": (11, 0), "big": "+ SMALL", "small": "SURPLUS · BELOW 15% BODY FAT", "span": 2, "pink": True},
+    {"kind": "stat", "at": (11, 0), "big": "+100", "small": "KCAL · BELOW 15% BODY FAT", "span": 2, "pink": True},
     {"kind": "chip", "at": (12, 1), "text": "PATIENCE", "style": "serif"},
     {"kind": "follow", "at": (15, 0), "span": 2},
 ]

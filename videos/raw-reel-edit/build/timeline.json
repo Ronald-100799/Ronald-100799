@@ -353,22 +353,22 @@
   },
   {
    "start": 96.1,
-   "end": 101.2,
-   "l1": "If you're below 15% body fat,",
-   "l2": "eat a small surplus",
+   "end": 101.9667,
+   "l1": "If you're below 15% body fat, eat at",
+   "l2": "maintenance or a small surplus \u2014",
    "range": 11,
    "idx": 0
   },
   {
-   "start": 101.2,
-   "end": 104.4667,
-   "l1": "above your",
-   "l2": "maintenance calories.",
+   "start": 101.9667,
+   "end": 105.5,
+   "l1": "about 100 calories",
+   "l2": "above your maintenance.",
    "range": 11,
    "idx": 1
   },
   {
-   "start": 104.4667,
+   "start": 105.5,
    "end": 110.0,
    "l1": "That helps you build muscle",
    "l2": "without gaining much fat.",
