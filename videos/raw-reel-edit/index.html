@@ -17,11 +17,11 @@
       #cam video { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; object-fit: cover; }
       #vignette { position: absolute; inset: 0; pointer-events: none;
         background: linear-gradient(to bottom, rgba(0,0,0,0) 55%, rgba(0,0,0,0.38) 100%); }
-      .cap { position: absolute; left: 60px; right: 60px; top: 1330px; text-align: center; }
+      .cap { position: absolute; left: 40px; right: 40px; top: 1330px; text-align: center; }
       .cap .l1, .cap .l2 { display: block; font-weight: 700; line-height: 1.22; letter-spacing: -0.01em;
-        text-shadow: 0 3px 10px rgba(0,0,0,0.85), 0 0 2px rgba(0,0,0,0.9); }
-      .cap .l1 { color: #ffffff; font-size: 50px; }
-      .cap .l2 { color: #f8e71c; font-size: 46px; margin-top: 4px; }
+        text-shadow: 0 3px 10px rgba(0,0,0,0.85), 0 0 2px rgba(0,0,0,0.9); text-wrap: balance; }
+      .cap .l1 { color: #ffffff; font-size: 44px; }
+      .cap .l2 { color: #f8e71c; font-size: 42px; margin-top: 4px; }
       .g { position: absolute; }
       .badge { left: 56px; top: 150px; display: flex; align-items: center; gap: 18px; }
       .badge .num { position: relative; width: 118px; height: 118px; display: flex; align-items: center; justify-content: center;
@@ -116,7 +116,7 @@
       <div id="cap34" class="cap clip" data-start="130.3333" data-duration="3.5667" data-track-index="5"><span class="l1">For more useful fitness tips,</span><span class="l2">hit follow.</span></div>
       <div id="cap35" class="cap clip" data-start="133.9" data-duration="4.1667" data-track-index="5"><span class="l1">If you liked this video,</span><span class="l2">drop a like. Thank you!</span></div>
       <div id="g0" class="g chipwrap clip" data-start="0.1" data-duration="4.7333" data-track-index="7"><div class="chip serif">SKINNY FAT?</div></div>
-      <div id="g1" class="g badge clip" data-start="4.9667" data-duration="6.4" data-track-index="6"><div class="num"><svg viewBox="0 0 134 134"><path class="draw" d="M67 8 C 104 6, 128 32, 126 68 C 124 104, 98 128, 64 126 C 30 124, 8 100, 9 66 C 10 34, 34 12, 72 10" fill="none" stroke="#f8e71c" stroke-width="7" stroke-linecap="round"/></svg><span>2</span></div><div class="lbl">REASONS</div></div>
+      <div id="g1" class="g badge clip" data-start="4.9667" data-duration="3.4333" data-track-index="6"><div class="num"><svg viewBox="0 0 134 134"><path class="draw" d="M67 8 C 104 6, 128 32, 126 68 C 124 104, 98 128, 64 126 C 30 124, 8 100, 9 66 C 10 34, 34 12, 72 10" fill="none" stroke="#f8e71c" stroke-width="7" stroke-linecap="round"/></svg><span>2</span></div><div class="lbl">REASONS</div></div>
       <div id="g2" class="g badge clip" data-start="8.5667" data-duration="11.0333" data-track-index="6"><div class="num"><svg viewBox="0 0 134 134"><path class="draw" d="M67 8 C 104 6, 128 32, 126 68 C 124 104, 98 128, 64 126 C 30 124, 8 100, 9 66 C 10 34, 34 12, 72 10" fill="none" stroke="#f8e71c" stroke-width="7" stroke-linecap="round"/></svg><span>1</span></div><div class="lbl">RESISTANCE TRAINING</div></div>
       <div id="g3" class="g chipwrap clip" data-start="16.3333" data-duration="3.3" data-track-index="7"><div class="chip accent">BUILD MUSCLE</div></div>
       <div id="g4" class="g chipwrap clip" data-start="31.8333" data-duration="2.0" data-track-index="7"><div class="chip accent">+ CONFIDENCE</div></div>
@@ -131,7 +131,7 @@
       <div id="g13" class="g stat pink clip" data-start="88.4333" data-duration="7.6333" data-track-index="7"><div class="box"><div class="big">−100–200</div><div class="small">KCAL · ABOVE 15% BODY FAT</div></div></div>
       <div id="g14" class="g stat pink clip" data-start="96.2" data-duration="9.2333" data-track-index="7"><div class="box"><div class="big">+100</div><div class="small">KCAL · BELOW 15% BODY FAT</div></div></div>
       <div id="g15" class="g chipwrap clip" data-start="114.1" data-duration="4.7333" data-track-index="7"><div class="chip serif">PATIENCE</div></div>
-      <div id="g16" class="g follow clip" data-start="130.4333" data-duration="7.6" data-track-index="7"><div class="card"><div class="av"></div><div class="txt">Follow for more fitness tips</div><div class="btn"><span class="b2">Following</span><span class="b1">Follow</span></div></div></div>
+      <div id="g16" class="g follow clip" data-start="130.4333" data-duration="7.6" data-track-index="7"><div class="card"><div class="av"></div><div class="txt">Follow for more fitness tips</div><div class="btn" data-layout-allow-overlap><span class="b2">Following</span><span class="b1">Follow</span></div></div></div>
       <audio id="pop0" src="assets/pop.wav" data-start="0.1" data-duration="0.09" data-track-index="20" data-volume="0.5"></audio>
       <audio id="pop1" src="assets/pop.wav" data-start="4.9667" data-duration="0.09" data-track-index="20" data-volume="0.5"></audio>
       <audio id="pop2" src="assets/pop.wav" data-start="8.5667" data-duration="0.09" data-track-index="20" data-volume="0.5"></audio>
@@ -174,7 +174,7 @@
       tl.set("#cam", { scale: 1.0 }, 130.3333);
       tl.set("#cam", { scale: 1.0 }, 137.5);
       tl.fromTo("#push", { scale: 1.0 }, { scale: 1.08, duration: 4.8667, ease: "none" }, 0);
-      tl.fromTo("#push", { filter: "blur(18px)", y: -60 }, { filter: "blur(0px)", y: 0, duration: 0.28, ease: "power2.out" }, 55.1667);
+      tl.fromTo("#push", { filter: "blur(18px)", y: -60 }, { filter: "blur(0px)", y: 0, duration: 0.28, ease: "power2.out", immediateRender: false }, 55.1667);
       tl.to("#push", { filter: "grayscale(1) contrast(1.08)", duration: 0.2 }, 59.9333);
       tl.to("#push", { filter: "grayscale(0) contrast(1)", duration: 0.2 }, 64.2);
       tl.fromTo("#cap0 .l1", { y: 16, opacity: 0 }, { y: 0, opacity: 1, duration: 0.18, ease: "power2.out" }, 0.0);

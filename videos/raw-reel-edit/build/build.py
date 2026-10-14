@@ -75,7 +75,7 @@ def card(ri, ci):
 # kind: badge (big number top-left), chip (keyword callout), chips (several), stat, follow
 G = [
     {"kind": "chip", "at": (0, 0), "text": "SKINNY FAT?", "style": "serif"},
-    {"kind": "badge", "at": (0, 1), "text": "2", "label": "REASONS", "span": 2},
+    {"kind": "badge", "at": (0, 1), "text": "2", "label": "REASONS", "span": 1},
     {"kind": "badge", "at": (0, 2), "text": "1", "label": "RESISTANCE TRAINING", "span": 3},
     {"kind": "chip", "at": (0, 4), "text": "BUILD MUSCLE", "style": "accent"},
     {"kind": "chip", "at": (2, 1), "text": "+ CONFIDENCE", "style": "accent"},
@@ -115,11 +115,11 @@ o(f"""<!doctype html>
       #cam video {{ position: absolute; left: 0; top: 0; width: {W}px; height: {H}px; object-fit: cover; }}
       #vignette {{ position: absolute; inset: 0; pointer-events: none;
         background: linear-gradient(to bottom, rgba(0,0,0,0) 55%, rgba(0,0,0,0.38) 100%); }}
-      .cap {{ position: absolute; left: 60px; right: 60px; top: 1330px; text-align: center; }}
+      .cap {{ position: absolute; left: 40px; right: 40px; top: 1330px; text-align: center; }}
       .cap .l1, .cap .l2 {{ display: block; font-weight: 700; line-height: 1.22; letter-spacing: -0.01em;
-        text-shadow: 0 3px 10px rgba(0,0,0,0.85), 0 0 2px rgba(0,0,0,0.9); }}
-      .cap .l1 {{ color: #ffffff; font-size: 50px; }}
-      .cap .l2 {{ color: #f8e71c; font-size: 46px; margin-top: 4px; }}
+        text-shadow: 0 3px 10px rgba(0,0,0,0.85), 0 0 2px rgba(0,0,0,0.9); text-wrap: balance; }}
+      .cap .l1 {{ color: #ffffff; font-size: 44px; }}
+      .cap .l2 {{ color: #f8e71c; font-size: 42px; margin-top: 4px; }}
       .g {{ position: absolute; }}
       .badge {{ left: 56px; top: 150px; display: flex; align-items: center; gap: 18px; }}
       .badge .num {{ position: relative; width: 118px; height: 118px; display: flex; align-items: center; justify-content: center;
@@ -191,7 +191,7 @@ for k, g in enumerate(G):
     elif kind == "follow":
         o(f'      <div id="{gid}" class="g follow clip" data-start="{st}" data-duration="{du}" data-track-index="7">'
           f'<div class="card"><div class="av"></div><div class="txt">Follow for more fitness tips</div>'
-          f'<div class="btn"><span class="b2">Following</span><span class="b1">Follow</span></div></div></div>')
+          f'<div class="btn" data-layout-allow-overlap><span class="b2">Following</span><span class="b1">Follow</span></div></div></div>')
     gfx_anim.append((gid, kind, st, du))
     sfx.append(st)
 
@@ -216,7 +216,7 @@ for g in segments:
 # slow push-in across the hook
 js.append(f'      tl.fromTo("#push", {{ scale: 1.0 }}, {{ scale: 1.08, duration: {card(0,0)["end"]}, ease: "none" }}, 0);')
 # whip into reason 2
-js.append(f'      tl.fromTo("#push", {{ filter: "blur(18px)", y: -60 }}, {{ filter: "blur(0px)", y: 0, duration: 0.28, ease: "power2.out" }}, {whip_t});')
+js.append(f'      tl.fromTo("#push", {{ filter: "blur(18px)", y: -60 }}, {{ filter: "blur(0px)", y: 0, duration: 0.28, ease: "power2.out", immediateRender: false }}, {whip_t});')
 # black & white emphasis on the "poor diet" consequence
 bw = card(5, 2)
 js.append(f'      tl.to("#push", {{ filter: "grayscale(1) contrast(1.08)", duration: 0.2 }}, {bw["start"]});')
