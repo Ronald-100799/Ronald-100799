@@ -100,6 +100,7 @@
       .end { position: absolute; left: 72px; right: 150px; top: 240px; display: flex; align-items: center; gap: 20px;
         padding: 20px 22px; background: #FFFFFF; border-radius: 26px; box-shadow: 0 18px 40px rgba(0,0,0,0.35); }
       .end-av { width: 84px; height: 84px; flex: none; border-radius: 50%; background: linear-gradient(135deg, #FFE11A, #FF2E88); }
+      .end-av img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; display: block; }
       .end-txt { flex: 1; display: flex; flex-direction: column; }
       .end-txt b { font-weight: 800; font-size: 32px; color: #101012; line-height: 1.1; }
       .end-handle { font-weight: 600; font-size: 26px; color: #5b5b63; }
@@ -113,6 +114,7 @@
     <div id="root" data-composition-id="main" data-start="0" data-duration="88.6333" data-width="1080" data-height="1920" data-fps="30">
       <div id="fx"><div id="grade"><div id="move"><div id="cam">
         <video id="v0" class="clip" src="assets/footage.mp4" data-start="0.0" data-duration="88.1333" data-media-start="0.0" data-track-index="0" muted playsinline></video>
+        <video id="ov0" class="clip" src="assets/react_fg.webm" data-start="0.0" data-duration="8.7333" data-media-start="0" data-track-index="12" muted playsinline style="left: 0px; top: 1100px; width: 1080px; height: 820px; filter: brightness(1.42) contrast(1.05) saturate(1.04)"></video>
       </div></div></div></div>
       <div id="shade"></div>
       <div id="cap0" class="cap clip" data-start="8.1333" data-duration="2.5" data-track-index="10"><div class="capin"><div class="sup" style="font-size:50px"><span class="w">How</span> <span class="w">do</span> <span class="w">fitness</span> <span class="w">influencers</span> <span class="w">and</span> <span class="w">actors</span></div></div></div>
@@ -161,15 +163,13 @@
       <div id="cap43" class="cap clip" data-start="80.8333" data-duration="2.8" data-track-index="10"><div class="capin"><div class="sup" style="font-size:50px"><span class="w">I&#x27;m</span> <span class="w">planning</span> <span class="w">a</span> <span class="w">whiteboard</span> <span class="w">series</span> <span class="w">on</span> <span class="w">nutrition</span> <span class="w">and</span> <span class="w">training.</span></div></div></div>
       <div id="cap44" class="cap clip" data-start="83.6333" data-duration="1.3333" data-track-index="10"><div class="capin"><div class="sup" style="font-size:50px"><span class="w">What</span> <span class="w">do</span> <span class="w">you</span> <span class="w">think?</span> <span class="w">Tell</span> <span class="w">me</span> <span class="w">in</span> <span class="w">the</span> <span class="w acc">comments.</span></div></div></div>
       <div id="cap45" class="cap clip" data-start="84.9667" data-duration="3.1667" data-track-index="10"><div class="capin"><div class="sup" style="font-size:50px"><span class="w">And</span> <span class="w">share</span> <span class="w">this</span> <span class="w">reel</span> <span class="w">with</span> <span class="w">friends</span> <span class="w">who</span> <span class="w">want</span> <span class="w">to</span> <span class="w">get</span> <span class="w">fit</span> <span class="w">in</span> <span class="w">2027.</span></div></div></div>
-      <div id="gx1" class="gx clip" data-start="26.3333" data-duration="1.0333" data-track-index="22"><div class="end"><div class="end-av"></div><div class="end-txt"><b>Follow for more fitness tips</b><span class="end-handle">@YOUR_HANDLE</span></div><div class="end-btn" data-layout-allow-overlap><span class="b2" data-layout-allow-overlap>Following</span><span class="b1" data-layout-allow-overlap>Follow</span></div></div></div>
+      <div id="gx1" class="gx clip" data-start="26.3333" data-duration="1.0333" data-track-index="22"><div class="end"><div class="end-av"></div><div class="end-txt"><b>Follow for more fitness tips</b><span class="end-handle">@ron_tamil</span></div><div class="end-btn" data-layout-allow-overlap><span class="b2" data-layout-allow-overlap>Following</span><span class="b1" data-layout-allow-overlap>Follow</span></div></div></div>
       <div id="gx2" class="gx clip" data-start="31.9333" data-duration="1.4" data-track-index="21"><div class="gauge"><div class="g-maint">MAINTENANCE</div><div class="gcol main up"><div class="g-h">EAT MORE</div><div class="g-plot"><i class="g-base"></i><i class="g-bar"></i><div class="g-val">WEIGHT ↑</div></div></div></div></div>
       <div id="gx3" class="gx clip" data-start="33.3333" data-duration="2.0" data-track-index="21"><div class="gauge two"><div class="g-maint">MAINTENANCE</div><div class="gcol dim up"><div class="g-h">EAT MORE</div><div class="g-plot"><i class="g-base"></i><i class="g-bar"></i><div class="g-val">↑</div></div></div><div class="gcol main down"><div class="g-h">EAT LESS</div><div class="g-plot"><i class="g-base"></i><i class="g-bar"></i><div class="g-val">WEIGHT ↓</div></div></div></div></div>
       <div id="gx4" class="gx clip" data-start="38.5333" data-duration="14.9" data-track-index="21"><div class="list compact"><div class="lh">FIND YOUR MAINTENANCE</div><div class="li" id="gx4r0"><b>01</b><span>ASK CHATGPT TO ESTIMATE</span></div><div class="li" id="gx4r1"><b>02</b><span>EAT THAT NUMBER DAILY</span></div><div class="li" id="gx4r2"><b>03</b><span>TRACK EVERYTHING</span></div><div class="li" id="gx4r3"><b>04</b><span>WEIGH IN EVERY MORNING</span></div><div class="li" id="gx4r4"><b>05</b><span>TAKE THE WEEKLY AVERAGE</span></div></div></div>
       <div id="gx5" class="gx clip" data-start="57.8333" data-duration="4.9" data-track-index="21"><div class="steps"><div class="st-h">TRIAL &amp; ERROR</div><div class="st-row"><div class="st" id="gx5s0"><i style="height:40px"></i><span>WK 1</span></div><div class="st" id="gx5s1"><i style="height:62px"></i><span>WK 2</span></div><div class="st" id="gx5s2"><i style="height:84px"></i><span>WK 3</span></div><svg class="st-arrow" viewBox="0 0 520 130"><path d="M20 118 L 470 14" /><path d="M432 8 L 474 12 L 458 50" /></svg></div></div></div>
       <div id="gx6" class="gx clip" data-start="65.4667" data-duration="4.1" data-track-index="21"><div class="list compact"><div class="lh">THEIR TEAM</div><div class="li" id="gx6r0"><b>✓</b><span>PERSONAL CHEF</span></div><div class="li" id="gx6r1"><b>✓</b><span>DIETICIAN</span></div><div class="li" id="gx6r2"><b>✓</b><span>COACHES</span></div></div></div>
-      <div id="gx7" class="gx clip" data-start="73.5667" data-duration="0.7667" data-track-index="22"><div class="end"><div class="end-av"></div><div class="end-txt"><b>Follow for more fitness tips</b><span class="end-handle">@YOUR_HANDLE</span></div><div class="end-btn" data-layout-allow-overlap><span class="b2" data-layout-allow-overlap>Following</span><span class="b1" data-layout-allow-overlap>Follow</span></div></div></div>
-      <div id="gx8" class="gx clip" data-start="74.5" data-duration="6.3" data-track-index="21"><div class="list compact"><div class="lh">COMING UP NEXT</div><div class="li" id="gx8r0"><b>01</b><span>METABOLIC ADAPTATION</span></div><div class="li" id="gx8r1"><b>02</b><span>HOW FAST TO GAIN / LOSE</span></div><div class="li" id="gx8r2"><b>03</b><span>MACROS</span></div></div></div>
-      <div id="gx9" class="gx clip" data-start="85.0667" data-duration="3.5667" data-track-index="22"><div class="end"><div class="end-av"></div><div class="end-txt"><b>Follow for more fitness tips</b><span class="end-handle">@YOUR_HANDLE</span></div><div class="end-btn" data-layout-allow-overlap><span class="b2" data-layout-allow-overlap>Following</span><span class="b1" data-layout-allow-overlap>Follow</span></div></div></div>
+      <div id="gx7" class="gx clip" data-start="74.5" data-duration="6.3" data-track-index="21"><div class="list compact"><div class="lh">COMING UP NEXT</div><div class="li" id="gx7r0"><b>01</b><span>METABOLIC ADAPTATION</span></div><div class="li" id="gx7r1"><b>02</b><span>HOW FAST TO GAIN / LOSE</span></div><div class="li" id="gx7r2"><b>03</b><span>MACROS</span></div></div></div>
       <audio id="a0" src="assets/voice.wav" data-start="0.0" data-duration="88.1333" data-media-start="0.0" data-track-index="2" data-automation='{"version": 1, "lanes": [{"target": "volume", "points": [{"t": 0, "v": 0}, {"t": 0.02, "v": 1.0}, {"t": 88.113, "v": 1.0}, {"t": 88.1333, "v": 0}]}]}'></audio>
       <!-- MUSIC PLACEHOLDER: drop a licensed track at assets/music/bed.mp3 and rebuild -->
       <audio id="sfx0" src="assets/sfx/thump.wav" data-start="19.9" data-duration="0.35" data-track-index="5" data-volume="0.5"></audio>
@@ -186,12 +186,10 @@
       <audio id="sfx11" src="assets/sfx/tick.wav" data-start="65.9667" data-duration="0.05" data-track-index="7" data-volume="0.5"></audio>
       <audio id="sfx12" src="assets/sfx/tick.wav" data-start="66.7333" data-duration="0.05" data-track-index="5" data-volume="0.5"></audio>
       <audio id="sfx13" src="assets/sfx/tick.wav" data-start="67.2667" data-duration="0.05" data-track-index="6" data-volume="0.5"></audio>
-      <audio id="sfx14" src="assets/sfx/tick.wav" data-start="73.8333" data-duration="0.05" data-track-index="7" data-volume="0.6"></audio>
-      <audio id="sfx15" src="assets/sfx/tick.wav" data-start="75.0" data-duration="0.05" data-track-index="5" data-volume="0.5"></audio>
-      <audio id="sfx16" src="assets/sfx/tick.wav" data-start="76.1" data-duration="0.05" data-track-index="6" data-volume="0.5"></audio>
-      <audio id="sfx17" src="assets/sfx/tick.wav" data-start="78.2333" data-duration="0.05" data-track-index="7" data-volume="0.5"></audio>
-      <audio id="sfx18" src="assets/sfx/tick.wav" data-start="86.1667" data-duration="0.05" data-track-index="5" data-volume="0.6"></audio>
-      <audio id="sfx19" src="assets/sfx/swoosh.wav" data-start="62.6667" data-duration="0.42" data-track-index="6" data-volume="0.45"></audio>
+      <audio id="sfx14" src="assets/sfx/tick.wav" data-start="75.0" data-duration="0.05" data-track-index="7" data-volume="0.5"></audio>
+      <audio id="sfx15" src="assets/sfx/tick.wav" data-start="76.1" data-duration="0.05" data-track-index="5" data-volume="0.5"></audio>
+      <audio id="sfx16" src="assets/sfx/tick.wav" data-start="78.2333" data-duration="0.05" data-track-index="6" data-volume="0.5"></audio>
+      <audio id="sfx17" src="assets/sfx/swoosh.wav" data-start="62.6667" data-duration="0.42" data-track-index="7" data-volume="0.45"></audio>
     </div>
     <script>
       const tl = gsap.timeline({ paused: true });
@@ -336,22 +334,14 @@
       tl.fromTo("#gx6r2", { opacity: 0, x: -48 }, { opacity: 1, x: 0, duration: 0.3, ease: "expo.out" }, 67.2667);
       tl.fromTo("#gx6r2 b", { scale: 0.4 }, { scale: 1, duration: 0.32, ease: "back.out(1.6)" }, 67.3333);
       tl.to("#gx6 .list", { opacity: 0, x: -30, duration: 0.18, ease: "power2.in" }, 69.3667);
-      tl.fromTo("#gx7 .end", { opacity: 0, y: 60 }, { opacity: 1, y: 0, duration: 0.4, ease: "expo.out" }, 73.5667);
-      tl.fromTo("#gx7 .end-btn", { scale: 1 }, { scale: 0.9, duration: 0.08, yoyo: true, repeat: 1, ease: "sine.inOut", immediateRender: false }, 73.8333);
-      tl.fromTo("#gx7 .b2", { opacity: 0 }, { opacity: 1, duration: 0.01 }, 73.9);
-      tl.to("#gx7 .b1", { opacity: 0, duration: 0.14 }, 73.9);
-      tl.fromTo("#gx8 .lh", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.3, ease: "expo.out" }, 74.5);
-      tl.fromTo("#gx8r0", { opacity: 0, x: -48 }, { opacity: 1, x: 0, duration: 0.3, ease: "expo.out" }, 75.0);
-      tl.fromTo("#gx8r0 b", { scale: 0.4 }, { scale: 1, duration: 0.32, ease: "back.out(1.6)" }, 75.0667);
-      tl.fromTo("#gx8r1", { opacity: 0, x: -48 }, { opacity: 1, x: 0, duration: 0.3, ease: "expo.out" }, 76.1);
-      tl.fromTo("#gx8r1 b", { scale: 0.4 }, { scale: 1, duration: 0.32, ease: "back.out(1.6)" }, 76.1333);
-      tl.fromTo("#gx8r2", { opacity: 0, x: -48 }, { opacity: 1, x: 0, duration: 0.3, ease: "expo.out" }, 78.2333);
-      tl.fromTo("#gx8r2 b", { scale: 0.4 }, { scale: 1, duration: 0.32, ease: "back.out(1.6)" }, 78.2667);
-      tl.to("#gx8 .list", { opacity: 0, x: -30, duration: 0.18, ease: "power2.in" }, 80.6);
-      tl.fromTo("#gx9 .end", { opacity: 0, y: 60 }, { opacity: 1, y: 0, duration: 0.4, ease: "expo.out" }, 85.0667);
-      tl.fromTo("#gx9 .end-btn", { scale: 1 }, { scale: 0.9, duration: 0.08, yoyo: true, repeat: 1, ease: "sine.inOut", immediateRender: false }, 86.1667);
-      tl.fromTo("#gx9 .b2", { opacity: 0 }, { opacity: 1, duration: 0.01 }, 86.2333);
-      tl.to("#gx9 .b1", { opacity: 0, duration: 0.14 }, 86.2333);
+      tl.fromTo("#gx7 .lh", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.3, ease: "expo.out" }, 74.5);
+      tl.fromTo("#gx7r0", { opacity: 0, x: -48 }, { opacity: 1, x: 0, duration: 0.3, ease: "expo.out" }, 75.0);
+      tl.fromTo("#gx7r0 b", { scale: 0.4 }, { scale: 1, duration: 0.32, ease: "back.out(1.6)" }, 75.0667);
+      tl.fromTo("#gx7r1", { opacity: 0, x: -48 }, { opacity: 1, x: 0, duration: 0.3, ease: "expo.out" }, 76.1);
+      tl.fromTo("#gx7r1 b", { scale: 0.4 }, { scale: 1, duration: 0.32, ease: "back.out(1.6)" }, 76.1333);
+      tl.fromTo("#gx7r2", { opacity: 0, x: -48 }, { opacity: 1, x: 0, duration: 0.3, ease: "expo.out" }, 78.2333);
+      tl.fromTo("#gx7r2 b", { scale: 0.4 }, { scale: 1, duration: 0.32, ease: "back.out(1.6)" }, 78.2667);
+      tl.to("#gx7 .list", { opacity: 0, x: -30, duration: 0.18, ease: "power2.in" }, 80.6);
       tl.fromTo("#fx", { filter: "blur(10px)", scale: 1.06 }, { filter: "blur(0px)", scale: 1, duration: 0.36, ease: "power3.out", immediateRender: false }, 62.7667);
       tl.set("#cam", { scale: 1.0 }, 0.0);
       tl.set("#move", { scale: 1, transformOrigin: "50% 46%" }, 0.0);

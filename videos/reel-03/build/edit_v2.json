@@ -331,13 +331,6 @@
    ]
   },
   {
-   "type": "endcard",
-   "mini": true,
-   "t": 73.583,
-   "until": 74.317,
-   "follow_t": 73.817
-  },
-  {
    "type": "list",
    "compact": true,
    "t": 74.5,
@@ -360,12 +353,6 @@
      "t": 78.225
     }
    ]
-  },
-  {
-   "type": "endcard",
-   "t": 85.083,
-   "until": 88.133,
-   "follow_t": 86.167
   }
  ],
  "fx": [
@@ -492,5 +479,18 @@
   "1:18 'personal aid chef' rendered as 'a personal chef, dieticians, coaches'.",
   "0:00–0:08.7 reaction clip (Vikram podcast) keeps its own burned-in captions; no V2 captions added there. That clip is third-party footage — your call on usage rights.",
   "'ChatGPT' appears as text only (no logo)."
+ ],
+ "overlays": [
+  {
+   "file": "assets/react_fg.webm",
+   "t": 0.0,
+   "until": 8.73,
+   "left": 0,
+   "top": 1100,
+   "w": 1080,
+   "h": 820,
+   "filter": "brightness(1.42) contrast(1.05) saturate(1.04)",
+   "why": "Relight the underexposed reaction cutout only (matte from remove-background)."
+  }
  ]
 }

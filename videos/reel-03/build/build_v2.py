@@ -64,6 +64,7 @@ E["gfx"] = [g for g in E.get("gfx", []) if in_kept(g["t"])]
 E["fx"] = [f for f in E.get("fx", []) if in_kept(f["t"])]
 E["camera"] = [c for c in E.get("camera", []) if in_kept(c["t"])]
 E["broll"] = [b for b in E.get("broll", []) if in_kept(b["t"])]
+E["overlays"] = [ov for ov in E.get("overlays", []) if in_kept(ov["t"])]
 TOTAL = q(t_out + TAIL)
 
 
@@ -337,8 +338,10 @@ for gx in E.get("gfx", []):
         add_sfx("thump", rt, 0.45)
         J(f'      tl.to("#{I} .build", {{ opacity: 0, y: 20, duration: {M["exit_dur"]}, ease: "{M["exit_ease"]}" }}, {q(t1 - 0.2)});')
     elif typ == "endcard":
+        av = (f'<div class="end-av"><img src="{D["avatar"]}" alt="" /></div>'
+              if D.get("avatar") and os.path.exists(os.path.join(ROOT, D["avatar"])) else '<div class="end-av"></div>')
         o(f'      <div id="{I}" class="gx clip" data-start="{t0}" data-duration="{dur if gx.get("mini") else q(TOTAL - t0)}" data-track-index="22">'
-          f'<div class="end"><div class="end-av"></div><div class="end-txt"><b>{esc(D["end_card_text"])}</b>'
+          f'<div class="end">{av}<div class="end-txt"><b>{esc(D["end_card_text"])}</b>'
           f'<span class="end-handle">{esc(D["handle"])}</span></div>'
           f'<div class="end-btn" data-layout-allow-overlap><span class="b2" data-layout-allow-overlap>Following</span><span class="b1" data-layout-allow-overlap>Follow</span></div></div></div>')
         J(f'      tl.fromTo("#{I} .end", {{ opacity: 0, y: 60 }}, {{ opacity: 1, y: 0, duration: 0.4, ease: "{M["enter_ease"]}" }}, {t0});')
@@ -480,6 +483,7 @@ style = f"""
       .end {{ position: absolute; left: {SAFE["left"]}px; right: {SAFE["right"]}px; top: {D["layout"]["gfx_top"]}px; display: flex; align-items: center; gap: 20px;
         padding: 20px 22px; background: {C["white"]}; border-radius: 26px; box-shadow: 0 18px 40px rgba(0,0,0,0.35); }}
       .end-av {{ width: 84px; height: 84px; flex: none; border-radius: 50%; background: linear-gradient(135deg, {C["yellow"]}, {C["pink"]}); }}
+      .end-av img {{ width: 100%; height: 100%; border-radius: 50%; object-fit: cover; display: block; }}
       .end-txt {{ flex: 1; display: flex; flex-direction: column; }}
       .end-txt b {{ font-weight: 800; font-size: 32px; color: {C["ink"]}; line-height: 1.1; }}
       .end-handle {{ font-weight: 600; font-size: 26px; color: #5b5b63; }}
@@ -504,6 +508,11 @@ o_head = f"""<!doctype html>
 vids = []
 auds = []
 FADE = D["audio"]["clip_fade"]
+for n, ov in enumerate(E.get("overlays", [])):
+    t0, t1 = to_out(ov["t"]), to_out(ov["until"])
+    vids.append(f'        <video id="ov{n}" class="clip" src="{ov["file"]}" data-start="{t0}" data-duration="{q(t1 - t0)}" '
+                f'data-media-start="{ov.get("media_start", 0)}" data-track-index="{12 + n}" muted playsinline '
+                f'style="left: {ov["left"]}px; top: {ov["top"]}px; width: {ov["w"]}px; height: {ov["h"]}px; filter: {ov["filter"]}"></video>')
 for i, g in enumerate(segments):
     d = q(g["src_e"] - g["src_s"])
     vids.append(f'        <video id="v{i}" class="clip" src="{E["source_video"]}" data-start="{g["out_s"]}" data-duration="{d}" '
@@ -540,6 +549,8 @@ SFX_LEN = {"swoosh": 0.42, "tick": 0.05, "thump": 0.35, "rise": 0.5}
 sfx_html = [f'      <audio id="sfx{n}" src="assets/sfx/{name}.wav" data-start="{max(0, t)}" data-duration="{SFX_LEN[name]}" '
             f'data-track-index="{5 + n % 3}" data-volume="{vol}"></audio>' for n, (name, t, vol) in enumerate(sfx)]
 
+ov_tags = [v for v in vids if 'id="ov' in v]
+vids = [v for v in vids if 'id="ov' not in v] + ov_tags
 doc = [o_head] + vids + ['      </div></div></div></div>'] + broll_html + ['      <div id="shade"></div>'] + out + auds + \
       ([music_html] if music_html else ["      <!-- MUSIC PLACEHOLDER: drop a licensed track at assets/music/bed.mp3 and rebuild -->"]) + sfx_html + \
       ["    </div>", "    <script>", "      const tl = gsap.timeline({ paused: true });"] + js + \
