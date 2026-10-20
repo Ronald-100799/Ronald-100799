@@ -63,5 +63,6 @@
     "_comment": "Reel 03: face at y\u2248440-920 (close-up) / 560-920 (wide). Graphics live in the top band y 240-420 and stay compact."
   },
   "caption_shadow": "0 0 2px rgba(0,0,0,0.95), 0 0 1px rgba(0,0,0,0.95), 0 3px 10px rgba(0,0,0,0.8), 0 0 22px rgba(0,0,0,0.45)",
-  "hero_shadow": "0 0 3px rgba(0,0,0,0.95), 0 4px 14px rgba(0,0,0,0.75), 0 0 30px rgba(0,0,0,0.4)"
+  "hero_shadow": "0 0 3px rgba(0,0,0,0.95), 0 4px 14px rgba(0,0,0,0.75), 0 0 30px rgba(0,0,0,0.4)",
+  "shade": "linear-gradient(to bottom, rgba(0,0,0,0.18) 0%, rgba(0,0,0,0) 20%, rgba(0,0,0,0) 56%, rgba(0,0,0,0.38) 70%, rgba(0,0,0,0.5) 82%, rgba(0,0,0,0.4) 100%)"
 }

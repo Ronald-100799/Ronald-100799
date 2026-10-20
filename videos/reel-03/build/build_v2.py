@@ -258,7 +258,7 @@ for gx in E.get("gfx", []):
             for n, it in enumerate(gx["items"]))
         head = f'<div class="lh">{esc(gx["header"])}</div>' if gx.get("header") else ""
         o(f'      <div id="{I}" class="gx clip" data-start="{t0}" data-duration="{dur}" data-track-index="21">'
-          f'<div class="list">{head}{rows}</div></div>')
+          f'<div class="list{" compact" if gx.get("compact") else ""}">{head}{rows}</div></div>')
         if head:
             J(f'      tl.fromTo("#{I} .lh", {{ opacity: 0, y: 14 }}, {{ opacity: 1, y: 0, duration: 0.3, ease: "{M["enter_ease"]}" }}, {t0});')
         for n, it in enumerate(gx["items"]):
@@ -337,7 +337,7 @@ for gx in E.get("gfx", []):
         add_sfx("thump", rt, 0.45)
         J(f'      tl.to("#{I} .build", {{ opacity: 0, y: 20, duration: {M["exit_dur"]}, ease: "{M["exit_ease"]}" }}, {q(t1 - 0.2)});')
     elif typ == "endcard":
-        o(f'      <div id="{I}" class="gx clip" data-start="{t0}" data-duration="{q(TOTAL - t0)}" data-track-index="22">'
+        o(f'      <div id="{I}" class="gx clip" data-start="{t0}" data-duration="{dur if gx.get("mini") else q(TOTAL - t0)}" data-track-index="22">'
           f'<div class="end"><div class="end-av"></div><div class="end-txt"><b>{esc(D["end_card_text"])}</b>'
           f'<span class="end-handle">{esc(D["handle"])}</span></div>'
           f'<div class="end-btn" data-layout-allow-overlap><span class="b2" data-layout-allow-overlap>Following</span><span class="b1" data-layout-allow-overlap>Follow</span></div></div></div>')
@@ -367,6 +367,10 @@ for i, g in enumerate(segments):
     J(f'      tl.set("#cam", {{ scale: {CAM[frames_by_seg[i]]} }}, {g["out_s"]});')
     J(f'      tl.set("#move", {{ scale: 1, transformOrigin: "50% 46%" }}, {g["out_s"]});')
 for c in cam_events:
+    if c.get("move") == "reset":
+        J(f'      tl.to("#move", {{ scale: 1, duration: {c.get("dur", 0.35)}, ease: "power2.inOut" }}, {to_out(c["t"])});')
+    elif c.get("move") == "cut":
+        J(f'      tl.set("#move", {{ scale: 1, transformOrigin: "50% 46%" }}, {to_out(c["t"])});')
     if c.get("move") in ("push", "punch"):
         t0 = to_out(c["t"])
         g = seg_at(t0)
@@ -375,9 +379,9 @@ for c in cam_events:
         J(f'      tl.set("#move", {{ transformOrigin: "{org}" }}, {t0});')
         if c["move"] == "push":
             d = q(min(c.get("dur", 3.0), seg_end - t0))
-            J(f'      tl.fromTo("#move", {{ scale: 1 }}, {{ scale: {c.get("amount", 1.06)}, duration: {d}, ease: "sine.inOut", immediateRender: false }}, {t0});')
+            J(f'      tl.to("#move", {{ scale: {c.get("amount", 1.06)}, duration: {d}, ease: "sine.inOut" }}, {t0});')
         else:
-            J(f'      tl.fromTo("#move", {{ scale: 1 }}, {{ scale: {c.get("amount", 1.12)}, duration: 0.28, ease: "power3.out", immediateRender: false }}, {t0});')
+            J(f'      tl.to("#move", {{ scale: {c.get("amount", 1.12)}, duration: {c.get("dur", 0.28)}, ease: "power3.out" }}, {t0});')
 
 # ------------------------------------------------------------------ 9. assemble document
 G = D["grade"]
@@ -394,7 +398,7 @@ style = f"""
       #cam video {{ position: absolute; left: 0; top: 0; width: {W}px; height: {H}px; object-fit: cover; }}
       .brw {{ position: absolute; inset: 0; transform-origin: 50% 50%; filter: contrast({G["contrast"]}) saturate({G["saturate"]}); }}
       .broll {{ position: absolute; left: 0; top: 0; width: {W}px; height: {H}px; object-fit: cover; }}
-      #shade {{ position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,0.18) 0%, rgba(0,0,0,0) 22%, rgba(0,0,0,0) 52%, rgba(0,0,0,0.42) 100%); }}
+      #shade {{ position: absolute; inset: 0; background: {D["shade"]}; }}
       .cap {{ position: absolute; left: {SAFE["left"]}px; right: {SAFE["right"]}px; bottom: {H - SAFE["bottom"]}px; }}
       .capin {{ display: flex; flex-direction: column; align-items: center; text-align: center; gap: 10px; }}
       .sup {{ font-weight: {F["support"]}; color: {C["white"]}; line-height: 1.22; text-wrap: balance; letter-spacing: -0.005em;
@@ -447,7 +451,7 @@ style = f"""
       .st-arrow path {{ fill: none; stroke: {C["yellow"]}; stroke-width: 7; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 520; }}
       .gauge {{ position: absolute; left: {SAFE["left"]}px; right: {SAFE["right"]}px; top: {D["layout"]["gfx_top"]}px; display: flex; justify-content: center; gap: 24px;
         padding: 20px 26px; background: {C["plate"]}; border-radius: 22px; }}
-      .g-maint {{ position: absolute; left: 26px; top: 108px; font-weight: 800; font-size: 20px; letter-spacing: 0.12em; color: {C["muted"]}; }}
+      .g-maint {{ position: absolute; right: 26px; top: 108px; font-weight: 800; font-size: 20px; letter-spacing: 0.12em; color: {C["muted"]}; }}
       .gcol {{ flex: 1; display: flex; flex-direction: column; align-items: center; }}
       .g-h {{ font-weight: 800; font-size: 28px; color: {C["white"]}; letter-spacing: 0.03em; text-transform: uppercase; text-align: center; height: 40px; }}
       .g-plot {{ position: relative; width: 100%; height: 150px; }}
@@ -459,12 +463,20 @@ style = f"""
       .up .g-val {{ top: 18px; }}
       .down .g-val {{ top: 90px; }}
       .two .g-val {{ font-size: 34px; }}
+      .two .g-maint {{ display: none; }}
       .two .g-h {{ font-size: 24px; }}
       .dim {{ opacity: 0.42; }}
       .build {{ position: absolute; left: {SAFE["left"]}px; right: {SAFE["right"]}px; top: {SAFE["top"] + 20}px; display: flex; flex-direction: column; align-items: center; gap: 8px; }}
       .bd {{ font-weight: 800; font-size: 46px; color: {C["white"]}; text-transform: uppercase; letter-spacing: 0.01em; text-shadow: 0 3px 14px rgba(0,0,0,0.7); }}
       .bd-eq {{ position: relative; margin-top: 10px; }}
       .bd-eq span {{ display: inline-block; font-weight: 900; font-size: 120px; color: {C["yellow"]}; letter-spacing: -0.03em; line-height: 1; text-shadow: 0 6px 24px rgba(0,0,0,0.55); }}
+      .list.compact {{ gap: 8px; }}
+      .list.compact .li {{ padding: 6px 20px 6px 8px; border-radius: 12px; }}
+      .list.compact .li b {{ font-size: 24px; padding: 2px 10px; }}
+      .list.compact .li span {{ font-size: 32px; }}
+      .list.compact .lh {{ font-size: 24px; }}
+      .lh, .st-h {{ align-self: flex-start; background: {C["plate"]}; border-radius: 10px; padding: 4px 14px; text-shadow: none; }}
+      .st-h {{ align-self: center; }}
       .end {{ position: absolute; left: {SAFE["left"]}px; right: {SAFE["right"]}px; top: {D["layout"]["gfx_top"]}px; display: flex; align-items: center; gap: 20px;
         padding: 20px 22px; background: {C["white"]}; border-radius: 26px; box-shadow: 0 18px 40px rgba(0,0,0,0.35); }}
       .end-av {{ width: 84px; height: 84px; flex: none; border-radius: 50%; background: linear-gradient(135deg, {C["yellow"]}, {C["pink"]}); }}

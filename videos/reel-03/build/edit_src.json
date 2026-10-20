@@ -1,0 +1,124 @@
+{
+  "_comment": "Times are ORIGINAL-speed seconds in the delivered clip. build/speed.py divides them by `speed` and writes build/edit_v2.json for build_v2.py.",
+  "speed": 1.2,
+  "source_video": "assets/footage.mp4",
+  "source_audio": "assets/voice.wav",
+  "pacing": { "pad": 0.0, "inner_pad": 0.0, "keep_pause": 999 },
+  "tail_hold": 0.5,
+  "takes": [
+    { "id": "ALL", "s": 0.0, "e": 105.76, "keep": true, "ta": "Pre-cut by creator; whole clip kept, sped up 1.2x.", "why": "Gaps already removed by the creator." }
+  ],
+
+  "beats": [
+    { "t": 9.77, "support": "How do fitness influencers and actors" },
+    { "t": 12.75, "support": "*gain* or *lose* weight whenever they want," },
+    { "t": 14.51, "support": "while your 2026", "hero": "WEIGHT-LOSS|RESOLUTION", "hero_t": 15.98, "fx": "mask", "hero_first": false },
+    { "t": 17.26, "support": "still isn't complete?" },
+    { "t": 18.68, "support": "The *secret* isn't a special diet or a coach." },
+    { "t": 20.92, "support": "The basic principle is the same for you and them:" },
+    { "t": 23.60, "support": "", "hero": "MAINTENANCE|CALORIES", "hero_t": 23.87, "fx": "plate", "hero_first": false, "sfx": "thump", "sfx_vol": 0.5 },
+    { "t": 24.75, "support": "In this video, I'll show you how to *track* and *implement* it." },
+    { "t": 27.53, "support": "Before that, if you want to be one step closer" },
+    { "t": 29.50, "support": "to your *fitness goal* in 2027," },
+    { "t": 31.82, "support": "*follow* me." },
+
+    { "t": 32.85, "support": "Maintenance calories are what keep" },
+    { "t": 33.89, "support": "your *current body weight* the same —" },
+    { "t": 35.40, "support": "the amount you need to eat *every day.*" },
+    { "t": 38.10, "support": "Consistently eat *more* and your weight *goes up.*" },
+    { "t": 40.02, "support": "Consistently eat *less* and it *comes down.*" },
+    { "t": 42.44, "support": "The key word:", "hero": "CONSISTENTLY", "hero_t": 42.96, "fx": "underline", "hero_first": false, "pulse": true },
+    { "t": 43.48, "support": "But how do you estimate your maintenance calories?" },
+    { "t": 46.25, "support": "Ask *ChatGPT* for a rough estimate." },
+    { "t": 48.87, "support": "It takes your details and gives you a number." },
+    { "t": 51.57, "support": "With a food scale and a calorie-tracking app," },
+    { "t": 54.63, "support": "eat that many calories daily — and *track* it." },
+    { "t": 57.29, "support": "Snacks, breakfast, oils — *everything.*" },
+    { "t": 59.35, "support": "Weigh yourself every morning on an *empty stomach,*" },
+    { "t": 62.25, "support": "and take the *weekly average.*" },
+    { "t": 64.17, "support": "If your weight drops on ChatGPT's number," },
+    { "t": 66.93, "support": "your maintenance is a little *higher* than that." },
+    { "t": 69.29, "support": "Do this for", "hero": "2–3 WEEKS", "hero_t": 69.49, "fx": "pop", "hero_first": false },
+    { "t": 70.20, "support": "Only through *trial and error*" },
+    { "t": 71.96, "support": "will you find your *almost accurate* maintenance calories." },
+
+    { "t": 75.32, "support": "One last *important* thing:" },
+    { "t": 76.28, "support": "you're not", "hero": "CHIYAAN VIKRAM", "hero_t": 76.62, "fx": "plate", "hero_first": false, "sfx": "thump", "sfx_vol": 0.45 },
+    { "t": 77.36, "support": "or any other celebrity." },
+    { "t": 78.56, "support": "They have a personal chef, dieticians, coaches —" },
+    { "t": 81.26, "support": "a whole *team* behind their transformation." },
+    { "t": 83.60, "support": "You need time to assess your journey" },
+    { "t": 85.08, "support": "and adjust the *variables.*" },
+    { "t": 87.04, "support": "That's what I'm here to teach you —" },
+    { "t": 88.44, "support": "*follow* me." },
+
+    { "t": 89.18, "support": "Next, we'll cover *metabolic adaptation,*" },
+    { "t": 91.31, "support": "how fast to gain or lose weight," },
+    { "t": 93.43, "support": "and *macros* — we haven't discussed those yet," },
+    { "t": 95.81, "support": "and they're *really important.*" },
+    { "t": 97.00, "support": "I'm planning a *whiteboard series* on nutrition and training." },
+    { "t": 100.36, "support": "What do you think? Tell me in the *comments.*" },
+    { "t": 101.98, "support": "And share this reel with friends who want to get *fit in 2027.*" }
+  ],
+
+  "gfx": [
+    { "type": "endcard", "mini": true, "t": 31.60, "until": 32.85, "follow_t": 32.24 },
+    { "type": "gauge", "t": 38.30, "until": 40.00, "dir": "up", "header": "EAT MORE", "value": "WEIGHT ↑", "value_t": 39.46 },
+    { "type": "gauge", "t": 40.02, "until": 42.40, "dir": "down", "header": "EAT LESS", "value": "WEIGHT ↓", "value_t": 41.72,
+      "compare": { "dir": "up", "header": "EAT MORE", "value": "↑" } },
+    { "type": "list", "compact": true, "t": 46.25, "until": 64.10, "header": "FIND YOUR MAINTENANCE", "items": [
+        { "idx": "01", "text": "ASK CHATGPT TO ESTIMATE", "t": 46.39 },
+        { "idx": "02", "text": "EAT THAT NUMBER DAILY", "t": 54.63 },
+        { "idx": "03", "text": "TRACK EVERYTHING", "t": 56.63 },
+        { "idx": "04", "text": "WEIGH IN EVERY MORNING", "t": 59.77 },
+        { "idx": "05", "text": "TAKE THE WEEKLY AVERAGE", "t": 63.37 } ] },
+    { "type": "steps", "t": 69.40, "until": 75.30, "header": "TRIAL & ERROR", "labels": ["WK 1", "WK 2", "WK 3"] },
+    { "type": "list", "compact": true, "t": 78.56, "until": 83.50, "header": "THEIR TEAM", "items": [
+        { "idx": "✓", "text": "PERSONAL CHEF", "t": 79.18 },
+        { "idx": "✓", "text": "DIETICIAN", "t": 80.10 },
+        { "idx": "✓", "text": "COACHES", "t": 80.74 } ] },
+    { "type": "endcard", "mini": true, "t": 88.30, "until": 89.18, "follow_t": 88.58 },
+    { "type": "list", "compact": true, "t": 89.40, "until": 96.95, "header": "COMING UP NEXT", "items": [
+        { "idx": "01", "text": "METABOLIC ADAPTATION", "t": 89.99 },
+        { "idx": "02", "text": "HOW FAST TO GAIN / LOSE", "t": 91.31 },
+        { "idx": "03", "text": "MACROS", "t": 93.87 } ] },
+    { "type": "endcard", "t": 102.10, "until": 105.76, "follow_t": 103.40 }
+  ],
+
+  "fx": [
+    { "type": "blurpush", "t": 75.33 }
+  ],
+
+  "camera": [
+    { "t": 0.0, "frame": "W" },
+    { "t": 9.77, "move": "push", "amount": 1.06, "dur": 3.0 },
+    { "t": 12.90, "move": "reset", "dur": 0.4 },
+    { "t": 23.75, "move": "punch", "amount": 1.12 },
+    { "t": 27.40, "move": "reset", "dur": 0.45 },
+    { "t": 32.87, "move": "cut" },
+    { "t": 38.20, "move": "push", "amount": 1.05, "dur": 4.0 },
+    { "t": 42.90, "move": "punch", "amount": 1.12 },
+    { "t": 46.10, "move": "reset", "dur": 0.4 },
+    { "t": 62.80, "move": "push", "amount": 1.16, "dur": 2.2, "origin": "26% 45%" },
+    { "t": 66.80, "move": "reset", "dur": 0.45 },
+    { "t": 75.33, "move": "cut" },
+    { "t": 76.47, "move": "cut" },
+    { "t": 76.62, "move": "punch", "amount": 1.12, "dur": 0.32, "origin": "62% 40%" },
+    { "t": 78.45, "move": "reset", "dur": 0.4 },
+    { "t": 84.60, "move": "push", "amount": 1.06, "dur": 2.3 },
+    { "t": 87.03, "move": "cut" },
+    { "t": 88.44, "move": "punch", "amount": 1.1 },
+    { "t": 89.20, "move": "cut" },
+    { "t": 97.07, "move": "cut" },
+    { "t": 102.07, "move": "cut" },
+    { "t": 102.20, "move": "push", "amount": 1.05, "dur": 3.4 }
+  ],
+
+  "flags": [
+    "0:14.5 'நா 2026 எடுத்த weight loss resolution' — ASR heard 'my 2026 resolution'; captioned as 'your 2026 weight-loss resolution' because the line addresses the viewer. Change to 'my' if you meant yourself.",
+    "1:29 'இந்த பாண்ட் என்னால்…' is garbled; captioned as 'Next, we'll cover metabolic adaptation…' from context ('next' + the list that follows).",
+    "1:18 'personal aid chef' rendered as 'a personal chef, dieticians, coaches'.",
+    "0:00–0:08.7 reaction clip (Vikram podcast) keeps its own burned-in captions; no V2 captions added there. That clip is third-party footage — your call on usage rights.",
+    "'ChatGPT' appears as text only (no logo)."
+  ]
+}
