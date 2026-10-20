@@ -1,0 +1,65 @@
+{
+  "_comment": "Reusable visual identity for fitness reels. Edit values here, not in build_v2.py.",
+  "canvas": {
+    "w": 1080,
+    "h": 1920,
+    "fps": 30
+  },
+  "safe": {
+    "top": 230,
+    "bottom": 1530,
+    "left": 72,
+    "right": 150
+  },
+  "color": {
+    "white": "#FFFFFF",
+    "yellow": "#FFE11A",
+    "pink": "#FF2E88",
+    "ink": "#101012",
+    "plate": "rgba(12,12,14,0.62)",
+    "muted": "rgba(255,255,255,0.55)"
+  },
+  "font": {
+    "family": "Poppins",
+    "support": 600,
+    "label": 800,
+    "hero": 900
+  },
+  "size": {
+    "hero_max": 150,
+    "hero_min": 72,
+    "hero_width": 820,
+    "support": 50,
+    "support_with_hero": 44,
+    "secondary": 30
+  },
+  "motion": {
+    "enter_ease": "expo.out",
+    "settle_ease": "back.out(1.6)",
+    "exit_ease": "power2.in",
+    "enter_dur": 0.32,
+    "exit_dur": 0.18,
+    "word_stagger": 0.045,
+    "word_rise": 26
+  },
+  "camera": {
+    "W": 1.0,
+    "M": 1.09,
+    "C": 1.2
+  },
+  "grade": {
+    "contrast": 1.04,
+    "saturate": 0.96
+  },
+  "audio": {
+    "clip_fade": 0.02,
+    "lufs_target": -14,
+    "true_peak": -1.0
+  },
+  "handle": "@YOUR_HANDLE",
+  "end_card_text": "Follow for more fitness tips",
+  "layout": {
+    "gfx_top": 290,
+    "_comment": "Info graphics live on the upper wall and must end above y\u2248560 (top of head in the wide frame \u2248 580)."
+  }
+}
