@@ -348,16 +348,16 @@
    "why": "tracker H"
   },
   {
-   "t": 44.34,
-   "name": "sfx2/bell",
-   "vol": 0.35,
-   "why": "TECHNIQUE — the right call"
-  },
-  {
    "t": 47.06,
    "name": "sfx2/pop",
    "vol": 0.3,
    "why": "tracker S"
+  },
+  {
+   "t": 51.97,
+   "name": "sfx2/digits",
+   "vol": 0.3,
+   "why": "6–10 WEEKLY SETS — numeric, analytical"
   }
  ]
 }
