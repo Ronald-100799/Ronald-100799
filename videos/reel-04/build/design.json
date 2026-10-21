@@ -54,7 +54,8 @@
   "audio": {
     "clip_fade": 0.02,
     "lufs_target": -14,
-    "true_peak": -1.0
+    "true_peak": -1.0,
+    "voice_gain": 0.6
   },
   "handle": "@ron_tamil",
   "end_card_text": "Follow for more fitness tips",

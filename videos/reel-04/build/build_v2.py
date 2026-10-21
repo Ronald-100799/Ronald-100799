@@ -65,6 +65,7 @@ E["fx"] = [f for f in E.get("fx", []) if in_kept(f["t"])]
 E["camera"] = [c for c in E.get("camera", []) if in_kept(c["t"])]
 E["broll"] = [b for b in E.get("broll", []) if in_kept(b["t"])]
 E["overlays"] = [ov for ov in E.get("overlays", []) if in_kept(ov["t"])]
+E["_in"] = in_kept
 TOTAL = q(t_out + TAIL)
 
 
@@ -131,7 +132,7 @@ for g in segments:
 ref_db = float(np.median(levels))
 for g in segments:
     adj = 0.0 if g["db"] is None else max(-2.5, min(2.5, ref_db - g["db"]))
-    g["gain"] = round(10 ** (adj / 20), 3)
+    g["gain"] = round(10 ** (adj / 20) * D["audio"].get("voice_gain", 1.0), 3)
 json.dump(cache, open(cache_p, "w"), indent=0)
 
 # ------------------------------------------------------------------ 3. camera
@@ -172,8 +173,9 @@ def hero_size(text):
     return int(max(SZ["hero_min"], min(SZ["hero_max"], SZ["hero_width"] / (0.68 * n))))
 
 
-def add_sfx(name, t, vol):
-    sfx.append((name, q(t), vol))
+def add_sfx(name, t, vol, explicit=False):
+    if explicit or E.get("auto_sfx", True):
+        sfx.append((name, q(t), vol))
 
 
 # ------------------------------------------------------------------ 5. captions
@@ -586,7 +588,19 @@ for ext in ("mp3", "wav", "m4a"):
         break
 
 SFX_LEN = {"swoosh": 0.42, "tick": 0.05, "thump": 0.35, "rise": 0.5}
-sfx_html = [f'      <audio id="sfx{n}" src="assets/sfx/{name}.wav" data-start="{max(0, t)}" data-duration="{SFX_LEN[name]}" '
+for cue in E.get("sfx_cues", []):
+    if E["_in"](cue["t"]):
+        add_sfx(cue["name"], to_out(cue["t"]), cue.get("vol", 0.7), explicit=True)
+
+
+def sfx_len(name):
+    if name in SFX_LEN:
+        return SFX_LEN[name]
+    w_ = wave.open(os.path.join(ROOT, f"assets/{name}.wav"))
+    return round(w_.getnframes() / w_.getframerate(), 3)
+
+
+sfx_html = [f'      <audio id="sfx{n}" src="assets/{name if "/" in name else "sfx/" + name}.wav" data-start="{max(0, t)}" data-duration="{sfx_len(name)}" '
             f'data-track-index="{5 + n % 3}" data-volume="{vol}"></audio>' for n, (name, t, vol) in enumerate(sfx)]
 
 ov_tags = [v for v in vids if 'id="ov' in v]

@@ -1,6 +1,6 @@
 # Editorial decision log — V2
 
-Output duration: **71.67s** · segments: 1 · captions: 35 · sfx: 13
+Output duration: **71.67s** · segments: 1 · captions: 35 · sfx: 21
 
 | Take | Source | Decision | Output | Spoken (Tamil, ASR) | Reason |
 |---|---|---|---|---|---|

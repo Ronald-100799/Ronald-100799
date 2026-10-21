@@ -40,9 +40,7 @@
    "hero": "4 STEPS",
    "hero_t": 6.38,
    "fx": "plate",
-   "hero_first": false,
-   "sfx": "thump",
-   "sfx_vol": 0.5
+   "hero_first": false
   },
   {
    "t": 7.88,
@@ -130,9 +128,7 @@
    "hero": "MOVEMENTS",
    "hero_t": 35.54,
    "fx": "plate",
-   "hero_first": false,
-   "sfx": "thump",
-   "sfx_vol": 0.45
+   "hero_first": false
   },
   {
    "t": 36.8,
@@ -300,5 +296,129 @@
   "0:20 'அவனுக்கு 1800 வேல இருக்கு' captioned literally as 'they've got 1,800 things of their own to do'.",
   "Tracker labels follow your board's right-hand words (Just do it / Game plan / Simple); for H I used 'TECHNIQUE FIRST' from what you say, because the board word wasn't clear in the footage.",
   "Board-quadrant outlines were not used: the board shifts with your manual zooms, so outlines would drift; the J·G·H·S tracker mirrors the board instead."
+ ],
+ "auto_sfx": false,
+ "sfx_cues": [
+  {
+   "t": 6.38,
+   "name": "sfx2/vineboom",
+   "vol": 0.6,
+   "why": "4 STEPS reveal"
+  },
+  {
+   "t": 12.36,
+   "name": "sfx2/click",
+   "vol": 0.7,
+   "why": "follow button flip"
+  },
+  {
+   "t": 12.98,
+   "name": "sfx2/pop",
+   "vol": 0.6,
+   "why": "tracker J"
+  },
+  {
+   "t": 22.57,
+   "name": "sfx2/badumtss",
+   "vol": 0.6,
+   "why": "THEY'RE THE JOKER punchline"
+  },
+  {
+   "t": 23.83,
+   "name": "sfx2/pop",
+   "vol": 0.6,
+   "why": "tracker G"
+  },
+  {
+   "t": 25.4,
+   "name": "sfx2/whoosh",
+   "vol": 0.75,
+   "why": "LIKE TARZAN swing"
+  },
+  {
+   "t": 27.87,
+   "name": "sfx2/correct",
+   "vol": 0.7,
+   "why": "GAME PLAN = the right way"
+  },
+  {
+   "t": 29.69,
+   "name": "sfx2/popsoft",
+   "vol": 0.6
+  },
+  {
+   "t": 30.13,
+   "name": "sfx2/popsoft",
+   "vol": 0.6
+  },
+  {
+   "t": 30.85,
+   "name": "sfx2/popsoft",
+   "vol": 0.6
+  },
+  {
+   "t": 31.5,
+   "name": "sfx2/popsoft",
+   "vol": 0.6
+  },
+  {
+   "t": 32.08,
+   "name": "sfx2/popsoft",
+   "vol": 0.6
+  },
+  {
+   "t": 35.56,
+   "name": "sfx2/message",
+   "vol": 0.75,
+   "why": "Comment MOVEMENTS"
+  },
+  {
+   "t": 38.3,
+   "name": "sfx2/pop",
+   "vol": 0.6,
+   "why": "tracker H"
+  },
+  {
+   "t": 42.26,
+   "name": "sfx2/wrong",
+   "vol": 0.6,
+   "why": "FAILURE"
+  },
+  {
+   "t": 44.34,
+   "name": "sfx2/bell",
+   "vol": 0.7,
+   "why": "TECHNIQUE — the right call"
+  },
+  {
+   "t": 47.06,
+   "name": "sfx2/pop",
+   "vol": 0.6,
+   "why": "tracker S"
+  },
+  {
+   "t": 51.97,
+   "name": "sfx2/digits",
+   "vol": 0.6,
+   "why": "6–10 WEEKLY SETS"
+  },
+  {
+   "t": 57.3,
+   "name": "sfx2/ticking",
+   "vol": 0.55,
+   "why": "IN 3 MONTHS / timeline"
+  },
+  {
+   "t": 61.78,
+   "name": "sfx2/vineboom",
+   "vol": 0.55,
+   "why": "1–1.5 YEARS reveal"
+  },
+  {
+   "t": 66.41,
+   "name": "sfx2/swoosh",
+   "vol": 0.6,
+   "why": "share CTA"
+  }
  ]
 }

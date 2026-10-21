@@ -19,7 +19,7 @@ def nums(x):
     return [nums(v) for v in x] if isinstance(x, list) else (round(x / k, 3) if isinstance(x, (int, float)) else x)
 
 
-out = {key: (conv(v) if key in ("takes", "beats", "gfx", "fx", "camera", "overlays") else v) for key, v in E.items()}
+out = {key: (conv(v) if key in ("takes", "beats", "gfx", "fx", "camera", "overlays", "sfx_cues") else v) for key, v in E.items()}
 out["caption_left"] = nums(E.get("caption_left", []))
 for g in out.get("gfx", []):
     if "switch" in g:
