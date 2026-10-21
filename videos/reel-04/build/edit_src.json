@@ -1,0 +1,363 @@
+{
+ "_comment": "Reel 04 — times are seconds in the delivered clip (no speed change). build/speed.py writes build/edit_v2.json.",
+ "speed": 1.0,
+ "source_video": "assets/footage.mp4",
+ "source_audio": "assets/voice.wav",
+ "pacing": {
+  "pad": 0.0,
+  "inner_pad": 0.0,
+  "keep_pause": 999
+ },
+ "tail_hold": 0.4,
+ "takes": [
+  {
+   "id": "ALL",
+   "s": 0.0,
+   "e": 71.26,
+   "keep": true,
+   "ta": "Pre-cut by creator; whole clip kept at original speed.",
+   "why": "Creator's own cut and zooms."
+  }
+ ],
+ "caption_left": [
+  [
+   23.8,
+   71.3
+  ]
+ ],
+ "beats": [
+  {
+   "t": 0.0,
+   "support": "Planning to join a gym, or already joined,"
+  },
+  {
+   "t": 3.22,
+   "support": "but don't know what to do once you're *inside?*"
+  },
+  {
+   "t": 6.2,
+   "support": "Use these",
+   "hero": "4 STEPS",
+   "hero_t": 6.38,
+   "fx": "plate",
+   "hero_first": false
+  },
+  {
+   "t": 7.88,
+   "support": "They'll really help you."
+  },
+  {
+   "t": 8.68,
+   "support": "Before that — to learn about *training, nutrition*"
+  },
+  {
+   "t": 10.3,
+   "support": "and *science-based lifting,*"
+  },
+  {
+   "t": 12.0,
+   "support": "*follow* me."
+  },
+  {
+   "t": 12.98,
+   "support": "Point one: in the gym,"
+  },
+  {
+   "t": 14.15,
+   "support": "forget what others think of you."
+  },
+  {
+   "t": 16.43,
+   "support": "Just go and follow your *routine.*"
+  },
+  {
+   "t": 18.27,
+   "support": "Nobody is there to *judge* you —"
+  },
+  {
+   "t": 20.07,
+   "support": "they've got 1,800 things of their own to do."
+  },
+  {
+   "t": 21.65,
+   "support": "Even if they judge you,"
+  },
+  {
+   "t": 22.57,
+   "support": "not you.",
+   "hero": "THEY'RE THE|JOKER",
+   "hero_t": 22.57,
+   "fx": "pop",
+   "hero_first": true
+  },
+  {
+   "t": 23.83,
+   "support": "Point two: don't jump from machine to machine",
+   "hero": "LIKE TARZAN",
+   "hero_t": 25.47,
+   "fx": "mask",
+   "hero_first": false
+  },
+  {
+   "t": 27.55,
+   "support": "Go in with a",
+   "hero": "GAME PLAN",
+   "hero_t": 27.87,
+   "fx": "plate",
+   "hero_first": false
+  },
+  {
+   "t": 28.75,
+   "support": "Learn the basic movements:"
+  },
+  {
+   "t": 29.69,
+   "support": "*squats, hinges, pressing,*"
+  },
+  {
+   "t": 31.5,
+   "support": "*pulling* and *elbow movements.*"
+  },
+  {
+   "t": 33.42,
+   "support": "No idea what those are?"
+  },
+  {
+   "t": 35.54,
+   "support": "Comment",
+   "hero": "MOVEMENTS",
+   "hero_t": 35.54,
+   "fx": "plate",
+   "hero_first": false
+  },
+  {
+   "t": 36.8,
+   "support": "and I'll send you a *free guide.*"
+  },
+  {
+   "t": 38.3,
+   "support": "I know you're desperate for a *transformation,*"
+  },
+  {
+   "t": 40.52,
+   "support": "but don't push every exercise to",
+   "hero": "FAILURE",
+   "hero_t": 42.26,
+   "fx": "mask",
+   "hero_first": false
+  },
+  {
+   "t": 43.62,
+   "support": "First, learn good",
+   "hero": "TECHNIQUE",
+   "hero_t": 44.34,
+   "fx": "underline",
+   "hero_first": false
+  },
+  {
+   "t": 45.22,
+   "support": "then try to *progress.*"
+  },
+  {
+   "t": 47.06,
+   "support": "Last point: don't add every exercise to your routine."
+  },
+  {
+   "t": 50.33,
+   "support": "For each muscle group, do",
+   "hero": "6–10|WEEKLY SETS",
+   "hero_t": 51.97,
+   "fx": "plate",
+   "hero_first": false
+  },
+  {
+   "t": 53.81,
+   "support": "Keep your training",
+   "hero": "SIMPLE",
+   "hero_t": 54.33,
+   "fx": "underline",
+   "hero_first": false,
+   "pulse": true
+  },
+  {
+   "t": 55.23,
+   "support": "Don't overcomplicate it, bro."
+  },
+  {
+   "t": 57.1,
+   "support": "You won't get the results you expect",
+   "hero": "IN 3 MONTHS",
+   "hero_t": 57.84,
+   "fx": "mask",
+   "hero_first": false
+  },
+  {
+   "t": 60.04,
+   "support": "Learning the training *fundamentals* alone takes at least",
+   "hero": "1–1.5 YEARS",
+   "hero_t": 61.78,
+   "fx": "plate",
+   "hero_first": false
+  },
+  {
+   "t": 63.95,
+   "support": "Focus on getting those *perfect.*"
+  },
+  {
+   "t": 66.41,
+   "support": "And share this reel with friends who are"
+  },
+  {
+   "t": 68.29,
+   "support": "desperate for a *transformation.*"
+  }
+ ],
+ "gfx": [
+  {
+   "type": "endcard",
+   "mini": true,
+   "t": 11.9,
+   "until": 12.98,
+   "follow_t": 12.36
+  },
+  {
+   "type": "tracker",
+   "t": 12.98,
+   "until": 57.05,
+   "letters": [
+    "J",
+    "G",
+    "H",
+    "S"
+   ],
+   "labels": [
+    "JUST DO IT",
+    "GAME PLAN",
+    "TECHNIQUE FIRST",
+    "KEEP IT SIMPLE"
+   ],
+   "switch": [
+    12.98,
+    23.83,
+    38.3,
+    47.06
+   ]
+  },
+  {
+   "type": "chips",
+   "t": 29.5,
+   "until": 33.4,
+   "items": [
+    {
+     "text": "SQUAT",
+     "t": 29.69
+    },
+    {
+     "text": "HINGE",
+     "t": 30.13
+    },
+    {
+     "text": "PRESS",
+     "t": 30.85
+    },
+    {
+     "text": "PULL",
+     "t": 31.5
+    },
+    {
+     "text": "ELBOW",
+     "t": 32.08
+    }
+   ]
+  },
+  {
+   "type": "steps",
+   "t": 57.3,
+   "until": 63.9,
+   "header": "REALISTIC TIMELINE",
+   "labels": [
+    "3 MO",
+    "6 MO",
+    "1 YR",
+    "1.5 YRS"
+   ]
+  }
+ ],
+ "fx": [],
+ "camera": [
+  {
+   "t": 0.0,
+   "frame": "W"
+  }
+ ],
+ "flags": [
+  "0:10 'size based lifting' captioned as 'science-based lifting'.",
+  "0:32 'elbow movements' kept as spoken — confirm the wording (e.g. curls/extensions).",
+  "0:20 'அவனுக்கு 1800 வேல இருக்கு' captioned literally as 'they've got 1,800 things of their own to do'.",
+  "Tracker labels follow your board's right-hand words (Just do it / Game plan / Simple); for H I used 'TECHNIQUE FIRST' from what you say, because the board word wasn't clear in the footage.",
+  "Board-quadrant outlines were not used: the board shifts with your manual zooms, so outlines would drift; the J·G·H·S tracker mirrors the board instead."
+ ],
+ "auto_sfx": false,
+ "sfx_cues": [
+  {
+   "t": 12.36,
+   "name": "sfx2/click",
+   "vol": 0.35,
+   "why": "follow button flip"
+  },
+  {
+   "t": 12.98,
+   "name": "sfx2/pop",
+   "vol": 0.3,
+   "why": "tracker J"
+  },
+  {
+   "t": 22.57,
+   "name": "sfx2/badumtss",
+   "vol": 0.3,
+   "why": "THEY'RE THE JOKER punchline"
+  },
+  {
+   "t": 23.83,
+   "name": "sfx2/pop",
+   "vol": 0.3,
+   "why": "tracker G"
+  },
+  {
+   "t": 25.4,
+   "name": "sfx2/whoosh",
+   "vol": 0.375,
+   "why": "LIKE TARZAN swing"
+  },
+  {
+   "t": 27.87,
+   "name": "sfx2/correct",
+   "vol": 0.35,
+   "why": "GAME PLAN = the right way"
+  },
+  {
+   "t": 35.56,
+   "name": "sfx2/message",
+   "vol": 0.375,
+   "why": "Comment MOVEMENTS"
+  },
+  {
+   "t": 38.3,
+   "name": "sfx2/pop",
+   "vol": 0.3,
+   "why": "tracker H"
+  },
+  {
+   "t": 47.06,
+   "name": "sfx2/pop",
+   "vol": 0.3,
+   "why": "tracker S"
+  },
+  {
+   "t": 51.97,
+   "name": "sfx2/digits",
+   "vol": 0.3,
+   "why": "6–10 WEEKLY SETS — numeric, analytical"
+  }
+ ]
+}
