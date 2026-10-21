@@ -2,54 +2,311 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=1920, height=1080" />
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>Skinny Fat Reel V2</title>
+    <script src="assets/gsap.min.js"></script>
     <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-      html,
-      body {
-        margin: 0;
-        width: 1920px;
-        height: 1080px;
-        overflow: hidden;
-        background: #0a0a0a;
-      }
-      #root {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-family: Inter, ui-sans-serif, system-ui, sans-serif;
-      }
-      #title {
-        color: #f4f4f5;
-        font-size: 72px;
-        font-weight: 600;
-        letter-spacing: -0.03em;
-      }
+      @font-face { font-family: "Poppins"; font-weight: 600; src: url("assets/fonts/poppins-latin-600-normal.woff2") format("woff2"); }
+      @font-face { font-family: "Poppins"; font-weight: 800; src: url("assets/fonts/poppins-latin-800-normal.woff2") format("woff2"); }
+      @font-face { font-family: "Poppins"; font-weight: 900; src: url("assets/fonts/poppins-latin-900-normal.woff2") format("woff2"); }
+      @font-face { font-family: "Poppins"; font-weight: 900; font-style: italic; src: url("assets/fonts/poppins-latin-900-italic.woff2") format("woff2"); }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1080px; height: 1920px; overflow: hidden; background: #000; }
+      #root { position: relative; width: 100%; height: 100%; overflow: hidden; font-family: "Poppins", sans-serif; }
+      #fx, #grade, #move, #cam { position: absolute; inset: 0; transform-origin: 50% 46%; }
+      #grade { filter: contrast(1.0) saturate(1.0); }
+      #cam video { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; object-fit: cover; }
+      .brw { position: absolute; inset: 0; transform-origin: 50% 50%; filter: contrast(1.0) saturate(1.0); }
+      .broll { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; object-fit: cover; }
+      #shade { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,0.18) 0%, rgba(0,0,0,0) 20%, rgba(0,0,0,0) 56%, rgba(0,0,0,0.38) 70%, rgba(0,0,0,0.5) 82%, rgba(0,0,0,0.4) 100%); }
+      .cap { position: absolute; left: 72px; right: 150px; bottom: 390px; }
+      .capin { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 10px; }
+      .sup { font-weight: 600; color: #FFFFFF; line-height: 1.22; text-wrap: balance; letter-spacing: -0.005em;
+        text-shadow: 0 0 2px rgba(0,0,0,0.95), 0 0 1px rgba(0,0,0,0.95), 0 3px 10px rgba(0,0,0,0.8), 0 0 22px rgba(0,0,0,0.45); }
+      .sup .w { display: inline-block; }
+      .sup .acc { color: #FFE11A; }
+      .hero { position: relative; display: inline-block; overflow: visible; line-height: 1.0; }
+      .hw { display: block; font-weight: 900; color: #FFE11A; letter-spacing: -0.02em; text-transform: uppercase;
+        text-shadow: 0 0 3px rgba(0,0,0,0.95), 0 4px 14px rgba(0,0,0,0.75), 0 0 30px rgba(0,0,0,0.4); white-space: nowrap; }
+      .fx-mask { overflow: hidden; padding: 0 6px; }
+      .fx-plate { padding: 8px 22px 4px; }
+      .fx-plate .pl { position: absolute; inset: 0; background: #FFE11A; border-radius: 10px; transform-origin: left center; }
+      .fx-plate .hw { position: relative; color: #101012; text-shadow: none; }
+      .ul { position: absolute; left: 4%; width: 92%; bottom: -16px; height: 22px; overflow: visible; }
+      .ul path { fill: none; stroke: #FFFFFF; stroke-width: 7; stroke-linecap: round; stroke-dasharray: 420; }
+      .gx { position: absolute; inset: 0; }
+      .mk { overflow: hidden; }
+      .sec-big { position: absolute; left: 72px; top: 250px; transform-origin: left top; }
+      .sec-num { font-weight: 900; font-size: 190px; line-height: 0.92; color: #FFE11A; letter-spacing: -0.04em;
+        text-shadow: 0 8px 28px rgba(0,0,0,0.45); }
+      .sec-bar { display: block; width: 150px; height: 8px; background: #FFFFFF; margin: 10px 0 14px; transform-origin: left; border-radius: 4px; }
+      .sec-line { font-weight: 800; font-size: 46px; line-height: 1.08; color: #FFFFFF; text-transform: uppercase; letter-spacing: 0.01em;
+        text-shadow: 0 3px 14px rgba(0,0,0,0.7); }
+      .sec-tag { position: absolute; left: 72px; top: 230px; display: flex; align-items: center; gap: 14px;
+        padding: 10px 20px 10px 10px; background: rgba(12,12,14,0.62); border-radius: 14px; }
+      .sec-tag b { font-weight: 900; font-size: 34px; color: #101012; background: #FFE11A; border-radius: 9px; padding: 2px 12px; }
+      .sec-tag span { font-weight: 800; font-size: 26px; color: #FFFFFF; letter-spacing: 0.04em; text-transform: uppercase; }
+      .list { position: absolute; left: 72px; top: 250px; display: flex; flex-direction: column; gap: 14px; }
+      .lh { font-weight: 800; font-size: 30px; letter-spacing: 0.08em; color: #FFE11A; text-transform: uppercase; text-shadow: 0 2px 10px rgba(0,0,0,0.6); }
+      .li { display: flex; align-items: center; gap: 16px; padding: 10px 26px 10px 10px; background: rgba(12,12,14,0.62); border-radius: 14px; align-self: flex-start; }
+      .li b { font-weight: 900; font-size: 30px; color: #101012; background: #FFE11A; border-radius: 9px; padding: 4px 12px; }
+      .li span { font-weight: 800; font-size: 42px; color: #FFFFFF; text-transform: uppercase; letter-spacing: 0.01em; }
+      .week { position: absolute; left: 72px; right: 150px; top: 250px; display: flex; flex-direction: column; align-items: center; gap: 16px; }
+      .wk-h { display: flex; align-items: baseline; gap: 14px; text-shadow: 0 3px 14px rgba(0,0,0,0.6); }
+      .wk-h b { font-weight: 900; font-size: 92px; color: #FFE11A; letter-spacing: -0.03em; line-height: 1; }
+      .wk-h span { font-weight: 800; font-size: 32px; color: #FFFFFF; letter-spacing: 0.06em; text-transform: uppercase; }
+      .days { display: flex; gap: 12px; }
+      .day { position: relative; width: 98px; height: 104px; border-radius: 16px; border: 3px solid rgba(255,255,255,0.55); background: rgba(12,12,14,0.62);
+        color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 40px; overflow: hidden; }
+      .day i { position: absolute; left: 0; right: 0; bottom: 0; height: 10px; background: #FFFFFF; transform: scaleX(0); transform-origin: left; }
+      .wk-rest { font-weight: 800; font-size: 28px; color: #FFFFFF; letter-spacing: 0.08em; text-transform: uppercase; text-shadow: 0 2px 10px rgba(0,0,0,0.7); }
+      .steps { position: absolute; left: 72px; right: 150px; top: 250px; display: flex; flex-direction: column; align-items: center; gap: 14px; }
+      .st-h { font-weight: 900; font-size: 58px; color: #FFE11A; text-transform: uppercase; letter-spacing: -0.02em; text-shadow: 0 4px 18px rgba(0,0,0,0.55); line-height: 1; }
+      .st-row { position: relative; display: flex; align-items: flex-end; gap: 26px; height: 150px; }
+      .st { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+      .st i { display: block; width: 92px; background: #FFFFFF; border-radius: 10px 10px 4px 4px; transform-origin: bottom; }
+      .st:last-of-type i { background: #FFE11A; }
+      .st span { font-weight: 800; font-size: 24px; color: #FFFFFF; letter-spacing: 0.06em; background: rgba(12,12,14,0.62); border-radius: 8px; padding: 2px 10px; }
+      .st-arrow { position: absolute; left: -10px; top: -20px; width: 500px; height: 130px; overflow: visible; }
+      .st-arrow path { fill: none; stroke: #FFE11A; stroke-width: 7; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 520; }
+      .gauge { position: absolute; left: 72px; right: 150px; top: 250px; display: flex; justify-content: center; gap: 24px;
+        padding: 20px 26px; background: rgba(12,12,14,0.62); border-radius: 22px; }
+      .g-maint { position: absolute; right: 26px; top: 108px; font-weight: 800; font-size: 20px; letter-spacing: 0.12em; color: rgba(255,255,255,0.55); }
+      .gcol { flex: 1; display: flex; flex-direction: column; align-items: center; }
+      .g-h { font-weight: 800; font-size: 28px; color: #FFFFFF; letter-spacing: 0.03em; text-transform: uppercase; text-align: center; height: 40px; }
+      .g-plot { position: relative; width: 100%; height: 150px; }
+      .g-base { position: absolute; left: 0; right: 0; top: 70px; height: 4px; background: rgba(255,255,255,0.8); transform-origin: left; }
+      .g-bar { position: absolute; left: 30%; width: 80px; margin-left: -40px; border-radius: 10px; }
+      .up .g-bar { bottom: 82px; height: 62px; background: #FFE11A; transform-origin: bottom; }
+      .down .g-bar { top: 76px; height: 70px; background: #FF2E88; transform-origin: top; }
+      .g-val { position: absolute; left: 44%; right: 0; text-align: left; font-weight: 900; font-size: 44px; color: #FFFFFF; letter-spacing: -0.01em; line-height: 1; }
+      .up .g-val { top: 18px; }
+      .down .g-val { top: 90px; }
+      .two .g-val { font-size: 34px; }
+      .two .g-maint { display: none; }
+      .two .g-h { font-size: 24px; }
+      .dim { opacity: 0.42; }
+      .build { position: absolute; left: 72px; right: 150px; top: 250px; display: flex; flex-direction: column; align-items: center; gap: 8px; }
+      .bd { font-weight: 800; font-size: 46px; color: #FFFFFF; text-transform: uppercase; letter-spacing: 0.01em; text-shadow: 0 3px 14px rgba(0,0,0,0.7); }
+      .bd-eq { position: relative; margin-top: 10px; }
+      .bd-eq span { display: inline-block; font-weight: 900; font-size: 120px; color: #FFE11A; letter-spacing: -0.03em; line-height: 1; text-shadow: 0 6px 24px rgba(0,0,0,0.55); }
+      .list.compact { gap: 8px; }
+      .list.compact .li { padding: 6px 20px 6px 8px; border-radius: 12px; }
+      .list.compact .li b { font-size: 24px; padding: 2px 10px; }
+      .list.compact .li span { font-size: 32px; }
+      .list.compact .lh { font-size: 24px; }
+      .lh, .st-h { align-self: flex-start; background: rgba(12,12,14,0.62); border-radius: 10px; padding: 4px 14px; text-shadow: none; }
+      .st-h { align-self: center; }
+      .cap.left { left: 64px; right: auto; width: 500px; bottom: auto; top: 1240px; }
+      .cap.left .capin { align-items: flex-start; text-align: left; }
+      .tracker { position: absolute; left: 72px; top: 250px; display: flex; flex-direction: column; gap: 14px; }
+      .tk-row { display: flex; gap: 14px; }
+      .tk-t { width: 92px; height: 92px; border-radius: 18px; display: flex; align-items: center; justify-content: center;
+        font-weight: 900; font-size: 56px; background: rgba(12,12,14,0.62); color: rgba(255,255,255,0.55); }
+      .tk-lab { position: relative; height: 54px; }
+      .tk-l { position: absolute; left: 0; top: 0; white-space: nowrap; font-weight: 900; font-size: 44px; color: #FFFFFF;
+        text-transform: uppercase; letter-spacing: -0.01em; text-shadow: 0 0 3px rgba(0,0,0,0.95), 0 4px 14px rgba(0,0,0,0.75), 0 0 30px rgba(0,0,0,0.4); opacity: 0; }
+      .chips { position: absolute; left: 72px; top: 440px; width: 560px; display: flex; flex-wrap: wrap; gap: 12px; }
+      .chips .chip { padding: 8px 20px; border-radius: 12px; background: #FFE11A; color: #101012; font-weight: 900; font-size: 34px; }
+      .end { position: absolute; left: 72px; right: 150px; top: 250px; display: flex; align-items: center; gap: 20px;
+        padding: 20px 22px; background: #FFFFFF; border-radius: 26px; box-shadow: 0 18px 40px rgba(0,0,0,0.35); }
+      .end-av { width: 84px; height: 84px; flex: none; border-radius: 50%; background: linear-gradient(135deg, #FFE11A, #FF2E88); }
+      .end-av img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; display: block; }
+      .end-txt { flex: 1; display: flex; flex-direction: column; }
+      .end-txt b { font-weight: 800; font-size: 32px; color: #101012; line-height: 1.1; }
+      .end-handle { font-weight: 600; font-size: 26px; color: #5b5b63; }
+      .end-btn { position: relative; width: 190px; height: 64px; flex: none; }
+      .end-btn span { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; border-radius: 14px; font-weight: 800; font-size: 28px; }
+      .end-btn .b1 { background: #0095f6; color: #fff; }
+      .end-btn .b2 { background: #efefef; color: #101012; }
     </style>
   </head>
   <body>
-    <div
-      id="root"
-      data-composition-id="main"
-      data-start="0"
-      data-duration="10"
-      data-width="1920"
-      data-height="1080"
-    >
-      <h1 id="title" class="clip" data-start="0" data-duration="10" data-track-index="0">Title</h1>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="71.6667" data-width="1080" data-height="1920" data-fps="30">
+      <div id="fx"><div id="grade"><div id="move"><div id="cam">
+        <video id="v0" class="clip" src="assets/footage.mp4" data-start="0.0" data-duration="71.2667" data-media-start="0.0" data-track-index="0" muted playsinline></video>
+      </div></div></div></div>
+      <div id="shade"></div>
+      <div id="cap0" class="cap clip" data-start="0.0" data-duration="3.2333" data-track-index="10"><div class="capin"><div class="sup" style="font-size:50px"><span class="w">Planning</span> <span class="w">to</span> <span class="w">join</span> <span class="w">a</span> <span class="w">gym,</span> <span class="w">or</span> <span class="w">already</span> <span class="w">joined,</span></div></div></div>
+      <div id="cap1" class="cap clip" data-start="3.2333" data-duration="2.9667" data-track-index="10"><div class="capin"><div class="sup" style="font-size:50px"><span class="w">but</span> <span class="w">don&#x27;t</span> <span class="w">know</span> <span class="w">what</span> <span class="w">to</span> <span class="w">do</span> <span class="w">once</span> <span class="w">you&#x27;re</span> <span class="w acc">inside?</span></div></div></div>
+      <div id="cap2" class="cap clip" data-start="6.2" data-duration="1.6667" data-track-index="10"><div class="capin"><div class="sup" style="font-size:44px"><span class="w">Use</span> <span class="w">these</span></div><div class="hero fx-plate"><i class="pl"></i><span class="hw" style="font-size:150px">4 STEPS</span></div></div></div>
+      <div id="cap3" class="cap clip" data-start="7.8667" data-duration="0.8" data-track-index="10"><div class="capin"><div class="sup" style="font-size:50px"><span class="w">They&#x27;ll</span> <span class="w">really</span> <span class="w">help</span> <span class="w">you.</span></div></div></div>
+      <div id="cap4" class="cap clip" data-start="8.6667" data-duration="1.6333" data-track-index="10"><div class="capin"><div class="sup" style="font-size:50px"><span class="w">Before</span> <span class="w">that</span> <span class="w">—</span> <span class="w">to</span> <span class="w">learn</span> <span class="w">about</span> <span class="w">training,</span> <span class="w">nutrition</span></div></div></div>
+      <div id="cap5" class="cap clip" data-start="10.3" data-duration="1.7" data-track-index="10"><div class="capin"><div class="sup" style="font-size:50px"><span class="w">and</span> <span class="w">science-based</span> <span class="w">lifting,</span></div></div></div>
+      <div id="cap6" class="cap clip" data-start="12.0" data-duration="0.9667" data-track-index="10"><div class="capin"><div class="sup" style="font-size:50px"><span class="w acc">follow</span> <span class="w">me.</span></div></div></div>
+      <div id="cap7" class="cap clip" data-start="12.9667" data-duration="1.1667" data-track-index="10"><div class="capin"><div class="sup" style="font-size:50px"><span class="w">Point</span> <span class="w">one:</span> <span class="w">in</span> <span class="w">the</span> <span class="w">gym,</span></div></div></div>
+      <div id="cap8" class="cap clip" data-start="14.1333" data-duration="2.3" data-track-index="10"><div class="capin"><div class="sup" style="font-size:50px"><span class="w">forget</span> <span class="w">what</span> <span class="w">others</span> <span class="w">think</span> <span class="w">of</span> <span class="w">you.</span></div></div></div>
+      <div id="cap9" class="cap clip" data-start="16.4333" data-duration="1.8333" data-track-index="10"><div class="capin"><div class="sup" style="font-size:50px"><span class="w">Just</span> <span class="w">go</span> <span class="w">and</span> <span class="w">follow</span> <span class="w">your</span> <span class="w acc">routine.</span></div></div></div>
+      <div id="cap10" class="cap clip" data-start="18.2667" data-duration="1.8" data-track-index="10"><div class="capin"><div class="sup" style="font-size:50px"><span class="w">Nobody</span> <span class="w">is</span> <span class="w">there</span> <span class="w">to</span> <span class="w acc">judge</span> <span class="w">you</span> <span class="w">—</span></div></div></div>
+      <div id="cap11" class="cap clip" data-start="20.0667" data-duration="1.6" data-track-index="10"><div class="capin"><div class="sup" style="font-size:50px"><span class="w">they&#x27;ve</span> <span class="w">got</span> <span class="w">1,800</span> <span class="w">things</span> <span class="w">of</span> <span class="w">their</span> <span class="w">own</span> <span class="w">to</span> <span class="w">do.</span></div></div></div>
+      <div id="cap12" class="cap clip" data-start="21.6667" data-duration="0.9" data-track-index="10"><div class="capin"><div class="sup" style="font-size:50px"><span class="w">Even</span> <span class="w">if</span> <span class="w">they</span> <span class="w">judge</span> <span class="w">you,</span></div></div></div>
+      <div id="cap13" class="cap clip" data-start="22.5667" data-duration="1.2667" data-track-index="10"><div class="capin"><div class="hero fx-pop hero-first"><span class="hw" style="font-size:109px">THEY&#x27;RE THE</span><span class="hw" style="font-size:109px">JOKER</span></div><div class="sup" style="font-size:44px"><span class="w">not</span> <span class="w">you.</span></div></div></div>
+      <div id="cap14" class="cap clip left" data-start="23.8333" data-duration="3.7" data-track-index="10"><div class="capin"><div class="sup" style="font-size:44px"><span class="w">Point</span> <span class="w">two:</span> <span class="w">don&#x27;t</span> <span class="w">jump</span> <span class="w">from</span> <span class="w">machine</span> <span class="w">to</span> <span class="w">machine</span></div><div class="hero fx-mask" data-layout-allow-overlap><span class="hw" style="font-size:64px">LIKE TARZAN</span></div></div></div>
+      <div id="cap15" class="cap clip left" data-start="27.5333" data-duration="1.2" data-track-index="10"><div class="capin"><div class="sup" style="font-size:44px"><span class="w">Go</span> <span class="w">in</span> <span class="w">with</span> <span class="w">a</span></div><div class="hero fx-plate"><i class="pl"></i><span class="hw" style="font-size:78px">GAME PLAN</span></div></div></div>
+      <div id="cap16" class="cap clip left" data-start="28.7333" data-duration="0.9667" data-track-index="10"><div class="capin"><div class="sup" style="font-size:50px"><span class="w">Learn</span> <span class="w">the</span> <span class="w">basic</span> <span class="w">movements:</span></div></div></div>
+      <div id="cap17" class="cap clip left" data-start="29.7" data-duration="1.8" data-track-index="10"><div class="capin"><div class="sup" style="font-size:50px"><span class="w">squats,</span> <span class="w">hinges,</span> <span class="w">pressing,</span></div></div></div>
+      <div id="cap18" class="cap clip left" data-start="31.5" data-duration="1.9333" data-track-index="10"><div class="capin"><div class="sup" style="font-size:50px"><span class="w acc">pulling</span> <span class="w">and</span> <span class="w">elbow</span> <span class="w">movements.</span></div></div></div>
+      <div id="cap19" class="cap clip left" data-start="33.4333" data-duration="2.1" data-track-index="10"><div class="capin"><div class="sup" style="font-size:50px"><span class="w">No</span> <span class="w">idea</span> <span class="w">what</span> <span class="w">those</span> <span class="w">are?</span></div></div></div>
+      <div id="cap20" class="cap clip left" data-start="35.5333" data-duration="1.2667" data-track-index="10"><div class="capin"><div class="sup" style="font-size:44px"><span class="w">Comment</span></div><div class="hero fx-plate"><i class="pl"></i><span class="hw" style="font-size:78px">MOVEMENTS</span></div></div></div>
+      <div id="cap21" class="cap clip left" data-start="36.8" data-duration="1.5" data-track-index="10"><div class="capin"><div class="sup" style="font-size:50px"><span class="w">and</span> <span class="w">I&#x27;ll</span> <span class="w">send</span> <span class="w">you</span> <span class="w">a</span> <span class="w">free</span> <span class="w">guide.</span></div></div></div>
+      <div id="cap22" class="cap clip left" data-start="38.3" data-duration="2.2333" data-track-index="10"><div class="capin"><div class="sup" style="font-size:50px"><span class="w">I</span> <span class="w">know</span> <span class="w">you&#x27;re</span> <span class="w">desperate</span> <span class="w">for</span> <span class="w">a</span> <span class="w acc">transformation,</span></div></div></div>
+      <div id="cap23" class="cap clip left" data-start="40.5333" data-duration="3.1" data-track-index="10"><div class="capin"><div class="sup" style="font-size:44px"><span class="w">but</span> <span class="w">don&#x27;t</span> <span class="w">push</span> <span class="w">every</span> <span class="w">exercise</span> <span class="w">to</span></div><div class="hero fx-mask" data-layout-allow-overlap><span class="hw" style="font-size:100px">FAILURE</span></div></div></div>
+      <div id="cap24" class="cap clip left" data-start="43.6333" data-duration="1.6" data-track-index="10"><div class="capin"><div class="sup" style="font-size:44px"><span class="w">First,</span> <span class="w">learn</span> <span class="w">good</span></div><div class="hero fx-underline"><span class="hw" style="font-size:78px">TECHNIQUE</span><svg class="ul" viewBox="0 0 400 24" preserveAspectRatio="none"><path d="M4 16 C 120 6, 280 6, 396 14" /></svg></div></div></div>
+      <div id="cap25" class="cap clip left" data-start="45.2333" data-duration="1.8333" data-track-index="10"><div class="capin"><div class="sup" style="font-size:50px"><span class="w">then</span> <span class="w">try</span> <span class="w">to</span> <span class="w acc">progress.</span></div></div></div>
+      <div id="cap26" class="cap clip left" data-start="47.0667" data-duration="3.2667" data-track-index="10"><div class="capin"><div class="sup" style="font-size:50px"><span class="w">Last</span> <span class="w">point:</span> <span class="w">don&#x27;t</span> <span class="w">add</span> <span class="w">every</span> <span class="w">exercise</span> <span class="w">to</span> <span class="w">your</span> <span class="w">routine.</span></div></div></div>
+      <div id="cap27" class="cap clip left" data-start="50.3333" data-duration="3.4667" data-track-index="10"><div class="capin"><div class="sup" style="font-size:44px"><span class="w">For</span> <span class="w">each</span> <span class="w">muscle</span> <span class="w">group,</span> <span class="w">do</span></div><div class="hero fx-plate"><i class="pl"></i><span class="hw" style="font-size:64px">6–10</span><span class="hw" style="font-size:64px">WEEKLY SETS</span></div></div></div>
+      <div id="cap28" class="cap clip left" data-start="53.8" data-duration="1.4333" data-track-index="10"><div class="capin"><div class="sup" style="font-size:44px"><span class="w">Keep</span> <span class="w">your</span> <span class="w">training</span></div><div class="hero fx-underline"><span class="hw" style="font-size:117px">SIMPLE</span><svg class="ul" viewBox="0 0 400 24" preserveAspectRatio="none"><path d="M4 16 C 120 6, 280 6, 396 14" /></svg></div></div></div>
+      <div id="cap29" class="cap clip left" data-start="55.2333" data-duration="1.8667" data-track-index="10"><div class="capin"><div class="sup" style="font-size:50px"><span class="w">Don&#x27;t</span> <span class="w">overcomplicate</span> <span class="w">it,</span> <span class="w">bro.</span></div></div></div>
+      <div id="cap30" class="cap clip left" data-start="57.1" data-duration="2.9333" data-track-index="10"><div class="capin"><div class="sup" style="font-size:44px"><span class="w">You</span> <span class="w">won&#x27;t</span> <span class="w">get</span> <span class="w">the</span> <span class="w">results</span> <span class="w">you</span> <span class="w">expect</span></div><div class="hero fx-mask" data-layout-allow-overlap><span class="hw" style="font-size:64px">IN 3 MONTHS</span></div></div></div>
+      <div id="cap31" class="cap clip left" data-start="60.0333" data-duration="3.9" data-track-index="10"><div class="capin"><div class="sup" style="font-size:44px"><span class="w">Learning</span> <span class="w">the</span> <span class="w">training</span> <span class="w acc">fundamentals</span> <span class="w">alone</span> <span class="w">takes</span> <span class="w">at</span> <span class="w">least</span></div><div class="hero fx-plate"><i class="pl"></i><span class="hw" style="font-size:64px">1–1.5 YEARS</span></div></div></div>
+      <div id="cap32" class="cap clip left" data-start="63.9333" data-duration="2.4667" data-track-index="10"><div class="capin"><div class="sup" style="font-size:50px"><span class="w">Focus</span> <span class="w">on</span> <span class="w">getting</span> <span class="w">those</span> <span class="w acc">perfect.</span></div></div></div>
+      <div id="cap33" class="cap clip left" data-start="66.4" data-duration="1.9" data-track-index="10"><div class="capin"><div class="sup" style="font-size:50px"><span class="w">And</span> <span class="w">share</span> <span class="w">this</span> <span class="w">reel</span> <span class="w">with</span> <span class="w">friends</span> <span class="w">who</span> <span class="w">are</span></div></div></div>
+      <div id="cap34" class="cap clip left" data-start="68.3" data-duration="2.9667" data-track-index="10"><div class="capin"><div class="sup" style="font-size:50px"><span class="w">desperate</span> <span class="w">for</span> <span class="w">a</span> <span class="w acc">transformation.</span></div></div></div>
+      <div id="gx1" class="gx clip" data-start="11.9" data-duration="1.0667" data-track-index="22"><div class="end"><div class="end-av"><img src="assets/avatar.jpg" alt="" /></div><div class="end-txt"><b>Follow for more fitness tips</b><span class="end-handle">@ron_tamil</span></div><div class="end-btn" data-layout-allow-overlap><span class="b2" data-layout-allow-overlap>Following</span><span class="b1" data-layout-allow-overlap>Follow</span></div></div></div>
+      <div id="gx2" class="gx clip" data-start="12.9667" data-duration="44.1" data-track-index="20"><div class="tracker"><div class="tk-row"><div class="tk-t" id="gx2t0">J</div><div class="tk-t" id="gx2t1">G</div><div class="tk-t" id="gx2t2">H</div><div class="tk-t" id="gx2t3">S</div></div><div class="tk-lab"><div class="tk-l" id="gx2l0">JUST DO IT</div><div class="tk-l" id="gx2l1">GAME PLAN</div><div class="tk-l" id="gx2l2">TECHNIQUE FIRST</div><div class="tk-l" id="gx2l3">KEEP IT SIMPLE</div></div></div></div>
+      <div id="gx3" class="gx clip" data-start="29.5" data-duration="3.9" data-track-index="21"><div class="chips"><div class="chip" id="gx3c0">SQUAT</div><div class="chip" id="gx3c1">HINGE</div><div class="chip" id="gx3c2">PRESS</div><div class="chip" id="gx3c3">PULL</div><div class="chip" id="gx3c4">ELBOW</div></div></div>
+      <div id="gx4" class="gx clip" data-start="57.3" data-duration="6.6" data-track-index="21"><div class="steps"><div class="st-h">REALISTIC TIMELINE</div><div class="st-row"><div class="st" id="gx4s0"><i style="height:40px"></i><span>3 MO</span></div><div class="st" id="gx4s1"><i style="height:62px"></i><span>6 MO</span></div><div class="st" id="gx4s2"><i style="height:84px"></i><span>1 YR</span></div><div class="st" id="gx4s3"><i style="height:106px"></i><span>1.5 YRS</span></div><svg class="st-arrow" viewBox="0 0 520 130"><path d="M20 118 L 470 14" /><path d="M432 8 L 474 12 L 458 50" /></svg></div></div></div>
+      <audio id="a0" src="assets/voice.wav" data-start="0.0" data-duration="71.2667" data-media-start="0.0" data-track-index="2" data-automation='{"version": 1, "lanes": [{"target": "volume", "points": [{"t": 0, "v": 0}, {"t": 0.02, "v": 1.0}, {"t": 71.247, "v": 1.0}, {"t": 71.2667, "v": 0}]}]}'></audio>
+      <!-- MUSIC PLACEHOLDER: drop a licensed track at assets/music/bed.mp3 and rebuild -->
+      <audio id="sfx0" src="assets/sfx/thump.wav" data-start="6.3667" data-duration="0.35" data-track-index="5" data-volume="0.5"></audio>
+      <audio id="sfx1" src="assets/sfx/thump.wav" data-start="35.5333" data-duration="0.35" data-track-index="6" data-volume="0.45"></audio>
+      <audio id="sfx2" src="assets/sfx/tick.wav" data-start="12.3667" data-duration="0.05" data-track-index="7" data-volume="0.6"></audio>
+      <audio id="sfx3" src="assets/sfx/tick.wav" data-start="12.9667" data-duration="0.05" data-track-index="5" data-volume="0.5"></audio>
+      <audio id="sfx4" src="assets/sfx/tick.wav" data-start="23.8333" data-duration="0.05" data-track-index="6" data-volume="0.5"></audio>
+      <audio id="sfx5" src="assets/sfx/tick.wav" data-start="38.3" data-duration="0.05" data-track-index="7" data-volume="0.5"></audio>
+      <audio id="sfx6" src="assets/sfx/tick.wav" data-start="47.0667" data-duration="0.05" data-track-index="5" data-volume="0.5"></audio>
+      <audio id="sfx7" src="assets/sfx/tick.wav" data-start="29.7" data-duration="0.05" data-track-index="6" data-volume="0.4"></audio>
+      <audio id="sfx8" src="assets/sfx/tick.wav" data-start="30.1333" data-duration="0.05" data-track-index="7" data-volume="0.4"></audio>
+      <audio id="sfx9" src="assets/sfx/tick.wav" data-start="30.8667" data-duration="0.05" data-track-index="5" data-volume="0.4"></audio>
+      <audio id="sfx10" src="assets/sfx/tick.wav" data-start="31.5" data-duration="0.05" data-track-index="6" data-volume="0.4"></audio>
+      <audio id="sfx11" src="assets/sfx/tick.wav" data-start="32.0667" data-duration="0.05" data-track-index="7" data-volume="0.4"></audio>
+      <audio id="sfx12" src="assets/sfx/rise.wav" data-start="57.4333" data-duration="0.5" data-track-index="5" data-volume="0.35"></audio>
     </div>
     <script>
       const tl = gsap.timeline({ paused: true });
-      // Example: tl.fromTo("#title", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.6 }, 0);
+      tl.fromTo("#cap0 .w", { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.22, ease: "expo.out", stagger: 0.045 }, 0.0);
+      tl.to("#cap0 .capin", { opacity: 0, duration: 0.08, ease: "none" }, 3.1667);
+      tl.fromTo("#cap1 .w", { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.22, ease: "expo.out", stagger: 0.045 }, 3.2333);
+      tl.to("#cap1 .capin", { opacity: 0, duration: 0.08, ease: "none" }, 6.1333);
+      tl.fromTo("#cap2 .w", { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.22, ease: "expo.out", stagger: 0.045 }, 6.2);
+      tl.fromTo("#cap2 .pl", { scaleX: 0 }, { scaleX: 1, duration: 0.26, ease: "power3.out" }, 6.3667);
+      tl.fromTo("#cap2 .hw", { opacity: 0, x: -18 }, { opacity: 1, x: 0, duration: 0.26, ease: "expo.out", stagger: 0.06 }, 6.4667);
+      tl.to("#cap2 .capin", { opacity: 0, duration: 0.08, ease: "none" }, 7.8);
+      tl.fromTo("#cap3 .w", { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.22, ease: "expo.out", stagger: 0.045 }, 7.8667);
+      tl.to("#cap3 .capin", { opacity: 0, duration: 0.08, ease: "none" }, 8.6);
+      tl.fromTo("#cap4 .w", { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.22, ease: "expo.out", stagger: 0.045 }, 8.6667);
+      tl.to("#cap4 .capin", { opacity: 0, duration: 0.08, ease: "none" }, 10.2333);
+      tl.fromTo("#cap5 .w", { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.22, ease: "expo.out", stagger: 0.045 }, 10.3);
+      tl.to("#cap5 .capin", { opacity: 0, duration: 0.08, ease: "none" }, 11.9333);
+      tl.fromTo("#cap6 .w", { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.22, ease: "expo.out", stagger: 0.045 }, 12.0);
+      tl.to("#cap6 .capin", { opacity: 0, duration: 0.08, ease: "none" }, 12.9);
+      tl.fromTo("#cap7 .w", { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.22, ease: "expo.out", stagger: 0.045 }, 12.9667);
+      tl.to("#cap7 .capin", { opacity: 0, duration: 0.08, ease: "none" }, 14.0667);
+      tl.fromTo("#cap8 .w", { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.22, ease: "expo.out", stagger: 0.045 }, 14.1333);
+      tl.to("#cap8 .capin", { opacity: 0, duration: 0.08, ease: "none" }, 16.3667);
+      tl.fromTo("#cap9 .w", { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.22, ease: "expo.out", stagger: 0.045 }, 16.4333);
+      tl.to("#cap9 .capin", { opacity: 0, duration: 0.08, ease: "none" }, 18.2);
+      tl.fromTo("#cap10 .w", { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.22, ease: "expo.out", stagger: 0.045 }, 18.2667);
+      tl.to("#cap10 .capin", { opacity: 0, duration: 0.08, ease: "none" }, 20.0);
+      tl.fromTo("#cap11 .w", { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.22, ease: "expo.out", stagger: 0.045 }, 20.0667);
+      tl.to("#cap11 .capin", { opacity: 0, duration: 0.08, ease: "none" }, 21.6);
+      tl.fromTo("#cap12 .w", { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.22, ease: "expo.out", stagger: 0.045 }, 21.6667);
+      tl.to("#cap12 .capin", { opacity: 0, duration: 0.08, ease: "none" }, 22.5);
+      tl.fromTo("#cap13 .w", { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.22, ease: "expo.out", stagger: 0.045 }, 22.5667);
+      tl.fromTo("#cap13 .hw", { opacity: 0, scale: 1.32 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(1.6)", stagger: 0.06 }, 22.5667);
+      tl.to("#cap13 .capin", { opacity: 0, duration: 0.08, ease: "none" }, 23.7667);
+      tl.fromTo("#cap14 .w", { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.22, ease: "expo.out", stagger: 0.045 }, 23.8333);
+      tl.fromTo("#cap14 .hw", { yPercent: 105, opacity: 0 }, { yPercent: 0, opacity: 1, duration: 0.34, ease: "expo.out", stagger: 0.06 }, 25.4667);
+      tl.to("#cap14 .capin", { opacity: 0, duration: 0.08, ease: "none" }, 27.4667);
+      tl.fromTo("#cap15 .w", { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.22, ease: "expo.out", stagger: 0.045 }, 27.5333);
+      tl.fromTo("#cap15 .pl", { scaleX: 0 }, { scaleX: 1, duration: 0.26, ease: "power3.out" }, 27.8667);
+      tl.fromTo("#cap15 .hw", { opacity: 0, x: -18 }, { opacity: 1, x: 0, duration: 0.26, ease: "expo.out", stagger: 0.06 }, 27.9667);
+      tl.to("#cap15 .capin", { opacity: 0, duration: 0.08, ease: "none" }, 28.6667);
+      tl.fromTo("#cap16 .w", { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.22, ease: "expo.out", stagger: 0.045 }, 28.7333);
+      tl.to("#cap16 .capin", { opacity: 0, duration: 0.08, ease: "none" }, 29.6333);
+      tl.fromTo("#cap17 .w", { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.22, ease: "expo.out", stagger: 0.045 }, 29.7);
+      tl.to("#cap17 .capin", { opacity: 0, duration: 0.08, ease: "none" }, 31.4333);
+      tl.fromTo("#cap18 .w", { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.22, ease: "expo.out", stagger: 0.045 }, 31.5);
+      tl.to("#cap18 .capin", { opacity: 0, duration: 0.08, ease: "none" }, 33.3667);
+      tl.fromTo("#cap19 .w", { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.22, ease: "expo.out", stagger: 0.045 }, 33.4333);
+      tl.to("#cap19 .capin", { opacity: 0, duration: 0.08, ease: "none" }, 35.4667);
+      tl.fromTo("#cap20 .w", { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.22, ease: "expo.out", stagger: 0.045 }, 35.5333);
+      tl.fromTo("#cap20 .pl", { scaleX: 0 }, { scaleX: 1, duration: 0.26, ease: "power3.out" }, 35.5333);
+      tl.fromTo("#cap20 .hw", { opacity: 0, x: -18 }, { opacity: 1, x: 0, duration: 0.26, ease: "expo.out", stagger: 0.06 }, 35.6333);
+      tl.to("#cap20 .capin", { opacity: 0, duration: 0.08, ease: "none" }, 36.7333);
+      tl.fromTo("#cap21 .w", { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.22, ease: "expo.out", stagger: 0.045 }, 36.8);
+      tl.to("#cap21 .capin", { opacity: 0, duration: 0.08, ease: "none" }, 38.2333);
+      tl.fromTo("#cap22 .w", { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.22, ease: "expo.out", stagger: 0.045 }, 38.3);
+      tl.to("#cap22 .capin", { opacity: 0, duration: 0.08, ease: "none" }, 40.4667);
+      tl.fromTo("#cap23 .w", { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.22, ease: "expo.out", stagger: 0.045 }, 40.5333);
+      tl.fromTo("#cap23 .hw", { yPercent: 105, opacity: 0 }, { yPercent: 0, opacity: 1, duration: 0.34, ease: "expo.out", stagger: 0.06 }, 42.2667);
+      tl.to("#cap23 .capin", { opacity: 0, duration: 0.08, ease: "none" }, 43.5667);
+      tl.fromTo("#cap24 .w", { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.22, ease: "expo.out", stagger: 0.045 }, 43.6333);
+      tl.fromTo("#cap24 .hw", { opacity: 0, scale: 1.18 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(1.6)", stagger: 0.06 }, 44.3333);
+      tl.fromTo("#cap24 .ul path", { strokeDashoffset: 420 }, { strokeDashoffset: 0, duration: 0.38, ease: "power2.inOut" }, 44.5);
+      tl.to("#cap24 .capin", { opacity: 0, duration: 0.08, ease: "none" }, 45.1667);
+      tl.fromTo("#cap25 .w", { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.22, ease: "expo.out", stagger: 0.045 }, 45.2333);
+      tl.to("#cap25 .capin", { opacity: 0, duration: 0.08, ease: "none" }, 47.0);
+      tl.fromTo("#cap26 .w", { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.22, ease: "expo.out", stagger: 0.045 }, 47.0667);
+      tl.to("#cap26 .capin", { opacity: 0, duration: 0.08, ease: "none" }, 50.2667);
+      tl.fromTo("#cap27 .w", { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.22, ease: "expo.out", stagger: 0.045 }, 50.3333);
+      tl.fromTo("#cap27 .pl", { scaleX: 0 }, { scaleX: 1, duration: 0.26, ease: "power3.out" }, 51.9667);
+      tl.fromTo("#cap27 .hw", { opacity: 0, x: -18 }, { opacity: 1, x: 0, duration: 0.26, ease: "expo.out", stagger: 0.06 }, 52.0667);
+      tl.to("#cap27 .capin", { opacity: 0, duration: 0.08, ease: "none" }, 53.7333);
+      tl.fromTo("#cap28 .w", { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.22, ease: "expo.out", stagger: 0.045 }, 53.8);
+      tl.fromTo("#cap28 .hw", { opacity: 0, scale: 1.18 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(1.6)", stagger: 0.06 }, 54.3333);
+      tl.fromTo("#cap28 .ul path", { strokeDashoffset: 420 }, { strokeDashoffset: 0, duration: 0.38, ease: "power2.inOut" }, 54.5);
+      tl.fromTo("#cap28 .hw", { scale: 1 }, { scale: 1.06, duration: 0.12, yoyo: true, repeat: 1, ease: "sine.inOut", immediateRender: false }, 54.7667);
+      tl.to("#cap28 .capin", { opacity: 0, duration: 0.08, ease: "none" }, 55.1667);
+      tl.fromTo("#cap29 .w", { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.22, ease: "expo.out", stagger: 0.045 }, 55.2333);
+      tl.to("#cap29 .capin", { opacity: 0, duration: 0.08, ease: "none" }, 57.0333);
+      tl.fromTo("#cap30 .w", { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.22, ease: "expo.out", stagger: 0.045 }, 57.1);
+      tl.fromTo("#cap30 .hw", { yPercent: 105, opacity: 0 }, { yPercent: 0, opacity: 1, duration: 0.34, ease: "expo.out", stagger: 0.06 }, 57.8333);
+      tl.to("#cap30 .capin", { opacity: 0, duration: 0.08, ease: "none" }, 59.9667);
+      tl.fromTo("#cap31 .w", { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.22, ease: "expo.out", stagger: 0.045 }, 60.0333);
+      tl.fromTo("#cap31 .pl", { scaleX: 0 }, { scaleX: 1, duration: 0.26, ease: "power3.out" }, 61.7667);
+      tl.fromTo("#cap31 .hw", { opacity: 0, x: -18 }, { opacity: 1, x: 0, duration: 0.26, ease: "expo.out", stagger: 0.06 }, 61.8667);
+      tl.to("#cap31 .capin", { opacity: 0, duration: 0.08, ease: "none" }, 63.8667);
+      tl.fromTo("#cap32 .w", { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.22, ease: "expo.out", stagger: 0.045 }, 63.9333);
+      tl.to("#cap32 .capin", { opacity: 0, duration: 0.08, ease: "none" }, 66.3333);
+      tl.fromTo("#cap33 .w", { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.22, ease: "expo.out", stagger: 0.045 }, 66.4);
+      tl.to("#cap33 .capin", { opacity: 0, duration: 0.08, ease: "none" }, 68.2333);
+      tl.fromTo("#cap34 .w", { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.22, ease: "expo.out", stagger: 0.045 }, 68.3);
+      tl.to("#cap34 .capin", { opacity: 0, duration: 0.08, ease: "none" }, 71.2);
+      tl.fromTo("#gx1 .end", { opacity: 0, y: 60 }, { opacity: 1, y: 0, duration: 0.4, ease: "expo.out" }, 11.9);
+      tl.fromTo("#gx1 .end-btn", { scale: 1 }, { scale: 0.9, duration: 0.08, yoyo: true, repeat: 1, ease: "sine.inOut", immediateRender: false }, 12.3667);
+      tl.fromTo("#gx1 .b2", { opacity: 0 }, { opacity: 1, duration: 0.01 }, 12.4333);
+      tl.to("#gx1 .b1", { opacity: 0, duration: 0.14 }, 12.4333);
+      tl.fromTo("#gx2 .tk-t", { opacity: 0, y: -24 }, { opacity: 1, y: 0, duration: 0.32, ease: "expo.out", stagger: 0.06 }, 12.9667);
+      tl.to("#gx2t0", { backgroundColor: "#FFE11A", color: "#101012", scale: 1.12, duration: 0.25, ease: "back.out(1.6)" }, 12.9667);
+      tl.fromTo("#gx2l0", { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.3, ease: "expo.out" }, 13.0333);
+      tl.to("#gx2t0", { backgroundColor: "rgba(12,12,14,0.62)", color: "rgba(255,255,255,0.55)", scale: 1, duration: 0.2 }, 23.7667);
+      tl.to("#gx2l0", { opacity: 0, x: 20, duration: 0.18 }, 23.7);
+      tl.to("#gx2t1", { backgroundColor: "#FFE11A", color: "#101012", scale: 1.12, duration: 0.25, ease: "back.out(1.6)" }, 23.8333);
+      tl.fromTo("#gx2l1", { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.3, ease: "expo.out" }, 23.9);
+      tl.to("#gx2t1", { backgroundColor: "rgba(12,12,14,0.62)", color: "rgba(255,255,255,0.55)", scale: 1, duration: 0.2 }, 38.2667);
+      tl.to("#gx2l1", { opacity: 0, x: 20, duration: 0.18 }, 38.1667);
+      tl.to("#gx2t2", { backgroundColor: "#FFE11A", color: "#101012", scale: 1.12, duration: 0.25, ease: "back.out(1.6)" }, 38.3);
+      tl.fromTo("#gx2l2", { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.3, ease: "expo.out" }, 38.3667);
+      tl.to("#gx2t2", { backgroundColor: "rgba(12,12,14,0.62)", color: "rgba(255,255,255,0.55)", scale: 1, duration: 0.2 }, 47.0333);
+      tl.to("#gx2l2", { opacity: 0, x: 20, duration: 0.18 }, 46.9333);
+      tl.to("#gx2t3", { backgroundColor: "#FFE11A", color: "#101012", scale: 1.12, duration: 0.25, ease: "back.out(1.6)" }, 47.0667);
+      tl.fromTo("#gx2l3", { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.3, ease: "expo.out" }, 47.1333);
+      tl.to("#gx2 .tracker", { opacity: 0, y: -16, duration: 0.18, ease: "power2.in" }, 56.8667);
+      tl.fromTo("#gx3c0", { opacity: 0, scale: 0.6, y: 16 }, { opacity: 1, scale: 1, y: 0, duration: 0.3, ease: "back.out(1.6)" }, 29.7);
+      tl.fromTo("#gx3c1", { opacity: 0, scale: 0.6, y: 16 }, { opacity: 1, scale: 1, y: 0, duration: 0.3, ease: "back.out(1.6)" }, 30.1333);
+      tl.fromTo("#gx3c2", { opacity: 0, scale: 0.6, y: 16 }, { opacity: 1, scale: 1, y: 0, duration: 0.3, ease: "back.out(1.6)" }, 30.8667);
+      tl.fromTo("#gx3c3", { opacity: 0, scale: 0.6, y: 16 }, { opacity: 1, scale: 1, y: 0, duration: 0.3, ease: "back.out(1.6)" }, 31.5);
+      tl.fromTo("#gx3c4", { opacity: 0, scale: 0.6, y: 16 }, { opacity: 1, scale: 1, y: 0, duration: 0.3, ease: "back.out(1.6)" }, 32.0667);
+      tl.to("#gx3 .chips", { opacity: 0, y: -12, duration: 0.18, ease: "power2.in" }, 33.2);
+      tl.fromTo("#gx4 .st-h", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.3, ease: "expo.out" }, 57.3);
+      tl.fromTo("#gx4 .st i", { scaleY: 0 }, { scaleY: 1, duration: 0.4, ease: "power3.out", stagger: 0.12 }, 57.4333);
+      tl.fromTo("#gx4 .st span", { opacity: 0 }, { opacity: 1, duration: 0.2, stagger: 0.12 }, 57.6);
+      tl.fromTo("#gx4 .st-arrow path", { strokeDashoffset: 520 }, { strokeDashoffset: 0, duration: 0.45, ease: "power2.inOut" }, 58.0);
+      tl.to("#gx4 .steps", { opacity: 0, y: 20, duration: 0.18, ease: "power2.in" }, 63.7);
+      tl.set("#cam", { scale: 1.0 }, 0.0);
+      tl.set("#move", { scale: 1, transformOrigin: "50% 46%" }, 0.0);
       window.__timelines["main"] = tl;
-      tl.seek(0);
     </script>
   </body>
 </html>

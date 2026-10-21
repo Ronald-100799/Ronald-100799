@@ -15,6 +15,14 @@ def conv(x):
     return x
 
 
-out = {key: (conv(v) if key in ("takes", "beats", "gfx", "fx", "camera") else v) for key, v in E.items()}
+def nums(x):
+    return [nums(v) for v in x] if isinstance(x, list) else (round(x / k, 3) if isinstance(x, (int, float)) else x)
+
+
+out = {key: (conv(v) if key in ("takes", "beats", "gfx", "fx", "camera", "overlays") else v) for key, v in E.items()}
+out["caption_left"] = nums(E.get("caption_left", []))
+for g in out.get("gfx", []):
+    if "switch" in g:
+        g["switch"] = nums(g["switch"])
 json.dump(out, open(os.path.join(ROOT, "build/edit_v2.json"), "w"), ensure_ascii=False, indent=1)
 print("speed", k, "→ build/edit_v2.json")

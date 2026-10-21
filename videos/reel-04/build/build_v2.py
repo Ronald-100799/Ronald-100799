@@ -190,7 +190,9 @@ for k, b in enumerate(beats):
     en = min(x for x in [nxt, b.get("until") and to_out(b["until"]), seg_end] if x)
     cap_rows.append((k, b, st, q(en)))
 
+LEFT = [(to_out(a), to_out(z)) for a, z in E.get("caption_left", [])]
 for k, b, st, en in cap_rows:
+    left = any(a - 0.01 <= st < z for a, z in LEFT)
     hero = b.get("hero", "")
     fx = b.get("fx", "pop")
     sup_size = SZ["support_with_hero"] if hero else SZ["support"]
@@ -198,6 +200,8 @@ for k, b, st, en in cap_rows:
     if hero:
         hlines = hero.split("|")
         hs = min(hero_size(l) for l in hlines)
+        if left:
+            hs = min(hs, int(D["left_captions"]["hero_width"] / (0.68 * max(len(l) for l in hlines))))
         inner = "".join(f'<span class="hw" style="font-size:{hs}px">{esc(l)}</span>' for l in hlines)
         if fx == "plate":
             inner = f'<i class="pl"></i>{inner}'
@@ -207,7 +211,7 @@ for k, b, st, en in cap_rows:
         hero_html = f'<div class="hero fx-{fx}{" hero-first" if b.get("hero_first", True) else ""}"{allow}>{inner}</div>'
     sup = f'<div class="sup" style="font-size:{sup_size}px">{words_html(b["support"])}</div>' if b.get("support") else ""
     body = hero_html + sup if b.get("hero_first", True) else sup + hero_html
-    o(f'      <div id="cap{k}" class="cap clip" data-start="{st}" data-duration="{q(en - st)}" data-track-index="10">'
+    o(f'      <div id="cap{k}" class="cap clip{" left" if left else ""}" data-start="{st}" data-duration="{q(en - st)}" data-track-index="10">'
       f'<div class="capin">{body}</div></div>')
     # support words: quick phrase reveal (word stagger), starts with the phrase
     J(f'      tl.fromTo("#cap{k} .w", {{ opacity: 0, y: {M["word_rise"]} }}, {{ opacity: 1, y: 0, duration: 0.22, '
@@ -337,6 +341,31 @@ for gx in E.get("gfx", []):
         J(f'      tl.fromTo("#{I} .bd-eq path", {{ strokeDashoffset: 420 }}, {{ strokeDashoffset: 0, duration: 0.4, ease: "power2.inOut" }}, {q(rt + 0.2)});')
         add_sfx("thump", rt, 0.45)
         J(f'      tl.to("#{I} .build", {{ opacity: 0, y: 20, duration: {M["exit_dur"]}, ease: "{M["exit_ease"]}" }}, {q(t1 - 0.2)});')
+    elif typ == "tracker":
+        tiles = "".join(f'<div class="tk-t" id="{I}t{n}">{esc(L)}</div>' for n, L in enumerate(gx["letters"]))
+        labels = "".join(f'<div class="tk-l" id="{I}l{n}">{esc(w)}</div>' for n, w in enumerate(gx["labels"]))
+        o(f'      <div id="{I}" class="gx clip" data-start="{t0}" data-duration="{dur}" data-track-index="20">'
+          f'<div class="tracker"><div class="tk-row">{tiles}</div><div class="tk-lab">{labels}</div></div></div>')
+        J(f'      tl.fromTo("#{I} .tk-t", {{ opacity: 0, y: -24 }}, {{ opacity: 1, y: 0, duration: 0.32, ease: "{M["enter_ease"]}", stagger: 0.06 }}, {t0});')
+        sw = [to_out(x) for x in gx["switch"]] + [t1]
+        for n in range(len(gx["letters"])):
+            a, z = q(max(t0, sw[n])), q(sw[n + 1])
+            J(f'      tl.to("#{I}t{n}", {{ backgroundColor: "{C["yellow"]}", color: "{C["ink"]}", scale: 1.12, duration: 0.25, ease: "{M["settle_ease"]}" }}, {a});')
+            J(f'      tl.fromTo("#{I}l{n}", {{ opacity: 0, x: -20 }}, {{ opacity: 1, x: 0, duration: 0.3, ease: "{M["enter_ease"]}" }}, {q(a + 0.08)});')
+            if n + 1 < len(gx["letters"]):
+                J(f'      tl.to("#{I}t{n}", {{ backgroundColor: "rgba(12,12,14,0.62)", color: "rgba(255,255,255,0.55)", scale: 1, duration: 0.2 }}, {q(z - 0.05)});')
+                J(f'      tl.to("#{I}l{n}", {{ opacity: 0, x: 20, duration: 0.18 }}, {q(z - 0.12)});')
+            add_sfx("tick", a, 0.5)
+        J(f'      tl.to("#{I} .tracker", {{ opacity: 0, y: -16, duration: {M["exit_dur"]}, ease: "{M["exit_ease"]}" }}, {q(t1 - 0.2)});')
+    elif typ == "chips":
+        chips = "".join(f'<div class="chip" id="{I}c{n}">{esc(it["text"])}</div>' for n, it in enumerate(gx["items"]))
+        o(f'      <div id="{I}" class="gx clip" data-start="{t0}" data-duration="{dur}" data-track-index="21">'
+          f'<div class="chips">{chips}</div></div>')
+        for n, it in enumerate(gx["items"]):
+            ti = q(max(t0, to_out(it["t"])))
+            J(f'      tl.fromTo("#{I}c{n}", {{ opacity: 0, scale: 0.6, y: 16 }}, {{ opacity: 1, scale: 1, y: 0, duration: 0.3, ease: "{M["settle_ease"]}" }}, {ti});')
+            add_sfx("tick", ti, 0.4)
+        J(f'      tl.to("#{I} .chips", {{ opacity: 0, y: -12, duration: {M["exit_dur"]}, ease: "{M["exit_ease"]}" }}, {q(t1 - 0.2)});')
     elif typ == "endcard":
         av = (f'<div class="end-av"><img src="{D["avatar"]}" alt="" /></div>'
               if D.get("avatar") and os.path.exists(os.path.join(ROOT, D["avatar"])) else '<div class="end-av"></div>')
@@ -480,6 +509,17 @@ style = f"""
       .list.compact .lh {{ font-size: 24px; }}
       .lh, .st-h {{ align-self: flex-start; background: {C["plate"]}; border-radius: 10px; padding: 4px 14px; text-shadow: none; }}
       .st-h {{ align-self: center; }}
+      .cap.left {{ left: {D["left_captions"]["left"]}px; right: auto; width: {D["left_captions"]["width"]}px; bottom: auto; top: {D["left_captions"]["top"]}px; }}
+      .cap.left .capin {{ align-items: flex-start; text-align: left; }}
+      .tracker {{ position: absolute; left: {SAFE["left"]}px; top: {D["layout"]["gfx_top"]}px; display: flex; flex-direction: column; gap: 14px; }}
+      .tk-row {{ display: flex; gap: 14px; }}
+      .tk-t {{ width: 92px; height: 92px; border-radius: 18px; display: flex; align-items: center; justify-content: center;
+        font-weight: 900; font-size: 56px; background: {C["plate"]}; color: rgba(255,255,255,0.55); }}
+      .tk-lab {{ position: relative; height: 54px; }}
+      .tk-l {{ position: absolute; left: 0; top: 0; white-space: nowrap; font-weight: 900; font-size: 44px; color: {C["white"]};
+        text-transform: uppercase; letter-spacing: -0.01em; text-shadow: {D["hero_shadow"]}; opacity: 0; }}
+      .chips {{ position: absolute; left: {SAFE["left"]}px; top: {D["layout"]["chips_top"]}px; width: 560px; display: flex; flex-wrap: wrap; gap: 12px; }}
+      .chips .chip {{ padding: 8px 20px; border-radius: 12px; background: {C["yellow"]}; color: {C["ink"]}; font-weight: 900; font-size: 34px; }}
       .end {{ position: absolute; left: {SAFE["left"]}px; right: {SAFE["right"]}px; top: {D["layout"]["gfx_top"]}px; display: flex; align-items: center; gap: 20px;
         padding: 20px 22px; background: {C["white"]}; border-radius: 26px; box-shadow: 0 18px 40px rgba(0,0,0,0.35); }}
       .end-av {{ width: 84px; height: 84px; flex: none; border-radius: 50%; background: linear-gradient(135deg, {C["yellow"]}, {C["pink"]}); }}
