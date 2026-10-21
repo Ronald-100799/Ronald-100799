@@ -300,125 +300,64 @@
  "auto_sfx": false,
  "sfx_cues": [
   {
-   "t": 6.38,
-   "name": "sfx2/vineboom",
-   "vol": 0.6,
-   "why": "4 STEPS reveal"
-  },
-  {
    "t": 12.36,
    "name": "sfx2/click",
-   "vol": 0.7,
+   "vol": 0.35,
    "why": "follow button flip"
   },
   {
    "t": 12.98,
    "name": "sfx2/pop",
-   "vol": 0.6,
+   "vol": 0.3,
    "why": "tracker J"
   },
   {
    "t": 22.57,
    "name": "sfx2/badumtss",
-   "vol": 0.6,
+   "vol": 0.3,
    "why": "THEY'RE THE JOKER punchline"
   },
   {
    "t": 23.83,
    "name": "sfx2/pop",
-   "vol": 0.6,
+   "vol": 0.3,
    "why": "tracker G"
   },
   {
    "t": 25.4,
    "name": "sfx2/whoosh",
-   "vol": 0.75,
+   "vol": 0.375,
    "why": "LIKE TARZAN swing"
   },
   {
    "t": 27.87,
    "name": "sfx2/correct",
-   "vol": 0.7,
+   "vol": 0.35,
    "why": "GAME PLAN = the right way"
-  },
-  {
-   "t": 29.69,
-   "name": "sfx2/popsoft",
-   "vol": 0.6
-  },
-  {
-   "t": 30.13,
-   "name": "sfx2/popsoft",
-   "vol": 0.6
-  },
-  {
-   "t": 30.85,
-   "name": "sfx2/popsoft",
-   "vol": 0.6
-  },
-  {
-   "t": 31.5,
-   "name": "sfx2/popsoft",
-   "vol": 0.6
-  },
-  {
-   "t": 32.08,
-   "name": "sfx2/popsoft",
-   "vol": 0.6
   },
   {
    "t": 35.56,
    "name": "sfx2/message",
-   "vol": 0.75,
+   "vol": 0.375,
    "why": "Comment MOVEMENTS"
   },
   {
    "t": 38.3,
    "name": "sfx2/pop",
-   "vol": 0.6,
+   "vol": 0.3,
    "why": "tracker H"
-  },
-  {
-   "t": 42.26,
-   "name": "sfx2/wrong",
-   "vol": 0.6,
-   "why": "FAILURE"
   },
   {
    "t": 44.34,
    "name": "sfx2/bell",
-   "vol": 0.7,
+   "vol": 0.35,
    "why": "TECHNIQUE — the right call"
   },
   {
    "t": 47.06,
    "name": "sfx2/pop",
-   "vol": 0.6,
+   "vol": 0.3,
    "why": "tracker S"
-  },
-  {
-   "t": 51.97,
-   "name": "sfx2/digits",
-   "vol": 0.6,
-   "why": "6–10 WEEKLY SETS"
-  },
-  {
-   "t": 57.3,
-   "name": "sfx2/ticking",
-   "vol": 0.55,
-   "why": "IN 3 MONTHS / timeline"
-  },
-  {
-   "t": 61.78,
-   "name": "sfx2/vineboom",
-   "vol": 0.55,
-   "why": "1–1.5 YEARS reveal"
-  },
-  {
-   "t": 66.41,
-   "name": "sfx2/swoosh",
-   "vol": 0.6,
-   "why": "share CTA"
   }
  ]
 }
