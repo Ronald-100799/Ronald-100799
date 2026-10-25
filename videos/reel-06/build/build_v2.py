@@ -382,6 +382,15 @@ for gx in E.get("gfx", []):
         J(f'      tl.to("#{I} .b1", {{ opacity: 0, duration: 0.14 }}, {q(ft + 0.08)});')
         add_sfx("tick", ft, 0.6)
 
+# per-graphic vertical override: "top" (px) moves the graphic's inner block
+for n, gx in enumerate(E.get("gfx", []), start=1):
+    if "top" in gx:
+        for k, line in enumerate(out):
+            if f'id="gx{n}"' in line:
+                head, sep, tail = line.partition('><div class="')
+                out[k] = head + sep.replace('<div class="', f'<div style="top:{gx["top"]}px" class="') + tail
+                break
+
 # ------------------------------------------------------------------ 7. stylised fx on the picture
 for fx in E.get("fx", []):
     t0 = to_out(fx["t"])
