@@ -8,7 +8,7 @@ These apply to every reel unless the request for a specific reel says otherwise.
 
 ## Content planning
 - Calendar, trend pulls, metrics and the weekly loop: `content/README.md`. Calendar rows: `content/content_calendar.csv`.
-- Ron's working copy lives in his Google Drive folder https://drive.google.com/drive/folders/1SFXyvvzMT5uYhDMF_wQmV3I96TdqBeq2 — keep it there and update it each week (needs the Google Drive connector). Before editing, read the Drive copy first (Ron fills metrics there), merge into the repo CSV, then upload the updated version.
+- Ron's working copy lives in his Google Drive folder https://drive.google.com/drive/folders/1SFXyvvzMT5uYhDMF_wQmV3I96TdqBeq2 — keep it there and update it each week. The live calendar is the Google Sheet "Ron — Content Calendar & Tracker" (file ID `15Z8c2w5XBNL-v2lsqxVo-yA2aWs_IYawTyhQawrEv3M`). Weekly: read the Sheet first (Ron types metrics there), merge into `content/content_calendar.csv`, then write new/changed rows back into the same Sheet with the Google Sheets connector (edit in place; don't create copies). Cells must not start with `'`, `=`, `+`, `-` or `@` (Sheets eats or evaluates them); use curly quotes.
 - Every source added to the calendar must be checked (search result or the publisher page) before it is added. Never cite from memory.
 - Engagement numbers are entered by hand. Do not connect to Ron's Instagram unless he asks.
 
