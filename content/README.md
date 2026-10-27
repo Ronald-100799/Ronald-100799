@@ -36,12 +36,19 @@ Everything for planning, researching and tracking reels. Ron shoots; Claude edit
 
 ## Weekly slot plan
 
-| Day | Format | Works best for |
-|---|---|---|
-| Mon | Desk | Authority + reaction to the week's news (hook stack: 3 fast claims in the first 3 s) |
-| Wed | Whiteboard | One concept per episode, numbered series ("Gym Basics Ep-N") |
-| Fri | Terrace | Humour + hacks, relatable, built to be shared |
-| Sun | Desk or Terrace | Myth-bust or seasonal topic |
+Two pillars, 7 reels a week. **Fitness trends** (Mon/Wed/Fri/Sun) and **Lifting science** (Tue/Thu/Sat, `content_type` starts with "Lifting science ·").
+
+| Day | Format | Pillar | Works best for |
+|---|---|---|---|
+| Mon | Desk | Fitness trends | Authority + reaction to the week's news (hook stack: 3 fast claims in the first 3 s) |
+| Tue | Desk | Lifting science | One study broken down, or a gym myth reacted to |
+| Wed | Whiteboard | Fitness trends | "Gym Basics Ep-N": one concept per episode |
+| Thu | Whiteboard | Lifting science | "Lifting Science Ep-N" (LS Ep-N): one training variable per episode |
+| Fri | Terrace | Fitness trends | Humour + hacks, relatable, built to be shared |
+| Sat | Terrace | Lifting science | Humour myth-bust about lifting |
+| Sun | Desk or Terrace | Fitness trends | Myth-bust or seasonal topic |
+
+Seasonal days can swap slots (e.g. World Diabetes Day moves a Desk reel to Saturday).
 
 ## Fixing the whiteboard reels
 
