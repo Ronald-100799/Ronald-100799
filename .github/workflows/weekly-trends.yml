@@ -1,0 +1,33 @@
+name: Weekly fitness trends (Tamil Nadu)
+
+# Every Monday 07:00 IST (01:30 UTC). Also runnable by hand from the Actions tab.
+# Scheduled runs only start once this file is on the repository's default branch.
+on:
+  schedule:
+    - cron: "30 1 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  trends:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install trendspyg
+        run: pip install "trendspyg[analysis]==1.9.0"
+      - name: Pull this week's trends
+        run: python content/tools/weekly_trends.py
+        continue-on-error: true
+      - name: Commit results
+        run: |
+          git config user.name "weekly-trends-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add content/trends
+          git diff --cached --quiet || git commit -m "Weekly trends $(date +%F)"
+          git push
