@@ -14,6 +14,13 @@ These apply to every reel unless the request for a specific reel says otherwise.
 - Every source added to the calendar must be checked (search result or the publisher page) before it is added. Never cite from memory.
 - Engagement numbers are entered by hand. Do not connect to Ron's Instagram unless he asks.
 
+## Format styles (each format has its own theme and editing style; keep them consistent)
+Pick the style from the reel's format (calendar column `format`). Set it in the edit with `"theme"` (builder themes live in `design.json` → `themes`).
+- **Desk** — red / black / white (`"theme": "desk_red"`). Level of motion set by the approved Ozempic sample (`videos/sample-ozempic/`): number/price counter in the hook over a rising riser, a hit on the pattern interrupt (strike, shake, stamp; a Remotion 3D hero shot when it fits), a 3D object for the key subject, a GSAP flowchart for the process, a 3D comparison for the payoff, and a sources line on screen for any figure. Facts on screen must be checked first.
+- **Whiteboard** — the yellow / white house style below (reels 04 and 06): tracker, chips, steps and week graphics; graphics never over the board.
+- **Terrace** — style not set yet. Before the first Terrace edit, propose a theme with still frames and get Ron's approval.
+The house style below applies to every format except where the format's theme changes colours or motion.
+
 ## House style (approved in V2, refined since)
 - English captions translated from Tamil/Thanglish, concise and faithful; never strengthen claims.
 - Two-level hierarchy: medium white support line + large yellow hero word on key terms (plate / underline / mask / pop reveals). Poppins 600/800/900.
