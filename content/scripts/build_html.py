@@ -6,7 +6,7 @@ f = lambda iso: (lambda d: f"{d.day} {M[d.month-1]}")(dt.date.fromisoformat(iso)
 e = html.escape
 for ws, items in sorted(weeks.items()):
     we = (dt.date.fromisoformat(ws) + dt.timedelta(days=6)).isoformat()
-    o = [f"<h1>Reel scripts: {f(ws)} – {f(we)} 2026</h1><p><i>@ron_tamil · 7 reels · English drafts. Say them your way in Tamil/Thanglish. Plain text is spoken; [grey italics] are edit directions; CHECK lines must be confirmed before filming.</i></p>",
+    o = [f"<h1>Reel scripts: {f(ws)} – {f(we)} 2026</h1><p><i>@ron_tamil · 7 reels · v2 (7-beat structure) · English drafts. Say them your way in Tamil/Thanglish. Plain text is spoken; [grey italics] are edit directions; CHECK lines must be confirmed before filming.</i></p>",
          "<table border=1 cellpadding=4><tr><th>Day</th><th>ID</th><th>Format</th><th>Topic</th><th>Length</th><th>Link test</th></tr>"]
     for it in items:
         o.append(f"<tr><td>{it['day']} {f(it['date'])}</td><td>{it['id']}</td><td>{it['format']}</td><td>{e(it['topic'])}</td><td>~{it['secs']} s</td><td>{it['link'][0] if it['link'] else '–'}</td></tr>")
