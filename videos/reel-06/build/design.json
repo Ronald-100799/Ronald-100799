@@ -62,7 +62,7 @@
   "layout": {
     "gfx_top": 250,
     "chips_top": 440,
-    "_comment": "Reel 04: head top \u2248 y 600-640. Tracker y 250-420, chips y 440-560; left column below the board (board bottom \u2248 y 1130)."
+    "_comment": "Reel 04: head top ≈ y 600-640. Tracker y 250-420, chips y 440-560; left column below the board (board bottom ≈ y 1130)."
   },
   "caption_shadow": "0 0 2px rgba(0,0,0,0.95), 0 0 1px rgba(0,0,0,0.95), 0 3px 10px rgba(0,0,0,0.8), 0 0 22px rgba(0,0,0,0.45)",
   "hero_shadow": "0 0 3px rgba(0,0,0,0.95), 0 4px 14px rgba(0,0,0,0.75), 0 0 30px rgba(0,0,0,0.4)",
@@ -73,5 +73,16 @@
     "width": 500,
     "top": 1240,
     "hero_width": 480
+  },
+  "themes": {
+    "desk_red": {
+      "_comment": "Desk format: red / black / white (approved Ozempic sample, Oct 2026). Accent slot 'yellow' holds the red.",
+      "color": {
+        "yellow": "#E10600",
+        "on_accent": "#FFFFFF",
+        "pink": "#9A9AA0",
+        "plate": "rgba(11,11,12,0.72)"
+      }
+    }
   }
 }

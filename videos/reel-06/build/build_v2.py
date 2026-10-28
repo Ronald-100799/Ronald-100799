@@ -16,6 +16,10 @@ D = json.load(open(os.path.join(ROOT, "build/design.json")))
 EDIT = sys.argv[sys.argv.index("--edit") + 1] if "--edit" in sys.argv else "build/edit_v2.json"
 OUT_HTML = sys.argv[sys.argv.index("--out") + 1] if "--out" in sys.argv else "index.html"
 E = json.load(open(os.path.join(ROOT, EDIT)))
+# optional per-format theme from design.json "themes" (e.g. "theme": "desk_red" in the edit); "yellow" is the accent slot
+for k, v in D.get("themes", {}).get(E.get("theme", ""), {}).items():
+    D[k] = {**D[k], **v} if isinstance(v, dict) and isinstance(D.get(k), dict) else v
+D["color"].setdefault("on_accent", D["color"]["ink"])
 VAD = json.load(open(os.path.join(ROOT, "build/vad_fine.json")))
 W, H, FPS = D["canvas"]["w"], D["canvas"]["h"], D["canvas"]["fps"]
 C, M, SZ, SAFE, F = D["color"], D["motion"], D["size"], D["safe"], D["font"]
@@ -285,7 +289,7 @@ for gx in E.get("gfx", []):
         J(f'      tl.fromTo("#{I} .day", {{ opacity: 0, y: 30 }}, {{ opacity: 1, y: 0, duration: 0.3, ease: "{M["enter_ease"]}", stagger: 0.04 }}, {q(t0 + 0.1)});')
         tt = q(t0 + 0.55)
         for n in gx["train"]:
-            J(f'      tl.to("#{I}d{n}", {{ backgroundColor: "{C["yellow"]}", color: "{C["ink"]}", duration: 0.18 }}, {tt});')
+            J(f'      tl.to("#{I}d{n}", {{ backgroundColor: "{C["yellow"]}", color: "{C["on_accent"]}", duration: 0.18 }}, {tt});')
             J(f'      tl.fromTo("#{I}d{n}", {{ scale: 1 }}, {{ scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "sine.inOut", immediateRender: false }}, {tt});')
             add_sfx("tick", tt, 0.4)
             tt = q(tt + 0.16)
@@ -353,7 +357,7 @@ for gx in E.get("gfx", []):
         sw = [to_out(x) for x in gx["switch"]] + [t1]
         for n in range(len(gx["letters"])):
             a, z = q(max(t0, sw[n])), q(sw[n + 1])
-            J(f'      tl.to("#{I}t{n}", {{ backgroundColor: "{C["yellow"]}", color: "{C["ink"]}", scale: 1.12, duration: 0.25, ease: "{M["settle_ease"]}" }}, {a});')
+            J(f'      tl.to("#{I}t{n}", {{ backgroundColor: "{C["yellow"]}", color: "{C["on_accent"]}", scale: 1.12, duration: 0.25, ease: "{M["settle_ease"]}" }}, {a});')
             J(f'      tl.fromTo("#{I}l{n}", {{ opacity: 0, x: -20 }}, {{ opacity: 1, x: 0, duration: 0.3, ease: "{M["enter_ease"]}" }}, {q(a + 0.08)});')
             if n + 1 < len(gx["letters"]):
                 J(f'      tl.to("#{I}t{n}", {{ backgroundColor: "rgba(12,12,14,0.62)", color: "rgba(255,255,255,0.55)", scale: 1, duration: 0.2 }}, {q(z - 0.05)});')
@@ -615,7 +619,7 @@ style = f"""
       .fx-mask {{ overflow: hidden; padding: 0 6px; }}
       .fx-plate {{ padding: 8px 22px 4px; }}
       .fx-plate .pl {{ position: absolute; inset: 0; background: {C["yellow"]}; border-radius: 10px; transform-origin: left center; }}
-      .fx-plate .hw {{ position: relative; color: {C["ink"]}; text-shadow: none; }}
+      .fx-plate .hw {{ position: relative; color: {C["on_accent"]}; text-shadow: none; }}
       .ul {{ position: absolute; left: 4%; width: 92%; bottom: -16px; height: 22px; overflow: visible; }}
       .ul path {{ fill: none; stroke: {C["white"]}; stroke-width: 7; stroke-linecap: round; stroke-dasharray: 420; }}
       .gx {{ position: absolute; inset: 0; }}
@@ -628,12 +632,12 @@ style = f"""
         text-shadow: 0 3px 14px rgba(0,0,0,0.7); }}
       .sec-tag {{ position: absolute; left: {SAFE["left"]}px; top: {SAFE["top"]}px; display: flex; align-items: center; gap: 14px;
         padding: 10px 20px 10px 10px; background: {C["plate"]}; border-radius: 14px; }}
-      .sec-tag b {{ font-weight: 900; font-size: 34px; color: {C["ink"]}; background: {C["yellow"]}; border-radius: 9px; padding: 2px 12px; }}
+      .sec-tag b {{ font-weight: 900; font-size: 34px; color: {C["on_accent"]}; background: {C["yellow"]}; border-radius: 9px; padding: 2px 12px; }}
       .sec-tag span {{ font-weight: 800; font-size: 26px; color: {C["white"]}; letter-spacing: 0.04em; text-transform: uppercase; }}
       .list {{ position: absolute; left: {SAFE["left"]}px; top: {D["layout"]["gfx_top"]}px; display: flex; flex-direction: column; gap: 14px; }}
       .lh {{ font-weight: 800; font-size: 30px; letter-spacing: 0.08em; color: {C["yellow"]}; text-transform: uppercase; text-shadow: 0 2px 10px rgba(0,0,0,0.6); }}
       .li {{ display: flex; align-items: center; gap: 16px; padding: 10px 26px 10px 10px; background: {C["plate"]}; border-radius: 14px; align-self: flex-start; }}
-      .li b {{ font-weight: 900; font-size: 30px; color: {C["ink"]}; background: {C["yellow"]}; border-radius: 9px; padding: 4px 12px; }}
+      .li b {{ font-weight: 900; font-size: 30px; color: {C["on_accent"]}; background: {C["yellow"]}; border-radius: 9px; padding: 4px 12px; }}
       .li span {{ font-weight: 800; font-size: 42px; color: {C["white"]}; text-transform: uppercase; letter-spacing: 0.01em; }}
       .week {{ position: absolute; left: {SAFE["left"]}px; right: {SAFE["right"]}px; top: {D["layout"]["gfx_top"]}px; display: flex; flex-direction: column; align-items: center; gap: 16px; }}
       .wk-h {{ display: flex; align-items: baseline; gap: 14px; text-shadow: 0 3px 14px rgba(0,0,0,0.6); }}
@@ -691,7 +695,7 @@ style = f"""
       .tk-l {{ position: absolute; left: 0; top: 0; white-space: nowrap; font-weight: 900; font-size: 44px; color: {C["white"]};
         text-transform: uppercase; letter-spacing: -0.01em; text-shadow: {D["hero_shadow"]}; opacity: 0; }}
       .chips {{ position: absolute; left: {SAFE["left"]}px; top: {D["layout"]["chips_top"]}px; width: 560px; display: flex; flex-wrap: wrap; gap: 12px; }}
-      .chips .chip {{ padding: 8px 20px; border-radius: 12px; background: {C["yellow"]}; color: {C["ink"]}; font-weight: 900; font-size: 34px; }}
+      .chips .chip {{ padding: 8px 20px; border-radius: 12px; background: {C["yellow"]}; color: {C["on_accent"]}; font-weight: 900; font-size: 34px; }}
       .end {{ position: absolute; left: {SAFE["left"]}px; right: {SAFE["right"]}px; top: {D["layout"]["gfx_top"]}px; display: flex; align-items: center; gap: 20px;
         padding: 20px 22px; background: {C["white"]}; border-radius: 26px; box-shadow: 0 18px 40px rgba(0,0,0,0.35); }}
       .end-av {{ width: 84px; height: 84px; flex: none; border-radius: 50%; background: linear-gradient(135deg, {C["yellow"]}, {C["pink"]}); }}
@@ -711,10 +715,10 @@ style = f"""
       .fl-loop {{ stroke: {C["yellow"]}; }}
       .fl-n {{ position: absolute; display: flex; align-items: center; justify-content: center; gap: 12px; padding: 0 18px; background: {C["plate"]};
         border: 3px solid rgba(255,255,255,0.7); border-radius: 18px; }}
-      .fl-n b {{ font-weight: 900; font-size: 26px; color: {C["ink"]}; background: {C["yellow"]}; border-radius: 8px; padding: 2px 10px; }}
+      .fl-n b {{ font-weight: 900; font-size: 26px; color: {C["on_accent"]}; background: {C["yellow"]}; border-radius: 8px; padding: 2px 10px; }}
       .fl-n span {{ font-weight: 800; font-size: 34px; color: {C["white"]}; text-transform: uppercase; letter-spacing: 0.01em; text-align: center; line-height: 1.05; }}
       .fl-n.hot {{ background: {C["yellow"]}; border-color: {C["yellow"]}; }}
-      .fl-n.hot span {{ color: {C["ink"]}; }}
+      .fl-n.hot span {{ color: {C["on_accent"]}; }}
       .t3 {{ position: absolute; display: flex; flex-direction: column; align-items: center; }}
       .t3 canvas {{ display: block; }}
       .t3-l {{ margin-top: -24px; font-weight: 900; font-size: 44px; color: {C["yellow"]}; text-transform: uppercase; letter-spacing: -0.01em;
@@ -773,7 +777,7 @@ for ext in ("mp3", "wav", "m4a"):
                       f"data-track-index=\"4\" data-automation='{lane}'></audio>")
         break
 
-SFX_LEN = {"swoosh": 0.42, "tick": 0.05, "thump": 0.35, "rise": 0.5}
+SFX_LEN = {"swoosh": 0.42, "tick": 0.05, "thump": 0.35, "rise": 0.5, "riser": 2.6}
 for cue in E.get("sfx_cues", []):
     if E["_in"](cue["t"]):
         add_sfx(cue["name"], to_out(cue["t"]), cue.get("vol", 0.7), explicit=True)
