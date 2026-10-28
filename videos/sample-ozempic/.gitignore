@@ -1,0 +1,13 @@
+renders/
+.hyperframes/
+assets/footage.mp4
+assets/voice.wav
+assets/broll/
+assets/music/
+node_modules/
+build/analysis_cache.json
+build/edit_preview.json
+build/timeline_preview.json
+assets/react_crop.mp4
+assets/react_fg.webm
+.transcode-cache/

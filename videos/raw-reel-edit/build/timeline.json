@@ -1,0 +1,435 @@
+{
+ "total": 138.0667,
+ "segments": [
+  {
+   "src_s": 7.2667,
+   "src_e": 26.9333,
+   "out_s": 0.0,
+   "range": 0,
+   "first": true
+  },
+  {
+   "src_s": 46.2333,
+   "src_e": 54.2667,
+   "out_s": 19.6667,
+   "range": 1,
+   "first": true
+  },
+  {
+   "src_s": 70.7,
+   "src_e": 83.1667,
+   "out_s": 27.7,
+   "range": 2,
+   "first": true
+  },
+  {
+   "src_s": 91.2,
+   "src_e": 94.3667,
+   "out_s": 40.1667,
+   "range": 3,
+   "first": true
+  },
+  {
+   "src_s": 100.1667,
+   "src_e": 112.0,
+   "out_s": 43.3333,
+   "range": 4,
+   "first": true
+  },
+  {
+   "src_s": 123.3,
+   "src_e": 124.2667,
+   "out_s": 55.1667,
+   "range": 5,
+   "first": true
+  },
+  {
+   "src_s": 124.4667,
+   "src_e": 132.7333,
+   "out_s": 56.1333,
+   "range": 5,
+   "first": false
+  },
+  {
+   "src_s": 183.9333,
+   "src_e": 190.8667,
+   "out_s": 64.4,
+   "range": 6,
+   "first": true
+  },
+  {
+   "src_s": 206.9,
+   "src_e": 213.0667,
+   "out_s": 71.3333,
+   "range": 7,
+   "first": true
+  },
+  {
+   "src_s": 224.9,
+   "src_e": 230.7333,
+   "out_s": 77.5,
+   "range": 8,
+   "first": true
+  },
+  {
+   "src_s": 239.0,
+   "src_e": 243.2333,
+   "out_s": 83.3333,
+   "range": 9,
+   "first": true
+  },
+  {
+   "src_s": 243.4667,
+   "src_e": 244.2333,
+   "out_s": 87.5667,
+   "range": 9,
+   "first": false
+  },
+  {
+   "src_s": 262.2667,
+   "src_e": 263.5,
+   "out_s": 88.3333,
+   "range": 10,
+   "first": true
+  },
+  {
+   "src_s": 264.5,
+   "src_e": 271.0333,
+   "out_s": 89.5667,
+   "range": 10,
+   "first": false
+  },
+  {
+   "src_s": 284.6667,
+   "src_e": 298.5667,
+   "out_s": 96.1,
+   "range": 11,
+   "first": true
+  },
+  {
+   "src_s": 315.9667,
+   "src_e": 324.8333,
+   "out_s": 110.0,
+   "range": 12,
+   "first": true
+  },
+  {
+   "src_s": 332.5667,
+   "src_e": 336.1333,
+   "out_s": 118.8667,
+   "range": 13,
+   "first": true
+  },
+  {
+   "src_s": 341.9667,
+   "src_e": 349.8667,
+   "out_s": 122.4333,
+   "range": 14,
+   "first": true
+  },
+  {
+   "src_s": 355.8,
+   "src_e": 362.9667,
+   "out_s": 130.3333,
+   "range": 15,
+   "first": true
+  },
+  {
+   "src_s": 363.3,
+   "src_e": 363.8667,
+   "out_s": 137.5,
+   "range": 15,
+   "first": false
+  }
+ ],
+ "cards": [
+  {
+   "start": 0.0,
+   "end": 4.8667,
+   "l1": "If you're stuck in a skinny fat body type,",
+   "l2": "don't skip this video.",
+   "range": 0,
+   "idx": 0
+  },
+  {
+   "start": 4.8667,
+   "end": 8.4667,
+   "l1": "There are two main reasons",
+   "l2": "for being skinny fat.",
+   "range": 0,
+   "idx": 1
+  },
+  {
+   "start": 8.4667,
+   "end": 11.4333,
+   "l1": "Number one:",
+   "l2": "lack of resistance training.",
+   "range": 0,
+   "idx": 2
+  },
+  {
+   "start": 11.4333,
+   "end": 16.2333,
+   "l1": "Doing more cardio or sports",
+   "l2": "won't improve your body composition.",
+   "range": 0,
+   "idx": 3
+  },
+  {
+   "start": 16.2333,
+   "end": 19.6667,
+   "l1": "Instead, you need to focus",
+   "l2": "on building muscle.",
+   "range": 0,
+   "idx": 4
+  },
+  {
+   "start": 19.6667,
+   "end": 24.3333,
+   "l1": "Train to increase your strength,",
+   "l2": "and your muscle building improves,",
+   "range": 1,
+   "idx": 0
+  },
+  {
+   "start": 24.3333,
+   "end": 27.7,
+   "l1": "and your body composition",
+   "l2": "improves along with it.",
+   "range": 1,
+   "idx": 1
+  },
+  {
+   "start": 27.7,
+   "end": 31.7333,
+   "l1": "Focus on building muscle and your",
+   "l2": "body composition improves,",
+   "range": 2,
+   "idx": 0
+  },
+  {
+   "start": 31.7333,
+   "end": 33.8667,
+   "l1": "and you'll gain",
+   "l2": "more confidence.",
+   "range": 2,
+   "idx": 1
+  },
+  {
+   "start": 33.8667,
+   "end": 37.5667,
+   "l1": "My suggestion: follow a",
+   "l2": "3\u20134 day workout split per week.",
+   "range": 2,
+   "idx": 2
+  },
+  {
+   "start": 37.5667,
+   "end": 40.1667,
+   "l1": "It gives you plenty",
+   "l2": "of time to recover.",
+   "range": 2,
+   "idx": 3
+  },
+  {
+   "start": 40.1667,
+   "end": 43.3333,
+   "l1": "Also, don't forget",
+   "l2": "progressive overload every week.",
+   "range": 3,
+   "idx": 0
+  },
+  {
+   "start": 43.3333,
+   "end": 46.2,
+   "l1": "Add compound lifts",
+   "l2": "to your workout.",
+   "range": 4,
+   "idx": 0
+  },
+  {
+   "start": 46.2,
+   "end": 50.1667,
+   "l1": "Bench press, squat, deadlift \u2014",
+   "l2": "lifts like these.",
+   "range": 4,
+   "idx": 1
+  },
+  {
+   "start": 50.1667,
+   "end": 55.1667,
+   "l1": "They let you activate and target",
+   "l2": "more muscle groups at once.",
+   "range": 4,
+   "idx": 2
+  },
+  {
+   "start": 55.1667,
+   "end": 56.9667,
+   "l1": "Reason number two:",
+   "l2": "poor diet.",
+   "range": 5,
+   "idx": 0
+  },
+  {
+   "start": 56.9667,
+   "end": 59.9333,
+   "l1": "Too much processed and",
+   "l2": "sugary food in your diet",
+   "range": 5,
+   "idx": 1
+  },
+  {
+   "start": 59.9333,
+   "end": 64.4,
+   "l1": "means you can't build muscle, and your",
+   "l2": "body composition won't improve.",
+   "range": 5,
+   "idx": 2
+  },
+  {
+   "start": 64.4,
+   "end": 68.0667,
+   "l1": "Instead of processed and",
+   "l2": "sugary foods,",
+   "range": 6,
+   "idx": 0
+  },
+  {
+   "start": 68.0667,
+   "end": 71.3333,
+   "l1": "focus on",
+   "l2": "protein-rich whole foods.",
+   "range": 6,
+   "idx": 1
+  },
+  {
+   "start": 71.3333,
+   "end": 75.4,
+   "l1": "Protein-rich whole foods help",
+   "l2": "your muscle building",
+   "range": 7,
+   "idx": 0
+  },
+  {
+   "start": 75.4,
+   "end": 77.5,
+   "l1": "and your",
+   "l2": "hormonal balance.",
+   "range": 7,
+   "idx": 1
+  },
+  {
+   "start": 77.5,
+   "end": 83.3333,
+   "l1": "Good fat sources like nuts",
+   "l2": "also help your hormonal balance.",
+   "range": 8,
+   "idx": 0
+  },
+  {
+   "start": 83.3333,
+   "end": 88.3333,
+   "l1": "If you're skinny fat, knowing your",
+   "l2": "maintenance calories is key.",
+   "range": 9,
+   "idx": 0
+  },
+  {
+   "start": 88.3333,
+   "end": 93.1,
+   "l1": "If you're above 15% body fat,",
+   "l2": "eat 100\u2013200 calories",
+   "range": 10,
+   "idx": 0
+  },
+  {
+   "start": 93.1,
+   "end": 96.1,
+   "l1": "below your",
+   "l2": "maintenance calories.",
+   "range": 10,
+   "idx": 1
+  },
+  {
+   "start": 96.1,
+   "end": 101.9667,
+   "l1": "If you're below 15% body fat, eat at",
+   "l2": "maintenance or a small surplus \u2014",
+   "range": 11,
+   "idx": 0
+  },
+  {
+   "start": 101.9667,
+   "end": 105.5,
+   "l1": "about 100 calories",
+   "l2": "above your maintenance.",
+   "range": 11,
+   "idx": 1
+  },
+  {
+   "start": 105.5,
+   "end": 110.0,
+   "l1": "That helps you build muscle",
+   "l2": "without gaining much fat.",
+   "range": 11,
+   "idx": 2
+  },
+  {
+   "start": 110.0,
+   "end": 114.0,
+   "l1": "One last important thing:",
+   "l2": "if you're skinny fat,",
+   "range": 12,
+   "idx": 0
+  },
+  {
+   "start": 114.0,
+   "end": 118.8667,
+   "l1": "patience is everything.",
+   "l2": "Stick with this for the long run.",
+   "range": 12,
+   "idx": 1
+  },
+  {
+   "start": 118.8667,
+   "end": 122.4333,
+   "l1": "If you're impatient, you'll get",
+   "l2": "demotivated and give up.",
+   "range": 13,
+   "idx": 0
+  },
+  {
+   "start": 122.4333,
+   "end": 126.7,
+   "l1": "So lower your expectations,",
+   "l2": "focus on progressive overload",
+   "range": 14,
+   "idx": 0
+  },
+  {
+   "start": 126.7,
+   "end": 130.3333,
+   "l1": "and your diet, and you'll",
+   "l2": "definitely get results.",
+   "range": 14,
+   "idx": 1
+  },
+  {
+   "start": 130.3333,
+   "end": 133.9,
+   "l1": "For more useful fitness tips,",
+   "l2": "hit follow.",
+   "range": 15,
+   "idx": 0
+  },
+  {
+   "start": 133.9,
+   "end": 138.0667,
+   "l1": "If you liked this video,",
+   "l2": "drop a like. Thank you!",
+   "range": 15,
+   "idx": 1
+  }
+ ]
+}
