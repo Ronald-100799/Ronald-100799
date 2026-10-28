@@ -3,7 +3,7 @@
 These apply to every reel unless the request for a specific reel says otherwise.
 
 ## Scope
-- **Default: full edit** — captions with emphasised keywords, motion graphics, camera moves where needed, colour/quality check, audio polish, mastering. Pipeline and house style: `videos/raw-reel-v2/build/README.md`; latest working copies: `videos/reel-04/build/`.
+- **Default: full edit** — captions with emphasised keywords, motion graphics, camera moves where needed, colour/quality check, audio polish, mastering. Pipeline and house style: `videos/raw-reel-v2/build/README.md`; latest working copies (current template): `videos/reel-06/build/`. Motion toolkit (`tools/README.md`): GSAP flowcharts (`flow` graphic), Three.js 3D objects (`three` graphic), Remotion 3D inserts as transparent overlays (`tools/remotion-3d/`), NullMotion for breaking down reference reels. Use 3D and flowcharts only where they explain something (a process, a cycle, a comparison); same placement rules as other graphics.
 - **"Captions only" when the request says so** — add captions for Ron's own voice only. Do not caption meme audio, movie clips or other inserted audio; add no graphics, zooms, SFX or grading.
 
 ## Content planning

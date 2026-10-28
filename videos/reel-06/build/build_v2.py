@@ -239,6 +239,7 @@ for k, b, st, en in cap_rows:
 
 # ------------------------------------------------------------------ 6. graphics
 gid = 0
+three_js = []  # 3D graphics, rendered by a module script after the GSAP timeline
 for gx in E.get("gfx", []):
     gid += 1
     t0 = to_out(gx["t"])
@@ -381,10 +382,76 @@ for gx in E.get("gfx", []):
         J(f'      tl.fromTo("#{I} .b2", {{ opacity: 0 }}, {{ opacity: 1, duration: 0.01 }}, {q(ft + 0.07)});')
         J(f'      tl.to("#{I} .b1", {{ opacity: 0, duration: 0.14 }}, {q(ft + 0.08)});')
         add_sfx("tick", ft, 0.6)
+    elif typ == "flow":
+        # GSAP flowchart: nodes appear on their spoken cue; connectors draw in with stroke-dashoffset.
+        # dir "down" (stacked) or "right" (side by side); optional loop arrow from last node back to first.
+        nodes = gx["nodes"]
+        horiz = gx.get("dir", "down") == "right"
+        nw, nh, gap = gx.get("w", 420 if not horiz else 230), gx.get("h", 84), gx.get("gap", 64)
+        pos = [((n * (nw + gap), 0) if horiz else (0, n * (nh + gap))) for n in range(len(nodes))]
+        loop = gx.get("loop")
+        box_w = (pos[-1][0] + nw) if horiz else nw + (120 if loop else 0)
+        box_h = nh + (110 if (loop and horiz) else 0) if horiz else pos[-1][1] + nh
+        paths = []
+        for n in range(len(nodes) - 1):
+            (x0, y0), (x1, y1) = pos[n], pos[n + 1]
+            if horiz:
+                a, b, y = x0 + nw + 8, x1 - 10, nh / 2
+                paths.append(f'<path class="fl-c" id="{I}c{n}" d="M{a} {y} L{b} {y} M{b - 14} {y - 12} L{b} {y} L{b - 14} {y + 12}" pathLength="1" />')
+            else:
+                x, a, b = nw / 2, y0 + nh + 8, y1 - 10
+                paths.append(f'<path class="fl-c" id="{I}c{n}" d="M{x} {a} L{x} {b} M{x - 12} {b - 14} L{x} {b} L{x + 12} {b - 14}" pathLength="1" />')
+        if loop:
+            if horiz:
+                xa, xb, yb = pos[-1][0] + nw / 2, nw / 2, nh + 70
+                d = f"M{xa} {nh + 8} C{xa} {yb}, {xa} {yb}, {xa - 60} {yb} L{xb + 60} {yb} C{xb} {yb}, {xb} {yb}, {xb} {nh + 10} M{xb - 12} {nh + 24} L{xb} {nh + 10} L{xb + 12} {nh + 24}"
+            else:
+                xr, ya, yb = nw + 70, pos[-1][1] + nh / 2, nh / 2
+                d = f"M{nw + 8} {ya} C{xr} {ya}, {xr} {ya}, {xr} {ya - 60} L{xr} {yb + 60} C{xr} {yb}, {xr} {yb}, {nw + 10} {yb} M{nw + 24} {yb - 12} L{nw + 10} {yb} L{nw + 24} {yb + 12}"
+            paths.append(f'<path class="fl-c fl-loop" id="{I}lp" d="{d}" pathLength="1" />')
+        boxes = "".join(
+            f'<div class="fl-n{" hot" if nd.get("hot") else ""}" id="{I}n{n}" style="left:{x}px;top:{y}px;width:{nw}px;height:{nh}px">'
+            f'{f"<b>{esc(nd["idx"])}</b>" if nd.get("idx") else ""}<span>{esc(nd["text"])}</span></div>'
+            for n, (nd, (x, y)) in enumerate(zip(nodes, pos)))
+        head = f'<div class="lh fl-h">{esc(gx["header"])}</div>' if gx.get("header") else ""
+        left = gx.get("left", SAFE["left"] if not horiz else (W - box_w) // 2)
+        o(f'      <div id="{I}" class="gx clip" data-start="{t0}" data-duration="{dur}" data-track-index="21">'
+          f'<div class="flow" style="left:{left}px;top:{gx.get("top", D["layout"]["gfx_top"])}px">{head}<div class="fl-box" style="width:{box_w}px;height:{box_h}px">'
+          f'<svg class="fl-svg" width="{box_w}" height="{box_h}" viewBox="0 0 {box_w} {box_h}">{"".join(paths)}</svg>{boxes}</div></div></div>')
+        if head:
+            J(f'      tl.fromTo("#{I} .fl-h", {{ opacity: 0, y: 14 }}, {{ opacity: 1, y: 0, duration: 0.3, ease: "{M["enter_ease"]}" }}, {t0});')
+        prev = t0
+        for n, nd in enumerate(nodes):
+            ti = q(max(prev, to_out(nd["t"]) if "t" in nd else q(t0 + 0.1 + n * 0.45)))
+            if n > 0:  # connector draws into the node just before it lands
+                J(f'      tl.fromTo("#{I}c{n - 1}", {{ strokeDashoffset: 1 }}, {{ strokeDashoffset: 0, duration: 0.3, ease: "power2.inOut" }}, {q(max(prev, ti - 0.22))});')
+            J(f'      tl.fromTo("#{I}n{n}", {{ opacity: 0, scale: 0.7 }}, {{ opacity: 1, scale: 1, duration: 0.32, ease: "{M["settle_ease"]}" }}, {ti});')
+            if nd.get("hot"):
+                J(f'      tl.fromTo("#{I}n{n}", {{ scale: 1 }}, {{ scale: 1.08, duration: 0.12, yoyo: true, repeat: 1, ease: "sine.inOut", immediateRender: false }}, {q(ti + 0.36)});')
+            add_sfx("tick", ti, 0.4)
+            prev = q(ti + 0.1)
+        if loop:
+            lt = q(max(prev + 0.2, to_out(loop["t"]) if isinstance(loop, dict) and "t" in loop else prev + 0.3))
+            J(f'      tl.fromTo("#{I}lp", {{ strokeDashoffset: 1 }}, {{ strokeDashoffset: 0, duration: 0.6, ease: "power2.inOut" }}, {lt});')
+            add_sfx("swoosh", lt, 0.3)
+        J(f'      tl.to("#{I} .flow", {{ opacity: 0, y: 16, duration: {M["exit_dur"]}, ease: "{M["exit_ease"]}" }}, {q(t1 - 0.2)});')
+    elif typ == "three":
+        # Three.js 3D object on a transparent canvas, drawn from HyperFrames time (hf-seek). Models: dumbbell, plate, bars.
+        S = gx.get("size", 520)
+        x, y = gx.get("x", W - SAFE["right"] - S + 60), gx.get("y", D["layout"]["gfx_top"])
+        lab = f'<div class="t3-l">{esc(gx["label"])}</div>' if gx.get("label") else ""
+        o(f'      <div id="{I}" class="gx clip" data-start="{t0}" data-duration="{dur}" data-track-index="21">'
+          f'<div class="t3" style="left:{x}px;top:{y}px;width:{S}px"><canvas id="{I}cv" width="{S}" height="{S}" style="width:{S}px;height:{S}px"></canvas>{lab}</div></div>')
+        if lab:
+            J(f'      tl.fromTo("#{I} .t3-l", {{ opacity: 0, y: 14 }}, {{ opacity: 1, y: 0, duration: 0.3, ease: "{M["enter_ease"]}" }}, {q(t0 + 0.35)});')
+        J(f'      tl.to("#{I} .t3", {{ opacity: 0, duration: {M["exit_dur"]}, ease: "{M["exit_ease"]}" }}, {q(t1 - 0.2)});')
+        three_js.append({"id": I, "t0": t0, "t1": t1, "size": S, "model": gx.get("model", "dumbbell"),
+                         "bars": gx.get("bars", []), "spin": gx.get("spin", 0.9)})
+        add_sfx("swoosh", t0, 0.35)
 
 # per-graphic vertical override: "top" (px) moves the graphic's inner block
 for n, gx in enumerate(E.get("gfx", []), start=1):
-    if "top" in gx:
+    if "top" in gx and gx["type"] not in ("flow", "three"):  # these place themselves
         for k, line in enumerate(out):
             if f'id="gx{n}"' in line:
                 head, sep, tail = line.partition('><div class="')
@@ -427,6 +494,100 @@ for c in cam_events:
             J(f'      tl.to("#move", {{ scale: {c.get("amount", 1.12)}, duration: {c.get("dur", 0.28)}, ease: "power3.out" }}, {t0});')
 
 # ------------------------------------------------------------------ 9. assemble document
+
+def three_module():
+    """One module script that draws every 3D graphic from HyperFrames time (hf-seek). Deterministic: no rAF, no random."""
+    if not three_js:
+        return []
+    return ["    <script type=\"module\">",
+            "      import * as THREE from \"./assets/three/three.module.min.js\";",
+            f"      const SPECS = {json.dumps(three_js)};",
+            f"      const YEL = new THREE.Color(\"{C['yellow']}\"), WHITE = new THREE.Color(\"#f2f2f4\"), STEEL = new THREE.Color(\"#6b6f78\");",
+            THREE_JS_BODY,
+            "    </script>"]
+
+
+THREE_JS_BODY = """      const ease = (x) => 1 - Math.pow(1 - Math.min(Math.max(x, 0), 1), 3);
+      const back = (x) => { x = Math.min(Math.max(x, 0), 1); const c = 1.6; return 1 + (c + 1) * Math.pow(x - 1, 3) + c * Math.pow(x - 1, 2); };
+      function mat(color, rough = 0.42, metal = 0.35) { return new THREE.MeshStandardMaterial({ color, roughness: rough, metalness: metal }); }
+      function dumbbell() {
+        const g = new THREE.Group();
+        const bar = new THREE.Mesh(new THREE.CylinderGeometry(0.09, 0.09, 2.6, 32), mat(STEEL, 0.35, 0.8));
+        bar.rotation.z = Math.PI / 2; g.add(bar);
+        for (const sx of [-1, 1]) {
+          for (const [off, r, w] of [[0.62, 0.62, 0.18], [0.82, 0.5, 0.16], [1.0, 0.36, 0.14]]) {
+            const p = new THREE.Mesh(new THREE.CylinderGeometry(r, r, w, 48), mat(off === 0.62 ? YEL : new THREE.Color("#1c1c20"), 0.5, 0.2));
+            p.rotation.z = Math.PI / 2; p.position.x = sx * off; g.add(p);
+          }
+        }
+        return g;
+      }
+      function plate() {
+        const g = new THREE.Group();
+        const ring = new THREE.Mesh(new THREE.TorusGeometry(0.95, 0.22, 32, 96), mat(YEL, 0.5, 0.15));
+        const disc = new THREE.Mesh(new THREE.CylinderGeometry(0.92, 0.92, 0.22, 96), mat(new THREE.Color("#1c1c20"), 0.55, 0.2));
+        disc.rotation.x = Math.PI / 2;
+        const hole = new THREE.Mesh(new THREE.CylinderGeometry(0.16, 0.16, 0.3, 48), mat(STEEL, 0.3, 0.9));
+        hole.rotation.x = Math.PI / 2;
+        g.add(disc, ring, hole);
+        return g;
+      }
+      function bars(spec) {
+        const g = new THREE.Group();
+        const n = spec.bars.length, max = Math.max(...spec.bars.map((b) => b.value));
+        g.userData.cols = spec.bars.map((b, i) => {
+          const h = 2.2 * b.value / max;
+          const m = new THREE.Mesh(new THREE.BoxGeometry(0.62, 1, 0.62), mat(b.hot ? YEL : WHITE, 0.5, 0.1));
+          m.position.x = (i - (n - 1) / 2) * 0.95;
+          m.userData.h = h;
+          g.add(m);
+          return m;
+        });
+        g.position.y = -1.35;
+        return g;
+      }
+      const scenes = SPECS.map((spec) => {
+        const canvas = document.getElementById(spec.id + "cv");
+        const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true, preserveDrawingBuffer: true });
+        renderer.setPixelRatio(1);
+        renderer.setSize(spec.size, spec.size, false);
+        renderer.setClearColor(0x000000, 0);
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(32, 1, 0.1, 50);
+        camera.position.set(0, spec.model === "bars" ? 1.2 : 0.6, spec.model === "bars" ? 7.2 : 6.2);
+        camera.lookAt(0, 0, 0);
+        scene.add(new THREE.HemisphereLight(0xffffff, 0x202028, 1.6));
+        const key = new THREE.DirectionalLight(0xfff1d6, 2.4); key.position.set(3, 4, 5); scene.add(key);
+        const rim = new THREE.DirectionalLight(0x9fc4ff, 1.4); rim.position.set(-4, 2, -3); scene.add(rim);
+        const obj = spec.model === "plate" ? plate() : spec.model === "bars" ? bars(spec) : dumbbell();
+        scene.add(obj);
+        return { spec, renderer, scene, camera, obj };
+      });
+      function renderAt(T) {
+        for (const s of scenes) {
+          const t = T - s.spec.t0;
+          if (t < -0.05 || T > s.spec.t1 + 0.05) continue;
+          if (s.spec.model === "bars") {
+            s.obj.rotation.y = -0.5 + 0.12 * t;
+            s.obj.rotation.x = 0.08;
+            s.obj.userData.cols.forEach((m, i) => {
+              const k = ease((t - 0.15 - i * 0.18) / 0.55);
+              m.scale.y = Math.max(0.001, m.userData.h * k);
+              m.position.y = m.scale.y / 2;
+            });
+          } else {
+            const k = back(t / 0.55);
+            s.obj.scale.setScalar(Math.max(0.001, k));
+            s.obj.rotation.y = -1.2 + s.spec.spin * t + 1.2 * ease(t / 0.8);
+            s.obj.rotation.x = 0.35 + 0.08 * Math.sin(t * 1.3);
+            s.obj.rotation.z = s.spec.model === "dumbbell" ? -0.25 : 0;
+          }
+          s.renderer.render(s.scene, s.camera);
+        }
+      }
+      window.addEventListener("hf-seek", (e) => renderAt(e.detail.time));
+      renderAt(window.__hfThreeTime || 0);"""
+
 G = D["grade"]
 style = f"""
       @font-face {{ font-family: "Poppins"; font-weight: 600; src: url("assets/fonts/poppins-latin-600-normal.woff2") format("woff2"); }}
@@ -542,6 +703,22 @@ style = f"""
       .end-btn span {{ position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; border-radius: 14px; font-weight: 800; font-size: 28px; }}
       .end-btn .b1 {{ background: #0095f6; color: #fff; }}
       .end-btn .b2 {{ background: #efefef; color: {C["ink"]}; }}
+      .flow {{ position: absolute; display: flex; flex-direction: column; gap: 16px; }}
+      .fl-h {{ align-self: flex-start; }}
+      .fl-box {{ position: relative; }}
+      .fl-svg {{ position: absolute; left: 0; top: 0; overflow: visible; }}
+      .fl-c {{ fill: none; stroke: {C["white"]}; stroke-width: 6; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 1; filter: drop-shadow(0 2px 6px rgba(0,0,0,0.5)); }}
+      .fl-loop {{ stroke: {C["yellow"]}; }}
+      .fl-n {{ position: absolute; display: flex; align-items: center; justify-content: center; gap: 12px; padding: 0 18px; background: {C["plate"]};
+        border: 3px solid rgba(255,255,255,0.7); border-radius: 18px; }}
+      .fl-n b {{ font-weight: 900; font-size: 26px; color: {C["ink"]}; background: {C["yellow"]}; border-radius: 8px; padding: 2px 10px; }}
+      .fl-n span {{ font-weight: 800; font-size: 34px; color: {C["white"]}; text-transform: uppercase; letter-spacing: 0.01em; text-align: center; line-height: 1.05; }}
+      .fl-n.hot {{ background: {C["yellow"]}; border-color: {C["yellow"]}; }}
+      .fl-n.hot span {{ color: {C["ink"]}; }}
+      .t3 {{ position: absolute; display: flex; flex-direction: column; align-items: center; }}
+      .t3 canvas {{ display: block; }}
+      .t3-l {{ margin-top: -24px; font-weight: 900; font-size: 44px; color: {C["yellow"]}; text-transform: uppercase; letter-spacing: -0.01em;
+        text-shadow: {D["hero_shadow"]}; }}
 """
 
 o_head = f"""<!doctype html>
@@ -617,7 +794,7 @@ vids = [v for v in vids if 'id="ov' not in v] + ov_tags
 doc = [o_head] + vids + ['      </div></div></div></div>'] + broll_html + ['      <div id="shade"></div>'] + out + auds + \
       ([music_html] if music_html else ["      <!-- MUSIC PLACEHOLDER: drop a licensed track at assets/music/bed.mp3 and rebuild -->"]) + sfx_html + \
       ["    </div>", "    <script>", "      const tl = gsap.timeline({ paused: true });"] + js + \
-      ['      window.__timelines["main"] = tl;', "    </script>", "  </body>", "</html>"]
+      ['      window.__timelines["main"] = tl;', "    </script>"] + three_module() + ["  </body>", "</html>"]
 open(os.path.join(ROOT, OUT_HTML), "w").write("\n".join(doc) + "\n")
 
 # ------------------------------------------------------------------ 10. records

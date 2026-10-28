@@ -22,6 +22,10 @@ Source footage is never modified. Everything is driven by two files:
 7. **Verify** — `npx hyperframes check`, snapshots at key moments, render the preview (`-c preview.html`), transcribe its audio to confirm no repeated speech.
 8. **Render + master** — `npx hyperframes render --quality delivery -o renders/v2-raw.mp4`, then `build/master.sh renders/v2-raw.mp4 renders/<name>.mp4`.
 
+## Motion toolkit
+
+Flowcharts (`flow`), Three.js 3D objects (`three`) and Remotion 3D overlays: see `tools/README.md`. The current builder with these graphic types is `videos/reel-06/build/build_v2.py`.
+
 ## Pacing rules (not a fixed silence threshold)
 
 - Gaps < 0.35 s inside a take are kept as natural speech.
