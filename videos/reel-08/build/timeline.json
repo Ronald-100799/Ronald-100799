@@ -1,0 +1,541 @@
+{
+ "total": 78.2667,
+ "segments": [
+  {
+   "take": "ALL",
+   "src_s": 0.0,
+   "src_e": 77.9667,
+   "out_s": 0.0,
+   "take_start": true,
+   "luma": 94,
+   "bright": 1.0,
+   "db": -16.19053077697754,
+   "gain": 0.6
+  }
+ ],
+ "frames": [
+  "W"
+ ],
+ "captions": [
+  {
+   "k": 0,
+   "out_start": 0.0,
+   "out_end": 1.6333,
+   "src_t": 0.0,
+   "support": "If you're trying to *lose weight*\u2026",
+   "hero": ""
+  },
+  {
+   "k": 1,
+   "out_start": 1.6333,
+   "out_end": 3.6667,
+   "src_t": 1.62,
+   "support": "you don't need the gym, a diet, anything.",
+   "hero": ""
+  },
+  {
+   "k": 2,
+   "out_start": 3.6667,
+   "out_end": 5.4,
+   "src_t": 3.68,
+   "support": "Just *one injection* a week is enough.",
+   "hero": ""
+  },
+  {
+   "k": 3,
+   "out_start": 5.4,
+   "out_end": 7.4,
+   "src_t": 5.4,
+   "support": "And that injection costs just \u20b91,300.",
+   "hero": ""
+  },
+  {
+   "k": 4,
+   "out_start": 11.6667,
+   "out_end": 13.1333,
+   "src_t": 11.67,
+   "support": "Before you book a doctor's appointment,",
+   "hero": ""
+  },
+  {
+   "k": 5,
+   "out_start": 13.1333,
+   "out_end": 14.5333,
+   "src_t": 13.14,
+   "support": "watch this video till the end.",
+   "hero": "WATCH THIS"
+  },
+  {
+   "k": 6,
+   "out_start": 14.5333,
+   "out_end": 16.0667,
+   "src_t": 14.52,
+   "support": "Celebrities, social media \u2014",
+   "hero": ""
+  },
+  {
+   "k": 7,
+   "out_start": 16.0667,
+   "out_end": 17.4333,
+   "src_t": 16.06,
+   "support": "why is there so much *hype*?",
+   "hero": ""
+  },
+  {
+   "k": 8,
+   "out_start": 17.4333,
+   "out_end": 19.1667,
+   "src_t": 17.42,
+   "support": "What's in it? So I",
+   "hero": "RESEARCHED IT"
+  },
+  {
+   "k": 9,
+   "out_start": 19.2,
+   "out_end": 20.8333,
+   "src_t": 19.2,
+   "support": "From this March, the *Ozempic* molecule",
+   "hero": ""
+  },
+  {
+   "k": 10,
+   "out_start": 20.8333,
+   "out_end": 21.7667,
+   "src_t": 20.84,
+   "support": "has gone *off patent*.",
+   "hero": ""
+  },
+  {
+   "k": 11,
+   "out_start": 21.7667,
+   "out_end": 24.9,
+   "src_t": 21.78,
+   "support": "In India, a drug now starts at \u20b91,300.",
+   "hero": ""
+  },
+  {
+   "k": 12,
+   "out_start": 24.9,
+   "out_end": 26.1,
+   "src_t": 24.9,
+   "support": "Does it work, bro?",
+   "hero": ""
+  },
+  {
+   "k": 13,
+   "out_start": 26.1,
+   "out_end": 26.9333,
+   "src_t": 26.1,
+   "support": "Yes.",
+   "hero": "IT WORKS"
+  },
+  {
+   "k": 14,
+   "out_start": 26.9333,
+   "out_end": 28.6667,
+   "src_t": 26.95,
+   "support": "In the STEP 1 trial, participants",
+   "hero": ""
+  },
+  {
+   "k": 15,
+   "out_start": 28.6667,
+   "out_end": 31.1333,
+   "src_t": 28.67,
+   "support": "lost *15%* of their body weight.",
+   "hero": ""
+  },
+  {
+   "k": 16,
+   "out_start": 31.1333,
+   "out_end": 32.7,
+   "src_t": 31.13,
+   "support": "So should we shut down the gym?",
+   "hero": "SHUT THE GYM?"
+  },
+  {
+   "k": 17,
+   "out_start": 34.3333,
+   "out_end": 35.0,
+   "src_t": 34.34,
+   "support": "The ads won't tell you",
+   "hero": ""
+  },
+  {
+   "k": 18,
+   "out_start": 35.0,
+   "out_end": 36.9333,
+   "src_t": 35.01,
+   "support": "these *3 things* you need to know.",
+   "hero": ""
+  },
+  {
+   "k": 19,
+   "out_start": 37.0,
+   "out_end": 40.7667,
+   "src_t": 37.0,
+   "support": "And the last one",
+   "hero": "CHANGES THE|WHOLE TRIAL"
+  },
+  {
+   "k": 20,
+   "out_start": 40.7667,
+   "out_end": 41.9667,
+   "src_t": 40.78,
+   "support": "One: it's a *prescription drug*.",
+   "hero": ""
+  },
+  {
+   "k": 21,
+   "out_start": 41.9667,
+   "out_end": 43.5333,
+   "src_t": 41.98,
+   "support": "India's Health Ministry says",
+   "hero": ""
+  },
+  {
+   "k": 22,
+   "out_start": 43.5333,
+   "out_end": 46.0,
+   "src_t": 43.52,
+   "support": "don't take it without a doctor's prescription.",
+   "hero": ""
+  },
+  {
+   "k": 23,
+   "out_start": 46.0667,
+   "out_end": 47.7667,
+   "src_t": 46.06,
+   "support": "Two: *nausea* and *diarrhoea*",
+   "hero": ""
+  },
+  {
+   "k": 24,
+   "out_start": 47.7667,
+   "out_end": 49.3333,
+   "src_t": 47.78,
+   "support": "are common side effects of this drug.",
+   "hero": ""
+  },
+  {
+   "k": 25,
+   "out_start": 49.4,
+   "out_end": 51.1333,
+   "src_t": 49.4,
+   "support": "Three: people in this trial also made",
+   "hero": ""
+  },
+  {
+   "k": 26,
+   "out_start": 51.1333,
+   "out_end": 53.9,
+   "src_t": 51.12,
+   "support": "*activity changes* and *diet changes*.",
+   "hero": ""
+  },
+  {
+   "k": 27,
+   "out_start": 53.9667,
+   "out_end": 55.5667,
+   "src_t": 53.96,
+   "support": "The scale will show your weight dropping,",
+   "hero": ""
+  },
+  {
+   "k": 28,
+   "out_start": 55.5667,
+   "out_end": 57.7333,
+   "src_t": 55.58,
+   "support": "but nobody asks how much *muscle* you kept.",
+   "hero": ""
+  },
+  {
+   "k": 29,
+   "out_start": 57.8,
+   "out_end": 59.6667,
+   "src_t": 57.8,
+   "support": "That's where *resistance training* and *diet*",
+   "hero": ""
+  },
+  {
+   "k": 30,
+   "out_start": 59.6667,
+   "out_end": 60.5333,
+   "src_t": 59.68,
+   "support": "become very important.",
+   "hero": ""
+  },
+  {
+   "k": 31,
+   "out_start": 60.5333,
+   "out_end": 61.7667,
+   "src_t": 60.52,
+   "support": "If you're curious about it,",
+   "hero": ""
+  },
+  {
+   "k": 32,
+   "out_start": 61.7667,
+   "out_end": 63.1333,
+   "src_t": 61.78,
+   "support": "talk to a good",
+   "hero": "DOCTOR"
+  },
+  {
+   "k": 33,
+   "out_start": 63.1333,
+   "out_end": 63.9333,
+   "src_t": 63.12,
+   "support": "Don't try it just because",
+   "hero": ""
+  },
+  {
+   "k": 34,
+   "out_start": 63.9333,
+   "out_end": 65.9333,
+   "src_t": 63.92,
+   "support": "you saw the ads and the *hype*.",
+   "hero": ""
+  },
+  {
+   "k": 35,
+   "out_start": 66.0,
+   "out_end": 68.4,
+   "src_t": 65.99,
+   "support": "What really gives you healthy, *sustained results*",
+   "hero": ""
+  },
+  {
+   "k": 36,
+   "out_start": 68.4,
+   "out_end": 70.8667,
+   "src_t": 68.39,
+   "support": "is a good lifestyle change and healthy choices.",
+   "hero": ""
+  },
+  {
+   "k": 37,
+   "out_start": 70.9333,
+   "out_end": 73.2,
+   "src_t": 70.95,
+   "support": "And friends who'd want to know about this?",
+   "hero": ""
+  },
+  {
+   "k": 38,
+   "out_start": 73.2,
+   "out_end": 74.4,
+   "src_t": 73.19,
+   "support": "Share this research with them.",
+   "hero": "SHARE IT"
+  },
+  {
+   "k": 39,
+   "out_start": 74.4667,
+   "out_end": 76.8667,
+   "src_t": 74.45,
+   "support": "For more on training and nutrition like this,",
+   "hero": ""
+  },
+  {
+   "k": 40,
+   "out_start": 76.8667,
+   "out_end": 77.9667,
+   "src_t": 76.85,
+   "support": "*follow me*.",
+   "hero": ""
+  }
+ ],
+ "sfx": [
+  [
+   "sfx2/popsoft",
+   0.1667,
+   0.3
+  ],
+  [
+   "sfx/thump",
+   1.6333,
+   0.35
+  ],
+  [
+   "sfx/thump",
+   2.1667,
+   0.35
+  ],
+  [
+   "sfx2/whoosh",
+   3.6333,
+   0.45
+  ],
+  [
+   "sfx/riser",
+   4.8333,
+   0.5
+  ],
+  [
+   "sfx2/digits",
+   5.6333,
+   0.3
+  ],
+  [
+   "sfx/thump",
+   6.2333,
+   0.7
+  ],
+  [
+   "sfx/rise",
+   14.9,
+   0.35
+  ],
+  [
+   "sfx2/whoosh",
+   19.1333,
+   0.45
+  ],
+  [
+   "sfx/thump",
+   20.8333,
+   0.7
+  ],
+  [
+   "sfx/swoosh",
+   22.2,
+   0.35
+  ],
+  [
+   "sfx2/popsoft",
+   22.9,
+   0.35
+  ],
+  [
+   "sfx2/popsoft",
+   26.1667,
+   0.4
+  ],
+  [
+   "sfx2/whoosh",
+   26.9,
+   0.45
+  ],
+  [
+   "sfx/rise",
+   27.7,
+   0.35
+  ],
+  [
+   "sfx/thump",
+   28.6667,
+   0.6
+  ],
+  [
+   "sfx/swoosh",
+   31.6,
+   0.35
+  ],
+  [
+   "sfx2/whoosh",
+   34.3,
+   0.45
+  ],
+  [
+   "sfx/tick",
+   35.1333,
+   0.5
+  ],
+  [
+   "sfx/tick",
+   35.3333,
+   0.5
+  ],
+  [
+   "sfx/tick",
+   35.5333,
+   0.55
+  ],
+  [
+   "sfx/riser",
+   38.1667,
+   0.45
+  ],
+  [
+   "sfx/thump",
+   40.7667,
+   0.7
+  ],
+  [
+   "sfx2/whoosh",
+   46.0,
+   0.4
+  ],
+  [
+   "sfx2/whoosh",
+   49.3333,
+   0.4
+  ],
+  [
+   "sfx/tick",
+   50.0,
+   0.5
+  ],
+  [
+   "sfx/tick",
+   51.2,
+   0.5
+  ],
+  [
+   "sfx/tick",
+   52.3,
+   0.5
+  ],
+  [
+   "sfx/thump",
+   53.1,
+   0.5
+  ],
+  [
+   "sfx2/whoosh",
+   53.9,
+   0.4
+  ],
+  [
+   "sfx2/popsoft",
+   56.3333,
+   0.4
+  ],
+  [
+   "sfx2/whoosh",
+   57.7333,
+   0.45
+  ],
+  [
+   "sfx/thump",
+   63.2667,
+   0.3
+  ],
+  [
+   "sfx/thump",
+   64.0667,
+   0.3
+  ],
+  [
+   "sfx2/whoosh",
+   65.9333,
+   0.4
+  ],
+  [
+   "sfx/tick",
+   68.9,
+   0.5
+  ],
+  [
+   "sfx/tick",
+   69.8,
+   0.5
+  ],
+  [
+   "sfx2/popsoft",
+   73.6667,
+   0.35
+  ]
+ ]
+}

@@ -1,0 +1,742 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>Ozempic ₹1,300 — Reel 08</title>
+    <script src="assets/gsap.min.js"></script>
+    <style>
+      @font-face { font-family: "Poppins"; font-weight: 600; src: url("assets/fonts/poppins-latin-600-normal.woff2") format("woff2"); }
+      @font-face { font-family: "Poppins"; font-weight: 800; src: url("assets/fonts/poppins-latin-800-normal.woff2") format("woff2"); }
+      @font-face { font-family: "Poppins"; font-weight: 900; src: url("assets/fonts/poppins-latin-900-normal.woff2") format("woff2"); }
+      @font-face { font-family: "Poppins"; font-weight: 900; font-style: italic; src: url("assets/fonts/poppins-latin-900-italic.woff2") format("woff2"); }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1080px; height: 1920px; overflow: hidden; background: #000; }
+      #root { position: relative; width: 100%; height: 100%; overflow: hidden; font-family: "Poppins", sans-serif; }
+      #fx, #grade, #move, #cam { position: absolute; inset: 0; transform-origin: 50% 46%; }
+      #grade { filter: contrast(1.0) saturate(1.0); }
+      #cam video { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; object-fit: cover; }
+      .brw { position: absolute; inset: 0; transform-origin: 50% 50%; filter: contrast(1.0) saturate(1.0); }
+      .broll { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; object-fit: cover; }
+      #shade { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0) 22%, rgba(0,0,0,0) 54%, rgba(0,0,0,0.45) 68%, rgba(0,0,0,0.62) 82%, rgba(0,0,0,0.55) 100%); }
+      .cap { position: absolute; left: 72px; right: 150px; bottom: 390px; }
+      .capin { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 10px; }
+      .sup { font-weight: 600; color: #FFFFFF; line-height: 1.22; text-wrap: balance; letter-spacing: -0.005em;
+        text-shadow: 0 0 2px rgba(0,0,0,0.95), 0 0 1px rgba(0,0,0,0.95), 0 3px 10px rgba(0,0,0,0.8), 0 0 22px rgba(0,0,0,0.45); }
+      .sup .w { display: inline-block; }
+      .sup .acc { color: #E10600; }
+      .hero { position: relative; display: inline-block; overflow: visible; line-height: 1.0; }
+      .hw { display: block; font-weight: 900; color: #E10600; letter-spacing: -0.02em; text-transform: uppercase;
+        text-shadow: 0 0 3px rgba(0,0,0,0.95), 0 4px 14px rgba(0,0,0,0.75), 0 0 30px rgba(0,0,0,0.4); white-space: nowrap; }
+      .fx-mask { overflow: hidden; padding: 0 6px; }
+      .fx-plate { padding: 8px 22px 4px; }
+      .fx-plate .pl { position: absolute; inset: 0; background: #E10600; border-radius: 10px; transform-origin: left center; }
+      .fx-plate .hw { position: relative; color: #FFFFFF; text-shadow: none; }
+      .ul { position: absolute; left: 4%; width: 92%; bottom: -16px; height: 22px; overflow: visible; }
+      .ul path { fill: none; stroke: #FFFFFF; stroke-width: 7; stroke-linecap: round; stroke-dasharray: 420; }
+      .gx { position: absolute; inset: 0; }
+      .mk { overflow: hidden; }
+      .sec-big { position: absolute; left: 72px; top: 250px; transform-origin: left top; }
+      .sec-num { font-weight: 900; font-size: 190px; line-height: 0.92; color: #E10600; letter-spacing: -0.04em;
+        text-shadow: 0 8px 28px rgba(0,0,0,0.45); }
+      .sec-bar { display: block; width: 150px; height: 8px; background: #FFFFFF; margin: 10px 0 14px; transform-origin: left; border-radius: 4px; }
+      .sec-line { font-weight: 800; font-size: 46px; line-height: 1.08; color: #FFFFFF; text-transform: uppercase; letter-spacing: 0.01em;
+        text-shadow: 0 3px 14px rgba(0,0,0,0.7); }
+      .sec-tag { position: absolute; left: 72px; top: 230px; display: flex; align-items: center; gap: 14px;
+        padding: 10px 20px 10px 10px; background: rgba(11,11,12,0.72); border-radius: 14px; }
+      .sec-tag b { font-weight: 900; font-size: 34px; color: #FFFFFF; background: #E10600; border-radius: 9px; padding: 2px 12px; }
+      .sec-tag span { font-weight: 800; font-size: 26px; color: #FFFFFF; letter-spacing: 0.04em; text-transform: uppercase; }
+      .list { position: absolute; left: 72px; top: 250px; display: flex; flex-direction: column; gap: 14px; }
+      .lh { font-weight: 800; font-size: 30px; letter-spacing: 0.08em; color: #E10600; text-transform: uppercase; text-shadow: 0 2px 10px rgba(0,0,0,0.6); }
+      .li { display: flex; align-items: center; gap: 16px; padding: 10px 26px 10px 10px; background: rgba(11,11,12,0.72); border-radius: 14px; align-self: flex-start; }
+      .li b { font-weight: 900; font-size: 30px; color: #FFFFFF; background: #E10600; border-radius: 9px; padding: 4px 12px; }
+      .li span { font-weight: 800; font-size: 42px; color: #FFFFFF; text-transform: uppercase; letter-spacing: 0.01em; }
+      .week { position: absolute; left: 72px; right: 150px; top: 250px; display: flex; flex-direction: column; align-items: center; gap: 16px; }
+      .wk-h { display: flex; align-items: baseline; gap: 14px; text-shadow: 0 3px 14px rgba(0,0,0,0.6); }
+      .wk-h b { font-weight: 900; font-size: 92px; color: #E10600; letter-spacing: -0.03em; line-height: 1; }
+      .wk-h span { font-weight: 800; font-size: 32px; color: #FFFFFF; letter-spacing: 0.06em; text-transform: uppercase; }
+      .days { display: flex; gap: 12px; }
+      .day { position: relative; width: 98px; height: 104px; border-radius: 16px; border: 3px solid rgba(255,255,255,0.55); background: rgba(11,11,12,0.72);
+        color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 40px; overflow: hidden; }
+      .day i { position: absolute; left: 0; right: 0; bottom: 0; height: 10px; background: #FFFFFF; transform: scaleX(0); transform-origin: left; }
+      .wk-rest { font-weight: 800; font-size: 28px; color: #FFFFFF; letter-spacing: 0.08em; text-transform: uppercase; text-shadow: 0 2px 10px rgba(0,0,0,0.7); }
+      .steps { position: absolute; left: 72px; right: 150px; top: 250px; display: flex; flex-direction: column; align-items: center; gap: 14px; }
+      .st-h { font-weight: 900; font-size: 58px; color: #E10600; text-transform: uppercase; letter-spacing: -0.02em; text-shadow: 0 4px 18px rgba(0,0,0,0.55); line-height: 1; }
+      .st-row { position: relative; display: flex; align-items: flex-end; gap: 26px; height: 150px; }
+      .st { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+      .st i { display: block; width: 92px; background: #FFFFFF; border-radius: 10px 10px 4px 4px; transform-origin: bottom; }
+      .st:last-of-type i { background: #E10600; }
+      .st span { font-weight: 800; font-size: 24px; color: #FFFFFF; letter-spacing: 0.06em; background: rgba(11,11,12,0.72); border-radius: 8px; padding: 2px 10px; }
+      .st-arrow { position: absolute; left: -10px; top: -20px; width: 500px; height: 130px; overflow: visible; }
+      .st-arrow path { fill: none; stroke: #E10600; stroke-width: 7; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 520; }
+      .gauge { position: absolute; left: 72px; right: 150px; top: 250px; display: flex; justify-content: center; gap: 24px;
+        padding: 20px 26px; background: rgba(11,11,12,0.72); border-radius: 22px; }
+      .g-maint { position: absolute; right: 26px; top: 108px; font-weight: 800; font-size: 20px; letter-spacing: 0.12em; color: rgba(255,255,255,0.55); }
+      .gcol { flex: 1; display: flex; flex-direction: column; align-items: center; }
+      .g-h { font-weight: 800; font-size: 28px; color: #FFFFFF; letter-spacing: 0.03em; text-transform: uppercase; text-align: center; height: 40px; }
+      .g-plot { position: relative; width: 100%; height: 150px; }
+      .g-base { position: absolute; left: 0; right: 0; top: 70px; height: 4px; background: rgba(255,255,255,0.8); transform-origin: left; }
+      .g-bar { position: absolute; left: 30%; width: 80px; margin-left: -40px; border-radius: 10px; }
+      .up .g-bar { bottom: 82px; height: 62px; background: #E10600; transform-origin: bottom; }
+      .down .g-bar { top: 76px; height: 70px; background: #9A9AA0; transform-origin: top; }
+      .g-val { position: absolute; left: 44%; right: 0; text-align: left; font-weight: 900; font-size: 44px; color: #FFFFFF; letter-spacing: -0.01em; line-height: 1; }
+      .up .g-val { top: 18px; }
+      .down .g-val { top: 90px; }
+      .two .g-val { font-size: 34px; }
+      .two .g-maint { display: none; }
+      .two .g-h { font-size: 24px; }
+      .dim { opacity: 0.42; }
+      .build { position: absolute; left: 72px; right: 150px; top: 250px; display: flex; flex-direction: column; align-items: center; gap: 8px; }
+      .bd { font-weight: 800; font-size: 46px; color: #FFFFFF; text-transform: uppercase; letter-spacing: 0.01em; text-shadow: 0 3px 14px rgba(0,0,0,0.7); }
+      .bd-eq { position: relative; margin-top: 10px; }
+      .bd-eq span { display: inline-block; font-weight: 900; font-size: 120px; color: #E10600; letter-spacing: -0.03em; line-height: 1; text-shadow: 0 6px 24px rgba(0,0,0,0.55); }
+      .list.compact { gap: 8px; }
+      .list.compact .li { padding: 6px 20px 6px 8px; border-radius: 12px; }
+      .list.compact .li b { font-size: 24px; padding: 2px 10px; }
+      .list.compact .li span { font-size: 32px; }
+      .list.compact .lh { font-size: 24px; }
+      .lh, .st-h { align-self: flex-start; background: rgba(11,11,12,0.72); border-radius: 10px; padding: 4px 14px; text-shadow: none; }
+      .st-h { align-self: center; }
+      .cap.left { left: 64px; right: auto; width: 500px; bottom: auto; top: 1240px; }
+      .cap.left .capin { align-items: flex-start; text-align: left; }
+      .tracker { position: absolute; left: 72px; top: 250px; display: flex; flex-direction: column; gap: 14px; }
+      .tk-row { display: flex; gap: 14px; }
+      .tk-t { width: 92px; height: 92px; border-radius: 18px; display: flex; align-items: center; justify-content: center;
+        font-weight: 900; font-size: 56px; background: rgba(11,11,12,0.72); color: rgba(255,255,255,0.55); }
+      .tk-lab { position: relative; height: 54px; }
+      .tk-l { position: absolute; left: 0; top: 0; white-space: nowrap; font-weight: 900; font-size: 44px; color: #FFFFFF;
+        text-transform: uppercase; letter-spacing: -0.01em; text-shadow: 0 0 3px rgba(0,0,0,0.95), 0 4px 14px rgba(0,0,0,0.75), 0 0 30px rgba(0,0,0,0.4); opacity: 0; }
+      .chips { position: absolute; left: 72px; top: 440px; width: 560px; display: flex; flex-wrap: wrap; gap: 12px; }
+      .chips .chip { padding: 8px 20px; border-radius: 12px; background: #E10600; color: #FFFFFF; font-weight: 900; font-size: 34px; }
+      .end { position: absolute; left: 72px; right: 150px; top: 250px; display: flex; align-items: center; gap: 20px;
+        padding: 20px 22px; background: #FFFFFF; border-radius: 26px; box-shadow: 0 18px 40px rgba(0,0,0,0.35); }
+      .end-av { width: 84px; height: 84px; flex: none; border-radius: 50%; background: linear-gradient(135deg, #E10600, #9A9AA0); }
+      .end-av img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; display: block; }
+      .end-txt { flex: 1; display: flex; flex-direction: column; }
+      .end-txt b { font-weight: 800; font-size: 32px; color: #101012; line-height: 1.1; }
+      .end-handle { font-weight: 600; font-size: 26px; color: #5b5b63; }
+      .end-btn { position: relative; width: 190px; height: 64px; flex: none; }
+      .end-btn span { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; border-radius: 14px; font-weight: 800; font-size: 28px; }
+      .end-btn .b1 { background: #0095f6; color: #fff; }
+      .end-btn .b2 { background: #efefef; color: #101012; }
+      .flow { position: absolute; display: flex; flex-direction: column; gap: 16px; }
+      .fl-h { align-self: flex-start; }
+      .fl-box { position: relative; }
+      .fl-svg { position: absolute; left: 0; top: 0; overflow: visible; }
+      .fl-c { fill: none; stroke: #FFFFFF; stroke-width: 6; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 1; filter: drop-shadow(0 2px 6px rgba(0,0,0,0.5)); }
+      .fl-loop { stroke: #E10600; }
+      .fl-n { position: absolute; display: flex; align-items: center; justify-content: center; gap: 12px; padding: 0 18px; background: rgba(11,11,12,0.72);
+        border: 3px solid rgba(255,255,255,0.7); border-radius: 18px; }
+      .fl-n b { font-weight: 900; font-size: 26px; color: #FFFFFF; background: #E10600; border-radius: 8px; padding: 2px 10px; }
+      .fl-n span { font-weight: 800; font-size: 34px; color: #FFFFFF; text-transform: uppercase; letter-spacing: 0.01em; text-align: center; line-height: 1.05; }
+      .fl-n.hot { background: #E10600; border-color: #E10600; }
+      .fl-n.hot span { color: #FFFFFF; }
+      .t3 { position: absolute; display: flex; flex-direction: column; align-items: center; }
+      .t3 canvas { display: block; }
+      .t3-l { margin-top: -24px; font-weight: 900; font-size: 44px; color: #E10600; text-transform: uppercase; letter-spacing: -0.01em;
+        text-shadow: 0 0 3px rgba(0,0,0,0.95), 0 4px 14px rgba(0,0,0,0.75), 0 0 30px rgba(0,0,0,0.4); }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="78.2667" data-width="1080" data-height="1920" data-fps="30">
+      <div id="fx"><div id="grade"><div id="move"><div id="cam">
+        <video id="v0" class="clip" src="assets/footage.mp4" data-start="0.0" data-duration="77.9667" data-media-start="0.0" data-track-index="0" muted playsinline></video>
+      </div></div></div></div>
+      <div id="shade"></div>
+      <style>
+        .cx { --red: #E10600; --ink: #0B0B0C; }
+        .cut { position: absolute; inset: 0; background: #0B0B0C; overflow: hidden; }
+        .cut .bgx { position: absolute; inset: 0; background:
+            radial-gradient(70% 42% at 50% 38%, rgba(225,6,0,0.24), rgba(225,6,0,0) 70%),
+            repeating-linear-gradient(90deg, rgba(255,255,255,0.035) 0 1px, transparent 1px 90px),
+            repeating-linear-gradient(0deg, rgba(255,255,255,0.035) 0 1px, transparent 1px 90px); }
+        .cut .glow { position: absolute; inset: 0; background: radial-gradient(60% 40% at 50% 40%, rgba(225,6,0,0.6), rgba(225,6,0,0) 70%); opacity: 0; }
+        .cc { position: absolute; left: 0; right: 0; display: flex; flex-direction: column; align-items: center; text-align: center; color: #fff; font-family: "Poppins", sans-serif; }
+        .kk { font-weight: 800; font-size: 40px; letter-spacing: 0.14em; text-transform: uppercase; color: #fff; }
+        .kk b { color: #E10600; }
+        .big { font-weight: 900; font-size: 200px; letter-spacing: -0.04em; line-height: 1; font-variant-numeric: tabular-nums; }
+        .big.r { color: #E10600; text-shadow: 0 10px 50px rgba(225,6,0,0.4); }
+        .mid { font-weight: 900; font-size: 104px; letter-spacing: -0.03em; line-height: 1; text-transform: uppercase; }
+        .mid.r { color: #E10600; }
+        .sm { font-weight: 600; font-size: 36px; opacity: 0.85; }
+        .src { position: absolute; left: 40px; right: 40px; top: 1235px; text-align: center; font-family: "Poppins", sans-serif; font-weight: 600; font-size: 24px; color: rgba(255,255,255,0.6); }
+        .stamp { display: inline-block; padding: 14px 40px 8px; background: #E10600; color: #fff; font-weight: 900; font-size: 108px; letter-spacing: -0.02em;
+                 line-height: 1; border-radius: 16px; transform: rotate(-4deg); box-shadow: 0 20px 60px rgba(225,6,0,0.45); font-family: "Poppins", sans-serif; }
+        .chip { display: inline-flex; align-items: center; gap: 14px; padding: 10px 28px; border-radius: 16px; background: rgba(11,11,12,0.78); border: 3px solid rgba(255,255,255,0.85);
+                color: #fff; font-family: "Poppins", sans-serif; font-weight: 900; font-size: 66px; letter-spacing: -0.01em; text-transform: uppercase; position: relative; }
+        .chip.r { background: #E10600; border-color: #E10600; }
+        .chip .x { position: absolute; left: -10px; right: -10px; top: 50%; height: 12px; margin-top: -6px; background: #E10600; border-radius: 6px; transform-origin: left center; transform: scaleX(0); rotate: -6deg; z-index: 2; box-shadow: 0 2px 10px rgba(0,0,0,0.5); }
+        .band { position: absolute; left: 0; right: 0; top: 150px; display: flex; justify-content: center; gap: 22px; }
+        .strike { position: absolute; left: -16px; right: -16px; top: 52%; height: 16px; background: #E10600; border-radius: 8px; transform: scaleX(0) rotate(-5deg); transform-origin: left center; }
+        .meter { width: 640px; height: 34px; border-radius: 17px; border: 3px solid rgba(255,255,255,0.85); background: rgba(11,11,12,0.7); overflow: hidden; }
+        .meter i { display: block; height: 100%; width: 100%; background: linear-gradient(90deg, #ff6a5a, #E10600); transform-origin: left; transform: scaleX(0); }
+        .paper { width: 880px; background: #f4f2ee; color: #121214; border-radius: 10px; padding: 34px 40px 30px; text-align: left; box-shadow: 0 30px 80px rgba(0,0,0,0.6); font-family: "Poppins", sans-serif; }
+        .paper .j { font-weight: 800; font-size: 24px; letter-spacing: 0.08em; color: #E10600; text-transform: uppercase; }
+        .paper .t { font-weight: 800; font-size: 44px; line-height: 1.12; margin: 10px 0 12px; }
+        .paper .a { font-weight: 600; font-size: 24px; color: #4a4a50; }
+        .paper .hl { margin-top: 18px; padding: 12px 16px; border-left: 8px solid #E10600; background: rgba(225,6,0,0.08); font-weight: 600; font-size: 27px; line-height: 1.3; }
+        .paper .hl b { color: #E10600; }
+        .slots { display: flex; gap: 26px; }
+        .slot { width: 220px; height: 220px; border-radius: 30px; border: 5px solid rgba(255,255,255,0.85); display: flex; align-items: center; justify-content: center;
+                font-family: "Poppins", sans-serif; font-weight: 900; font-size: 130px; color: #fff; background: rgba(11,11,12,0.6); }
+        .slot.r { border-color: #E10600; color: #E10600; }
+        .pts { position: absolute; left: 0; right: 0; top: 140px; display: flex; flex-direction: column; align-items: center; gap: 14px; }
+        .pts .row { display: flex; gap: 16px; }
+        .pts .tile { width: 96px; height: 96px; border-radius: 20px; display: flex; align-items: center; justify-content: center; font-family: "Poppins", sans-serif;
+                     font-weight: 900; font-size: 58px; background: rgba(11,11,12,0.72); color: rgba(255,255,255,0.55); border: 3px solid rgba(255,255,255,0.35); }
+        .pts .lab { position: relative; height: 60px; width: 1000px; }
+        .pts .lab div { position: absolute; left: 0; right: 0; text-align: center; font-family: "Poppins", sans-serif; font-weight: 900; font-size: 46px; color: #fff; text-transform: uppercase;
+                        text-shadow: 0 0 3px rgba(0,0,0,0.95), 0 4px 14px rgba(0,0,0,0.75); opacity: 0; }
+        .rx { font-family: Georgia, "Times New Roman", serif; font-weight: 700; font-size: 300px; color: #E10600; line-height: 1; text-shadow: 0 16px 60px rgba(225,6,0,0.45); }
+        .ico { width: 230px; height: 230px; border-radius: 50%; border: 6px solid #fff; display: flex; align-items: center; justify-content: center; }
+        .eqn { display: flex; align-items: center; gap: 18px; }
+        .node { padding: 16px 26px; border-radius: 22px; border: 4px solid rgba(255,255,255,0.85); background: rgba(11,11,12,0.8); font-family: "Poppins", sans-serif;
+                font-weight: 900; font-size: 46px; color: #fff; text-transform: uppercase; line-height: 1.05; text-align: center; }
+        .node.r { background: #E10600; border-color: #E10600; }
+        .op { font-family: "Poppins", sans-serif; font-weight: 900; font-size: 72px; color: #E10600; }
+        .vcol { display: flex; flex-direction: column; align-items: center; gap: 18px; }
+        .card2 { width: 420px; height: 470px; border-radius: 30px; border: 4px solid rgba(255,255,255,0.85); background: rgba(255,255,255,0.04); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; }
+        .card2.r { border-color: #E10600; }
+        .card2 .h { font-family: "Poppins", sans-serif; font-weight: 800; font-size: 38px; letter-spacing: 0.12em; color: #fff; }
+        .card2.r .h { color: #E10600; }
+        .dial { position: relative; width: 300px; height: 170px; overflow: hidden; }
+        .dial .arc { position: absolute; left: 0; top: 0; width: 300px; height: 300px; border-radius: 50%; border: 14px solid rgba(255,255,255,0.85); border-bottom-color: transparent; border-right-color: rgba(255,255,255,0.85); transform: rotate(-45deg); box-sizing: border-box; }
+        .dial .ndl { position: absolute; left: 146px; top: 30px; width: 8px; height: 122px; background: #E10600; border-radius: 4px; transform-origin: 50% 100%; }
+        .qm { font-family: "Poppins", sans-serif; font-weight: 900; font-size: 210px; line-height: 1; color: #E10600; }
+        canvas.t3 { position: absolute; display: block; }
+      </style>
+      <div class="cx">
+
+      <!-- A · 0–1.6 · WEIGHT LOSS kicker (overlay) -->
+      <div id="oA" class="clip" data-start="0" data-duration="1.62" data-track-index="30" style="position:absolute;inset:0">
+        <div class="band"><div class="chip r" id="oAc">WEIGHT LOSS</div></div>
+      </div>
+      <!-- B · 1.6–3.66 · GYM / DIET struck (overlay) -->
+      <div id="oB" class="clip" data-start="1.62" data-duration="2.04" data-track-index="31" style="position:absolute;inset:0">
+        <div class="band"><div class="chip" id="oB0">GYM<i class="x"></i></div><div class="chip" id="oB1">DIET<i class="x"></i></div></div>
+      </div>
+
+      <!-- C · 3.66–5.38 · one injection a week (cutaway, 3D pen) -->
+      <div id="cC" class="clip cut" data-start="3.66" data-duration="1.72" data-track-index="32">
+        <div class="bgx"></div>
+        <canvas id="penCv" class="t3" width="1000" height="700" style="left:40px;top:330px;width:1000px;height:700px"></canvas>
+        <div class="cc" style="top:250px"><div class="kk">ONE <b>INJECTION</b></div></div>
+        <div class="cc" style="top:1010px"><div class="mid" id="cCw">ONCE A <span style="color:#E10600">WEEK</span></div></div>
+      </div>
+      <!-- D · 5.38–7.433 · price slam over the riser (cutaway) -->
+      <div id="cD" class="clip cut" data-start="5.38" data-duration="2.053" data-track-index="33">
+        <div class="bgx"></div><div class="glow" id="cDg"></div>
+        <div class="cc" style="top:520px"><div class="kk">AND THE PRICE?</div></div>
+        <div class="cc" style="top:610px"><div class="big r" id="cDp">₹0</div></div>
+        <div class="cc" style="top:840px"><div class="sm" id="cDs">cheapest generic at launch: ₹1,290 / month</div></div>
+        <div class="src" id="cDsrc">Business Today, 20 Mar 2026 · India</div>
+      </div>
+
+      <!-- F · 14.5–17.4 · HYPE meter (overlay) -->
+      <div id="oF" class="clip" data-start="14.5" data-duration="2.9" data-track-index="34" style="position:absolute;inset:0">
+        <div class="cc" style="top:130px;gap:16px">
+          <div style="display:flex;gap:16px"><div class="chip" id="oF0" style="font-size:40px">CELEBRITIES</div><div class="chip" id="oF1" style="font-size:40px">SOCIAL MEDIA</div></div>
+          <div style="display:flex;align-items:center;gap:20px"><div class="mid r" style="font-size:64px;text-shadow:0 0 3px #000,0 4px 14px rgba(0,0,0,0.7)">HYPE</div><div class="meter"><i id="oFm"></i></div></div>
+        </div>
+      </div>
+
+      <!-- H · 19.18–21.76 · Ozempic molecule off patent (cutaway, Remotion padlock) -->
+      <div id="cH" class="clip cut" data-start="19.18" data-duration="2.58" data-track-index="35">
+        <div class="bgx"></div>
+        <div class="cc" style="top:250px"><div class="kk" id="cHk">THE <b>OZEMPIC</b> MOLECULE</div><div class="sm" id="cHs" style="margin-top:8px">semaglutide</div></div>
+        <div class="cc" style="top:1040px"><div class="stamp" id="cHst">OFF PATENT</div><div class="sm" id="cHd" style="margin-top:26px">India · 20 March 2026</div></div>
+      </div>
+      <video id="cHv" class="clip" src="assets/inserts/patent-unlock.webm" data-start="20.17" data-duration="1.59" data-media-start="0" data-track-index="36" muted playsinline
+             style="position:absolute;left:190px;top:380px;width:700px;height:700px"></video>
+      <!-- I · 21.76–24.88 · the price in India (cutaway) -->
+      <div id="cI" class="clip cut" data-start="21.76" data-duration="3.12" data-track-index="37">
+        <div class="bgx"></div>
+        <div class="cc" style="top:330px"><div class="kk">IN <b>INDIA</b> · PER MONTH</div></div>
+        <div class="cc" style="top:420px"><div style="position:relative;display:inline-block"><div class="mid" id="cIb" style="font-size:120px;opacity:0.9">₹10,850</div><i class="strike" id="cIx"></i></div>
+          <div class="sm" style="margin-top:6px" id="cIbl">brand (Wegovy), lowest dose</div></div>
+        <div class="cc" style="top:720px"><div class="big r" id="cIg" style="font-size:230px">₹1,290</div><div class="sm" id="cIgl">generic semaglutide, from</div></div>
+        <div class="src" id="cIsrc">Business Today, 20–21 Mar 2026</div>
+      </div>
+
+      <!-- K · 26.93–31.11 · the STEP 1 study (cutaway: paper card + 3D bars) -->
+      <div id="cK" class="clip cut" data-start="26.93" data-duration="4.18" data-track-index="38">
+        <div class="bgx"></div>
+        <div class="cc" style="top:200px"><div class="paper" id="cKp">
+          <div class="j">N Engl J Med 2021 · 384:989–1002</div>
+          <div class="t">Once-Weekly Semaglutide in Adults with Overweight or Obesity</div>
+          <div class="a">Wilding et al. · STEP 1 · 1,961 adults · 68 weeks</div>
+          <div class="hl">Body weight: <b>−14.9%</b> semaglutide vs −2.4% placebo<br />(both groups also got lifestyle support)</div>
+        </div></div>
+        <canvas id="barsCv" class="t3" width="900" height="560" style="left:90px;top:690px;width:900px;height:560px"></canvas>
+        <div id="cKl0" class="cc" style="top:1195px;left:90px;right:auto;width:450px"><div class="mid r" style="font-size:66px" id="cKv0">−0%</div></div>
+        <div id="cKl1" class="cc" style="top:1195px;left:540px;right:auto;width:450px"><div class="mid" style="font-size:66px">−2.4%</div></div>
+      </div>
+
+      <!-- M · 34.333–36.93 · 3 things the ads won't tell you (cutaway) -->
+      <div id="cM" class="clip cut" data-start="34.333" data-duration="2.597" data-track-index="39">
+        <div class="bgx"></div>
+        <div class="cc" style="top:330px"><div class="kk" id="cMk">WHAT THE <b>ADS</b> WON'T TELL YOU</div></div>
+        <div class="cc" style="top:470px"><div class="slots"><div class="slot" id="cM0">1</div><div class="slot" id="cM1">2</div><div class="slot r" id="cM2">3</div></div></div>
+        <div class="cc" style="top:800px"><div class="mid" id="cMt"><span style="color:#E10600">3</span> THINGS</div></div>
+      </div>
+      <!-- points tracker (overlay, top band) 36.93–57.76; cutaways cover it when they run -->
+      <div id="oP" class="clip" data-start="36.93" data-duration="20.83" data-track-index="40" style="position:absolute;inset:0">
+        <div class="pts"><div class="row"><div class="tile" id="pt0">1</div><div class="tile" id="pt1">2</div><div class="tile" id="pt2">3</div></div>
+          <div class="lab"><div id="pl0">PRESCRIPTION ONLY</div><div id="pl1">SIDE EFFECTS</div><div id="pl2">DIET + ACTIVITY</div></div></div>
+      </div>
+      <!-- N · 40.76–42.58 · 1: prescription drug (cutaway) -->
+      <div id="cN" class="clip cut" data-start="40.76" data-duration="1.82" data-track-index="41">
+        <div class="bgx"></div><div class="glow" id="cNg"></div>
+        <div class="cc" style="top:300px"><div class="kk"><b>1</b> · IT'S A</div></div>
+        <div class="cc" style="top:420px"><div class="rx" id="cNrx">℞</div></div>
+        <div class="cc" style="top:800px"><div class="mid" id="cNt">PRESCRIPTION<br /><span style="color:#E10600">DRUG</span></div></div>
+      </div>
+      <!-- O · 46.0–49.36 · 2: side effects (cutaway) -->
+      <div id="cO" class="clip cut" data-start="46.0" data-duration="3.36" data-track-index="42">
+        <div class="bgx"></div>
+        <div class="cc" style="top:300px"><div class="kk"><b>2</b> · COMMON SIDE EFFECTS</div></div>
+        <div class="cc" style="top:470px;gap:30px"><div class="chip r" id="cO0" style="font-size:84px;padding:18px 44px">NAUSEA</div><div class="chip" id="cO1" style="font-size:84px;padding:18px 44px">DIARRHOEA</div></div>
+      </div>
+      <!-- P · 49.36–53.92 · 3: what the trial also did (cutaway, flow) -->
+      <div id="cP" class="clip cut" data-start="49.36" data-duration="4.56" data-track-index="43">
+        <div class="bgx"></div>
+        <div class="cc" style="top:280px"><div class="kk"><b>3</b> · WHAT THE TRIAL ACTUALLY DID</div></div>
+        <div class="cc" style="top:420px"><div class="vcol">
+          <div class="node" id="cP0">INJECTION</div><div class="op" id="cPo0">+</div>
+          <div class="node" id="cP1">ACTIVITY CHANGES</div><div class="op" id="cPo1">+</div>
+          <div class="node" id="cP2">DIET CHANGES</div><div class="op" id="cPo2">=</div>
+          <div class="node r" id="cP3" style="font-size:64px">−15% WEIGHT</div></div></div>
+      </div>
+      <!-- Q · 53.92–57.76 · scale vs muscle (cutaway) -->
+      <div id="cQ" class="clip cut" data-start="53.92" data-duration="3.84" data-track-index="44">
+        <div class="bgx"></div>
+        <div class="cc" style="top:420px"><div style="display:flex;gap:36px">
+          <div class="card2" id="cQ0"><div class="h">THE SCALE</div><div class="dial"><div class="arc"></div><div class="ndl" id="cQn"></div></div><div class="mid" style="font-size:96px">↓</div></div>
+          <div class="card2 r" id="cQ1"><div class="h">MUSCLE</div><div class="qm" id="cQq">?</div></div>
+        </div></div>
+      </div>
+      <!-- R · 57.76–60.5 · resistance training + diet (cutaway, 3D dumbbell) -->
+      <div id="cR" class="clip cut" data-start="57.76" data-duration="2.74" data-track-index="45">
+        <div class="bgx"></div>
+        <canvas id="dbCv" class="t3" width="1000" height="640" style="left:40px;top:300px;width:1000px;height:640px"></canvas>
+        <div class="cc" style="top:930px"><div class="mid r" id="cRt" style="font-size:92px">RESISTANCE<br />TRAINING</div><div class="mid" id="cRd" style="font-size:70px;margin-top:10px">+ DIET</div></div>
+      </div>
+      <!-- T · 63.1–65.95 · ads + hype struck (overlay) -->
+      <div id="oT" class="clip" data-start="63.1" data-duration="2.85" data-track-index="46" style="position:absolute;inset:0">
+        <div class="band"><div class="chip" id="oT0">ADS<i class="x"></i></div><div class="chip" id="oT1">HYPE<i class="x"></i></div></div>
+      </div>
+      <!-- U · 65.95–70.85 · what gives sustained results (cutaway) -->
+      <div id="cU" class="clip cut" data-start="65.95" data-duration="4.9" data-track-index="47">
+        <div class="bgx"></div>
+        <div class="cc" style="top:300px"><div class="kk">HEALTHY, <b>SUSTAINED</b> RESULTS</div></div>
+        <div class="cc" style="top:420px"><div class="vcol">
+          <div class="mid" id="cU0" style="font-size:150px">=</div>
+          <div class="node" id="cU1" style="font-size:58px">LIFESTYLE CHANGE</div><div class="op" id="cUo">+</div>
+          <div class="node r" id="cU2" style="font-size:58px">HEALTHY CHOICES</div></div></div>
+      </div>
+      </div>
+      <div id="cap0" class="cap clip" data-start="0.0" data-duration="1.6333" data-track-index="10"><div class="capin"><div class="sup" style="font-size:52px"><span class="w">If</span> <span class="w">you&#x27;re</span> <span class="w">trying</span> <span class="w">to</span> <span class="w">lose</span> <span class="w">weight…</span></div></div></div>
+      <div id="cap1" class="cap clip" data-start="1.6333" data-duration="2.0333" data-track-index="10"><div class="capin"><div class="sup" style="font-size:52px"><span class="w">you</span> <span class="w">don&#x27;t</span> <span class="w">need</span> <span class="w">the</span> <span class="w">gym,</span> <span class="w">a</span> <span class="w">diet,</span> <span class="w">anything.</span></div></div></div>
+      <div id="cap2" class="cap clip" data-start="3.6667" data-duration="1.7333" data-track-index="10"><div class="capin"><div class="sup" style="font-size:52px"><span class="w">Just</span> <span class="w">one</span> <span class="w">injection</span> <span class="w">a</span> <span class="w">week</span> <span class="w">is</span> <span class="w">enough.</span></div></div></div>
+      <div id="cap3" class="cap clip" data-start="5.4" data-duration="2.0" data-track-index="10"><div class="capin"><div class="sup" style="font-size:52px"><span class="w">And</span> <span class="w">that</span> <span class="w">injection</span> <span class="w">costs</span> <span class="w">just</span> <span class="w">₹1,300.</span></div></div></div>
+      <div id="cap4" class="cap clip" data-start="11.6667" data-duration="1.4667" data-track-index="10"><div class="capin"><div class="sup" style="font-size:52px"><span class="w">Before</span> <span class="w">you</span> <span class="w">book</span> <span class="w">a</span> <span class="w">doctor&#x27;s</span> <span class="w">appointment,</span></div></div></div>
+      <div id="cap5" class="cap clip" data-start="13.1333" data-duration="1.4" data-track-index="10"><div class="capin"><div class="hero fx-pop hero-first"><span class="hw" style="font-size:120px">WATCH THIS</span></div><div class="sup" style="font-size:46px"><span class="w">watch</span> <span class="w">this</span> <span class="w">video</span> <span class="w">till</span> <span class="w">the</span> <span class="w">end.</span></div></div></div>
+      <div id="cap6" class="cap clip" data-start="14.5333" data-duration="1.5333" data-track-index="10"><div class="capin"><div class="sup" style="font-size:52px"><span class="w">Celebrities,</span> <span class="w">social</span> <span class="w">media</span> <span class="w">—</span></div></div></div>
+      <div id="cap7" class="cap clip" data-start="16.0667" data-duration="1.3667" data-track-index="10"><div class="capin"><div class="sup" style="font-size:52px"><span class="w">why</span> <span class="w">is</span> <span class="w">there</span> <span class="w">so</span> <span class="w">much</span> <span class="w acc">hype?</span></div></div></div>
+      <div id="cap8" class="cap clip" data-start="17.4333" data-duration="1.7333" data-track-index="10"><div class="capin"><div class="sup" style="font-size:46px"><span class="w">What&#x27;s</span> <span class="w">in</span> <span class="w">it?</span> <span class="w">So</span> <span class="w">I</span></div><div class="hero fx-underline"><span class="hw" style="font-size:92px">RESEARCHED IT</span><svg class="ul" viewBox="0 0 400 24" preserveAspectRatio="none"><path d="M4 16 C 120 6, 280 6, 396 14" /></svg></div></div></div>
+      <div id="cap9" class="cap clip" data-start="19.2" data-duration="1.6333" data-track-index="10"><div class="capin"><div class="sup" style="font-size:52px"><span class="w">From</span> <span class="w">this</span> <span class="w">March,</span> <span class="w">the</span> <span class="w acc">Ozempic</span> <span class="w">molecule</span></div></div></div>
+      <div id="cap10" class="cap clip" data-start="20.8333" data-duration="0.9333" data-track-index="10"><div class="capin"><div class="sup" style="font-size:52px"><span class="w">has</span> <span class="w">gone</span> <span class="w">off</span> <span class="w">patent.</span></div></div></div>
+      <div id="cap11" class="cap clip" data-start="21.7667" data-duration="3.1333" data-track-index="10"><div class="capin"><div class="sup" style="font-size:52px"><span class="w">In</span> <span class="w">India,</span> <span class="w">a</span> <span class="w">drug</span> <span class="w">now</span> <span class="w">starts</span> <span class="w">at</span> <span class="w">₹1,300.</span></div></div></div>
+      <div id="cap12" class="cap clip" data-start="24.9" data-duration="1.2" data-track-index="10"><div class="capin"><div class="sup" style="font-size:52px"><span class="w">Does</span> <span class="w">it</span> <span class="w">work,</span> <span class="w">bro?</span></div></div></div>
+      <div id="cap13" class="cap clip" data-start="26.1" data-duration="0.8333" data-track-index="10"><div class="capin"><div class="sup" style="font-size:46px"><span class="w">Yes.</span></div><div class="hero fx-plate"><i class="pl"></i><span class="hw" style="font-size:150px">IT WORKS</span></div></div></div>
+      <div id="cap14" class="cap clip" data-start="26.9333" data-duration="1.7333" data-track-index="10"><div class="capin"><div class="sup" style="font-size:52px"><span class="w">In</span> <span class="w">the</span> <span class="w">STEP</span> <span class="w">1</span> <span class="w">trial,</span> <span class="w">participants</span></div></div></div>
+      <div id="cap15" class="cap clip" data-start="28.6667" data-duration="2.4667" data-track-index="10"><div class="capin"><div class="sup" style="font-size:52px"><span class="w">lost</span> <span class="w acc">15%</span> <span class="w">of</span> <span class="w">their</span> <span class="w">body</span> <span class="w">weight.</span></div></div></div>
+      <div id="cap16" class="cap clip" data-start="31.1333" data-duration="1.5667" data-track-index="10"><div class="capin"><div class="hero fx-plate hero-first"><i class="pl"></i><span class="hw" style="font-size:92px">SHUT THE GYM?</span></div><div class="sup" style="font-size:46px"><span class="w">So</span> <span class="w">should</span> <span class="w">we</span> <span class="w">shut</span> <span class="w">down</span> <span class="w">the</span> <span class="w">gym?</span></div></div></div>
+      <div id="cap17" class="cap clip" data-start="34.3333" data-duration="0.6667" data-track-index="10"><div class="capin"><div class="sup" style="font-size:52px"><span class="w">The</span> <span class="w">ads</span> <span class="w">won&#x27;t</span> <span class="w">tell</span> <span class="w">you</span></div></div></div>
+      <div id="cap18" class="cap clip" data-start="35.0" data-duration="1.9333" data-track-index="10"><div class="capin"><div class="sup" style="font-size:52px"><span class="w">these</span> <span class="w">3</span> <span class="w">things</span> <span class="w">you</span> <span class="w">need</span> <span class="w">to</span> <span class="w">know.</span></div></div></div>
+      <div id="cap19" class="cap clip" data-start="37.0" data-duration="3.7667" data-track-index="10"><div class="capin"><div class="sup" style="font-size:46px"><span class="w">And</span> <span class="w">the</span> <span class="w">last</span> <span class="w">one</span></div><div class="hero fx-mask" data-layout-allow-overlap><span class="hw" style="font-size:109px">CHANGES THE</span><span class="hw" style="font-size:109px">WHOLE TRIAL</span></div></div></div>
+      <div id="cap20" class="cap clip" data-start="40.7667" data-duration="1.2" data-track-index="10"><div class="capin"><div class="sup" style="font-size:52px"><span class="w">One:</span> <span class="w">it&#x27;s</span> <span class="w">a</span> <span class="w">prescription</span> <span class="w">drug.</span></div></div></div>
+      <div id="cap21" class="cap clip" data-start="41.9667" data-duration="1.5667" data-track-index="10"><div class="capin"><div class="sup" style="font-size:52px"><span class="w">India&#x27;s</span> <span class="w">Health</span> <span class="w">Ministry</span> <span class="w">says</span></div></div></div>
+      <div id="cap22" class="cap clip" data-start="43.5333" data-duration="2.4667" data-track-index="10"><div class="capin"><div class="sup" style="font-size:52px"><span class="w">don&#x27;t</span> <span class="w">take</span> <span class="w">it</span> <span class="w">without</span> <span class="w">a</span> <span class="w">doctor&#x27;s</span> <span class="w">prescription.</span></div></div></div>
+      <div id="cap23" class="cap clip" data-start="46.0667" data-duration="1.7" data-track-index="10"><div class="capin"><div class="sup" style="font-size:52px"><span class="w">Two:</span> <span class="w acc">nausea</span> <span class="w">and</span> <span class="w acc">diarrhoea</span></div></div></div>
+      <div id="cap24" class="cap clip" data-start="47.7667" data-duration="1.5667" data-track-index="10"><div class="capin"><div class="sup" style="font-size:52px"><span class="w">are</span> <span class="w">common</span> <span class="w">side</span> <span class="w">effects</span> <span class="w">of</span> <span class="w">this</span> <span class="w">drug.</span></div></div></div>
+      <div id="cap25" class="cap clip" data-start="49.4" data-duration="1.7333" data-track-index="10"><div class="capin"><div class="sup" style="font-size:52px"><span class="w">Three:</span> <span class="w">people</span> <span class="w">in</span> <span class="w">this</span> <span class="w">trial</span> <span class="w">also</span> <span class="w">made</span></div></div></div>
+      <div id="cap26" class="cap clip" data-start="51.1333" data-duration="2.7667" data-track-index="10"><div class="capin"><div class="sup" style="font-size:52px"><span class="w">activity</span> <span class="w">changes</span> <span class="w">and</span> <span class="w">diet</span> <span class="w">changes.</span></div></div></div>
+      <div id="cap27" class="cap clip" data-start="53.9667" data-duration="1.6" data-track-index="10"><div class="capin"><div class="sup" style="font-size:52px"><span class="w">The</span> <span class="w">scale</span> <span class="w">will</span> <span class="w">show</span> <span class="w">your</span> <span class="w">weight</span> <span class="w">dropping,</span></div></div></div>
+      <div id="cap28" class="cap clip" data-start="55.5667" data-duration="2.1667" data-track-index="10"><div class="capin"><div class="sup" style="font-size:52px"><span class="w">but</span> <span class="w">nobody</span> <span class="w">asks</span> <span class="w">how</span> <span class="w">much</span> <span class="w acc">muscle</span> <span class="w">you</span> <span class="w">kept.</span></div></div></div>
+      <div id="cap29" class="cap clip" data-start="57.8" data-duration="1.8667" data-track-index="10"><div class="capin"><div class="sup" style="font-size:52px"><span class="w">That&#x27;s</span> <span class="w">where</span> <span class="w">resistance</span> <span class="w">training</span> <span class="w">and</span> <span class="w acc">diet</span></div></div></div>
+      <div id="cap30" class="cap clip" data-start="59.6667" data-duration="0.8667" data-track-index="10"><div class="capin"><div class="sup" style="font-size:52px"><span class="w">become</span> <span class="w">very</span> <span class="w">important.</span></div></div></div>
+      <div id="cap31" class="cap clip" data-start="60.5333" data-duration="1.2333" data-track-index="10"><div class="capin"><div class="sup" style="font-size:52px"><span class="w">If</span> <span class="w">you&#x27;re</span> <span class="w">curious</span> <span class="w">about</span> <span class="w">it,</span></div></div></div>
+      <div id="cap32" class="cap clip" data-start="61.7667" data-duration="1.3667" data-track-index="10"><div class="capin"><div class="sup" style="font-size:46px"><span class="w">talk</span> <span class="w">to</span> <span class="w">a</span> <span class="w">good</span></div><div class="hero fx-plate"><i class="pl"></i><span class="hw" style="font-size:172px">DOCTOR</span></div></div></div>
+      <div id="cap33" class="cap clip" data-start="63.1333" data-duration="0.8" data-track-index="10"><div class="capin"><div class="sup" style="font-size:52px"><span class="w">Don&#x27;t</span> <span class="w">try</span> <span class="w">it</span> <span class="w">just</span> <span class="w">because</span></div></div></div>
+      <div id="cap34" class="cap clip" data-start="63.9333" data-duration="2.0" data-track-index="10"><div class="capin"><div class="sup" style="font-size:52px"><span class="w">you</span> <span class="w">saw</span> <span class="w">the</span> <span class="w">ads</span> <span class="w">and</span> <span class="w">the</span> <span class="w acc">hype.</span></div></div></div>
+      <div id="cap35" class="cap clip" data-start="66.0" data-duration="2.4" data-track-index="10"><div class="capin"><div class="sup" style="font-size:52px"><span class="w">What</span> <span class="w">really</span> <span class="w">gives</span> <span class="w">you</span> <span class="w">healthy,</span> <span class="w">sustained</span> <span class="w">results</span></div></div></div>
+      <div id="cap36" class="cap clip" data-start="68.4" data-duration="2.4667" data-track-index="10"><div class="capin"><div class="sup" style="font-size:52px"><span class="w">is</span> <span class="w">a</span> <span class="w">good</span> <span class="w">lifestyle</span> <span class="w">change</span> <span class="w">and</span> <span class="w">healthy</span> <span class="w">choices.</span></div></div></div>
+      <div id="cap37" class="cap clip" data-start="70.9333" data-duration="2.2667" data-track-index="10"><div class="capin"><div class="sup" style="font-size:52px"><span class="w">And</span> <span class="w">friends</span> <span class="w">who&#x27;d</span> <span class="w">want</span> <span class="w">to</span> <span class="w">know</span> <span class="w">about</span> <span class="w">this?</span></div></div></div>
+      <div id="cap38" class="cap clip" data-start="73.2" data-duration="1.2" data-track-index="10"><div class="capin"><div class="sup" style="font-size:46px"><span class="w">Share</span> <span class="w">this</span> <span class="w">research</span> <span class="w">with</span> <span class="w">them.</span></div><div class="hero fx-pop"><span class="hw" style="font-size:150px">SHARE IT</span></div></div></div>
+      <div id="cap39" class="cap clip" data-start="74.4667" data-duration="2.4" data-track-index="10"><div class="capin"><div class="sup" style="font-size:52px"><span class="w">For</span> <span class="w">more</span> <span class="w">on</span> <span class="w">training</span> <span class="w">and</span> <span class="w">nutrition</span> <span class="w">like</span> <span class="w">this,</span></div></div></div>
+      <div id="cap40" class="cap clip" data-start="76.8667" data-duration="1.1" data-track-index="10"><div class="capin"><div class="sup" style="font-size:52px"><span class="w">follow</span> <span class="w">me.</span></div></div></div>
+      <div id="gx1" class="gx clip" data-start="76.8" data-duration="1.1333" data-track-index="22"><div class="end"><div class="end-av"><img src="assets/avatar.jpg" alt="" /></div><div class="end-txt"><b>Follow for more fitness tips</b><span class="end-handle">@ron_tamil</span></div><div class="end-btn" data-layout-allow-overlap><span class="b2" data-layout-allow-overlap>Following</span><span class="b1" data-layout-allow-overlap>Follow</span></div></div></div>
+      <audio id="a0" src="assets/voice.wav" data-start="0.0" data-duration="77.9667" data-media-start="0.0" data-track-index="2" data-automation='{"version": 1, "lanes": [{"target": "volume", "points": [{"t": 0, "v": 0}, {"t": 0.02, "v": 0.6}, {"t": 77.947, "v": 0.6}, {"t": 77.9667, "v": 0}]}]}'></audio>
+      <audio id="music" src="assets/music/bed.wav" data-start="0" data-duration="78.2667" data-track-index="4" data-automation='{"version": 1, "lanes": [{"target": "volume", "points": [{"t": 0, "v": 0}, {"t": 1.0, "v": 1.0}, {"t": 76.77, "v": 1.0}, {"t": 78.2667, "v": 0}]}]}'></audio>
+      <audio id="sfx0" src="assets/sfx2/popsoft.wav" data-start="0.1667" data-duration="0.45" data-track-index="5" data-volume="0.3"></audio>
+      <audio id="sfx1" src="assets/sfx/thump.wav" data-start="1.6333" data-duration="0.35" data-track-index="6" data-volume="0.35"></audio>
+      <audio id="sfx2" src="assets/sfx/thump.wav" data-start="2.1667" data-duration="0.35" data-track-index="7" data-volume="0.35"></audio>
+      <audio id="sfx3" src="assets/sfx2/whoosh.wav" data-start="3.6333" data-duration="0.431" data-track-index="5" data-volume="0.45"></audio>
+      <audio id="sfx4" src="assets/sfx/riser.wav" data-start="4.8333" data-duration="2.6" data-track-index="6" data-volume="0.5"></audio>
+      <audio id="sfx5" src="assets/sfx2/digits.wav" data-start="5.6333" data-duration="0.6" data-track-index="7" data-volume="0.3"></audio>
+      <audio id="sfx6" src="assets/sfx/thump.wav" data-start="6.2333" data-duration="0.35" data-track-index="5" data-volume="0.7"></audio>
+      <audio id="sfx7" src="assets/sfx/rise.wav" data-start="14.9" data-duration="0.5" data-track-index="6" data-volume="0.35"></audio>
+      <audio id="sfx8" src="assets/sfx2/whoosh.wav" data-start="19.1333" data-duration="0.431" data-track-index="7" data-volume="0.45"></audio>
+      <audio id="sfx9" src="assets/sfx/thump.wav" data-start="20.8333" data-duration="0.35" data-track-index="5" data-volume="0.7"></audio>
+      <audio id="sfx10" src="assets/sfx/swoosh.wav" data-start="22.2" data-duration="0.42" data-track-index="6" data-volume="0.35"></audio>
+      <audio id="sfx11" src="assets/sfx2/popsoft.wav" data-start="22.9" data-duration="0.45" data-track-index="7" data-volume="0.35"></audio>
+      <audio id="sfx12" src="assets/sfx2/popsoft.wav" data-start="26.1667" data-duration="0.45" data-track-index="5" data-volume="0.4"></audio>
+      <audio id="sfx13" src="assets/sfx2/whoosh.wav" data-start="26.9" data-duration="0.431" data-track-index="6" data-volume="0.45"></audio>
+      <audio id="sfx14" src="assets/sfx/rise.wav" data-start="27.7" data-duration="0.5" data-track-index="7" data-volume="0.35"></audio>
+      <audio id="sfx15" src="assets/sfx/thump.wav" data-start="28.6667" data-duration="0.35" data-track-index="5" data-volume="0.6"></audio>
+      <audio id="sfx16" src="assets/sfx/swoosh.wav" data-start="31.6" data-duration="0.42" data-track-index="6" data-volume="0.35"></audio>
+      <audio id="sfx17" src="assets/sfx2/whoosh.wav" data-start="34.3" data-duration="0.431" data-track-index="7" data-volume="0.45"></audio>
+      <audio id="sfx18" src="assets/sfx/tick.wav" data-start="35.1333" data-duration="0.05" data-track-index="5" data-volume="0.5"></audio>
+      <audio id="sfx19" src="assets/sfx/tick.wav" data-start="35.3333" data-duration="0.05" data-track-index="6" data-volume="0.5"></audio>
+      <audio id="sfx20" src="assets/sfx/tick.wav" data-start="35.5333" data-duration="0.05" data-track-index="7" data-volume="0.55"></audio>
+      <audio id="sfx21" src="assets/sfx/riser.wav" data-start="38.1667" data-duration="2.6" data-track-index="5" data-volume="0.45"></audio>
+      <audio id="sfx22" src="assets/sfx/thump.wav" data-start="40.7667" data-duration="0.35" data-track-index="6" data-volume="0.7"></audio>
+      <audio id="sfx23" src="assets/sfx2/whoosh.wav" data-start="46.0" data-duration="0.431" data-track-index="7" data-volume="0.4"></audio>
+      <audio id="sfx24" src="assets/sfx2/whoosh.wav" data-start="49.3333" data-duration="0.431" data-track-index="5" data-volume="0.4"></audio>
+      <audio id="sfx25" src="assets/sfx/tick.wav" data-start="50.0" data-duration="0.05" data-track-index="6" data-volume="0.5"></audio>
+      <audio id="sfx26" src="assets/sfx/tick.wav" data-start="51.2" data-duration="0.05" data-track-index="7" data-volume="0.5"></audio>
+      <audio id="sfx27" src="assets/sfx/tick.wav" data-start="52.3" data-duration="0.05" data-track-index="5" data-volume="0.5"></audio>
+      <audio id="sfx28" src="assets/sfx/thump.wav" data-start="53.1" data-duration="0.35" data-track-index="6" data-volume="0.5"></audio>
+      <audio id="sfx29" src="assets/sfx2/whoosh.wav" data-start="53.9" data-duration="0.431" data-track-index="7" data-volume="0.4"></audio>
+      <audio id="sfx30" src="assets/sfx2/popsoft.wav" data-start="56.3333" data-duration="0.45" data-track-index="5" data-volume="0.4"></audio>
+      <audio id="sfx31" src="assets/sfx2/whoosh.wav" data-start="57.7333" data-duration="0.431" data-track-index="6" data-volume="0.45"></audio>
+      <audio id="sfx32" src="assets/sfx/thump.wav" data-start="63.2667" data-duration="0.35" data-track-index="7" data-volume="0.3"></audio>
+      <audio id="sfx33" src="assets/sfx/thump.wav" data-start="64.0667" data-duration="0.35" data-track-index="5" data-volume="0.3"></audio>
+      <audio id="sfx34" src="assets/sfx2/whoosh.wav" data-start="65.9333" data-duration="0.431" data-track-index="6" data-volume="0.4"></audio>
+      <audio id="sfx35" src="assets/sfx/tick.wav" data-start="68.9" data-duration="0.05" data-track-index="7" data-volume="0.5"></audio>
+      <audio id="sfx36" src="assets/sfx/tick.wav" data-start="69.8" data-duration="0.05" data-track-index="5" data-volume="0.5"></audio>
+      <audio id="sfx37" src="assets/sfx2/popsoft.wav" data-start="73.6667" data-duration="0.45" data-track-index="6" data-volume="0.35"></audio>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#cap0 .w", { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.22, ease: "expo.out", stagger: 0.045 }, 0.0);
+      tl.to("#cap0 .capin", { opacity: 0, duration: 0.08, ease: "none" }, 1.5667);
+      tl.fromTo("#cap1 .w", { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.22, ease: "expo.out", stagger: 0.045 }, 1.6333);
+      tl.to("#cap1 .capin", { opacity: 0, duration: 0.08, ease: "none" }, 3.6);
+      tl.fromTo("#cap2 .w", { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.22, ease: "expo.out", stagger: 0.045 }, 3.6667);
+      tl.to("#cap2 .capin", { opacity: 0, duration: 0.08, ease: "none" }, 5.3333);
+      tl.fromTo("#cap3 .w", { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.22, ease: "expo.out", stagger: 0.045 }, 5.4);
+      tl.to("#cap3 .capin", { opacity: 0, duration: 0.08, ease: "none" }, 7.3333);
+      tl.fromTo("#cap4 .w", { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.22, ease: "expo.out", stagger: 0.045 }, 11.6667);
+      tl.to("#cap4 .capin", { opacity: 0, duration: 0.08, ease: "none" }, 13.0667);
+      tl.fromTo("#cap5 .w", { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.22, ease: "expo.out", stagger: 0.045 }, 13.1333);
+      tl.fromTo("#cap5 .hw", { opacity: 0, scale: 1.32 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(1.6)", stagger: 0.06 }, 13.3333);
+      tl.to("#cap5 .capin", { opacity: 0, duration: 0.08, ease: "none" }, 14.4667);
+      tl.fromTo("#cap6 .w", { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.22, ease: "expo.out", stagger: 0.045 }, 14.5333);
+      tl.to("#cap6 .capin", { opacity: 0, duration: 0.08, ease: "none" }, 16.0);
+      tl.fromTo("#cap7 .w", { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.22, ease: "expo.out", stagger: 0.045 }, 16.0667);
+      tl.to("#cap7 .capin", { opacity: 0, duration: 0.08, ease: "none" }, 17.3667);
+      tl.fromTo("#cap8 .w", { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.22, ease: "expo.out", stagger: 0.045 }, 17.4333);
+      tl.fromTo("#cap8 .hw", { opacity: 0, scale: 1.18 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(1.6)", stagger: 0.06 }, 18.3667);
+      tl.fromTo("#cap8 .ul path", { strokeDashoffset: 420 }, { strokeDashoffset: 0, duration: 0.38, ease: "power2.inOut" }, 18.5333);
+      tl.to("#cap8 .capin", { opacity: 0, duration: 0.08, ease: "none" }, 19.1);
+      tl.fromTo("#cap9 .w", { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.22, ease: "expo.out", stagger: 0.045 }, 19.2);
+      tl.to("#cap9 .capin", { opacity: 0, duration: 0.08, ease: "none" }, 20.7667);
+      tl.fromTo("#cap10 .w", { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.22, ease: "expo.out", stagger: 0.045 }, 20.8333);
+      tl.to("#cap10 .capin", { opacity: 0, duration: 0.08, ease: "none" }, 21.7);
+      tl.fromTo("#cap11 .w", { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.22, ease: "expo.out", stagger: 0.045 }, 21.7667);
+      tl.to("#cap11 .capin", { opacity: 0, duration: 0.08, ease: "none" }, 24.8333);
+      tl.fromTo("#cap12 .w", { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.22, ease: "expo.out", stagger: 0.045 }, 24.9);
+      tl.to("#cap12 .capin", { opacity: 0, duration: 0.08, ease: "none" }, 26.0333);
+      tl.fromTo("#cap13 .w", { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.22, ease: "expo.out", stagger: 0.045 }, 26.1);
+      tl.fromTo("#cap13 .pl", { scaleX: 0 }, { scaleX: 1, duration: 0.26, ease: "power3.out" }, 26.1667);
+      tl.fromTo("#cap13 .hw", { opacity: 0, x: -18 }, { opacity: 1, x: 0, duration: 0.26, ease: "expo.out", stagger: 0.06 }, 26.2667);
+      tl.to("#cap13 .capin", { opacity: 0, duration: 0.08, ease: "none" }, 26.8667);
+      tl.fromTo("#cap14 .w", { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.22, ease: "expo.out", stagger: 0.045 }, 26.9333);
+      tl.to("#cap14 .capin", { opacity: 0, duration: 0.08, ease: "none" }, 28.6);
+      tl.fromTo("#cap15 .w", { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.22, ease: "expo.out", stagger: 0.045 }, 28.6667);
+      tl.to("#cap15 .capin", { opacity: 0, duration: 0.08, ease: "none" }, 31.0667);
+      tl.fromTo("#cap16 .w", { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.22, ease: "expo.out", stagger: 0.045 }, 31.1333);
+      tl.fromTo("#cap16 .pl", { scaleX: 0 }, { scaleX: 1, duration: 0.26, ease: "power3.out" }, 31.6);
+      tl.fromTo("#cap16 .hw", { opacity: 0, x: -18 }, { opacity: 1, x: 0, duration: 0.26, ease: "expo.out", stagger: 0.06 }, 31.7);
+      tl.to("#cap16 .capin", { opacity: 0, duration: 0.08, ease: "none" }, 32.6333);
+      tl.fromTo("#cap17 .w", { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.22, ease: "expo.out", stagger: 0.045 }, 34.3333);
+      tl.to("#cap17 .capin", { opacity: 0, duration: 0.08, ease: "none" }, 34.9333);
+      tl.fromTo("#cap18 .w", { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.22, ease: "expo.out", stagger: 0.045 }, 35.0);
+      tl.to("#cap18 .capin", { opacity: 0, duration: 0.08, ease: "none" }, 36.8667);
+      tl.fromTo("#cap19 .w", { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.22, ease: "expo.out", stagger: 0.045 }, 37.0);
+      tl.fromTo("#cap19 .hw", { yPercent: 105, opacity: 0 }, { yPercent: 0, opacity: 1, duration: 0.34, ease: "expo.out", stagger: 0.06 }, 38.9667);
+      tl.to("#cap19 .capin", { opacity: 0, duration: 0.08, ease: "none" }, 40.7);
+      tl.fromTo("#cap20 .w", { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.22, ease: "expo.out", stagger: 0.045 }, 40.7667);
+      tl.to("#cap20 .capin", { opacity: 0, duration: 0.08, ease: "none" }, 41.9);
+      tl.fromTo("#cap21 .w", { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.22, ease: "expo.out", stagger: 0.045 }, 41.9667);
+      tl.to("#cap21 .capin", { opacity: 0, duration: 0.08, ease: "none" }, 43.4667);
+      tl.fromTo("#cap22 .w", { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.22, ease: "expo.out", stagger: 0.045 }, 43.5333);
+      tl.to("#cap22 .capin", { opacity: 0, duration: 0.08, ease: "none" }, 45.9333);
+      tl.fromTo("#cap23 .w", { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.22, ease: "expo.out", stagger: 0.045 }, 46.0667);
+      tl.to("#cap23 .capin", { opacity: 0, duration: 0.08, ease: "none" }, 47.7);
+      tl.fromTo("#cap24 .w", { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.22, ease: "expo.out", stagger: 0.045 }, 47.7667);
+      tl.to("#cap24 .capin", { opacity: 0, duration: 0.08, ease: "none" }, 49.2667);
+      tl.fromTo("#cap25 .w", { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.22, ease: "expo.out", stagger: 0.045 }, 49.4);
+      tl.to("#cap25 .capin", { opacity: 0, duration: 0.08, ease: "none" }, 51.0667);
+      tl.fromTo("#cap26 .w", { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.22, ease: "expo.out", stagger: 0.045 }, 51.1333);
+      tl.to("#cap26 .capin", { opacity: 0, duration: 0.08, ease: "none" }, 53.8333);
+      tl.fromTo("#cap27 .w", { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.22, ease: "expo.out", stagger: 0.045 }, 53.9667);
+      tl.to("#cap27 .capin", { opacity: 0, duration: 0.08, ease: "none" }, 55.5);
+      tl.fromTo("#cap28 .w", { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.22, ease: "expo.out", stagger: 0.045 }, 55.5667);
+      tl.to("#cap28 .capin", { opacity: 0, duration: 0.08, ease: "none" }, 57.6667);
+      tl.fromTo("#cap29 .w", { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.22, ease: "expo.out", stagger: 0.045 }, 57.8);
+      tl.to("#cap29 .capin", { opacity: 0, duration: 0.08, ease: "none" }, 59.6);
+      tl.fromTo("#cap30 .w", { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.22, ease: "expo.out", stagger: 0.045 }, 59.6667);
+      tl.to("#cap30 .capin", { opacity: 0, duration: 0.08, ease: "none" }, 60.4667);
+      tl.fromTo("#cap31 .w", { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.22, ease: "expo.out", stagger: 0.045 }, 60.5333);
+      tl.to("#cap31 .capin", { opacity: 0, duration: 0.08, ease: "none" }, 61.7);
+      tl.fromTo("#cap32 .w", { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.22, ease: "expo.out", stagger: 0.045 }, 61.7667);
+      tl.fromTo("#cap32 .pl", { scaleX: 0 }, { scaleX: 1, duration: 0.26, ease: "power3.out" }, 62.1667);
+      tl.fromTo("#cap32 .hw", { opacity: 0, x: -18 }, { opacity: 1, x: 0, duration: 0.26, ease: "expo.out", stagger: 0.06 }, 62.2667);
+      tl.to("#cap32 .capin", { opacity: 0, duration: 0.08, ease: "none" }, 63.0667);
+      tl.fromTo("#cap33 .w", { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.22, ease: "expo.out", stagger: 0.045 }, 63.1333);
+      tl.to("#cap33 .capin", { opacity: 0, duration: 0.08, ease: "none" }, 63.8667);
+      tl.fromTo("#cap34 .w", { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.22, ease: "expo.out", stagger: 0.045 }, 63.9333);
+      tl.to("#cap34 .capin", { opacity: 0, duration: 0.08, ease: "none" }, 65.8667);
+      tl.fromTo("#cap35 .w", { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.22, ease: "expo.out", stagger: 0.045 }, 66.0);
+      tl.to("#cap35 .capin", { opacity: 0, duration: 0.08, ease: "none" }, 68.3333);
+      tl.fromTo("#cap36 .w", { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.22, ease: "expo.out", stagger: 0.045 }, 68.4);
+      tl.to("#cap36 .capin", { opacity: 0, duration: 0.08, ease: "none" }, 70.8);
+      tl.fromTo("#cap37 .w", { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.22, ease: "expo.out", stagger: 0.045 }, 70.9333);
+      tl.to("#cap37 .capin", { opacity: 0, duration: 0.08, ease: "none" }, 73.1333);
+      tl.fromTo("#cap38 .w", { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.22, ease: "expo.out", stagger: 0.045 }, 73.2);
+      tl.fromTo("#cap38 .hw", { opacity: 0, scale: 1.32 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(1.6)", stagger: 0.06 }, 73.6667);
+      tl.to("#cap38 .capin", { opacity: 0, duration: 0.08, ease: "none" }, 74.3333);
+      tl.fromTo("#cap39 .w", { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.22, ease: "expo.out", stagger: 0.045 }, 74.4667);
+      tl.to("#cap39 .capin", { opacity: 0, duration: 0.08, ease: "none" }, 76.8);
+      tl.fromTo("#cap40 .w", { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.22, ease: "expo.out", stagger: 0.045 }, 76.8667);
+      tl.to("#cap40 .capin", { opacity: 0, duration: 0.08, ease: "none" }, 77.9);
+      tl.fromTo("#gx1 .end", { opacity: 0, y: 60 }, { opacity: 1, y: 0, duration: 0.4, ease: "expo.out" }, 76.8);
+      tl.fromTo("#gx1 .end-btn", { scale: 1 }, { scale: 0.9, duration: 0.08, yoyo: true, repeat: 1, ease: "sine.inOut", immediateRender: false }, 77.2667);
+      tl.fromTo("#gx1 .b2", { opacity: 0 }, { opacity: 1, duration: 0.01 }, 77.3333);
+      tl.to("#gx1 .b1", { opacity: 0, duration: 0.14 }, 77.3333);
+      tl.set("#cam", { scale: 1.0 }, 0.0);
+      tl.set("#move", { scale: 1, transformOrigin: "50% 46%" }, 0.0);
+      tl.set("#move", { transformOrigin: "50% 34%" }, 0.0);
+      tl.to("#move", { scale: 1.08, duration: 3.6, ease: "sine.inOut" }, 0.0);
+      tl.set("#move", { scale: 1, transformOrigin: "50% 46%" }, 11.6667);
+      tl.set("#move", { transformOrigin: "50% 34%" }, 11.6667);
+      tl.to("#move", { scale: 1.07, duration: 2.8, ease: "sine.inOut" }, 11.6667);
+      tl.to("#move", { scale: 1, duration: 2.4, ease: "power2.inOut" }, 14.5);
+      tl.set("#move", { transformOrigin: "50% 34%" }, 17.4333);
+      tl.to("#move", { scale: 1.1, duration: 1.7, ease: "sine.inOut" }, 17.4333);
+      tl.set("#move", { scale: 1, transformOrigin: "50% 46%" }, 19.1667);
+      tl.set("#move", { transformOrigin: "50% 34%" }, 24.9);
+      tl.to("#move", { scale: 1.07, duration: 1.2, ease: "sine.inOut" }, 24.9);
+      tl.set("#move", { transformOrigin: "50% 34%" }, 26.1);
+      tl.to("#move", { scale: 1.14, duration: 0.25, ease: "power3.out" }, 26.1);
+      tl.set("#move", { scale: 1, transformOrigin: "50% 46%" }, 26.9333);
+      tl.set("#move", { transformOrigin: "50% 34%" }, 31.1333);
+      tl.to("#move", { scale: 1.12, duration: 1.5, ease: "sine.inOut" }, 31.1333);
+      tl.set("#move", { scale: 1, transformOrigin: "50% 46%" }, 32.7333);
+      tl.set("#move", { transformOrigin: "50% 34%" }, 36.9333);
+      tl.to("#move", { scale: 1.12, duration: 3.8, ease: "sine.inOut" }, 36.9333);
+      tl.set("#move", { scale: 1, transformOrigin: "50% 46%" }, 40.7333);
+      tl.set("#move", { transformOrigin: "50% 34%" }, 42.6);
+      tl.to("#move", { scale: 1.06, duration: 3.4, ease: "sine.inOut" }, 42.6);
+      tl.set("#move", { scale: 1, transformOrigin: "50% 46%" }, 46.0);
+      tl.set("#move", { transformOrigin: "50% 34%" }, 60.5);
+      tl.to("#move", { scale: 1.08, duration: 2.4, ease: "sine.inOut" }, 60.5);
+      tl.to("#move", { scale: 1, duration: 2.9, ease: "power2.inOut" }, 63.0);
+      tl.set("#move", { transformOrigin: "50% 34%" }, 70.9);
+      tl.to("#move", { scale: 1.07, duration: 3.4, ease: "sine.inOut" }, 70.9);
+      tl.to("#move", { scale: 1, duration: 3.0, ease: "power2.inOut" }, 74.4);
+      // ---------- custom layer (reel 08) ----------
+      (function () {
+        const IN = "expo.out", SET = "back.out(1.7)", OUT = "power2.in";
+        // cutaway entry: fast circular wipe from the centre; exit: quick scale-down fade (ends exactly at clip end)
+        function cut(id, t0, t1, cut_out = true) {
+          tl.fromTo(id, { clipPath: "circle(0% at 50% 42%)" }, { clipPath: "circle(120% at 50% 42%)", duration: 0.22, ease: "power3.out" }, t0);
+          if (cut_out) tl.to(id, { opacity: 0, scale: 1.04, duration: 0.12, ease: OUT }, t1 - 0.12);
+        }
+        const pop = (sel, t, from = 0.6) => tl.fromTo(sel, { opacity: 0, scale: from }, { opacity: 1, scale: 1, duration: 0.3, ease: SET }, t);
+        const rise = (sel, t, y = 30) => tl.fromTo(sel, { opacity: 0, y }, { opacity: 1, y: 0, duration: 0.32, ease: IN }, t);
+        const strikeX = (sel, t) => tl.fromTo(sel, { scaleX: 0 }, { scaleX: 1, duration: 0.16, ease: "power3.out" }, t);
+        const fadeOut = (sel, t) => tl.to(sel, { opacity: 0, y: -14, duration: 0.15, ease: OUT }, t);
+
+        // A, B: overlays
+        pop("#oAc", 0.18); fadeOut("#oAc", 1.47);
+        pop("#oB0", 1.62); strikeX("#oB0 .x", 1.85); pop("#oB1", 2.18); strikeX("#oB1 .x", 2.4);
+        tl.to("#oB .band", { scale: 0.9, opacity: 0, duration: 0.15, ease: OUT }, 3.5);
+
+        // C: pen cutaway
+        cut("#cC", 3.66, 5.38);
+        rise("#cC .kk", 3.8); tl.fromTo("#cCw", { opacity: 0, scale: 1.3 }, { opacity: 1, scale: 1, duration: 0.25, ease: SET }, 4.28);
+        // D: price slam over the riser; hard cut into the movie clip at 7.433
+        cut("#cD", 5.38, 7.433, false);
+        rise("#cD .kk", 5.45);
+        tl.fromTo("#cDp", { scale: 0.8 }, { scale: 1, duration: 0.5, ease: IN }, 5.55);
+        tl.fromTo("#cDp", { scale: 1.25 }, { scale: 1, duration: 0.22, ease: "power4.out", immediateRender: false }, 6.22);
+        tl.fromTo("#cDg", { opacity: 0 }, { opacity: 0.35, duration: 0.15 }, 6.22);
+        tl.to("#cDg", { opacity: 0.9, duration: 1.1, ease: "power2.in" }, 6.3);
+        tl.fromTo("#cDp", { scale: 1 }, { scale: 1.08, duration: 1.1, ease: "power1.in", immediateRender: false }, 6.3);
+        rise("#cDs", 6.45, 16); tl.fromTo("#cDsrc", { opacity: 0 }, { opacity: 1, duration: 0.25 }, 6.55);
+        tl.fromTo("#cD .cc", { x: 0 }, { keyframes: [{ x: -12, duration: 0.04 }, { x: 10, duration: 0.04 }, { x: -5, duration: 0.04 }, { x: 0, duration: 0.04 }] }, 6.22);
+
+        // F: hype meter
+        pop("#oF0", 14.55); pop("#oF1", 15.54);
+        tl.fromTo("#oFm", { scaleX: 0 }, { scaleX: 1, duration: 1.6, ease: "power2.in" }, 14.9);
+        tl.fromTo("#oF .meter", { x: 0 }, { keyframes: [{ x: -6, duration: 0.04 }, { x: 6, duration: 0.04 }, { x: -3, duration: 0.04 }, { x: 0, duration: 0.04 }] }, 16.5);
+        tl.to("#oF .cc", { opacity: 0, y: -14, duration: 0.15, ease: OUT }, 17.25);
+
+        // H: off patent (padlock clip is a separate track on top)
+        cut("#cH", 19.18, 21.76);
+        rise("#cHk", 19.3); rise("#cHs", 20.0, 14);
+        tl.fromTo("#cHst", { opacity: 0, scale: 1.8, rotation: -14 }, { opacity: 1, scale: 1, rotation: -4, duration: 0.22, ease: "power4.in" }, 20.62);
+        tl.fromTo("#cH .cc", { x: 0 }, { keyframes: [{ x: 10, duration: 0.04 }, { x: -8, duration: 0.04 }, { x: 0, duration: 0.05 }] }, 20.84);
+        rise("#cHd", 21.05, 14);
+        tl.to("#cHv", { opacity: 0, duration: 0.12 }, 21.64);
+        // I: price in India
+        cut("#cI", 21.76, 24.88);
+        rise("#cI .kk", 21.85); rise("#cIb", 21.95); rise("#cIbl", 22.0, 12);
+        tl.fromTo("#cIx", { scaleX: 0 }, { scaleX: 1, duration: 0.18, ease: "power3.out" }, 22.2);
+        tl.to(["#cIb", "#cIbl"], { opacity: 0.45, duration: 0.2 }, 22.35);
+        tl.fromTo("#cIg", { opacity: 0, scale: 1.5 }, { opacity: 1, scale: 1, duration: 0.28, ease: SET }, 22.9);
+        rise("#cIgl", 23.1, 12); tl.fromTo("#cIsrc", { opacity: 0 }, { opacity: 1, duration: 0.25 }, 23.3);
+
+        // K: STEP 1 study
+        cut("#cK", 26.93, 31.11);
+        tl.fromTo("#cKp", { opacity: 0, y: 60, rotation: -3 }, { opacity: 1, y: 0, rotation: -1.2, duration: 0.4, ease: IN }, 27.0);
+        tl.fromTo("#cKp .hl", { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.3, ease: IN }, 28.5);
+        rise("#cKl0", 28.3, 16); rise("#cKl1", 28.0, 16);
+        tl.fromTo("#cKv0", { scale: 1.3 }, { scale: 1, duration: 0.25, ease: SET }, 28.67);
+
+        // M: 3 things
+        cut("#cM", 34.333, 36.93);
+        rise("#cMk", 34.42);
+        pop("#cM0", 35.15, 0.4); pop("#cM1", 35.35, 0.4); pop("#cM2", 35.55, 0.4);
+        tl.fromTo("#cMt", { opacity: 0, scale: 1.3 }, { opacity: 1, scale: 1, duration: 0.25, ease: SET }, 35.6);
+        // points tracker: 3 pulses red on "the last one", then each point lights as it is spoken
+        tl.fromTo("#oP .row", { opacity: 0, y: -20 }, { opacity: 1, y: 0, duration: 0.3, ease: IN }, 36.95);
+        tl.to("#pt2", { borderColor: "#E10600", color: "#E10600", duration: 0.2 }, 37.48);
+        tl.fromTo("#pt2", { scale: 1 }, { scale: 1.15, duration: 0.3, yoyo: true, repeat: 5, ease: "sine.inOut", immediateRender: false }, 37.5);
+        tl.to("#pt2", { borderColor: "rgba(255,255,255,0.35)", color: "rgba(255,255,255,0.55)", duration: 0.2 }, 40.5);
+        [[0, 42.58, 46.0], [1, 46.0, 49.36], [2, 49.36, 57.6]].forEach(([n, a, z]) => {
+          tl.to("#pt" + n, { backgroundColor: "#E10600", borderColor: "#E10600", color: "#FFFFFF", scale: 1.1, duration: 0.2 }, a);
+          tl.fromTo("#pl" + n, { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.25, ease: IN }, a + 0.05);
+          if (n < 2) {
+            tl.to("#pt" + n, { backgroundColor: "rgba(11,11,12,0.72)", borderColor: "rgba(255,255,255,0.35)", color: "rgba(255,255,255,0.55)", scale: 1, duration: 0.15 }, z - 0.05);
+            tl.to("#pl" + n, { opacity: 0, duration: 0.12 }, z - 0.1);
+          }
+        });
+        tl.to("#oP .pts", { opacity: 0, duration: 0.15 }, 57.6);
+        // N: prescription
+        cut("#cN", 40.76, 42.58);
+        tl.fromTo("#cNrx", { opacity: 0, scale: 1.8 }, { opacity: 1, scale: 1, duration: 0.22, ease: "power4.in" }, 40.78);
+        tl.fromTo("#cNg", { opacity: 0 }, { opacity: 0.6, duration: 0.12, yoyo: true, repeat: 1 }, 41.0);
+        rise("#cN .kk", 40.85); rise("#cNt", 41.24);
+        // O: side effects
+        cut("#cO", 46.0, 49.36);
+        rise("#cO .kk", 46.1); pop("#cO0", 46.54); pop("#cO1", 47.14);
+        tl.fromTo(["#cO0", "#cO1"], { rotation: 0 }, { keyframes: [{ rotation: -2, duration: 0.08 }, { rotation: 2, duration: 0.08 }, { rotation: 0, duration: 0.08 }] }, 48.4);
+        // P: what the trial did
+        cut("#cP", 49.36, 53.92);
+        rise("#cP .kk", 49.45);
+        pop("#cP0", 50.0); pop("#cPo0", 50.9); pop("#cP1", 51.2); pop("#cPo1", 52.0); pop("#cP2", 52.3); pop("#cPo2", 52.9);
+        tl.fromTo("#cP3", { opacity: 0, scale: 1.5 }, { opacity: 1, scale: 1, duration: 0.25, ease: "power4.in" }, 53.05);
+        // Q: scale vs muscle
+        cut("#cQ", 53.92, 57.76);
+        pop("#cQ0", 54.0, 0.8);
+        tl.fromTo("#cQn", { rotation: 55 }, { rotation: -55, duration: 1.4, ease: "power2.inOut" }, 54.4);
+        pop("#cQ1", 55.6, 0.8);
+        tl.fromTo("#cQq", { scale: 1 }, { scale: 1.2, duration: 0.25, yoyo: true, repeat: 3, ease: "sine.inOut", immediateRender: false }, 56.32);
+        // R: resistance training
+        cut("#cR", 57.76, 60.5);
+        tl.fromTo("#cRt", { opacity: 0, scale: 1.3 }, { opacity: 1, scale: 1, duration: 0.25, ease: SET }, 58.24);
+        tl.fromTo("#cRd", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.25, ease: IN }, 59.42);
+        // T: ads + hype struck
+        pop("#oT0", 63.2); strikeX("#oT0 .x", 63.5); pop("#oT1", 64.05); strikeX("#oT1 .x", 64.3);
+        tl.to("#oT .band", { opacity: 0, y: -14, duration: 0.15, ease: OUT }, 65.75);
+        // U: sustained results
+        cut("#cU", 65.95, 70.85);
+        rise("#cU .kk", 66.05); pop("#cU0", 67.3);
+        pop("#cU1", 68.89); pop("#cUo", 69.5); pop("#cU2", 69.81);
+      })();
+      window.__timelines["main"] = tl;
+    </script>
+    <script type="module">
+      import * as THREE from "./assets/three/three.module.min.js";
+      const RED = new THREE.Color("#E10600"), WHITE = new THREE.Color("#f4f4f6"), INK = new THREE.Color("#141416"), STEEL = new THREE.Color("#9aa0a8");
+      const clamp = (x) => Math.min(Math.max(x, 0), 1);
+      const ease = (x) => 1 - Math.pow(1 - clamp(x), 3);
+      const back = (x) => { x = clamp(x); const c = 1.7; return 1 + (c + 1) * Math.pow(x - 1, 3) + c * Math.pow(x - 1, 2); };
+      const mat = (color, r = 0.4, m = 0.2) => new THREE.MeshStandardMaterial({ color, roughness: r, metalness: m });
+      function stage(id, w, h, cam) {
+        const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById(id), alpha: true, antialias: true, preserveDrawingBuffer: true });
+        renderer.setPixelRatio(1); renderer.setSize(w, h, false); renderer.setClearColor(0, 0);
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(30, w / h, 0.1, 50);
+        camera.position.set(...cam); camera.lookAt(0, 0, 0);
+        scene.add(new THREE.HemisphereLight(0xffffff, 0x200606, 1.5));
+        const key = new THREE.DirectionalLight(0xfff3ea, 2.6); key.position.set(3, 4, 5); scene.add(key);
+        const rim = new THREE.DirectionalLight(0xff4a3a, 2.0); rim.position.set(-4, 1, -4); scene.add(rim);
+        return { renderer, scene, camera };
+      }
+      // generic injection pen (no brand design)
+      const P = stage("penCv", 1000, 700, [0, 0.4, 9]);
+      const pen = new THREE.Group();
+      const addX = (g, geo, m, x) => { const o = new THREE.Mesh(geo, m); o.rotation.z = Math.PI / 2; o.position.x = x; g.add(o); return o; };
+      addX(pen, new THREE.CylinderGeometry(0.42, 0.42, 3.4, 64), mat(WHITE, 0.35), 0);
+      addX(pen, new THREE.CylinderGeometry(0.44, 0.44, 0.5, 64), mat(RED, 0.4), -0.55);
+      addX(pen, new THREE.CylinderGeometry(0.46, 0.46, 1.3, 64), mat(INK, 0.5), -2.35);
+      addX(pen, new THREE.CylinderGeometry(0.36, 0.42, 0.25, 64), mat(INK, 0.5), 1.82);
+      addX(pen, new THREE.CylinderGeometry(0.34, 0.34, 0.5, 48), mat(RED, 0.45), 2.2);
+      addX(pen, new THREE.CylinderGeometry(0.2, 0.2, 0.18, 32), mat(INK, 0.5), 2.54);
+      for (let k = 0; k < 10; k++) { const r = addX(pen, new THREE.BoxGeometry(0.06, 0.5, 0.74), mat(INK, 0.5), 2.2); r.rotation.x = k * Math.PI / 10; }
+      const clip = new THREE.Mesh(new THREE.BoxGeometry(1.0, 0.12, 0.16), mat(INK, 0.4)); clip.position.set(-2.3, 0.5, 0); pen.add(clip);
+      const win = new THREE.Mesh(new THREE.BoxGeometry(0.7, 0.26, 0.1), mat(new THREE.Color("#2a2a2e"), 0.15, 0.1)); win.position.set(0.55, 0, 0.42); pen.add(win);
+      P.scene.add(pen);
+      // STEP 1 bars: semaglutide −14.9% (red) vs placebo −2.4% (white), growing downward from a baseline
+      const B = stage("barsCv", 900, 560, [0, 0.9, 9.5]);
+      const barG = new THREE.Group(); barG.position.y = 1.35; B.scene.add(barG);
+      const base = new THREE.Mesh(new THREE.BoxGeometry(5.2, 0.05, 1.8), mat(WHITE, 0.6)); barG.add(base);
+      const bars = [[14.9, RED, -1.25], [2.4, WHITE, 1.25]].map(([v, c, x]) => {
+        const m = new THREE.Mesh(new THREE.BoxGeometry(1.5, 1, 1.5), mat(c, 0.45, 0.1));
+        m.position.x = x; m.userData.h = 2.9 * v / 14.9; barG.add(m); return m;
+      });
+      // dumbbell for resistance training
+      const Dm = stage("dbCv", 1000, 640, [0, 0.5, 8.4]);
+      const db = new THREE.Group();
+      addX(db, new THREE.CylinderGeometry(0.09, 0.09, 2.6, 32), mat(STEEL, 0.3, 0.7), 0);
+      for (const sx of [-1, 1]) for (const [off, r, w, c] of [[0.62, 0.66, 0.2, RED], [0.84, 0.52, 0.18, INK], [1.04, 0.38, 0.16, INK]]) addX(db, new THREE.CylinderGeometry(r, r, w, 64), mat(c, 0.5, 0.2), sx * off);
+      Dm.scene.add(db);
+
+      const fmt = (n) => "₹" + Math.round(n).toLocaleString("en-IN");
+      function renderAt(T) {
+        // price counter: ₹0 → ₹1,300 landing on the spoken "1300" at 6.22
+        const pc = document.getElementById("cDp");
+        if (pc) pc.textContent = fmt(1300 * ease((T - 5.55) / 0.67));
+        const tp = T - 3.66;
+        if (tp > -0.05 && tp < 1.8) {
+          pen.scale.setScalar(Math.max(0.85 * back(tp / 0.45), 0.001));
+          pen.rotation.set(0.15 + 0.08 * Math.sin(tp * 2), -1.3 + 1.4 * ease(tp / 0.8) + 0.25 * tp, 0.12 - 0.1 * ease(tp / 0.8));
+          P.renderer.render(P.scene, P.camera);
+        }
+        const tb = T - 26.93;
+        if (tb > -0.05 && tb < 4.3) {
+          barG.rotation.y = -0.3 + 0.06 * tb; barG.rotation.x = 0.12;
+          bars.forEach((m, i) => { const k = ease((tb - 1.1 - (1 - i) * 0.25) / 0.65); m.scale.y = Math.max(0.001, m.userData.h * k); m.position.y = -m.scale.y / 2; });
+          B.renderer.render(B.scene, B.camera);
+          const v = document.getElementById("cKv0");
+          if (v) v.textContent = "−" + (14.9 * ease((tb - 1.1) / 0.65)).toFixed(1) + "%";
+        }
+        const td = T - 57.76;
+        if (td > -0.05 && td < 2.8) {
+          db.scale.setScalar(Math.max(back(td / 0.5), 0.001));
+          db.rotation.set(0.35 + 0.06 * Math.sin(td * 2), -1.2 + 1.2 * ease(td / 0.9) + 0.35 * td, -0.25);
+          db.position.y = 0.12 * Math.sin(td * 2.4);
+          Dm.renderer.render(Dm.scene, Dm.camera);
+        }
+      }
+      window.addEventListener("hf-seek", (e) => renderAt(e.detail.time));
+      renderAt(window.__hfThreeTime || 0);
+    </script>
+  </body>
+</html>
