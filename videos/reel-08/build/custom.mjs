@@ -37,13 +37,6 @@
         const m = new THREE.Mesh(new THREE.BoxGeometry(1.5, 1, 1.5), mat(c, 0.45, 0.1));
         m.position.x = x; m.userData.h = 2.9 * v / 14.9; barG.add(m); return m;
       });
-      // dumbbell for resistance training
-      const Dm = stage("dbCv", 1000, 640, [0, 0.5, 8.4]);
-      const db = new THREE.Group();
-      addX(db, new THREE.CylinderGeometry(0.09, 0.09, 2.6, 32), mat(STEEL, 0.3, 0.7), 0);
-      for (const sx of [-1, 1]) for (const [off, r, w, c] of [[0.62, 0.66, 0.2, RED], [0.84, 0.52, 0.18, INK], [1.04, 0.38, 0.16, INK]]) addX(db, new THREE.CylinderGeometry(r, r, w, 64), mat(c, 0.5, 0.2), sx * off);
-      Dm.scene.add(db);
-
       const fmt = (n) => "₹" + Math.round(n).toLocaleString("en-IN");
       function renderAt(T) {
         // price counter: ₹0 → ₹1,300 landing on the spoken "1300" at 6.22
@@ -62,13 +55,6 @@
           B.renderer.render(B.scene, B.camera);
           const v = document.getElementById("cKv0");
           if (v) v.textContent = "−" + (14.9 * ease((tb - 1.1) / 0.65)).toFixed(1) + "%";
-        }
-        const td = T - 57.76;
-        if (td > -0.05 && td < 2.8) {
-          db.scale.setScalar(Math.max(back(td / 0.5), 0.001));
-          db.rotation.set(0.35 + 0.06 * Math.sin(td * 2), -1.2 + 1.2 * ease(td / 0.9) + 0.35 * td, -0.25);
-          db.position.y = 0.12 * Math.sin(td * 2.4);
-          Dm.renderer.render(Dm.scene, Dm.camera);
         }
       }
       window.addEventListener("hf-seek", (e) => renderAt(e.detail.time));
