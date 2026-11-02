@@ -19,7 +19,7 @@
       });
       function renderAt(T) {
         const t = T - 37.2;
-        if (t < -0.05 || t > 4.3) return;
+        if (t < -0.05 || t > 4.75) return;
         g.rotation.y = -0.28 + 0.05 * t; g.rotation.x = 0.1;
         bars.forEach((m, i) => {
           const k = ease((t - 0.7 - (1 - i) * 0.35) / 0.9);   // white first, red lands on "5.5%" (39.15)

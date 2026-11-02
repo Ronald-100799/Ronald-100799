@@ -24,8 +24,8 @@
  "caption_left": [],
  "caption_top": [
   [
-   22.85,
-   27.12
+   23.88,
+   27.08
   ],
   [
    50.88,
@@ -108,7 +108,7 @@
    "until": 27.0
   },
   {
-   "t": 27.04,
+   "t": 27.12,
    "support": "One group, while curling,"
   },
   {
@@ -266,10 +266,10 @@
    "move": "cut"
   },
   {
-   "t": 27.12,
+   "t": 27.17,
    "move": "push",
    "amount": 1.07,
-   "dur": 7.2,
+   "dur": 7.1,
    "origin": "50% 32%"
   },
   {
@@ -388,6 +388,12 @@
    "name": "sfx2/popsoft",
    "vol": 0.35,
    "why": "real results?"
+  },
+  {
+   "t": 23.9,
+   "name": "sfx/thump",
+   "vol": 0.4,
+   "why": "30 untrained men"
   },
   {
    "t": 27.34,

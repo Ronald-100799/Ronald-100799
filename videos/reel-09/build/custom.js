@@ -19,6 +19,12 @@
         rise("#aV", 20.4, 16);
         tl.fromTo("#aB", { opacity: 0, scale: 1.25 }, { opacity: 1, scale: 1, duration: 0.25, ease: "power4.out" }, 21.02);
         tl.to("#aA", { opacity: 0.4, duration: 0.25 }, 21.1);
+        // scene 2 inside the same backdrop, on Ron's words: "In 2018 researchers" / "30 untrained men"; then a straight cut to his screenshot at 24.4
+        tl.to("#aS1", { opacity: 0, y: -30, duration: 0.2, ease: OUT }, 22.7);
+        tl.fromTo("#aS2", { opacity: 0 }, { opacity: 1, duration: 0.01 }, 22.86);
+        tl.fromTo("#aS2k", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.3, ease: IN }, 22.86);
+        tl.fromTo("#aS2n", { opacity: 0, scale: 1.4 }, { opacity: 1, scale: 1, duration: 0.28, ease: "power4.out" }, 23.9);
+        tl.fromTo("#aS2t", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.3, ease: IN }, 24.12);
 
         // groups (top band while Ron explains)
         tl.fromTo("#o3a", { opacity: 0, y: -20 }, { opacity: 1, y: 0, duration: 0.3, ease: IN }, 27.34);

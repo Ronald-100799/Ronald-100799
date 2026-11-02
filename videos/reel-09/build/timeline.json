@@ -147,9 +147,9 @@
   },
   {
    "k": 16,
-   "out_start": 27.0333,
+   "out_start": 27.1333,
    "out_end": 28.4667,
-   "src_t": 27.04,
+   "src_t": 27.12,
    "support": "One group, while curling,",
    "hero": ""
   },
@@ -346,6 +346,11 @@
    "sfx2/popsoft",
    21.0333,
    0.35
+  ],
+  [
+   "sfx/thump",
+   23.9,
+   0.4
   ],
   [
    "sfx2/popsoft",
