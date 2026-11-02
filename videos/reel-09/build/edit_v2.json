@@ -1,0 +1,483 @@
+{
+ "_comment": "Reel 09 — R17 (Desk): mind-muscle connection. Ron's own overlays kept: study screenshot 22.867–27.1, text box 50.9–55.2 (captions move to the top then; no zoom there).",
+ "title": "Mind-muscle connection — Reel 09",
+ "theme": "desk_red",
+ "speed": 1.0,
+ "source_video": "assets/footage.mp4",
+ "source_audio": "assets/voice.wav",
+ "pacing": {
+  "pad": 0.0,
+  "inner_pad": 0.0,
+  "keep_pause": 999
+ },
+ "tail_hold": 0.3,
+ "takes": [
+  {
+   "id": "ALL",
+   "s": 0.0,
+   "e": 68.08,
+   "keep": true,
+   "ta": "Pre-cut by creator.",
+   "why": "Edited by Ron; no cuts."
+  }
+ ],
+ "caption_left": [],
+ "caption_top": [
+  [
+   22.85,
+   27.12
+  ],
+  [
+   50.88,
+   55.15
+  ]
+ ],
+ "beats": [
+  {
+   "t": 0.0,
+   "support": "When you work out in the gym,"
+  },
+  {
+   "t": 1.1,
+   "support": "don't just move the weight from point A to point B.",
+   "until": 3.5
+  },
+  {
+   "t": 3.54,
+   "support": "Use the",
+   "hero": "MIND-MUSCLE|CONNECTION",
+   "hero_t": 3.7,
+   "fx": "pop",
+   "hero_first": false
+  },
+  {
+   "t": 5.26,
+   "support": "You've heard plenty of influencers say it."
+  },
+  {
+   "t": 7.25,
+   "support": "Let's *decode* it.",
+   "until": 7.95
+  },
+  {
+   "t": 7.97,
+   "support": "Before that — if you're into scientific studies, fitness and nutrition,"
+  },
+  {
+   "t": 11.17,
+   "support": "*follow me*.",
+   "until": 12.15
+  },
+  {
+   "t": 12.17,
+   "support": "I've been in the gym space for years,"
+  },
+  {
+   "t": 13.67,
+   "support": "and this mind-muscle term —"
+  },
+  {
+   "t": 14.6,
+   "support": "people use it, abuse it, overuse it.",
+   "until": 17.5
+  },
+  {
+   "t": 17.58,
+   "support": "If you're a beginner, is the mind-muscle connection"
+  },
+  {
+   "t": 19.18,
+   "support": "just bro-science? Or can you actually get results with it?"
+  },
+  {
+   "t": 21.86,
+   "support": "I'll tell you in this video.",
+   "until": 22.84
+  },
+  {
+   "t": 22.86,
+   "support": "In 2018, researchers"
+  },
+  {
+   "t": 23.9,
+   "support": "took 30 untrained men"
+  },
+  {
+   "t": 25.4,
+   "support": "and ran an 8-week study.",
+   "until": 27.0
+  },
+  {
+   "t": 27.04,
+   "support": "One group, while curling,"
+  },
+  {
+   "t": 28.48,
+   "support": "focused on *squeezing the biceps*.",
+   "until": 30.9
+  },
+  {
+   "t": 30.95,
+   "support": "The other group focused only on"
+  },
+  {
+   "t": 31.99,
+   "support": "moving the weight from point A to point B.",
+   "until": 34.5
+  },
+  {
+   "t": 34.61,
+   "support": "The result? Compared to the second group,"
+  },
+  {
+   "t": 36.67,
+   "support": "the group that squeezed the biceps while curling"
+  },
+  {
+   "t": 39.15,
+   "support": "built 5.5% more muscle.",
+   "until": 41.75
+  },
+  {
+   "t": 41.83,
+   "support": "So now you'll all control every muscle with your mind"
+  },
+  {
+   "t": 43.29,
+   "support": "and become",
+   "hero": "ARNOLD?",
+   "hero_t": 43.29,
+   "fx": "plate",
+   "hero_first": false,
+   "until": 45.3
+  },
+  {
+   "t": 45.35,
+   "support": "No.",
+   "until": 45.95
+  },
+  {
+   "t": 45.97,
+   "support": "Like all research, this has limitations."
+  },
+  {
+   "t": 47.93,
+   "support": "Group A and group B had *similar strength gains*.",
+   "until": 50.85
+  },
+  {
+   "t": 50.99,
+   "support": "And this was"
+  },
+  {
+   "t": 52.11,
+   "support": "a short study on beginners.",
+   "until": 55.15
+  },
+  {
+   "t": 55.19,
+   "support": "It doesn't capture long-term adaptations."
+  },
+  {
+   "t": 57.07,
+   "support": "So if you're a beginner, the mind-muscle connection"
+  },
+  {
+   "t": 59.25,
+   "support": "for long-term progression is",
+   "hero": "NOT NEEDED",
+   "hero_t": 60.65,
+   "fx": "plate",
+   "hero_first": false,
+   "until": 61.65
+  },
+  {
+   "t": 61.71,
+   "support": "If you're into scientific studies, training and nutrition,"
+  },
+  {
+   "t": 64.97,
+   "support": "*follow me*,"
+  },
+  {
+   "t": 66.05,
+   "support": "and share this reel with your",
+   "hero": "BEGINNER FRIENDS",
+   "hero_t": 66.23,
+   "fx": "pop",
+   "hero_first": false
+  }
+ ],
+ "gfx": [
+  {
+   "type": "endcard",
+   "t": 11.0,
+   "until": 12.6,
+   "mini": true,
+   "follow_t": 11.59
+  }
+ ],
+ "fx": [],
+ "camera": [
+  {
+   "t": 0.0,
+   "frame": "W"
+  },
+  {
+   "t": 0.0,
+   "move": "push",
+   "amount": 1.08,
+   "dur": 3.5,
+   "origin": "50% 32%"
+  },
+  {
+   "t": 3.54,
+   "move": "punch",
+   "amount": 1.13,
+   "dur": 0.28,
+   "origin": "50% 32%"
+  },
+  {
+   "t": 5.2,
+   "move": "reset",
+   "dur": 2.0
+  },
+  {
+   "t": 7.25,
+   "move": "push",
+   "amount": 1.06,
+   "dur": 3.6,
+   "origin": "50% 32%"
+  },
+  {
+   "t": 12.17,
+   "move": "reset",
+   "dur": 1.4
+  },
+  {
+   "t": 13.67,
+   "move": "push",
+   "amount": 1.08,
+   "dur": 3.8,
+   "origin": "50% 32%"
+  },
+  {
+   "t": 19.1,
+   "move": "cut"
+  },
+  {
+   "t": 27.12,
+   "move": "push",
+   "amount": 1.07,
+   "dur": 7.2,
+   "origin": "50% 32%"
+  },
+  {
+   "t": 34.6,
+   "move": "reset",
+   "dur": 1.2
+  },
+  {
+   "t": 35.8,
+   "move": "push",
+   "amount": 1.05,
+   "dur": 1.4,
+   "origin": "50% 32%"
+  },
+  {
+   "t": 37.2,
+   "move": "cut"
+  },
+  {
+   "t": 41.83,
+   "move": "push",
+   "amount": 1.09,
+   "dur": 3.4,
+   "origin": "50% 32%"
+  },
+  {
+   "t": 45.35,
+   "move": "punch",
+   "amount": 1.16,
+   "dur": 0.22,
+   "origin": "50% 32%"
+  },
+  {
+   "t": 45.95,
+   "move": "cut"
+  },
+  {
+   "t": 55.25,
+   "move": "push",
+   "amount": 1.07,
+   "dur": 5.3,
+   "origin": "50% 32%"
+  },
+  {
+   "t": 60.65,
+   "move": "punch",
+   "amount": 1.12,
+   "dur": 0.25,
+   "origin": "50% 32%"
+  },
+  {
+   "t": 61.7,
+   "move": "reset",
+   "dur": 1.5
+  },
+  {
+   "t": 63.3,
+   "move": "push",
+   "amount": 1.07,
+   "dur": 4.6,
+   "origin": "50% 32%"
+  }
+ ],
+ "custom": {
+  "html": "build/custom.html",
+  "js": "build/custom.js",
+  "module": "build/custom.mjs"
+ },
+ "music_volume": 1.0,
+ "auto_sfx": false,
+ "sfx_cues": [
+  {
+   "t": 0.94,
+   "name": "sfx/riser",
+   "vol": 0.45,
+   "why": "riser under the hook into the turn"
+  },
+  {
+   "t": 2.2,
+   "name": "sfx/swoosh",
+   "vol": 0.3,
+   "why": "A → B arrow"
+  },
+  {
+   "t": 3.54,
+   "name": "sfx/thump",
+   "vol": 0.6,
+   "why": "MIND-MUSCLE punch-in"
+  },
+  {
+   "t": 15.4,
+   "name": "sfx/tick",
+   "vol": 0.5,
+   "why": "USE"
+  },
+  {
+   "t": 15.94,
+   "name": "sfx/tick",
+   "vol": 0.5,
+   "why": "ABUSE"
+  },
+  {
+   "t": 16.52,
+   "name": "sfx/tick",
+   "vol": 0.55,
+   "why": "OVERUSE"
+  },
+  {
+   "t": 19.1,
+   "name": "sfx/thump",
+   "vol": 0.5,
+   "why": "cut: bro-science?"
+  },
+  {
+   "t": 21.02,
+   "name": "sfx2/popsoft",
+   "vol": 0.35,
+   "why": "real results?"
+  },
+  {
+   "t": 27.34,
+   "name": "sfx2/popsoft",
+   "vol": 0.3,
+   "why": "group 1"
+  },
+  {
+   "t": 31.33,
+   "name": "sfx2/popsoft",
+   "vol": 0.3,
+   "why": "group 2"
+  },
+  {
+   "t": 37.2,
+   "name": "sfx/thump",
+   "vol": 0.45,
+   "why": "cut: result"
+  },
+  {
+   "t": 37.6,
+   "name": "sfx/rise",
+   "vol": 0.35,
+   "why": "bars grow"
+  },
+  {
+   "t": 38.5,
+   "name": "sfx2/digits",
+   "vol": 0.3,
+   "why": "counters"
+  },
+  {
+   "t": 39.15,
+   "name": "sfx/thump",
+   "vol": 0.55,
+   "why": "+5.5"
+  },
+  {
+   "t": 43.29,
+   "name": "sfx2/popsoft",
+   "vol": 0.35,
+   "why": "ARNOLD?"
+  },
+  {
+   "t": 45.35,
+   "name": "sfx/thump",
+   "vol": 0.6,
+   "why": "No."
+  },
+  {
+   "t": 47.93,
+   "name": "sfx/tick",
+   "vol": 0.5,
+   "why": "limitation"
+  },
+  {
+   "t": 49.01,
+   "name": "sfx/tick",
+   "vol": 0.55,
+   "why": "similar strength"
+  },
+  {
+   "t": 55.3,
+   "name": "sfx/tick",
+   "vol": 0.45,
+   "why": "8 weeks"
+  },
+  {
+   "t": 55.6,
+   "name": "sfx/tick",
+   "vol": 0.45,
+   "why": "beginners"
+  },
+  {
+   "t": 55.95,
+   "name": "sfx/tick",
+   "vol": 0.5,
+   "why": "not long-term"
+  },
+  {
+   "t": 60.65,
+   "name": "sfx/thump",
+   "vol": 0.45,
+   "why": "NOT NEEDED"
+  }
+ ],
+ "flags": [
+  "Ron says '5.5% more muscle': it's the gap between 12.4% and 6.9% biceps thickness gain (percentage points). Captions keep his words; the graphic shows 12.4% vs 6.9%.",
+  "Schoenfeld et al., Eur J Sport Sci 2018;18(5):705–712: 30 untrained men, 8 weeks; elbow flexor thickness +12.4% (internal focus) vs +6.9% (external); quadriceps thickness similar; strength differences not significant.",
+  "Follow card on the first 'follow me' (11.6 s); the closing follow ask gets no card (house rule).",
+  "Ron's closing line: for beginners the mind-muscle connection is not needed for long-term progression — captioned as said."
+ ]
+}
