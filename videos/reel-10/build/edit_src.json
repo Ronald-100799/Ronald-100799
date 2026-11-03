@@ -208,140 +208,95 @@
    "move": "push",
    "amount": 1.1,
    "dur": 4.9,
-   "origin": "50% 52%"
+   "origin": "50% 50%"
   },
   {
    "t": 5.067,
    "move": "cut"
   },
   {
-   "t": 6.62,
-   "move": "punch",
-   "amount": 1.22,
-   "dur": 0.3,
-   "origin": "50% 52%"
+   "t": 5.1,
+   "move": "push",
+   "amount": 1.1,
+   "dur": 3.0,
+   "origin": "50% 50%"
   },
   {
-   "t": 8.1,
+   "t": 8.12,
    "move": "reset",
-   "dur": 1.6
+   "dur": 3.4
   },
   {
    "t": 12.8,
    "move": "push",
-   "amount": 1.15,
-   "dur": 0.8,
-   "origin": "50% 52%"
-  },
-  {
-   "t": 13.58,
-   "move": "reset",
-   "dur": 2.0
-  },
-  {
-   "t": 15.68,
-   "move": "push",
-   "amount": 1.16,
-   "dur": 1.9,
-   "origin": "50% 52%"
+   "amount": 1.1,
+   "dur": 4.8,
+   "origin": "50% 50%"
   },
   {
    "t": 17.66,
-   "move": "punch",
-   "amount": 1.26,
-   "dur": 0.3,
-   "origin": "50% 52%"
-  },
-  {
-   "t": 19.6,
-   "move": "reset",
-   "dur": 1.2
-  },
-  {
-   "t": 21.33,
-   "move": "push",
-   "amount": 1.16,
-   "dur": 2.4,
-   "origin": "50% 52%"
-  },
-  {
-   "t": 24.0,
-   "move": "reset",
-   "dur": 2.6
-  },
-  {
-   "t": 27.44,
-   "move": "push",
-   "amount": 1.12,
-   "dur": 3.0,
-   "origin": "50% 52%"
-  },
-  {
-   "t": 30.84,
-   "move": "reset",
-   "dur": 1.5
-  },
-  {
-   "t": 32.7,
-   "move": "punch",
-   "amount": 1.2,
-   "dur": 0.3,
-   "origin": "50% 52%"
-  },
-  {
-   "t": 34.2,
-   "move": "reset",
-   "dur": 1.8
-  },
-  {
-   "t": 36.09,
-   "move": "push",
-   "amount": 1.12,
-   "dur": 2.6,
-   "origin": "50% 52%"
-  },
-  {
-   "t": 39.81,
-   "move": "push",
-   "amount": 1.22,
-   "dur": 0.9,
-   "origin": "50% 52%"
-  },
-  {
-   "t": 41.0,
    "move": "reset",
    "dur": 2.4
   },
   {
+   "t": 20.19,
+   "move": "push",
+   "amount": 1.1,
+   "dur": 4.8,
+   "origin": "50% 50%"
+  },
+  {
+   "t": 27.44,
+   "move": "reset",
+   "dur": 3.2
+  },
+  {
+   "t": 30.84,
+   "move": "push",
+   "amount": 1.1,
+   "dur": 3.3,
+   "origin": "50% 50%"
+  },
+  {
+   "t": 34.2,
+   "move": "reset",
+   "dur": 1.85
+  },
+  {
+   "t": 36.09,
+   "move": "push",
+   "amount": 1.1,
+   "dur": 3.6,
+   "origin": "50% 50%"
+  },
+  {
+   "t": 39.81,
+   "move": "reset",
+   "dur": 3.7
+  },
+  {
    "t": 43.65,
-   "move": "punch",
-   "amount": 1.18,
-   "dur": 0.3,
-   "origin": "50% 52%"
+   "move": "push",
+   "amount": 1.1,
+   "dur": 1.85,
+   "origin": "50% 50%"
   },
   {
    "t": 45.54,
    "move": "reset",
-   "dur": 1.2
-  },
-  {
-   "t": 46.82,
-   "move": "push",
-   "amount": 1.12,
-   "dur": 1.4,
-   "origin": "50% 52%"
+   "dur": 2.6
   },
   {
    "t": 48.23,
-   "move": "reset",
-   "dur": 1.8
+   "move": "push",
+   "amount": 1.1,
+   "dur": 2.9,
+   "origin": "50% 50%"
   },
   {
    "t": 51.23,
-   "move": "push",
-   "amount": 1.12,
-   "dur": 4.2,
-   "origin": "50% 52%"
+   "move": "reset",
+   "dur": 4.2
   }
  ],
  "custom": {
@@ -358,12 +313,6 @@
    "why": "photo: sweets plate"
   },
   {
-   "t": 1.14,
-   "name": "sfx2/popsoft",
-   "vol": 0.25,
-   "why": "photo: laddoo & barfi"
-  },
-  {
    "t": 1.6,
    "name": "sfx2/popsoft",
    "vol": 0.25,
@@ -372,49 +321,19 @@
   {
    "t": 6.62,
    "name": "sfx/swoosh",
-   "vol": 0.25,
-   "why": "don't skip punch-in"
-  },
-  {
-   "t": 17.66,
-   "name": "sfx2/pop",
-   "vol": 0.25,
-   "why": "400 g sticker"
-  },
-  {
-   "t": 21.6,
-   "name": "sfx2/popsoft",
-   "vol": 0.25,
-   "why": "photo: scale"
-  },
-  {
-   "t": 30.84,
-   "name": "sfx2/popsoft",
-   "vol": 0.25,
-   "why": "photo: sweets box"
+   "vol": 0.2,
+   "why": "don't skip"
   },
   {
    "t": 32.9,
    "name": "sfx2/popsoft",
    "vol": 0.25,
    "why": "photo: eggs"
-  },
-  {
-   "t": 36.9,
-   "name": "sfx2/popsoft",
-   "vol": 0.25,
-   "why": "photo: walk"
-  },
-  {
-   "t": 45.54,
-   "name": "sfx2/popsoft",
-   "vol": 0.25,
-   "why": "photo: kaju katli"
   }
  ],
  "flags": [
   "Ron says participants gained 'almost 400 grams of fat'. The study (Yanovski et al., NEJM 2000) measured body weight: +0.37 kg over the holiday season. Captions keep his words; the sticker shows the measured weight.",
   "No Pexels photos of Mysore pak or adhirasam exist; the opening uses a festive sweets plate and laddoos (correctly labelled only as sweets/laddoo).",
-  "Stock photos: Pexels (free to use, no attribution required) — IDs 8819769, 18488312, 18488302, 7991910, 19151502, 806457, 19295553, 10514163."
+  "v2: stock photos only where they matter (Pexels 8819769 sweets plate, 18488302 laddoo, 806457 eggs); weight-gain part uses silent hand-drawn doodles instead."
  ]
 }

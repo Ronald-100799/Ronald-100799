@@ -119,7 +119,11 @@
       },
       "shade": "none",
       "caption_shadow": "0 2px 12px rgba(0,0,0,0.55)",
-      "hero_shadow": "0 3px 16px rgba(0,0,0,0.5)"
+      "hero_shadow": "0 3px 16px rgba(0,0,0,0.5)",
+      "layout": {
+        "gfx_top": 470,
+        "chips_top": 470
+      }
     }
   }
 }

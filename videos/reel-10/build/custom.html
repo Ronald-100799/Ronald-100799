@@ -3,58 +3,66 @@
         @font-face { font-family: "Fraunces"; font-weight: 600; font-style: italic; src: url("assets/fonts/fraunces-latin-600-italic.woff2") format("woff2"); }
         @font-face { font-family: "Fraunces"; font-weight: 700; src: url("assets/fonts/fraunces-latin-700-normal.woff2") format("woff2"); }
         @font-face { font-family: "Caveat"; font-weight: 700; src: url("assets/fonts/caveat-latin-700-normal.woff2") format("woff2"); }
-        /* Terrace type: soft serif support line + marigold handwriting for the key words */
+        /* Terrace type: soft serif support line + marigold handwriting for the key words, tucked right under the picture */
+        .cap { top: 1292px; bottom: auto; }
         .sup { font-family: "Fraunces", Georgia, serif; font-weight: 600; letter-spacing: 0; line-height: 1.25; }
         .sup .acc { color: #FFB627; font-style: italic; }
         .hw { font-family: "Caveat", cursive; font-weight: 700; text-transform: lowercase; letter-spacing: 0; line-height: 0.95; }
         .ul path { stroke: #C9B3FF; }
-        .pol { position: absolute; background: #FFF7EC; padding: 16px 16px 0; border-radius: 6px; box-shadow: 0 18px 40px rgba(0,0,0,0.55); transform-origin: 50% 0%; }
+        .pol { position: absolute; background: #FFF7EC; padding: 14px 14px 0; border-radius: 6px; box-shadow: 0 18px 40px rgba(0,0,0,0.55); transform-origin: 50% 0%; }
         .pol img { display: block; width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 2px; }
         .pol .cap2 { font-family: "Caveat", cursive; font-weight: 700; color: #2B1D0E; text-align: center; padding: 6px 0 10px; line-height: 1; }
-        .tape { position: absolute; left: 50%; top: -14px; width: 110px; height: 30px; margin-left: -55px; background: rgba(201,179,255,0.75); transform: rotate(-3deg); }
+        .tape { position: absolute; left: 50%; top: -14px; width: 100px; height: 28px; margin-left: -50px; background: rgba(201,179,255,0.75); transform: rotate(-3deg); }
         .spark { position: absolute; width: 34px; height: 34px; }
         .spark path { fill: #FFB627; }
-        .note { position: absolute; left: 0; right: 0; top: 150px; display: flex; flex-direction: column; align-items: center; }
-        .note .big { font-family: "Caveat", cursive; font-weight: 700; font-size: 180px; color: #FFB627; line-height: 0.9; text-shadow: 0 4px 18px rgba(0,0,0,0.5); }
-        .note .sm { font-family: "Fraunces", Georgia, serif; font-weight: 600; font-size: 30px; color: #FFF7EC; margin-top: 10px; }
-        .note .src { font-family: "Fraunces", Georgia, serif; font-weight: 600; font-style: italic; font-size: 22px; color: rgba(255,247,236,0.6); margin-top: 6px; }
-        .note svg.sc { width: 120px; height: 90px; margin-bottom: 6px; }
-        .note svg.sc rect, .note svg.sc path, .note svg.sc circle { fill: none; stroke: #C9B3FF; stroke-width: 6; stroke-linecap: round; stroke-linejoin: round; }
+        .dood { position: absolute; left: 0; right: 0; top: 0; height: 650px; }
+        .dood .hand { position: absolute; font-family: "Caveat", cursive; font-weight: 700; color: #FFB627; line-height: 0.95; text-shadow: 0 3px 14px rgba(0,0,0,0.5); white-space: nowrap; }
+        .dood .hand.l { color: #C9B3FF; }
+        .dood .fine { position: absolute; font-family: "Fraunces", Georgia, serif; font-weight: 600; color: #FFF7EC; white-space: nowrap; }
+        .dood .fine.src { font-style: italic; color: rgba(255,247,236,0.6); }
+        .ln { fill: none; stroke: #FFF7EC; stroke-width: 7; stroke-linecap: round; stroke-linejoin: round; }
+        .ln.l { stroke: #C9B3FF; }
+        .ln.m { stroke: #FFB627; }
+        .heart path { fill: #FF8FA3; }
       </style>
 
-      <!-- opening: three polaroids fanned across the top bar (0–4.9 s) -->
+      <!-- opening: two polaroids just above the picture (0–4.9 s) -->
       <div id="pA" class="clip" data-start="0" data-duration="4.95" data-track-index="30" style="position:absolute;inset:0">
-        <div class="pol" id="pA0" style="left:40px;top:120px;width:310px"><i class="tape"></i><img src="assets/stock/p8819769.jpg" alt="" /><div class="cap2" style="font-size:40px">deepavali sweets</div></div>
-        <div class="pol" id="pA1" style="left:385px;top:95px;width:310px"><i class="tape"></i><img src="assets/stock/p18488312.jpg" alt="" /><div class="cap2" style="font-size:40px">barfi &amp; laddoo</div></div>
-        <div class="pol" id="pA2" style="left:730px;top:125px;width:310px"><i class="tape"></i><img src="assets/stock/p18488302.jpg" alt="" /><div class="cap2" style="font-size:40px">laddu!</div></div>
-        <svg class="spark" id="sA0" viewBox="0 0 40 40" style="left:350px;top:70px"><path d="M20 0 C22 14 26 18 40 20 C26 22 22 26 20 40 C18 26 14 22 0 20 C14 18 18 14 20 0Z" /></svg>
-        <svg class="spark" id="sA1" viewBox="0 0 40 40" style="left:1000px;top:90px;width:24px;height:24px"><path d="M20 0 C22 14 26 18 40 20 C26 22 22 26 20 40 C18 26 14 22 0 20 C14 18 18 14 20 0Z" /></svg>
+        <div class="pol" id="pA0" style="left:150px;top:268px;width:300px"><i class="tape"></i><img src="assets/stock/p8819769.jpg" alt="" /><div class="cap2" style="font-size:40px">deepavali sweets</div></div>
+        <div class="pol" id="pA2" style="left:630px;top:262px;width:300px"><i class="tape"></i><img src="assets/stock/p18488302.jpg" alt="" /><div class="cap2" style="font-size:40px">laddu!</div></div>
+        <svg class="spark" id="sA0" viewBox="0 0 40 40" style="left:500px;top:250px"><path d="M20 0 C22 14 26 18 40 20 C26 22 22 26 20 40 C18 26 14 22 0 20 C14 18 18 14 20 0Z" /></svg>
+        <svg class="spark" id="sA1" viewBox="0 0 40 40" style="left:950px;top:300px;width:24px;height:24px"><path d="M20 0 C22 14 26 18 40 20 C26 22 22 26 20 40 C18 26 14 22 0 20 C14 18 18 14 20 0Z" /></svg>
       </div>
 
-      <!-- study note (17.66–20.1): what the study actually measured -->
-      <div id="nW" class="clip" data-start="17.6" data-duration="2.5" data-track-index="31" style="position:absolute;inset:0">
-        <div class="note" id="nWc">
-          <svg class="sc" viewBox="0 0 120 90"><rect x="8" y="20" width="104" height="64" rx="14" /><path d="M38 44 A22 22 0 0 1 82 44" /><path d="M60 46 L70 34" /></svg>
-          <div class="big">+0.37 kg</div>
-          <div class="sm">average weight gain over the holiday season</div>
-          <div class="src">Yanovski et al., NEJM 2000</div>
+      <!-- weight-gain doodles (9.3–27.4 s), silent: scale ticks up → "normal!" → +0.37 kg note → panic → good choices fall away -->
+      <div id="dW" class="clip" data-start="9.3" data-duration="18.1" data-track-index="31" style="position:absolute;inset:0">
+        <div class="dood">
+          <svg id="dSc" viewBox="0 0 260 200" style="position:absolute;left:410px;top:400px;width:260px;height:200px;overflow:visible">
+            <rect class="ln" x="10" y="40" width="240" height="150" rx="34" />
+            <path class="ln l" d="M70 110 A60 60 0 0 1 190 110" />
+            <path class="ln l" d="M78 92 L88 98 M130 50 L130 62 M182 92 L172 98" />
+            <g id="dNd" style="transform-origin:130px 112px"><path class="ln m" d="M130 112 L130 66" /></g>
+            <circle cx="130" cy="112" r="9" fill="#FFB627" />
+          </svg>
+          <div class="hand" id="dT1" style="left:700px;top:430px;font-size:72px">+ a little</div>
+          <div class="hand l" id="dT2" style="left:700px;top:430px;font-size:80px">normal!</div>
+          <svg id="dCk" viewBox="0 0 80 60" style="position:absolute;left:600px;top:400px;width:80px;height:60px;overflow:visible"><path class="ln l" d="M6 32 L28 52 L74 6" pathLength="1" style="stroke-dasharray:1" /></svg>
+          <div class="hand l" id="dG" style="left:0;right:0;top:300px;text-align:center;font-size:64px">good news ✦</div>
+          <div class="hand" id="dK" style="left:480px;top:395px;font-size:132px">+0.37 kg</div>
+          <div class="fine" id="dK2" style="left:486px;top:535px;font-size:26px">avg. holiday-season weight gain</div>
+          <div class="fine src" id="dK3" style="left:486px;top:572px;font-size:21px">Yanovski et al., NEJM 2000</div>
+          <div class="hand" id="dP" style="left:700px;top:395px;font-size:120px;color:#FF8FA3">!!</div>
+          <svg id="dSw" viewBox="0 0 60 80" style="position:absolute;left:350px;top:390px;width:42px;height:56px;overflow:visible"><path d="M30 4 C44 30 56 44 56 56 A26 26 0 0 1 4 56 C4 44 16 30 30 4Z" fill="#9FD3FF" /></svg>
+          <div id="dH" style="position:absolute;left:0;right:0;top:300px;display:flex;justify-content:center;gap:40px">
+            <svg class="heart" id="dH0" viewBox="0 0 40 36" style="width:60px;height:54px"><path d="M20 36 C6 24 0 17 0 10 A10 10 0 0 1 20 6 A10 10 0 0 1 40 10 C40 17 34 24 20 36Z" /></svg>
+            <svg class="heart" id="dH1" viewBox="0 0 40 36" style="width:60px;height:54px"><path d="M20 36 C6 24 0 17 0 10 A10 10 0 0 1 20 6 A10 10 0 0 1 40 10 C40 17 34 24 20 36Z" /></svg>
+            <svg class="heart" id="dH2" viewBox="0 0 40 36" style="width:60px;height:54px"><path d="M20 36 C6 24 0 17 0 10 A10 10 0 0 1 20 6 A10 10 0 0 1 40 10 C40 17 34 24 20 36Z" /></svg>
+          </div>
+          <div class="hand l" id="dHt" style="left:0;right:0;top:225px;text-align:center;font-size:58px">good choices…</div>
         </div>
-        <svg class="spark" id="sW0" viewBox="0 0 40 40" style="left:820px;top:200px"><path d="M20 0 C22 14 26 18 40 20 C26 22 22 26 20 40 C18 26 14 22 0 20 C14 18 18 14 20 0Z" /></svg>
       </div>
 
-      <!-- single polaroids in the top bar -->
-      <div id="pS" class="clip" data-start="21.55" data-duration="2.6" data-track-index="32" style="position:absolute;inset:0">
-        <div class="pol" id="pS0" style="left:330px;top:95px;width:420px"><i class="tape"></i><img src="assets/stock/p7991910.jpg" alt="" /><div class="cap2" style="font-size:46px">the scale goes up…</div></div>
-      </div>
-      <div id="pB" class="clip" data-start="30.8" data-duration="1.95" data-track-index="33" style="position:absolute;inset:0">
-        <div class="pol" id="pB0" style="left:330px;top:95px;width:420px"><i class="tape"></i><img src="assets/stock/p19151502.jpg" alt="" /><div class="cap2" style="font-size:46px">every sweet you see?</div></div>
-      </div>
+      <!-- protein first (32.85–36.0) -->
       <div id="pE" class="clip" data-start="32.85" data-duration="3.15" data-track-index="34" style="position:absolute;inset:0">
-        <div class="pol" id="pE0" style="left:330px;top:95px;width:420px"><i class="tape"></i><img src="assets/stock/p806457.jpg" alt="" /><div class="cap2" style="font-size:46px">protein first</div></div>
-      </div>
-      <div id="pW" class="clip" data-start="36.85" data-duration="2.9" data-track-index="35" style="position:absolute;inset:0">
-        <div class="pol" id="pW0" style="left:330px;top:95px;width:420px"><i class="tape"></i><img src="assets/stock/p19295553.jpg" alt="" /><div class="cap2" style="font-size:46px">10–15 min walk</div></div>
-      </div>
-      <div id="pK" class="clip" data-start="45.5" data-duration="2.7" data-track-index="36" style="position:absolute;inset:0">
-        <div class="pol" id="pK0" style="left:330px;top:95px;width:420px"><i class="tape"></i><img src="assets/stock/p10514163.jpg" alt="" /><div class="cap2" style="font-size:46px">just one day</div></div>
+        <div class="pol" id="pE0" style="left:355px;top:200px;width:370px"><i class="tape"></i><img src="assets/stock/p806457.jpg" alt="" /><div class="cap2" style="font-size:44px">protein first</div></div>
       </div>

@@ -18,3 +18,11 @@ bash build/master.sh renders/raw.mp4 renders/reel-10-diwali-sweets.mp4
 - Zoom ins/outs inside the picture band only (`#fx` clip-path per band).
 - Music: `tools/analytic_bed.py … 96 5 warm` (G major, softer drums, pad), −12 dB, ducked; SFX: soft pops on photos only, one swoosh.
 - Builder fix: brightness matching skips letterboxed footage (sample corner is black).
+
+## v2 (Ron's review)
+
+- Captions right under the picture (top 1292 px); polaroids and doodles right above it.
+- One frame size throughout: the first 5 s (Ron's own reframe, band 598–1321) are cropped to the 656–1263 band.
+- Zooms: one steady rhythm (push to 1.10 over a thought, slow pull-out over the next), no punches.
+- Photos kept: sweets plate, laddu, eggs. Removed: barfi tray, scale, sweets box, walk, kaju katli.
+- 9.3–27.4 s (weight gain): silent hand-drawn doodles — scale ticks up, "+ a little", "normal!", "good news", +0.37 kg note with source, panic "!!" and sweat drop, good-choice hearts falling away.
