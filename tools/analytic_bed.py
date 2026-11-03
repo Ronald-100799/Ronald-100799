@@ -1,7 +1,8 @@
 """Original, licence-free 'analytic' background bed: tight drums, pulsing 16th-note synth, sub bass, minor key.
 News / explainer feel, built to sit under a voice. No third-party samples.
 
-Usage: python3 -I tools/analytic_bed.py OUT.wav SECONDS [bpm] [seed]
+Usage: python3 -I tools/analytic_bed.py OUT.wav SECONDS [bpm] [seed] [mood]
+  mood: "analytic" (default, D minor, Desk) or "warm" (G major, softer drums, pleasant — Terrace)
 """
 import sys, wave
 import numpy as np
@@ -10,6 +11,8 @@ SR = 48000
 out, dur = sys.argv[1], float(sys.argv[2])
 bpm = float(sys.argv[3]) if len(sys.argv) > 3 else 104
 rng = np.random.default_rng(int(sys.argv[4]) if len(sys.argv) > 4 else 11)
+MOOD = sys.argv[5] if len(sys.argv) > 5 else "analytic"
+WARM = MOOD == "warm"
 N = int(SR * dur)
 beat = 60 / bpm
 s16 = beat / 4
@@ -66,6 +69,9 @@ def hat(o=False):
 # D minor: Dm – Bb – F – C (i–VI–III–VII), arpeggio patterns per bar
 roots = [38, 34, 41, 36]
 chords = [[62, 65, 69, 74], [58, 62, 65, 70], [65, 69, 72, 77], [60, 64, 67, 72]]
+if WARM:  # G major: G – Em – C – D (I–vi–IV–V), brighter voicings
+    roots = [43, 40, 36, 38]
+    chords = [[67, 71, 74, 79], [64, 67, 71, 76], [64, 67, 72, 76], [66, 69, 74, 78]]
 pattern = [0, 2, 1, 3, 2, 1, 0, 2, 1, 3, 2, 3, 1, 2, 0, 1]
 Pl, Bs, Dr = np.zeros(N), np.zeros(N), np.zeros(N)
 bar = 4 * beat
@@ -81,12 +87,22 @@ for b in range(int(np.ceil(dur / bar))):
     for q in range(4):
         place(Dr, kick(), t0 + q * beat, 0.6 if q in (0, 2) else 0.35)
         if q in (1, 3):
-            place(Dr, clap(), t0 + q * beat, 0.35)
+            place(Dr, clap(), t0 + q * beat, 0.22 if WARM else 0.35)
         for h in range(4):
-            place(Dr, hat(), t0 + q * beat + h * s16, 0.9 if h == 2 else 0.45)
+            if WARM and h % 2:
+                continue  # 8th-note hats: lighter, less busy
+            place(Dr, hat(), t0 + q * beat + h * s16, (0.6 if h == 2 else 0.35) if WARM else (0.9 if h == 2 else 0.45))
     place(Dr, hat(True), t0 + 3.5 * beat, 0.6)
 
-Pl = lp(Pl, 4200)
+Pl = lp(Pl, 5200 if WARM else 4200)
+if WARM:  # soft sustained pad under the plucks
+    Pd = np.zeros(N)
+    for b in range(int(np.ceil(dur / bar))):
+        t_ = np.arange(int(SR * bar)) / SR
+        env = np.clip(t_ / 0.6, 0, 1) * np.clip((bar - t_) / 0.6, 0, 1)
+        x = sum(np.sin(2 * np.pi * midi(n - 12) * t_) + 0.3 * np.sin(2 * np.pi * midi(n - 12) * 2.003 * t_) for n in chords[b % 4][:3])
+        place(Pd, x * env, b * bar, 0.05)
+    Pl = Pl + lp(Pd, 1800)
 t = np.arange(N) / SR
 pump = np.ones(N)
 for k in range(int(dur / beat) + 1):
