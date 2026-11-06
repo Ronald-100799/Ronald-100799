@@ -1,0 +1,275 @@
+{
+ "total": 55.9333,
+ "segments": [
+  {
+   "take": "ALL",
+   "src_s": 0.0,
+   "src_e": 55.6333,
+   "out_s": 0.0,
+   "take_start": true,
+   "luma": 0,
+   "bright": 1.0,
+   "db": -15.971019744873047,
+   "gain": 0.6
+  }
+ ],
+ "frames": [
+  "W"
+ ],
+ "captions": [
+  {
+   "k": 0,
+   "out_start": 0.0,
+   "out_end": 2.0333,
+   "src_t": 0.0,
+   "support": "Mysore pak, adhirasam, laddu this Deepavali \u2014",
+   "hero": ""
+  },
+  {
+   "k": 1,
+   "out_start": 2.0333,
+   "out_end": 4.9333,
+   "src_t": 2.02,
+   "support": "eat it all, then start the diet after,",
+   "hero": "RIGHT?"
+  },
+  {
+   "k": 2,
+   "out_start": 5.0,
+   "out_end": 6.6333,
+   "src_t": 5.0,
+   "support": "If that's your mindset,",
+   "hero": ""
+  },
+  {
+   "k": 3,
+   "out_start": 6.6333,
+   "out_end": 8.0667,
+   "src_t": 6.62,
+   "support": "don't",
+   "hero": "SKIP THIS"
+  },
+  {
+   "k": 4,
+   "out_start": 8.1333,
+   "out_end": 9.3,
+   "src_t": 8.12,
+   "support": "Whatever the festival,",
+   "hero": ""
+  },
+  {
+   "k": 5,
+   "out_start": 9.3,
+   "out_end": 12.7,
+   "src_t": 9.3,
+   "support": "even fit people gain a little weight after it.",
+   "hero": ""
+  },
+  {
+   "k": 6,
+   "out_start": 12.8,
+   "out_end": 13.5333,
+   "src_t": 12.8,
+   "support": "That's",
+   "hero": "NORMAL"
+  },
+  {
+   "k": 7,
+   "out_start": 13.5667,
+   "out_end": 15.6667,
+   "src_t": 13.58,
+   "support": "The good news? According to a study,",
+   "hero": ""
+  },
+  {
+   "k": 8,
+   "out_start": 15.6667,
+   "out_end": 17.6667,
+   "src_t": 15.68,
+   "support": "after the festival, participants gained only about",
+   "hero": ""
+  },
+  {
+   "k": 9,
+   "out_start": 17.6667,
+   "out_end": 20.1,
+   "src_t": 17.66,
+   "support": "of fat.",
+   "hero": "400 GRAMS"
+  },
+  {
+   "k": 10,
+   "out_start": 20.2,
+   "out_end": 21.3333,
+   "src_t": 20.19,
+   "support": "But what do most people do?",
+   "hero": ""
+  },
+  {
+   "k": 11,
+   "out_start": 21.3333,
+   "out_end": 23.5,
+   "src_t": 21.33,
+   "support": "The moment the scale goes up, they panic",
+   "hero": ""
+  },
+  {
+   "k": 12,
+   "out_start": 23.5,
+   "out_end": 27.4,
+   "src_t": 23.51,
+   "support": "and drop all the good lifestyle choices they'd made.",
+   "hero": ""
+  },
+  {
+   "k": 13,
+   "out_start": 27.4333,
+   "out_end": 28.4667,
+   "src_t": 27.44,
+   "support": "To avoid that,",
+   "hero": ""
+  },
+  {
+   "k": 14,
+   "out_start": 28.4667,
+   "out_end": 30.8,
+   "src_t": 28.46,
+   "support": "cut down your",
+   "hero": "TREAT CHOICES"
+  },
+  {
+   "k": 15,
+   "out_start": 30.8333,
+   "out_end": 32.7,
+   "src_t": 30.84,
+   "support": "Don't grab every sweet you see \u2014",
+   "hero": ""
+  },
+  {
+   "k": 16,
+   "out_start": 32.7,
+   "out_end": 34.1333,
+   "src_t": 32.7,
+   "support": "put your",
+   "hero": "PROTEIN FIRST"
+  },
+  {
+   "k": 17,
+   "out_start": 34.2,
+   "out_end": 36.0667,
+   "src_t": 34.2,
+   "support": "It keeps you fuller for longer.",
+   "hero": ""
+  },
+  {
+   "k": 18,
+   "out_start": 36.1,
+   "out_end": 38.2667,
+   "src_t": 36.09,
+   "support": "After a big meal, take a",
+   "hero": "10\u201315 MIN WALK"
+  },
+  {
+   "k": 19,
+   "out_start": 38.3,
+   "out_end": 39.8,
+   "src_t": 38.31,
+   "support": "It brings your cravings down.",
+   "hero": ""
+  },
+  {
+   "k": 20,
+   "out_start": 39.8,
+   "out_end": 40.7333,
+   "src_t": 39.81,
+   "support": "And most importantly,",
+   "hero": ""
+  },
+  {
+   "k": 21,
+   "out_start": 40.7333,
+   "out_end": 43.6667,
+   "src_t": 40.73,
+   "support": "don't stress over these small fluctuations.",
+   "hero": ""
+  },
+  {
+   "k": 22,
+   "out_start": 43.6667,
+   "out_end": 45.5,
+   "src_t": 43.65,
+   "support": "Get",
+   "hero": "BACK ON TRACK"
+  },
+  {
+   "k": 23,
+   "out_start": 45.5333,
+   "out_end": 46.8333,
+   "src_t": 45.54,
+   "support": "A festival is just one day,",
+   "hero": ""
+  },
+  {
+   "k": 24,
+   "out_start": 46.8333,
+   "out_end": 48.2,
+   "src_t": 46.82,
+   "support": "but its effect can last for months.",
+   "hero": ""
+  },
+  {
+   "k": 25,
+   "out_start": 48.2333,
+   "out_end": 50.4,
+   "src_t": 48.23,
+   "support": "For more health tips like this,",
+   "hero": ""
+  },
+  {
+   "k": 26,
+   "out_start": 50.4,
+   "out_end": 51.2333,
+   "src_t": 50.4,
+   "support": "*follow me*,",
+   "hero": ""
+  },
+  {
+   "k": 27,
+   "out_start": 51.2333,
+   "out_end": 52.9667,
+   "src_t": 51.23,
+   "support": "and share this with the friend who's already wondering",
+   "hero": ""
+  },
+  {
+   "k": 28,
+   "out_start": 52.9667,
+   "out_end": 55.6333,
+   "src_t": 52.97,
+   "support": "what to do about their diet this Deepavali.",
+   "hero": "SHARE IT"
+  }
+ ],
+ "sfx": [
+  [
+   "sfx2/popsoft",
+   0.0667,
+   0.3
+  ],
+  [
+   "sfx2/popsoft",
+   1.6,
+   0.25
+  ],
+  [
+   "sfx/swoosh",
+   6.6333,
+   0.2
+  ],
+  [
+   "sfx2/popsoft",
+   32.9,
+   0.25
+  ]
+ ]
+}

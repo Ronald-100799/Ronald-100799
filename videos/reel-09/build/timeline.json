@@ -1,0 +1,426 @@
+{
+ "total": 68.3667,
+ "segments": [
+  {
+   "take": "ALL",
+   "src_s": 0.0,
+   "src_e": 68.0667,
+   "out_s": 0.0,
+   "take_start": true,
+   "luma": 127,
+   "bright": 1.0,
+   "db": -15.891274452209473,
+   "gain": 0.6
+  }
+ ],
+ "frames": [
+  "W"
+ ],
+ "captions": [
+  {
+   "k": 0,
+   "out_start": 0.0,
+   "out_end": 1.1,
+   "src_t": 0.0,
+   "support": "When you work out in the gym,",
+   "hero": ""
+  },
+  {
+   "k": 1,
+   "out_start": 1.1,
+   "out_end": 3.5,
+   "src_t": 1.1,
+   "support": "don't just move the weight from point A to point B.",
+   "hero": ""
+  },
+  {
+   "k": 2,
+   "out_start": 3.5333,
+   "out_end": 5.2667,
+   "src_t": 3.54,
+   "support": "Use the",
+   "hero": "MIND-MUSCLE|CONNECTION"
+  },
+  {
+   "k": 3,
+   "out_start": 5.2667,
+   "out_end": 7.2667,
+   "src_t": 5.26,
+   "support": "You've heard plenty of influencers say it.",
+   "hero": ""
+  },
+  {
+   "k": 4,
+   "out_start": 7.2667,
+   "out_end": 7.9333,
+   "src_t": 7.25,
+   "support": "Let's *decode* it.",
+   "hero": ""
+  },
+  {
+   "k": 5,
+   "out_start": 7.9667,
+   "out_end": 11.1667,
+   "src_t": 7.97,
+   "support": "Before that \u2014 if you're into scientific studies, fitness and nutrition,",
+   "hero": ""
+  },
+  {
+   "k": 6,
+   "out_start": 11.1667,
+   "out_end": 12.1333,
+   "src_t": 11.17,
+   "support": "*follow me*.",
+   "hero": ""
+  },
+  {
+   "k": 7,
+   "out_start": 12.1667,
+   "out_end": 13.6667,
+   "src_t": 12.17,
+   "support": "I've been in the gym space for years,",
+   "hero": ""
+  },
+  {
+   "k": 8,
+   "out_start": 13.6667,
+   "out_end": 14.6,
+   "src_t": 13.67,
+   "support": "and this mind-muscle term \u2014",
+   "hero": ""
+  },
+  {
+   "k": 9,
+   "out_start": 14.6,
+   "out_end": 17.5,
+   "src_t": 14.6,
+   "support": "people use it, abuse it, overuse it.",
+   "hero": ""
+  },
+  {
+   "k": 10,
+   "out_start": 17.5667,
+   "out_end": 19.1667,
+   "src_t": 17.58,
+   "support": "If you're a beginner, is the mind-muscle connection",
+   "hero": ""
+  },
+  {
+   "k": 11,
+   "out_start": 19.1667,
+   "out_end": 21.8667,
+   "src_t": 19.18,
+   "support": "just bro-science? Or can you actually get results with it?",
+   "hero": ""
+  },
+  {
+   "k": 12,
+   "out_start": 21.8667,
+   "out_end": 22.8333,
+   "src_t": 21.86,
+   "support": "I'll tell you in this video.",
+   "hero": ""
+  },
+  {
+   "k": 13,
+   "out_start": 22.8667,
+   "out_end": 23.9,
+   "src_t": 22.86,
+   "support": "In 2018, researchers",
+   "hero": ""
+  },
+  {
+   "k": 14,
+   "out_start": 23.9,
+   "out_end": 25.4,
+   "src_t": 23.9,
+   "support": "took 30 untrained men",
+   "hero": ""
+  },
+  {
+   "k": 15,
+   "out_start": 25.4,
+   "out_end": 27.0,
+   "src_t": 25.4,
+   "support": "and ran an 8-week study.",
+   "hero": ""
+  },
+  {
+   "k": 16,
+   "out_start": 27.1333,
+   "out_end": 28.4667,
+   "src_t": 27.12,
+   "support": "One group, while curling,",
+   "hero": ""
+  },
+  {
+   "k": 17,
+   "out_start": 28.4667,
+   "out_end": 30.9,
+   "src_t": 28.48,
+   "support": "focused on *squeezing the biceps*.",
+   "hero": ""
+  },
+  {
+   "k": 18,
+   "out_start": 30.9333,
+   "out_end": 32.0,
+   "src_t": 30.95,
+   "support": "The other group focused only on",
+   "hero": ""
+  },
+  {
+   "k": 19,
+   "out_start": 32.0,
+   "out_end": 34.5,
+   "src_t": 31.99,
+   "support": "moving the weight from point A to point B.",
+   "hero": ""
+  },
+  {
+   "k": 20,
+   "out_start": 34.6,
+   "out_end": 36.6667,
+   "src_t": 34.61,
+   "support": "The result? Compared to the second group,",
+   "hero": ""
+  },
+  {
+   "k": 21,
+   "out_start": 36.6667,
+   "out_end": 39.1333,
+   "src_t": 36.67,
+   "support": "the group that squeezed the biceps while curling",
+   "hero": ""
+  },
+  {
+   "k": 22,
+   "out_start": 39.1333,
+   "out_end": 41.7333,
+   "src_t": 39.15,
+   "support": "built 5.5% more muscle.",
+   "hero": ""
+  },
+  {
+   "k": 23,
+   "out_start": 41.8333,
+   "out_end": 43.3,
+   "src_t": 41.83,
+   "support": "So now you'll all control every muscle with your mind",
+   "hero": ""
+  },
+  {
+   "k": 24,
+   "out_start": 43.3,
+   "out_end": 45.3,
+   "src_t": 43.29,
+   "support": "and become",
+   "hero": "ARNOLD?"
+  },
+  {
+   "k": 25,
+   "out_start": 45.3333,
+   "out_end": 45.9333,
+   "src_t": 45.35,
+   "support": "No.",
+   "hero": ""
+  },
+  {
+   "k": 26,
+   "out_start": 45.9667,
+   "out_end": 47.9333,
+   "src_t": 45.97,
+   "support": "Like all research, this has limitations.",
+   "hero": ""
+  },
+  {
+   "k": 27,
+   "out_start": 47.9333,
+   "out_end": 50.8667,
+   "src_t": 47.93,
+   "support": "Group A and group B had *similar strength gains*.",
+   "hero": ""
+  },
+  {
+   "k": 28,
+   "out_start": 51.0,
+   "out_end": 52.1,
+   "src_t": 50.99,
+   "support": "And this was",
+   "hero": ""
+  },
+  {
+   "k": 29,
+   "out_start": 52.1,
+   "out_end": 55.1333,
+   "src_t": 52.11,
+   "support": "a short study on beginners.",
+   "hero": ""
+  },
+  {
+   "k": 30,
+   "out_start": 55.2,
+   "out_end": 57.0667,
+   "src_t": 55.19,
+   "support": "It doesn't capture long-term adaptations.",
+   "hero": ""
+  },
+  {
+   "k": 31,
+   "out_start": 57.0667,
+   "out_end": 59.2667,
+   "src_t": 57.07,
+   "support": "So if you're a beginner, the mind-muscle connection",
+   "hero": ""
+  },
+  {
+   "k": 32,
+   "out_start": 59.2667,
+   "out_end": 61.6667,
+   "src_t": 59.25,
+   "support": "for long-term progression is",
+   "hero": "NOT NEEDED"
+  },
+  {
+   "k": 33,
+   "out_start": 61.7,
+   "out_end": 64.9667,
+   "src_t": 61.71,
+   "support": "If you're into scientific studies, training and nutrition,",
+   "hero": ""
+  },
+  {
+   "k": 34,
+   "out_start": 64.9667,
+   "out_end": 66.0667,
+   "src_t": 64.97,
+   "support": "*follow me*,",
+   "hero": ""
+  },
+  {
+   "k": 35,
+   "out_start": 66.0667,
+   "out_end": 68.0667,
+   "src_t": 66.05,
+   "support": "and share this reel with your",
+   "hero": "BEGINNER FRIENDS"
+  }
+ ],
+ "sfx": [
+  [
+   "sfx/riser",
+   0.9333,
+   0.45
+  ],
+  [
+   "sfx/swoosh",
+   2.2,
+   0.3
+  ],
+  [
+   "sfx/thump",
+   3.5333,
+   0.6
+  ],
+  [
+   "sfx/tick",
+   15.4,
+   0.5
+  ],
+  [
+   "sfx/tick",
+   15.9333,
+   0.5
+  ],
+  [
+   "sfx/tick",
+   16.5333,
+   0.55
+  ],
+  [
+   "sfx/thump",
+   19.1,
+   0.5
+  ],
+  [
+   "sfx2/popsoft",
+   21.0333,
+   0.35
+  ],
+  [
+   "sfx/thump",
+   23.9,
+   0.4
+  ],
+  [
+   "sfx2/popsoft",
+   27.3333,
+   0.3
+  ],
+  [
+   "sfx2/popsoft",
+   31.3333,
+   0.3
+  ],
+  [
+   "sfx/thump",
+   37.2,
+   0.45
+  ],
+  [
+   "sfx/rise",
+   37.6,
+   0.35
+  ],
+  [
+   "sfx2/digits",
+   38.5,
+   0.3
+  ],
+  [
+   "sfx/thump",
+   39.1333,
+   0.55
+  ],
+  [
+   "sfx2/popsoft",
+   43.3,
+   0.35
+  ],
+  [
+   "sfx/thump",
+   45.3333,
+   0.6
+  ],
+  [
+   "sfx/tick",
+   47.9333,
+   0.5
+  ],
+  [
+   "sfx/tick",
+   49.0,
+   0.55
+  ],
+  [
+   "sfx/tick",
+   55.3,
+   0.45
+  ],
+  [
+   "sfx/tick",
+   55.6,
+   0.45
+  ],
+  [
+   "sfx/tick",
+   55.9333,
+   0.5
+  ],
+  [
+   "sfx/thump",
+   60.6667,
+   0.45
+  ]
+ ]
+}

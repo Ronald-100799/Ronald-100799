@@ -1,0 +1,766 @@
+{
+ "total": 128.5333,
+ "segments": [
+  {
+   "take": "U00",
+   "src_s": 7.2667,
+   "src_e": 26.9333,
+   "out_s": 0.0,
+   "take_start": true,
+   "luma": 110,
+   "bright": 1.018,
+   "db": -13.819387435913086,
+   "gain": 0.997
+  },
+  {
+   "take": "U04",
+   "src_s": 70.7,
+   "src_e": 83.1667,
+   "out_s": 19.6667,
+   "take_start": true,
+   "luma": 97,
+   "bright": 1.1,
+   "db": -13.777743339538574,
+   "gain": 0.993
+  },
+  {
+   "take": "U06",
+   "src_s": 91.2,
+   "src_e": 94.3667,
+   "out_s": 32.1333,
+   "take_start": true,
+   "luma": 97,
+   "bright": 1.1,
+   "db": -14.11090087890625,
+   "gain": 1.031
+  },
+  {
+   "take": "U09",
+   "src_s": 100.1667,
+   "src_e": 112.0,
+   "out_s": 35.3,
+   "take_start": true,
+   "luma": 112,
+   "bright": 1.0,
+   "db": -13.851995468139648,
+   "gain": 1.001
+  },
+  {
+   "take": "U12",
+   "src_s": 123.3,
+   "src_e": 132.7333,
+   "out_s": 47.1333,
+   "take_start": true,
+   "luma": 112,
+   "bright": 1.0,
+   "db": -13.693557739257812,
+   "gain": 0.983
+  },
+  {
+   "take": "U21",
+   "src_s": 183.9333,
+   "src_e": 190.8667,
+   "out_s": 56.5667,
+   "take_start": true,
+   "luma": 112,
+   "bright": 1.0,
+   "db": -13.864375114440918,
+   "gain": 1.002
+  },
+  {
+   "take": "U23",
+   "src_s": 206.9,
+   "src_e": 213.0667,
+   "out_s": 63.5,
+   "take_start": true,
+   "luma": 112,
+   "bright": 1.0,
+   "db": -13.59047794342041,
+   "gain": 0.971
+  },
+  {
+   "take": "U25",
+   "src_s": 224.9,
+   "src_e": 230.7333,
+   "out_s": 69.6667,
+   "take_start": true,
+   "luma": 112,
+   "bright": 1.0,
+   "db": -13.865717887878418,
+   "gain": 1.003
+  },
+  {
+   "take": "U26",
+   "src_s": 239.0,
+   "src_e": 243.3,
+   "out_s": 75.5,
+   "take_start": true,
+   "luma": 112,
+   "bright": 1.0,
+   "db": -13.814407348632812,
+   "gain": 0.997
+  },
+  {
+   "take": "U30",
+   "src_s": 264.4333,
+   "src_e": 271.0333,
+   "out_s": 79.8,
+   "take_start": true,
+   "luma": 112,
+   "bright": 1.0,
+   "db": -13.83358383178711,
+   "gain": 0.999
+  },
+  {
+   "take": "U32",
+   "src_s": 284.6667,
+   "src_e": 298.5667,
+   "out_s": 86.4,
+   "take_start": true,
+   "luma": 112,
+   "bright": 1.0,
+   "db": -13.573554992675781,
+   "gain": 0.969
+  },
+  {
+   "take": "U35",
+   "src_s": 315.9667,
+   "src_e": 324.1667,
+   "out_s": 100.3,
+   "take_start": true,
+   "luma": 112,
+   "bright": 1.0,
+   "db": -13.956171035766602,
+   "gain": 1.013
+  },
+  {
+   "take": "U36",
+   "src_s": 332.5667,
+   "src_e": 336.1333,
+   "out_s": 108.5,
+   "take_start": true,
+   "luma": 112,
+   "bright": 1.0,
+   "db": -14.022826194763184,
+   "gain": 1.021
+  },
+  {
+   "take": "U38",
+   "src_s": 341.9667,
+   "src_e": 349.8667,
+   "out_s": 112.0667,
+   "take_start": true,
+   "luma": 112,
+   "bright": 1.0,
+   "db": -13.805251121520996,
+   "gain": 0.996
+  },
+  {
+   "take": "U40",
+   "src_s": 355.8,
+   "src_e": 363.0333,
+   "out_s": 119.9667,
+   "take_start": true,
+   "luma": 112,
+   "bright": 1.0,
+   "db": -13.96793270111084,
+   "gain": 1.015
+  },
+  {
+   "take": "U40",
+   "src_s": 363.2333,
+   "src_e": 363.8667,
+   "out_s": 127.2,
+   "take_start": false,
+   "luma": 112,
+   "bright": 1.0,
+   "db": -17.02092742919922,
+   "gain": 1.334
+  }
+ ],
+ "frames": [
+  "W",
+  "M",
+  "M",
+  "W",
+  "W",
+  "M",
+  "W",
+  "M",
+  "W",
+  "W",
+  "W",
+  "M",
+  "C",
+  "W",
+  "M",
+  "W"
+ ],
+ "captions": [
+  {
+   "k": 0,
+   "out_start": 0.0,
+   "out_end": 2.3667,
+   "src_t": 7.25,
+   "support": "If you're stuck in a",
+   "hero": "SKINNY FAT|BODY TYPE"
+  },
+  {
+   "k": 1,
+   "out_start": 2.3667,
+   "out_end": 4.2333,
+   "src_t": 9.65,
+   "support": "*don't skip* this video.",
+   "hero": ""
+  },
+  {
+   "k": 2,
+   "out_start": 4.2333,
+   "out_end": 6.9667,
+   "src_t": 11.51,
+   "support": "For being skinny fat, there are",
+   "hero": "2 MAIN REASONS"
+  },
+  {
+   "k": 3,
+   "out_start": 6.9667,
+   "out_end": 9.1667,
+   "src_t": 14.23,
+   "support": "Number one: *lack of resistance training.*",
+   "hero": ""
+  },
+  {
+   "k": 4,
+   "out_start": 9.1667,
+   "out_end": 12.9667,
+   "src_t": 16.45,
+   "support": "Doing more",
+   "hero": "CARDIO"
+  },
+  {
+   "k": 5,
+   "out_start": 12.9667,
+   "out_end": 14.7,
+   "src_t": 20.25,
+   "support": "or playing more",
+   "hero": "SPORTS"
+  },
+  {
+   "k": 6,
+   "out_start": 14.7,
+   "out_end": 16.9,
+   "src_t": 21.97,
+   "support": "won't improve your *body composition.*",
+   "hero": ""
+  },
+  {
+   "k": 7,
+   "out_start": 16.9,
+   "out_end": 19.6667,
+   "src_t": 24.17,
+   "support": "Instead, focus on",
+   "hero": "MUSCLE BUILDING"
+  },
+  {
+   "k": 8,
+   "out_start": 19.7333,
+   "out_end": 21.6,
+   "src_t": 70.75,
+   "support": "When you focus on *muscle building,*",
+   "hero": ""
+  },
+  {
+   "k": 9,
+   "out_start": 21.6,
+   "out_end": 23.4667,
+   "src_t": 72.64,
+   "support": "your body composition improves",
+   "hero": ""
+  },
+  {
+   "k": 10,
+   "out_start": 23.4667,
+   "out_end": 25.2667,
+   "src_t": 74.5,
+   "support": "and you gain more",
+   "hero": "CONFIDENCE"
+  },
+  {
+   "k": 11,
+   "out_start": 25.2667,
+   "out_end": 26.1667,
+   "src_t": 76.3,
+   "support": "My suggestion: follow a",
+   "hero": ""
+  },
+  {
+   "k": 12,
+   "out_start": 26.1667,
+   "out_end": 29.1667,
+   "src_t": 77.2,
+   "support": "*3\u20134 day* workout split each week.",
+   "hero": ""
+  },
+  {
+   "k": 13,
+   "out_start": 29.1667,
+   "out_end": 32.1333,
+   "src_t": 80.2,
+   "support": "It gives you plenty of time to *recover.*",
+   "hero": ""
+  },
+  {
+   "k": 14,
+   "out_start": 32.1333,
+   "out_end": 35.3,
+   "src_t": 91.2,
+   "support": "And every week, don't forget *progressive overload.*",
+   "hero": ""
+  },
+  {
+   "k": 15,
+   "out_start": 35.3333,
+   "out_end": 37.2667,
+   "src_t": 100.2,
+   "support": "Add *compound lifts* to your workout \u2014",
+   "hero": ""
+  },
+  {
+   "k": 16,
+   "out_start": 37.2667,
+   "out_end": 38.9333,
+   "src_t": 102.15,
+   "support": "bench press, squat, deadlift.",
+   "hero": ""
+  },
+  {
+   "k": 17,
+   "out_start": 38.9333,
+   "out_end": 41.6667,
+   "src_t": 103.81,
+   "support": "Lifts like these",
+   "hero": ""
+  },
+  {
+   "k": 18,
+   "out_start": 41.6667,
+   "out_end": 45.0667,
+   "src_t": 106.55,
+   "support": "let you activate and target",
+   "hero": "MORE MUSCLE|GROUPS"
+  },
+  {
+   "k": 19,
+   "out_start": 45.0667,
+   "out_end": 47.1333,
+   "src_t": 109.93,
+   "support": "at the same time.",
+   "hero": ""
+  },
+  {
+   "k": 20,
+   "out_start": 47.1333,
+   "out_end": 48.8667,
+   "src_t": 123.3,
+   "support": "Reason number two: *poor diet.*",
+   "hero": ""
+  },
+  {
+   "k": 21,
+   "out_start": 48.8667,
+   "out_end": 52.2333,
+   "src_t": 125.03,
+   "support": "If your diet has too much *processed* and *sugary food,*",
+   "hero": ""
+  },
+  {
+   "k": 22,
+   "out_start": 52.2333,
+   "out_end": 54.1667,
+   "src_t": 128.41,
+   "support": "you can't",
+   "hero": "BUILD MUSCLE"
+  },
+  {
+   "k": 23,
+   "out_start": 54.1667,
+   "out_end": 56.5667,
+   "src_t": 130.33,
+   "support": "and your body composition *won't improve.*",
+   "hero": ""
+  },
+  {
+   "k": 24,
+   "out_start": 56.7,
+   "out_end": 60.3333,
+   "src_t": 184.07,
+   "support": "Instead of processed and sugary foods,",
+   "hero": ""
+  },
+  {
+   "k": 25,
+   "out_start": 60.3333,
+   "out_end": 63.5,
+   "src_t": 187.7,
+   "support": "focus on",
+   "hero": "PROTEIN-RICH|WHOLE FOODS"
+  },
+  {
+   "k": 26,
+   "out_start": 63.5,
+   "out_end": 66.0667,
+   "src_t": 206.9,
+   "support": "Eating protein-rich whole foods helps",
+   "hero": ""
+  },
+  {
+   "k": 27,
+   "out_start": 66.0667,
+   "out_end": 67.4667,
+   "src_t": 209.47,
+   "support": "your *muscle building*",
+   "hero": ""
+  },
+  {
+   "k": 28,
+   "out_start": 67.4667,
+   "out_end": 69.6667,
+   "src_t": 210.87,
+   "support": "and your *hormonal balance.*",
+   "hero": ""
+  },
+  {
+   "k": 29,
+   "out_start": 69.6667,
+   "out_end": 73.0333,
+   "src_t": 224.9,
+   "support": "Good fat sources like *nuts*",
+   "hero": "GOOD FATS"
+  },
+  {
+   "k": 30,
+   "out_start": 73.0333,
+   "out_end": 75.5,
+   "src_t": 228.27,
+   "support": "also support your *hormonal balance.*",
+   "hero": ""
+  },
+  {
+   "k": 31,
+   "out_start": 75.5,
+   "out_end": 77.3333,
+   "src_t": 239.0,
+   "support": "And if you're skinny fat,",
+   "hero": ""
+  },
+  {
+   "k": 32,
+   "out_start": 77.3333,
+   "out_end": 78.8667,
+   "src_t": 240.84,
+   "support": "knowing your",
+   "hero": "MAINTENANCE|CALORIES"
+  },
+  {
+   "k": 33,
+   "out_start": 78.8667,
+   "out_end": 79.8,
+   "src_t": 242.38,
+   "support": "is *really important.*",
+   "hero": ""
+  },
+  {
+   "k": 34,
+   "out_start": 79.8333,
+   "out_end": 82.2333,
+   "src_t": 264.45,
+   "support": "If you're *above 15%* body fat,",
+   "hero": ""
+  },
+  {
+   "k": 35,
+   "out_start": 82.2333,
+   "out_end": 84.1333,
+   "src_t": 266.85,
+   "support": "eat *100\u2013200 calories* less",
+   "hero": ""
+  },
+  {
+   "k": 36,
+   "out_start": 84.1333,
+   "out_end": 86.4,
+   "src_t": 268.77,
+   "support": "than your maintenance calories.",
+   "hero": ""
+  },
+  {
+   "k": 37,
+   "out_start": 86.4333,
+   "out_end": 88.9,
+   "src_t": 284.7,
+   "support": "If you're *below 15%* body fat,",
+   "hero": ""
+  },
+  {
+   "k": 38,
+   "out_start": 88.9,
+   "out_end": 92.1,
+   "src_t": 287.16,
+   "support": "eat at maintenance, or a *small surplus* \u2014",
+   "hero": ""
+  },
+  {
+   "k": 39,
+   "out_start": 92.1,
+   "out_end": 95.3,
+   "src_t": 290.38,
+   "support": "about *100 calories* above maintenance.",
+   "hero": ""
+  },
+  {
+   "k": 40,
+   "out_start": 95.3,
+   "out_end": 98.4333,
+   "src_t": 293.56,
+   "support": "That supports your *muscle building*",
+   "hero": ""
+  },
+  {
+   "k": 41,
+   "out_start": 98.4333,
+   "out_end": 100.3,
+   "src_t": 296.7,
+   "support": "and helps you avoid *extra fat gain.*",
+   "hero": ""
+  },
+  {
+   "k": 42,
+   "out_start": 100.3333,
+   "out_end": 101.8333,
+   "src_t": 316.0,
+   "support": "One last important thing:",
+   "hero": ""
+  },
+  {
+   "k": 43,
+   "out_start": 101.8333,
+   "out_end": 103.6667,
+   "src_t": 317.5,
+   "support": "if you're skinny fat,",
+   "hero": ""
+  },
+  {
+   "k": 44,
+   "out_start": 103.6667,
+   "out_end": 105.5667,
+   "src_t": 319.34,
+   "support": "you need",
+   "hero": "PATIENCE"
+  },
+  {
+   "k": 45,
+   "out_start": 105.5667,
+   "out_end": 108.5,
+   "src_t": 321.22,
+   "support": "Keep doing all of this for an *extended period of time.*",
+   "hero": ""
+  },
+  {
+   "k": 46,
+   "out_start": 108.6,
+   "out_end": 109.8,
+   "src_t": 332.67,
+   "support": "If you're impatient,",
+   "hero": ""
+  },
+  {
+   "k": 47,
+   "out_start": 109.8,
+   "out_end": 112.0667,
+   "src_t": 333.87,
+   "support": "you'll get *demotivated* and give up.",
+   "hero": ""
+  },
+  {
+   "k": 48,
+   "out_start": 112.1,
+   "out_end": 114.0,
+   "src_t": 342.0,
+   "support": "So lower your expectations,",
+   "hero": ""
+  },
+  {
+   "k": 49,
+   "out_start": 114.0,
+   "out_end": 115.2,
+   "src_t": 343.9,
+   "support": "focus on progressive overload",
+   "hero": ""
+  },
+  {
+   "k": 50,
+   "out_start": 115.2,
+   "out_end": 117.7333,
+   "src_t": 345.1,
+   "support": "and on your diet \u2014",
+   "hero": ""
+  },
+  {
+   "k": 51,
+   "out_start": 117.7333,
+   "out_end": 119.9667,
+   "src_t": 347.62,
+   "support": "and you'll *definitely* get results.",
+   "hero": ""
+  },
+  {
+   "k": 52,
+   "out_start": 119.9667,
+   "out_end": 122.7,
+   "src_t": 355.8,
+   "support": "For more useful fitness tips like this,",
+   "hero": ""
+  },
+  {
+   "k": 53,
+   "out_start": 122.7,
+   "out_end": 124.0333,
+   "src_t": 358.53,
+   "support": "hit *follow,*",
+   "hero": ""
+  },
+  {
+   "k": 54,
+   "out_start": 124.0333,
+   "out_end": 126.8667,
+   "src_t": 359.87,
+   "support": "and if you liked this video, drop a *like.*",
+   "hero": ""
+  },
+  {
+   "k": 55,
+   "out_start": 126.8667,
+   "out_end": 127.8333,
+   "src_t": 362.71,
+   "support": "Thank you!",
+   "hero": ""
+  }
+ ],
+ "sfx": [
+  [
+   "thump",
+   0.7,
+   0.5
+  ],
+  [
+   "tick",
+   18.0333,
+   0.5
+  ],
+  [
+   "tick",
+   60.5,
+   0.5
+  ],
+  [
+   "thump",
+   6.9667,
+   0.55
+  ],
+  [
+   "tick",
+   26.7333,
+   0.4
+  ],
+  [
+   "tick",
+   26.9,
+   0.4
+  ],
+  [
+   "tick",
+   27.0667,
+   0.4
+  ],
+  [
+   "rise",
+   32.4667,
+   0.35
+  ],
+  [
+   "tick",
+   37.2667,
+   0.5
+  ],
+  [
+   "tick",
+   38.0667,
+   0.5
+  ],
+  [
+   "tick",
+   38.5333,
+   0.5
+  ],
+  [
+   "thump",
+   47.2667,
+   0.55
+  ],
+  [
+   "tick",
+   66.2,
+   0.5
+  ],
+  [
+   "tick",
+   67.8,
+   0.5
+  ],
+  [
+   "rise",
+   82.9333,
+   0.35
+  ],
+  [
+   "rise",
+   91.4667,
+   0.35
+  ],
+  [
+   "tick",
+   112.8333,
+   0.45
+  ],
+  [
+   "tick",
+   114.0,
+   0.45
+  ],
+  [
+   "tick",
+   116.0667,
+   0.45
+  ],
+  [
+   "thump",
+   118.3333,
+   0.45
+  ],
+  [
+   "tick",
+   123.1667,
+   0.6
+  ],
+  [
+   "swoosh",
+   47.1333,
+   0.7
+  ],
+  [
+   "swoosh",
+   100.3333,
+   0.45
+  ]
+ ]
+}

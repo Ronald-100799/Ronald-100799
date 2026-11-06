@@ -1,0 +1,481 @@
+{
+ "total": 88.6333,
+ "segments": [
+  {
+   "take": "ALL",
+   "src_s": 0.0,
+   "src_e": 88.1333,
+   "out_s": 0.0,
+   "take_start": true,
+   "luma": 186,
+   "bright": 1.0,
+   "db": -8.583691596984863,
+   "gain": 1.0
+  }
+ ],
+ "frames": [
+  "W"
+ ],
+ "captions": [
+  {
+   "k": 0,
+   "out_start": 8.1333,
+   "out_end": 10.6333,
+   "src_t": 8.142,
+   "support": "How do fitness influencers and actors",
+   "hero": ""
+  },
+  {
+   "k": 1,
+   "out_start": 10.6333,
+   "out_end": 12.1,
+   "src_t": 10.625,
+   "support": "*gain* or *lose* weight whenever they want,",
+   "hero": ""
+  },
+  {
+   "k": 2,
+   "out_start": 12.1,
+   "out_end": 14.3667,
+   "src_t": 12.092,
+   "support": "while your 2026",
+   "hero": "WEIGHT-LOSS|RESOLUTION"
+  },
+  {
+   "k": 3,
+   "out_start": 14.3667,
+   "out_end": 15.5667,
+   "src_t": 14.383,
+   "support": "still isn't complete?",
+   "hero": ""
+  },
+  {
+   "k": 4,
+   "out_start": 15.5667,
+   "out_end": 17.4333,
+   "src_t": 15.567,
+   "support": "The *secret* isn't a special diet or a coach.",
+   "hero": ""
+  },
+  {
+   "k": 5,
+   "out_start": 17.4333,
+   "out_end": 19.6667,
+   "src_t": 17.433,
+   "support": "The basic principle is the same for you and them:",
+   "hero": ""
+  },
+  {
+   "k": 6,
+   "out_start": 19.6667,
+   "out_end": 20.6333,
+   "src_t": 19.667,
+   "support": "",
+   "hero": "MAINTENANCE|CALORIES"
+  },
+  {
+   "k": 7,
+   "out_start": 20.6333,
+   "out_end": 22.9333,
+   "src_t": 20.625,
+   "support": "In this video, I'll show you how to *track* and *implement* it.",
+   "hero": ""
+  },
+  {
+   "k": 8,
+   "out_start": 22.9333,
+   "out_end": 24.5667,
+   "src_t": 22.942,
+   "support": "Before that, if you want to be one step closer",
+   "hero": ""
+  },
+  {
+   "k": 9,
+   "out_start": 24.5667,
+   "out_end": 26.5333,
+   "src_t": 24.583,
+   "support": "to your *fitness goal* in 2027,",
+   "hero": ""
+  },
+  {
+   "k": 10,
+   "out_start": 26.5333,
+   "out_end": 27.3667,
+   "src_t": 26.517,
+   "support": "*follow* me.",
+   "hero": ""
+  },
+  {
+   "k": 11,
+   "out_start": 27.3667,
+   "out_end": 28.2333,
+   "src_t": 27.375,
+   "support": "Maintenance calories are what keep",
+   "hero": ""
+  },
+  {
+   "k": 12,
+   "out_start": 28.2333,
+   "out_end": 29.5,
+   "src_t": 28.242,
+   "support": "your *current body weight* the same \u2014",
+   "hero": ""
+  },
+  {
+   "k": 13,
+   "out_start": 29.5,
+   "out_end": 31.7333,
+   "src_t": 29.5,
+   "support": "the amount you need to eat *every day.*",
+   "hero": ""
+  },
+  {
+   "k": 14,
+   "out_start": 31.7333,
+   "out_end": 33.3333,
+   "src_t": 31.75,
+   "support": "Consistently eat *more* and your weight *goes up.*",
+   "hero": ""
+  },
+  {
+   "k": 15,
+   "out_start": 33.3333,
+   "out_end": 35.3667,
+   "src_t": 33.35,
+   "support": "Consistently eat *less* and it *comes down.*",
+   "hero": ""
+  },
+  {
+   "k": 16,
+   "out_start": 35.3667,
+   "out_end": 36.2333,
+   "src_t": 35.367,
+   "support": "The key word:",
+   "hero": "CONSISTENTLY"
+  },
+  {
+   "k": 17,
+   "out_start": 36.2333,
+   "out_end": 38.5333,
+   "src_t": 36.233,
+   "support": "But how do you estimate your maintenance calories?",
+   "hero": ""
+  },
+  {
+   "k": 18,
+   "out_start": 38.5333,
+   "out_end": 40.7333,
+   "src_t": 38.542,
+   "support": "Ask *ChatGPT* for a rough estimate.",
+   "hero": ""
+  },
+  {
+   "k": 19,
+   "out_start": 40.7333,
+   "out_end": 42.9667,
+   "src_t": 40.725,
+   "support": "It takes your details and gives you a number.",
+   "hero": ""
+  },
+  {
+   "k": 20,
+   "out_start": 42.9667,
+   "out_end": 45.5333,
+   "src_t": 42.975,
+   "support": "With a food scale and a calorie-tracking app,",
+   "hero": ""
+  },
+  {
+   "k": 21,
+   "out_start": 45.5333,
+   "out_end": 47.7333,
+   "src_t": 45.525,
+   "support": "eat that many calories daily \u2014 and *track* it.",
+   "hero": ""
+  },
+  {
+   "k": 22,
+   "out_start": 47.7333,
+   "out_end": 49.4667,
+   "src_t": 47.742,
+   "support": "Snacks, breakfast, oils \u2014 *everything.*",
+   "hero": ""
+  },
+  {
+   "k": 23,
+   "out_start": 49.4667,
+   "out_end": 51.8667,
+   "src_t": 49.458,
+   "support": "Weigh yourself every morning on an *empty stomach,*",
+   "hero": ""
+  },
+  {
+   "k": 24,
+   "out_start": 51.8667,
+   "out_end": 53.4667,
+   "src_t": 51.875,
+   "support": "and take the *weekly average.*",
+   "hero": ""
+  },
+  {
+   "k": 25,
+   "out_start": 53.4667,
+   "out_end": 55.7667,
+   "src_t": 53.475,
+   "support": "If your weight drops on ChatGPT's number,",
+   "hero": ""
+  },
+  {
+   "k": 26,
+   "out_start": 55.7667,
+   "out_end": 57.7333,
+   "src_t": 55.775,
+   "support": "your maintenance is a little *higher* than that.",
+   "hero": ""
+  },
+  {
+   "k": 27,
+   "out_start": 57.7333,
+   "out_end": 58.5,
+   "src_t": 57.742,
+   "support": "Do this for",
+   "hero": "2\u20133 WEEKS"
+  },
+  {
+   "k": 28,
+   "out_start": 58.5,
+   "out_end": 59.9667,
+   "src_t": 58.5,
+   "support": "Only through *trial and error*",
+   "hero": ""
+  },
+  {
+   "k": 29,
+   "out_start": 59.9667,
+   "out_end": 62.7667,
+   "src_t": 59.967,
+   "support": "will you find your *almost accurate* maintenance calories.",
+   "hero": ""
+  },
+  {
+   "k": 30,
+   "out_start": 62.7667,
+   "out_end": 63.5667,
+   "src_t": 62.767,
+   "support": "One last *important* thing:",
+   "hero": ""
+  },
+  {
+   "k": 31,
+   "out_start": 63.5667,
+   "out_end": 64.4667,
+   "src_t": 63.567,
+   "support": "you're not",
+   "hero": "CHIYAAN VIKRAM"
+  },
+  {
+   "k": 32,
+   "out_start": 64.4667,
+   "out_end": 65.4667,
+   "src_t": 64.467,
+   "support": "or any other celebrity.",
+   "hero": ""
+  },
+  {
+   "k": 33,
+   "out_start": 65.4667,
+   "out_end": 67.7333,
+   "src_t": 65.467,
+   "support": "They have a personal chef, dieticians, coaches \u2014",
+   "hero": ""
+  },
+  {
+   "k": 34,
+   "out_start": 67.7333,
+   "out_end": 69.6667,
+   "src_t": 67.717,
+   "support": "a whole *team* behind their transformation.",
+   "hero": ""
+  },
+  {
+   "k": 35,
+   "out_start": 69.6667,
+   "out_end": 70.9,
+   "src_t": 69.667,
+   "support": "You need time to assess your journey",
+   "hero": ""
+  },
+  {
+   "k": 36,
+   "out_start": 70.9,
+   "out_end": 72.5333,
+   "src_t": 70.9,
+   "support": "and adjust the *variables.*",
+   "hero": ""
+  },
+  {
+   "k": 37,
+   "out_start": 72.5333,
+   "out_end": 73.7,
+   "src_t": 72.533,
+   "support": "That's what I'm here to teach you \u2014",
+   "hero": ""
+  },
+  {
+   "k": 38,
+   "out_start": 73.7,
+   "out_end": 74.3333,
+   "src_t": 73.7,
+   "support": "*follow* me.",
+   "hero": ""
+  },
+  {
+   "k": 39,
+   "out_start": 74.3333,
+   "out_end": 76.1,
+   "src_t": 74.317,
+   "support": "Next, we'll cover *metabolic adaptation,*",
+   "hero": ""
+  },
+  {
+   "k": 40,
+   "out_start": 76.1,
+   "out_end": 77.8667,
+   "src_t": 76.092,
+   "support": "how fast to gain or lose weight,",
+   "hero": ""
+  },
+  {
+   "k": 41,
+   "out_start": 77.8667,
+   "out_end": 79.8333,
+   "src_t": 77.858,
+   "support": "and *macros* \u2014 we haven't discussed those yet,",
+   "hero": ""
+  },
+  {
+   "k": 42,
+   "out_start": 79.8333,
+   "out_end": 80.8333,
+   "src_t": 79.842,
+   "support": "and they're *really important.*",
+   "hero": ""
+  },
+  {
+   "k": 43,
+   "out_start": 80.8333,
+   "out_end": 83.6333,
+   "src_t": 80.833,
+   "support": "I'm planning a *whiteboard series* on nutrition and training.",
+   "hero": ""
+  },
+  {
+   "k": 44,
+   "out_start": 83.6333,
+   "out_end": 84.9667,
+   "src_t": 83.633,
+   "support": "What do you think? Tell me in the *comments.*",
+   "hero": ""
+  },
+  {
+   "k": 45,
+   "out_start": 84.9667,
+   "out_end": 88.1333,
+   "src_t": 84.983,
+   "support": "And share this reel with friends who want to get *fit in 2027.*",
+   "hero": ""
+  }
+ ],
+ "sfx": [
+  [
+   "thump",
+   19.9,
+   0.5
+  ],
+  [
+   "thump",
+   63.8667,
+   0.45
+  ],
+  [
+   "tick",
+   26.8667,
+   0.6
+  ],
+  [
+   "rise",
+   32.8667,
+   0.35
+  ],
+  [
+   "rise",
+   34.7667,
+   0.35
+  ],
+  [
+   "tick",
+   38.6667,
+   0.5
+  ],
+  [
+   "tick",
+   45.5333,
+   0.5
+  ],
+  [
+   "tick",
+   47.2,
+   0.5
+  ],
+  [
+   "tick",
+   49.8,
+   0.5
+  ],
+  [
+   "tick",
+   52.8,
+   0.5
+  ],
+  [
+   "rise",
+   57.9667,
+   0.35
+  ],
+  [
+   "tick",
+   65.9667,
+   0.5
+  ],
+  [
+   "tick",
+   66.7333,
+   0.5
+  ],
+  [
+   "tick",
+   67.2667,
+   0.5
+  ],
+  [
+   "tick",
+   75.0,
+   0.5
+  ],
+  [
+   "tick",
+   76.1,
+   0.5
+  ],
+  [
+   "tick",
+   78.2333,
+   0.5
+  ],
+  [
+   "swoosh",
+   62.6667,
+   0.45
+  ]
+ ]
+}

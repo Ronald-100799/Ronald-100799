@@ -1,0 +1,985 @@
+{
+ "_comment": "All times are SOURCE seconds in the original camera file. Edit here, then run: python3 -I build/build_v2.py",
+ "source_video": "assets/footage.mp4",
+ "source_audio": "assets/voice.wav",
+ "pacing": {
+  "pad": 0.12,
+  "inner_pad": 0.13,
+  "keep_pause": 0.35
+ },
+ "tail_hold": 0.7,
+ "music_volume": 0.12,
+ "takes": [
+  {
+   "id": "U00",
+   "s": 7.39,
+   "e": 26.81,
+   "keep": true,
+   "ta": "skinny fat … skip பண்ணாம பாருங்க … 2 main reason … number 1 lack of resistance training … muscle building மேல focus பண்ணணும்",
+   "why": "Hook + reason 1. Only take; complete and confident."
+  },
+  {
+   "id": "U01",
+   "s": 46.34,
+   "e": 54.14,
+   "keep": false,
+   "ta": "strength increase ஆகிற workout … muscle building improve … body composition improve",
+   "why": "Same thought as U04 (muscle building → body composition). V1 kept both = repeated idea. U04 is the final complete attempt and adds 'confidence'."
+  },
+  {
+   "id": "U02",
+   "s": 58.91,
+   "e": 61.95,
+   "keep": false,
+   "ta": "muscle building மேல focus பண்றதனால உங்க strength உம்…",
+   "why": "Abandoned mid-sentence."
+  },
+  {
+   "id": "U03",
+   "s": 66.4,
+   "e": 69.09,
+   "keep": false,
+   "ta": "strength ஐ improve பண்றதனால உங்க muscle உம்…",
+   "why": "Abandoned mid-sentence."
+  },
+  {
+   "id": "U04",
+   "s": 70.82,
+   "e": 83.04,
+   "keep": true,
+   "ta": "muscle building … body composition increase … confidence … 3–4 days workout split … recover",
+   "why": "Final complete take; natural delivery; flows into split advice."
+  },
+  {
+   "id": "U05",
+   "s": 89.25,
+   "e": 89.69,
+   "keep": false,
+   "ta": "அப்புறம்",
+   "why": "False start."
+  },
+  {
+   "id": "U06",
+   "s": 91.33,
+   "e": 94.24,
+   "keep": true,
+   "ta": "அப்புறம் every week progressive overload பண்ண மறந்துறாதீங்க",
+   "why": "Complete."
+  },
+  {
+   "id": "U07",
+   "s": 95.39,
+   "e": 96.32,
+   "keep": false,
+   "ta": "உங்க workoutல",
+   "why": "False start."
+  },
+  {
+   "id": "U08",
+   "s": 97.6,
+   "e": 99.42,
+   "keep": false,
+   "ta": "உங்க workoutல compound lifts…",
+   "why": "False start."
+  },
+  {
+   "id": "U09",
+   "s": 100.29,
+   "e": 111.87,
+   "keep": true,
+   "ta": "compound lifts … bench press, squat, deadlift … muscle groups activate … target",
+   "why": "Complete third attempt."
+  },
+  {
+   "id": "U10",
+   "s": 119.55,
+   "e": 120.38,
+   "keep": false,
+   "ta": "Reason number 2",
+   "why": "False start."
+  },
+  {
+   "id": "U11",
+   "s": 120.99,
+   "e": 121.92,
+   "keep": false,
+   "ta": "உங்க டயட்ல",
+   "why": "False start."
+  },
+  {
+   "id": "U12",
+   "s": 123.43,
+   "e": 132.61,
+   "keep": true,
+   "ta": "Reason 2, poor diet. Processed + sugary foods அதிகமா இருந்தா muscle build பண்ண முடியாது, body composition improve ஆகாது",
+   "why": "Only complete take of the CONSEQUENCE statement."
+  },
+  {
+   "id": "U13",
+   "s": 134.88,
+   "e": 139.13,
+   "keep": false,
+   "ta": "Reason number 2, poor diet … மோசமான sugary processed…",
+   "why": "Restart, abandoned."
+  },
+  {
+   "id": "U14",
+   "s": 141.38,
+   "e": 145.05,
+   "keep": false,
+   "ta": "Reason number 2, poor diet …",
+   "why": "Restart, abandoned."
+  },
+  {
+   "id": "U15",
+   "s": 147.04,
+   "e": 152.61,
+   "keep": false,
+   "ta": "Reason number 2 … sugar and processed foods include பண்றதனால",
+   "why": "Restart, abandoned."
+  },
+  {
+   "id": "U16",
+   "s": 155.84,
+   "e": 162.53,
+   "keep": false,
+   "ta": "Reason number 2 … processed sugary foods அதிகமா இருந்தா உங்களால muscle build…",
+   "why": "Restart of U12, cut off; U12 is complete."
+  },
+  {
+   "id": "U17",
+   "s": 167.14,
+   "e": 169.44,
+   "keep": false,
+   "ta": "Reason number 2, poor diet, உங்களால",
+   "why": "False start."
+  },
+  {
+   "id": "U18",
+   "s": 170.15,
+   "e": 170.88,
+   "keep": false,
+   "ta": "Reason number 2",
+   "why": "False start."
+  },
+  {
+   "id": "U19",
+   "s": 172.13,
+   "e": 174.72,
+   "keep": false,
+   "ta": "Reason number 2, poor diet, உங்க டயட்ல",
+   "why": "False start."
+  },
+  {
+   "id": "U20",
+   "s": 175.27,
+   "e": 179.13,
+   "keep": false,
+   "ta": "sugar and processed foods அதிகமா சேர்த்துக்கிறதுனால உங்களுக்கு…",
+   "why": "Abandoned."
+  },
+  {
+   "id": "U21a",
+   "s": 182.31,
+   "e": 183.9,
+   "keep": false,
+   "ta": "Reason number 2, poor diet",
+   "why": "Header already delivered in U12 — keeping it would repeat 'Reason 2, poor diet'."
+  },
+  {
+   "id": "U21",
+   "s": 184.07,
+   "e": 190.75,
+   "keep": true,
+   "ta": "உங்க டயட்ல processed + sugary foods சேர்த்துக்குறதுக்கு பதிலா protein rich whole foods மேல கவனம் செலுத்துங்க",
+   "why": "Only take of the REMEDY statement (follows U12's consequence)."
+  },
+  {
+   "id": "U22",
+   "s": 202.18,
+   "e": 205.76,
+   "keep": false,
+   "ta": "protein rich whole foods எடுக்குறதுனால muscle building…",
+   "why": "Abandoned; U23 repeats it fully."
+  },
+  {
+   "id": "U23",
+   "s": 207.01,
+   "e": 212.96,
+   "keep": true,
+   "ta": "protein rich whole foods … muscle building … hormonal balance help பண்ணும்",
+   "why": "Complete."
+  },
+  {
+   "id": "U24",
+   "s": 221.6,
+   "e": 224.25,
+   "keep": false,
+   "ta": "nuts மாதிரியான good fat sources",
+   "why": "Abandoned; U25 repeats it fully."
+  },
+  {
+   "id": "U25",
+   "s": 225.03,
+   "e": 230.62,
+   "keep": true,
+   "ta": "nuts மாதிரியான good fat sources … hormonal balance லயும் help பண்ணும்",
+   "why": "Complete."
+  },
+  {
+   "id": "U26a",
+   "s": 235.75,
+   "e": 238.78,
+   "keep": false,
+   "ta": "அப்புறம் skinny fat ஆ இருந்தீங்கன்னா maintenance calories தெரியுறது…",
+   "why": "Abandoned first half."
+  },
+  {
+   "id": "U26",
+   "s": 239.08,
+   "e": 243.2,
+   "keep": true,
+   "ta": "skinny fat ஆ இருந்தீங்கன்னா maintenance calories தெரியுறது ரொம்ப முக்கியம்",
+   "why": "Complete. Ends before the dangling 'நீங்க ஒரு' that V1 kept."
+  },
+  {
+   "id": "U27",
+   "s": 250.91,
+   "e": 252.7,
+   "keep": false,
+   "ta": "suppose ஒரு 15%",
+   "why": "False start."
+  },
+  {
+   "id": "U28",
+   "s": 253.86,
+   "e": 260.19,
+   "keep": false,
+   "ta": "15% body fat க்கு மேல … 100–200 calorie deficitல சாப்பிட்டு…",
+   "why": "Trails off; U30 is the complete version."
+  },
+  {
+   "id": "U29",
+   "s": 262.37,
+   "e": 263.45,
+   "keep": false,
+   "ta": "suppose நீங்க 15",
+   "why": "False start — V1 kept it, causing an audible 'suppose 15… suppose 15%' repeat."
+  },
+  {
+   "id": "U30",
+   "s": 264.55,
+   "e": 270.91,
+   "keep": true,
+   "ta": "15% body fat க்கு மேல … 100–200 calories maintenance calories விட குறைவா சாப்பிடணும்",
+   "why": "Complete."
+  },
+  {
+   "id": "U31",
+   "s": 276.77,
+   "e": 283.42,
+   "keep": false,
+   "ta": "15% body fat கீழ … maintenance calories இல்லைன்னா … slight…",
+   "why": "Abandoned; U32 is complete."
+  },
+  {
+   "id": "U32",
+   "s": 284.8,
+   "e": 298.46,
+   "keep": true,
+   "ta": "15% கீழ … maintenance calories இல்லன்னா சின்ன surplus — maintenance விட ஒரு 100 calories கூடுதல் … muscle building … fat gain avoid",
+   "why": "Complete."
+  },
+  {
+   "id": "U33",
+   "s": 306.69,
+   "e": 308.03,
+   "keep": false,
+   "ta": "கடைசியா ஒரு important…",
+   "why": "False start."
+  },
+  {
+   "id": "U34",
+   "s": 308.71,
+   "e": 311.65,
+   "keep": false,
+   "ta": "கடைசியா ஒரு important ஆன விஷயம், suppose skinny fat…",
+   "why": "Abandoned."
+  },
+  {
+   "id": "U35",
+   "s": 316.1,
+   "e": 324.05,
+   "keep": true,
+   "ta": "கடைசியா ஒரு important விஷயம் … patience ரொம்ப முக்கியம் … extended period of time",
+   "why": "Complete. Ends at 5:24.05, before a dangling \"நீங்க\" (start of the next attempt)."
+  },
+  {
+   "id": "U36a",
+   "s": 328.71,
+   "e": 332.38,
+   "keep": false,
+   "ta": "impatient ஆ இருந்தீங்கன்னா demotivate ஆயி give up பண்ணிருவீங்க",
+   "why": "Two complete takes back-to-back; second is grammatically fuller and ends with natural falling intonation."
+  },
+  {
+   "id": "U36",
+   "s": 332.67,
+   "e": 336.0,
+   "keep": true,
+   "ta": "நீங்க impatient ஆ இருந்தீங்கன்னா நீங்க demotivate ஆயி give up பண்ணிருவீங்க",
+   "why": "Preferred of two complete takes."
+  },
+  {
+   "id": "U37",
+   "s": 339.59,
+   "e": 340.0,
+   "keep": false,
+   "ta": "அதனால்",
+   "why": "False start."
+  },
+  {
+   "id": "U38",
+   "s": 342.08,
+   "e": 349.76,
+   "keep": true,
+   "ta": "expectation குறைச்சிட்டு progressive overload அப்புறம் diet மேல கவனம் … result கண்டிப்பா கிடைக்கும்",
+   "why": "Complete."
+  },
+  {
+   "id": "U39",
+   "s": 353.41,
+   "e": 355.07,
+   "keep": false,
+   "ta": "இதே மாதிரியான fitness related",
+   "why": "False start."
+  },
+  {
+   "id": "U40",
+   "s": 355.91,
+   "e": 363.74,
+   "keep": true,
+   "ta": "useful fitness related information க்கு follow … video பிடிச்சிருந்தா like … thank you",
+   "why": "Complete CTA."
+  }
+ ],
+ "beats": [
+  {
+   "t": 7.25,
+   "support": "If you're stuck in a",
+   "hero": "SKINNY FAT|BODY TYPE",
+   "hero_t": 7.97,
+   "fx": "plate",
+   "hero_first": false,
+   "sfx": "thump",
+   "sfx_vol": 0.5
+  },
+  {
+   "t": 9.65,
+   "support": "*don't skip* this video."
+  },
+  {
+   "t": 11.51,
+   "support": "For being skinny fat, there are",
+   "hero": "2 MAIN REASONS",
+   "hero_t": 13.09,
+   "fx": "pop",
+   "hero_first": false
+  },
+  {
+   "t": 14.23,
+   "support": "Number one: *lack of resistance training.*"
+  },
+  {
+   "t": 16.45,
+   "support": "Doing more",
+   "hero": "CARDIO",
+   "hero_t": 17.97,
+   "fx": "mask",
+   "hero_first": false
+  },
+  {
+   "t": 20.25,
+   "support": "or playing more",
+   "hero": "SPORTS",
+   "hero_t": 20.85,
+   "fx": "mask",
+   "hero_first": false
+  },
+  {
+   "t": 21.97,
+   "support": "won't improve your *body composition.*"
+  },
+  {
+   "t": 24.17,
+   "support": "Instead, focus on",
+   "hero": "MUSCLE BUILDING",
+   "hero_t": 25.31,
+   "fx": "underline",
+   "hero_first": false,
+   "sfx": "tick"
+  },
+  {
+   "t": 70.75,
+   "support": "When you focus on *muscle building,*"
+  },
+  {
+   "t": 72.64,
+   "support": "your body composition improves"
+  },
+  {
+   "t": 74.5,
+   "support": "and you gain more",
+   "hero": "CONFIDENCE",
+   "hero_t": 75.18,
+   "fx": "pop",
+   "hero_first": false,
+   "pulse": true
+  },
+  {
+   "t": 76.3,
+   "support": "My suggestion: follow a"
+  },
+  {
+   "t": 77.2,
+   "support": "*3–4 day* workout split each week."
+  },
+  {
+   "t": 80.2,
+   "support": "It gives you plenty of time to *recover.*"
+  },
+  {
+   "t": 91.2,
+   "support": "And every week, don't forget *progressive overload.*"
+  },
+  {
+   "t": 100.2,
+   "support": "Add *compound lifts* to your workout —"
+  },
+  {
+   "t": 102.15,
+   "support": "bench press, squat, deadlift."
+  },
+  {
+   "t": 103.81,
+   "support": "Lifts like these"
+  },
+  {
+   "t": 106.55,
+   "support": "let you activate and target",
+   "hero": "MORE MUSCLE|GROUPS",
+   "hero_t": 108.35,
+   "fx": "pop",
+   "hero_first": false
+  },
+  {
+   "t": 109.93,
+   "support": "at the same time."
+  },
+  {
+   "t": 123.3,
+   "support": "Reason number two: *poor diet.*"
+  },
+  {
+   "t": 125.03,
+   "support": "If your diet has too much *processed* and *sugary food,*"
+  },
+  {
+   "t": 128.41,
+   "support": "you can't",
+   "hero": "BUILD MUSCLE",
+   "hero_t": 128.99,
+   "fx": "pop",
+   "hero_first": false
+  },
+  {
+   "t": 130.33,
+   "support": "and your body composition *won't improve.*"
+  },
+  {
+   "t": 184.07,
+   "support": "Instead of processed and sugary foods,"
+  },
+  {
+   "t": 187.7,
+   "support": "focus on",
+   "hero": "PROTEIN-RICH|WHOLE FOODS",
+   "hero_t": 187.85,
+   "fx": "plate",
+   "hero_first": false,
+   "sfx": "tick"
+  },
+  {
+   "t": 206.9,
+   "support": "Eating protein-rich whole foods helps"
+  },
+  {
+   "t": 209.47,
+   "support": "your *muscle building*"
+  },
+  {
+   "t": 210.87,
+   "support": "and your *hormonal balance.*"
+  },
+  {
+   "t": 224.9,
+   "support": "Good fat sources like *nuts*",
+   "hero": "GOOD FATS",
+   "hero_t": 226.27,
+   "fx": "mask",
+   "hero_first": false
+  },
+  {
+   "t": 228.27,
+   "support": "also support your *hormonal balance.*"
+  },
+  {
+   "t": 239.0,
+   "support": "And if you're skinny fat,"
+  },
+  {
+   "t": 240.84,
+   "support": "knowing your",
+   "hero": "MAINTENANCE|CALORIES",
+   "hero_t": 240.98,
+   "fx": "underline",
+   "hero_first": false
+  },
+  {
+   "t": 242.38,
+   "support": "is *really important.*"
+  },
+  {
+   "t": 264.45,
+   "support": "If you're *above 15%* body fat,"
+  },
+  {
+   "t": 266.85,
+   "support": "eat *100–200 calories* less"
+  },
+  {
+   "t": 268.77,
+   "support": "than your maintenance calories."
+  },
+  {
+   "t": 284.7,
+   "support": "If you're *below 15%* body fat,"
+  },
+  {
+   "t": 287.16,
+   "support": "eat at maintenance, or a *small surplus* —"
+  },
+  {
+   "t": 290.38,
+   "support": "about *100 calories* above maintenance."
+  },
+  {
+   "t": 293.56,
+   "support": "That supports your *muscle building*"
+  },
+  {
+   "t": 296.7,
+   "support": "and helps you avoid *extra fat gain.*"
+  },
+  {
+   "t": 316.0,
+   "support": "One last important thing:"
+  },
+  {
+   "t": 317.5,
+   "support": "if you're skinny fat,"
+  },
+  {
+   "t": 319.34,
+   "support": "you need",
+   "hero": "PATIENCE",
+   "hero_t": 319.76,
+   "fx": "underline",
+   "hero_first": false,
+   "pulse": true
+  },
+  {
+   "t": 321.22,
+   "support": "Keep doing all of this for an *extended period of time.*"
+  },
+  {
+   "t": 332.67,
+   "support": "If you're impatient,"
+  },
+  {
+   "t": 333.87,
+   "support": "you'll get *demotivated* and give up."
+  },
+  {
+   "t": 342.0,
+   "support": "So lower your expectations,"
+  },
+  {
+   "t": 343.9,
+   "support": "focus on progressive overload"
+  },
+  {
+   "t": 345.1,
+   "support": "and on your diet —"
+  },
+  {
+   "t": 347.62,
+   "support": "and you'll *definitely* get results."
+  },
+  {
+   "t": 355.8,
+   "support": "For more useful fitness tips like this,"
+  },
+  {
+   "t": 358.53,
+   "support": "hit *follow,*"
+  },
+  {
+   "t": 359.87,
+   "support": "and if you liked this video, drop a *like.*"
+  },
+  {
+   "t": 362.71,
+   "support": "Thank you!"
+  }
+ ],
+ "gfx": [
+  {
+   "type": "section",
+   "t": 14.23,
+   "until": 26.81,
+   "num": "01",
+   "title": [
+    "LACK OF",
+    "RESISTANCE",
+    "TRAINING"
+   ],
+   "hold": 2.2
+  },
+  {
+   "type": "week",
+   "t": 77.2,
+   "until": 83.04,
+   "big": "3–4",
+   "label": "days / week",
+   "train": [
+    0,
+    2,
+    4
+   ],
+   "optional": [
+    5
+   ],
+   "rest_t": 81.16,
+   "rest_label": "rest days = recovery"
+  },
+  {
+   "type": "steps",
+   "t": 91.4,
+   "until": 94.24,
+   "header": "PROGRESSIVE OVERLOAD",
+   "labels": [
+    "WK 1",
+    "WK 2",
+    "WK 3",
+    "WK 4"
+   ]
+  },
+  {
+   "type": "list",
+   "t": 100.7,
+   "until": 106.4,
+   "header": "COMPOUND LIFTS",
+   "items": [
+    {
+     "idx": "01",
+     "text": "BENCH PRESS",
+     "t": 102.15
+    },
+    {
+     "idx": "02",
+     "text": "SQUAT",
+     "t": 102.95
+    },
+    {
+     "idx": "03",
+     "text": "DEADLIFT",
+     "t": 103.39
+    }
+   ]
+  },
+  {
+   "type": "section",
+   "t": 123.43,
+   "until": 190.75,
+   "num": "02",
+   "title": [
+    "POOR",
+    "DIET"
+   ],
+   "hold": 1.9
+  },
+  {
+   "type": "list",
+   "t": 207.1,
+   "until": 212.96,
+   "header": "PROTEIN-RICH WHOLE FOODS",
+   "items": [
+    {
+     "idx": "✓",
+     "text": "MUSCLE BUILDING",
+     "t": 209.61
+    },
+    {
+     "idx": "✓",
+     "text": "HORMONAL BALANCE",
+     "t": 211.21
+    }
+   ]
+  },
+  {
+   "type": "gauge",
+   "t": 264.55,
+   "until": 270.91,
+   "dir": "down",
+   "header": "ABOVE 15% BODY FAT",
+   "value": "−100–200 kcal",
+   "value_t": 267.57
+  },
+  {
+   "type": "gauge",
+   "t": 284.8,
+   "until": 293.4,
+   "dir": "up",
+   "header": "BELOW 15% BODY FAT",
+   "value": "≈ +100 kcal",
+   "value_t": 289.72,
+   "compare": {
+    "dir": "down",
+    "header": "ABOVE 15%",
+    "value": "−100–200"
+   }
+  },
+  {
+   "type": "build",
+   "t": 342.08,
+   "until": 349.76,
+   "items": [
+    {
+     "text": "LOWER EXPECTATIONS",
+     "t": 342.72
+    },
+    {
+     "text": "+ PROGRESSIVE OVERLOAD",
+     "t": 343.9
+    },
+    {
+     "text": "+ DIET",
+     "t": 345.98
+    }
+   ],
+   "result": "RESULTS",
+   "result_t": 348.24
+  },
+  {
+   "type": "endcard",
+   "t": 357.43,
+   "until": 363.74,
+   "follow_t": 358.99
+  }
+ ],
+ "fx": [
+  {
+   "type": "whip",
+   "t": 123.43
+  },
+  {
+   "type": "bw",
+   "t": 128.41,
+   "until": 132.61
+  },
+  {
+   "type": "blurpush",
+   "t": 316.1
+  }
+ ],
+ "camera": [
+  {
+   "t": 7.39,
+   "frame": "W"
+  },
+  {
+   "t": 7.45,
+   "move": "push",
+   "amount": 1.07,
+   "dur": 4.5
+  },
+  {
+   "t": 13.09,
+   "move": "punch",
+   "amount": 1.1
+  },
+  {
+   "t": 25.31,
+   "move": "punch",
+   "amount": 1.1
+  },
+  {
+   "t": 70.82,
+   "frame": "M"
+  },
+  {
+   "t": 75.18,
+   "move": "punch",
+   "amount": 1.1
+  },
+  {
+   "t": 91.33,
+   "frame": "M"
+  },
+  {
+   "t": 100.29,
+   "frame": "W"
+  },
+  {
+   "t": 123.43,
+   "frame": "W"
+  },
+  {
+   "t": 128.99,
+   "move": "punch",
+   "amount": 1.12
+  },
+  {
+   "t": 184.07,
+   "frame": "M"
+  },
+  {
+   "t": 187.85,
+   "move": "punch",
+   "amount": 1.1
+  },
+  {
+   "t": 207.01,
+   "frame": "W"
+  },
+  {
+   "t": 225.03,
+   "frame": "M"
+  },
+  {
+   "t": 239.08,
+   "frame": "W"
+  },
+  {
+   "t": 240.98,
+   "move": "push",
+   "amount": 1.06,
+   "dur": 2.0
+  },
+  {
+   "t": 264.55,
+   "frame": "W"
+  },
+  {
+   "t": 284.8,
+   "frame": "W"
+  },
+  {
+   "t": 316.1,
+   "frame": "M"
+  },
+  {
+   "t": 319.76,
+   "move": "punch",
+   "amount": 1.12
+  },
+  {
+   "t": 332.67,
+   "frame": "C"
+  },
+  {
+   "t": 342.08,
+   "frame": "W"
+  },
+  {
+   "t": 348.24,
+   "move": "punch",
+   "amount": 1.08
+  },
+  {
+   "t": 355.91,
+   "frame": "M"
+  }
+ ],
+ "flags": [
+  "U01 vs U04 (training benefits): V2 uses only U04, your final take ('focus on muscle building → body composition improves → more confidence'). U01's wording about 'workouts that increase strength' is dropped. Swap in U01 if that nuance matters.",
+  "Diet section: U12 (consequence) + U21 (remedy) both mention 'processed and sugary foods'. They are different statements, but if it feels repetitive, U21 alone also works.",
+  "U36 impatience: two complete takes; V2 uses the second. The first (5:28) is equally clear.",
+  "Translation of 'உங்க body compositionம் increase ஆவம்' rendered as 'body composition improves' (literal: 'increases').",
+  "U32 ASR was unreliable on the full clip; caption meaning comes from a separate per-piece pass: 'maintenance or a small surplus — about 100 calories above maintenance'. Please verify.",
+  "'Good fat sources like nuts' — your word was 'good fat sources'; hero shows GOOD FATS."
+ ],
+ "broll": [
+  {
+   "t": 17.25,
+   "until": 19.95,
+   "query": "treadmill running gym",
+   "why": "'doing more cardio'"
+  },
+  {
+   "t": 20.25,
+   "until": 21.9,
+   "query": "people playing football",
+   "why": "'or playing more sports'"
+  },
+  {
+   "t": 102.15,
+   "until": 102.92,
+   "query": "bench press barbell",
+   "why": "names bench press"
+  },
+  {
+   "t": 102.92,
+   "until": 103.36,
+   "query": "barbell back squat",
+   "why": "names squat"
+  },
+  {
+   "t": 103.36,
+   "until": 104.5,
+   "query": "deadlift barbell",
+   "why": "names deadlift"
+  },
+  {
+   "t": 126.0,
+   "until": 128.35,
+   "query": "junk food burger fries",
+   "why": "'processed and sugary food'"
+  },
+  {
+   "t": 187.85,
+   "until": 190.6,
+   "query": "healthy protein meal eggs chicken",
+   "why": "'protein-rich whole foods'"
+  },
+  {
+   "t": 225.4,
+   "until": 227.3,
+   "query": "almonds nuts bowl",
+   "why": "'nuts as good fat sources'"
+  },
+  {
+   "t": 241.6,
+   "until": 243.0,
+   "query": "kitchen scale weighing food",
+   "why": "'knowing your maintenance calories'"
+  },
+  {
+   "t": 321.2,
+   "until": 323.95,
+   "query": "man workout gym training",
+   "why": "'do this for an extended period'"
+  }
+ ]
+}

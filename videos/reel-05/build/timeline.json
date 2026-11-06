@@ -1,0 +1,246 @@
+{
+ "total": 58.1,
+ "segments": [
+  {
+   "take": "ALL",
+   "src_s": 0.0,
+   "src_e": 58.1,
+   "out_s": 0.0,
+   "take_start": true,
+   "luma": 190,
+   "bright": 1.0,
+   "db": -7.564818382263184,
+   "gain": 1.0
+  }
+ ],
+ "frames": [
+  "W"
+ ],
+ "captions": [
+  {
+   "k": 0,
+   "out_start": 0.0,
+   "out_end": 1.3,
+   "src_t": 0.0,
+   "support": "*Burger, fried rice, cake\u2026*",
+   "hero": ""
+  },
+  {
+   "k": 1,
+   "out_start": 1.3,
+   "out_end": 2.4,
+   "src_t": 1.3,
+   "support": "eating them on a *cheat meal,*",
+   "hero": ""
+  },
+  {
+   "k": 2,
+   "out_start": 2.4,
+   "out_end": 4.8,
+   "src_t": 2.4,
+   "support": "how do these influencers stay",
+   "hero": "JACKED?"
+  },
+  {
+   "k": 3,
+   "out_start": 7.2667,
+   "out_end": 8.0667,
+   "src_t": 7.27,
+   "support": "I'll tell you the *secret.*",
+   "hero": ""
+  },
+  {
+   "k": 4,
+   "out_start": 8.0667,
+   "out_end": 11.5333,
+   "src_t": 8.05,
+   "support": "First, they know exactly how many *calories* they need that day.",
+   "hero": ""
+  },
+  {
+   "k": 5,
+   "out_start": 11.5333,
+   "out_end": 14.9,
+   "src_t": 11.53,
+   "support": "If you don't know how to estimate your",
+   "hero": "MAINTENANCE|CALORIES"
+  },
+  {
+   "k": 6,
+   "out_start": 14.9,
+   "out_end": 16.6,
+   "src_t": 14.91,
+   "support": "I've linked a reel \u2014 *check it out.*",
+   "hero": ""
+  },
+  {
+   "k": 7,
+   "out_start": 16.6,
+   "out_end": 18.9667,
+   "src_t": 16.6,
+   "support": "And if you're in a *deficit* for fat loss,",
+   "hero": ""
+  },
+  {
+   "k": 8,
+   "out_start": 18.9667,
+   "out_end": 21.7667,
+   "src_t": 18.96,
+   "support": "a cheat meal doesn't mean eating *as much as you want, whenever you want.*",
+   "hero": ""
+  },
+  {
+   "k": 9,
+   "out_start": 21.7667,
+   "out_end": 23.0,
+   "src_t": 21.76,
+   "support": "Within your",
+   "hero": "CALORIE BUDGET"
+  },
+  {
+   "k": 10,
+   "out_start": 23.0,
+   "out_end": 24.8667,
+   "src_t": 23.0,
+   "support": "you can eat some foods *rarely,* in *moderation.*",
+   "hero": ""
+  },
+  {
+   "k": 11,
+   "out_start": 24.8667,
+   "out_end": 28.1,
+   "src_t": 24.85,
+   "support": "For example, going out for dinner with *family or friends?*",
+   "hero": ""
+  },
+  {
+   "k": 12,
+   "out_start": 28.1,
+   "out_end": 30.5,
+   "src_t": 28.09,
+   "support": "Save the *majority of your calories* for that dinner.",
+   "hero": ""
+  },
+  {
+   "k": 13,
+   "out_start": 30.5,
+   "out_end": 32.2,
+   "src_t": 30.51,
+   "support": "That day, focus on *full hydration*",
+   "hero": ""
+  },
+  {
+   "k": 14,
+   "out_start": 32.2,
+   "out_end": 34.2,
+   "src_t": 32.19,
+   "support": "and",
+   "hero": "HIGH-VOLUME|FOODS"
+  },
+  {
+   "k": 15,
+   "out_start": 34.2,
+   "out_end": 35.8333,
+   "src_t": 34.2,
+   "support": "and hit your *protein goal.*",
+   "hero": ""
+  },
+  {
+   "k": 16,
+   "out_start": 35.8333,
+   "out_end": 36.4333,
+   "src_t": 35.82,
+   "support": "Damn\u2026",
+   "hero": ""
+  },
+  {
+   "k": 17,
+   "out_start": 36.4333,
+   "out_end": 38.6333,
+   "src_t": 36.44,
+   "support": "I thought I could eat *cheat* daily, bro!",
+   "hero": ""
+  },
+  {
+   "k": 18,
+   "out_start": 38.6333,
+   "out_end": 40.2,
+   "src_t": 38.64,
+   "support": "If that worked, the uncle next door would",
+   "hero": ""
+  },
+  {
+   "k": 19,
+   "out_start": 40.2,
+   "out_end": 42.6667,
+   "src_t": 40.2,
+   "support": "drink a *quarter daily* and still be *jacked,* bro!",
+   "hero": ""
+  },
+  {
+   "k": 20,
+   "out_start": 44.6,
+   "out_end": 45.6,
+   "src_t": 44.6,
+   "support": "Always remember:",
+   "hero": ""
+  },
+  {
+   "k": 21,
+   "out_start": 45.6,
+   "out_end": 48.5333,
+   "src_t": 45.6,
+   "support": "to reach your goals, you have to",
+   "hero": "BALANCE|SOCIAL LIFE"
+  },
+  {
+   "k": 22,
+   "out_start": 48.5333,
+   "out_end": 50.3,
+   "src_t": 48.52,
+   "support": "That's why it's",
+   "hero": "CHEAT MEALS"
+  },
+  {
+   "k": 23,
+   "out_start": 50.3,
+   "out_end": 51.4667,
+   "src_t": 50.3,
+   "support": "\u2014 not *cheat days.*",
+   "hero": ""
+  },
+  {
+   "k": 24,
+   "out_start": 51.4667,
+   "out_end": 52.7333,
+   "src_t": 51.45,
+   "support": "A cheat meal shouldn't become a",
+   "hero": "CHEAT MONTH"
+  },
+  {
+   "k": 25,
+   "out_start": 52.7333,
+   "out_end": 54.5,
+   "src_t": 52.75,
+   "support": "in the name of completing your *protein goal.*",
+   "hero": ""
+  },
+  {
+   "k": 26,
+   "out_start": 54.5,
+   "out_end": 56.6,
+   "src_t": 54.5,
+   "support": "Share this reel with the friend who eats a *shawarma*",
+   "hero": ""
+  },
+  {
+   "k": 27,
+   "out_start": 56.6,
+   "out_end": 58.1,
+   "src_t": 56.6,
+   "support": "and *follow* me.",
+   "hero": ""
+  }
+ ],
+ "sfx": []
+}

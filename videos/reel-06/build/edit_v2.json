@@ -1,0 +1,557 @@
+{
+ "_comment": "Reel 06 — full edit; creator pre-cut silences. Meme 5.8–7.6 left ungraded, no zoom/graphics on it.",
+ "speed": 1.0,
+ "source_video": "assets/footage.mp4",
+ "source_audio": "assets/voice.wav",
+ "pacing": {
+  "pad": 0.0,
+  "inner_pad": 0.0,
+  "keep_pause": 999
+ },
+ "tail_hold": 0.3,
+ "takes": [
+  {
+   "id": "ALL",
+   "s": 0.0,
+   "e": 76.2,
+   "keep": true,
+   "ta": "Pre-cut by creator.",
+   "why": "Silences already removed."
+  }
+ ],
+ "caption_left": [
+  [
+   0.0,
+   5.4
+  ],
+  [
+   7.6,
+   65.6
+  ]
+ ],
+ "beats": [
+  {
+   "t": 0.0,
+   "support": "the first time I went to the gym,",
+   "hero": "8 YEARS AGO",
+   "hero_t": 0.0,
+   "fx": "pop",
+   "hero_first": true
+  },
+  {
+   "t": 2.06,
+   "support": "my trainer said: *3 sets of 10 reps at 60 kg.*"
+  },
+  {
+   "t": 5.4,
+   "support": "I just stared at him —"
+  },
+  {
+   "t": 6.82,
+   "support": "*what is this?*"
+  },
+  {
+   "t": 7.48,
+   "support": "I nodded along — *okay, okay, okay* — like I understood."
+  },
+  {
+   "t": 9.75,
+   "support": "After training for *5 years,* I learnt a lot."
+  },
+  {
+   "t": 12.19,
+   "support": "But even today, *many people* struggle with this."
+  },
+  {
+   "t": 14.59,
+   "support": "I'll explain it in",
+   "hero": "60 SECONDS",
+   "hero_t": 14.85,
+   "fx": "plate",
+   "hero_first": false
+  },
+  {
+   "t": 16.37,
+   "support": "Watch this video."
+  },
+  {
+   "t": 17.0,
+   "support": "Take a *bicep curl* as an example."
+  },
+  {
+   "t": 19.96,
+   "support": "If you do *60 kg* for *10 reps,* *3 sets* —"
+  },
+  {
+   "t": 22.84,
+   "support": "bringing the bar *up* and back *down*"
+  },
+  {
+   "t": 25.46,
+   "support": "is",
+   "hero": "1 REP",
+   "hero_t": 25.64,
+   "fx": "pop",
+   "hero_first": false
+  },
+  {
+   "t": 26.3,
+   "support": "Do that *10 times.*"
+  },
+  {
+   "t": 27.76,
+   "support": "After 10 reps, take *rest,*"
+  },
+  {
+   "t": 29.98,
+   "support": "then do *2 more sets.*"
+  },
+  {
+   "t": 31.24,
+   "support": "This isn't just for bicep curls —"
+  },
+  {
+   "t": 32.54,
+   "support": "it's valid for",
+   "hero": "ANY EXERCISE",
+   "hero_t": 32.94,
+   "fx": "underline",
+   "hero_first": false
+  },
+  {
+   "t": 34.6,
+   "support": "Next:",
+   "hero": "VOLUME",
+   "hero_t": 34.82,
+   "fx": "plate",
+   "hero_first": false
+  },
+  {
+   "t": 35.3,
+   "support": "Volume doesn't mean *shouting* while you exercise!"
+  },
+  {
+   "t": 37.36,
+   "support": "It's your *sets × reps × weight.*"
+  },
+  {
+   "t": 39.64,
+   "support": "Volume gives your",
+   "hero": "TOTAL|WORKLOAD",
+   "hero_t": 40.28,
+   "fx": "mask",
+   "hero_first": false
+  },
+  {
+   "t": 41.34,
+   "support": "Usually counted as",
+   "hero": "WEEKLY VOLUME|PER MUSCLE",
+   "hero_t": 41.56,
+   "fx": "plate",
+   "hero_first": false,
+   "until": 43.4
+  },
+  {
+   "t": 43.4,
+   "support": "Next:",
+   "hero": "INTENSITY",
+   "hero_t": 44.08,
+   "fx": "plate",
+   "hero_first": false
+  },
+  {
+   "t": 44.7,
+   "support": "In a bicep curl, the *last few reps*"
+  },
+  {
+   "t": 46.8,
+   "support": "are a *struggle,* right?"
+  },
+  {
+   "t": 48.2,
+   "support": "That's what *intensity* means."
+  },
+  {
+   "t": 49.8,
+   "support": "If you're a *beginner,* until you learn *technique,*"
+  },
+  {
+   "t": 51.0,
+   "support": "don't train to",
+   "hero": "FAILURE",
+   "hero_t": 52.02,
+   "fx": "mask",
+   "hero_first": false
+  },
+  {
+   "t": 53.5,
+   "support": "Keep about",
+   "hero": "2 REPS|IN RESERVE",
+   "hero_t": 53.98,
+   "fx": "plate",
+   "hero_first": false
+  },
+  {
+   "t": 55.15,
+   "support": "And",
+   "hero": "FREQUENCY",
+   "hero_t": 55.65,
+   "fx": "plate",
+   "hero_first": false
+  },
+  {
+   "t": 56.15,
+   "support": "is how many times a week you train that *muscle group.*"
+  },
+  {
+   "t": 60.15,
+   "support": "Beginner, intermediate or advanced —"
+  },
+  {
+   "t": 62.27,
+   "support": "target each muscle group *2–3 times a week.*"
+  },
+  {
+   "t": 65.73,
+   "support": "Didn't understand any of this?"
+  },
+  {
+   "t": 67.43,
+   "support": "Watch this reel",
+   "hero": "2–3 TIMES",
+   "hero_t": 67.77,
+   "fx": "pop",
+   "hero_first": false
+  },
+  {
+   "t": 69.3,
+   "support": "For more on *training & nutrition* like this,"
+  },
+  {
+   "t": 71.74,
+   "support": "*follow* me,"
+  },
+  {
+   "t": 72.4,
+   "support": "and share this with the friend"
+  },
+  {
+   "t": 73.58,
+   "support": "who thinks they've learnt *a lot* about fitness."
+  }
+ ],
+ "gfx": [
+  {
+   "type": "chips",
+   "t": 2.6,
+   "until": 5.4,
+   "items": [
+    {
+     "text": "3 SETS",
+     "t": 2.76
+    },
+    {
+     "text": "10 REPS",
+     "t": 3.3
+    },
+    {
+     "text": "60 KG",
+     "t": 3.94
+    }
+   ]
+  },
+  {
+   "type": "tracker",
+   "t": 17.0,
+   "until": 65.6,
+   "letters": [
+    "S",
+    "V",
+    "I",
+    "F"
+   ],
+   "labels": [
+    "SETS × REPS × WEIGHT",
+    "VOLUME",
+    "INTENSITY",
+    "FREQUENCY"
+   ],
+   "switch": [
+    17.0,
+    34.6,
+    43.4,
+    55.15
+   ]
+  },
+  {
+   "type": "chips",
+   "t": 25.5,
+   "until": 31.2,
+   "items": [
+    {
+     "text": "1 REP",
+     "t": 25.64
+    },
+    {
+     "text": "× 10 = 1 SET",
+     "t": 26.58
+    },
+    {
+     "text": "REST",
+     "t": 29.2
+    },
+    {
+     "text": "+ 2 SETS",
+     "t": 30.3
+    }
+   ]
+  },
+  {
+   "type": "chips",
+   "t": 37.4,
+   "until": 41.3,
+   "items": [
+    {
+     "text": "3 SETS",
+     "t": 37.6
+    },
+    {
+     "text": "× 10 REPS",
+     "t": 38.44
+    },
+    {
+     "text": "× 60 KG",
+     "t": 39.38
+    },
+    {
+     "text": "= 1,800 KG",
+     "t": 40.28
+    }
+   ]
+  },
+  {
+   "type": "week",
+   "t": 56.15,
+   "until": 65.5,
+   "top": 440,
+   "big": "2–3×",
+   "label": "PER MUSCLE GROUP / WEEK",
+   "train": [
+    0,
+    3
+   ],
+   "optional": [
+    5
+   ]
+  },
+  {
+   "type": "endcard",
+   "mini": true,
+   "t": 71.4,
+   "until": 73.0,
+   "follow_t": 72.12
+  }
+ ],
+ "fx": [],
+ "camera": [
+  {
+   "t": 0.0,
+   "frame": "W"
+  },
+  {
+   "t": 0.0,
+   "move": "push",
+   "amount": 1.06,
+   "dur": 2.5,
+   "origin": "70% 42%"
+  },
+  {
+   "t": 2.6,
+   "move": "reset",
+   "dur": 0.35
+  },
+  {
+   "t": 5.75,
+   "move": "cut"
+  },
+  {
+   "t": 9.75,
+   "move": "push",
+   "amount": 1.05,
+   "dur": 3.0
+  },
+  {
+   "t": 12.9,
+   "move": "reset",
+   "dur": 0.4
+  },
+  {
+   "t": 14.85,
+   "move": "punch",
+   "amount": 1.1,
+   "origin": "75% 38%"
+  },
+  {
+   "t": 16.95,
+   "move": "reset",
+   "dur": 0.35
+  },
+  {
+   "t": 22.8,
+   "move": "push",
+   "amount": 1.06,
+   "dur": 2.8,
+   "origin": "72% 50%"
+  },
+  {
+   "t": 26.2,
+   "move": "reset",
+   "dur": 0.4
+  },
+  {
+   "t": 32.94,
+   "move": "punch",
+   "amount": 1.1,
+   "origin": "75% 38%"
+  },
+  {
+   "t": 34.5,
+   "move": "reset",
+   "dur": 0.35
+  },
+  {
+   "t": 37.4,
+   "move": "push",
+   "amount": 1.08,
+   "dur": 2.6,
+   "origin": "35% 50%"
+  },
+  {
+   "t": 41.3,
+   "move": "reset",
+   "dur": 0.4
+  },
+  {
+   "t": 44.08,
+   "move": "punch",
+   "amount": 1.1,
+   "origin": "75% 38%"
+  },
+  {
+   "t": 46.7,
+   "move": "reset",
+   "dur": 0.4
+  },
+  {
+   "t": 52.02,
+   "move": "punch",
+   "amount": 1.12,
+   "origin": "75% 38%"
+  },
+  {
+   "t": 53.6,
+   "move": "reset",
+   "dur": 0.35
+  },
+  {
+   "t": 62.2,
+   "move": "push",
+   "amount": 1.05,
+   "dur": 3.0
+  },
+  {
+   "t": 65.4,
+   "move": "reset",
+   "dur": 0.3
+  },
+  {
+   "t": 67.77,
+   "move": "punch",
+   "amount": 1.1,
+   "origin": "55% 38%"
+  },
+  {
+   "t": 69.2,
+   "move": "reset",
+   "dur": 0.4
+  },
+  {
+   "t": 72.3,
+   "move": "push",
+   "amount": 1.05,
+   "dur": 3.8,
+   "origin": "55% 40%"
+  }
+ ],
+ "flags": [
+  "0:20 ASR heard '16 kg' once and '60 kg' on re-listen; captioned 60 kg to match your board.",
+  "0:35 'volume என்று exercise செய்யும் போது கத்துறது கிடையாது' read as a pun: 'Volume doesn't mean shouting while you exercise!' (ba-dum-tss added). Tell me if you meant something else.",
+  "0:53.5 'ஒரு இரண்டு rep reserve-ல வையுங்க' captioned 'Keep about 2 reps in reserve'; your board says 1–3. Confirm the number.",
+  "Volume chips (3 × 10 × 60 = 1,800 kg) use the numbers from your board.",
+  "Week graphic: Mon + Thu highlighted with Sat as optional, to show 2–3×/week; days are illustrative.",
+  "Meme (0:05.8–0:07.6): no grade, zoom or graphics; your voice over it is captioned."
+ ],
+ "auto_sfx": false,
+ "sfx_cues": [
+  {
+   "t": 2.76,
+   "name": "sfx2/popsoft",
+   "vol": 0.3,
+   "why": "3×10@60 chips"
+  },
+  {
+   "t": 14.85,
+   "name": "sfx2/ticking",
+   "vol": 0.2,
+   "why": "60 SECONDS"
+  },
+  {
+   "t": 17.0,
+   "name": "sfx2/pop",
+   "vol": 0.3,
+   "why": "tracker S"
+  },
+  {
+   "t": 25.64,
+   "name": "sfx2/popsoft",
+   "vol": 0.3,
+   "why": "1 REP"
+  },
+  {
+   "t": 34.6,
+   "name": "sfx2/pop",
+   "vol": 0.3,
+   "why": "tracker V"
+  },
+  {
+   "t": 36.96,
+   "name": "sfx2/badumtss",
+   "vol": 0.3,
+   "why": "volume ≠ shouting pun"
+  },
+  {
+   "t": 40.28,
+   "name": "sfx2/digits",
+   "vol": 0.3,
+   "why": "= 1,800 KG"
+  },
+  {
+   "t": 43.4,
+   "name": "sfx2/pop",
+   "vol": 0.3,
+   "why": "tracker I"
+  },
+  {
+   "t": 55.15,
+   "name": "sfx2/pop",
+   "vol": 0.3,
+   "why": "tracker F"
+  },
+  {
+   "t": 72.12,
+   "name": "sfx2/click",
+   "vol": 0.35,
+   "why": "follow button"
+  }
+ ]
+}

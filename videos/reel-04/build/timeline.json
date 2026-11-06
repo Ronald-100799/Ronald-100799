@@ -1,0 +1,353 @@
+{
+ "total": 71.6667,
+ "segments": [
+  {
+   "take": "ALL",
+   "src_s": 0.0,
+   "src_e": 71.2667,
+   "out_s": 0.0,
+   "take_start": true,
+   "luma": 110,
+   "bright": 1.0,
+   "db": -8.130918502807617,
+   "gain": 0.6
+  }
+ ],
+ "frames": [
+  "W"
+ ],
+ "captions": [
+  {
+   "k": 0,
+   "out_start": 0.0,
+   "out_end": 3.2333,
+   "src_t": 0.0,
+   "support": "Planning to join a gym, or already joined,",
+   "hero": ""
+  },
+  {
+   "k": 1,
+   "out_start": 3.2333,
+   "out_end": 6.2,
+   "src_t": 3.22,
+   "support": "but don't know what to do once you're *inside?*",
+   "hero": ""
+  },
+  {
+   "k": 2,
+   "out_start": 6.2,
+   "out_end": 7.8667,
+   "src_t": 6.2,
+   "support": "Use these",
+   "hero": "4 STEPS"
+  },
+  {
+   "k": 3,
+   "out_start": 7.8667,
+   "out_end": 8.6667,
+   "src_t": 7.88,
+   "support": "They'll really help you.",
+   "hero": ""
+  },
+  {
+   "k": 4,
+   "out_start": 8.6667,
+   "out_end": 10.3,
+   "src_t": 8.68,
+   "support": "Before that \u2014 to learn about *training, nutrition*",
+   "hero": ""
+  },
+  {
+   "k": 5,
+   "out_start": 10.3,
+   "out_end": 12.0,
+   "src_t": 10.3,
+   "support": "and *science-based lifting,*",
+   "hero": ""
+  },
+  {
+   "k": 6,
+   "out_start": 12.0,
+   "out_end": 12.9667,
+   "src_t": 12.0,
+   "support": "*follow* me.",
+   "hero": ""
+  },
+  {
+   "k": 7,
+   "out_start": 12.9667,
+   "out_end": 14.1333,
+   "src_t": 12.98,
+   "support": "Point one: in the gym,",
+   "hero": ""
+  },
+  {
+   "k": 8,
+   "out_start": 14.1333,
+   "out_end": 16.4333,
+   "src_t": 14.15,
+   "support": "forget what others think of you.",
+   "hero": ""
+  },
+  {
+   "k": 9,
+   "out_start": 16.4333,
+   "out_end": 18.2667,
+   "src_t": 16.43,
+   "support": "Just go and follow your *routine.*",
+   "hero": ""
+  },
+  {
+   "k": 10,
+   "out_start": 18.2667,
+   "out_end": 20.0667,
+   "src_t": 18.27,
+   "support": "Nobody is there to *judge* you \u2014",
+   "hero": ""
+  },
+  {
+   "k": 11,
+   "out_start": 20.0667,
+   "out_end": 21.6667,
+   "src_t": 20.07,
+   "support": "they've got 1,800 things of their own to do.",
+   "hero": ""
+  },
+  {
+   "k": 12,
+   "out_start": 21.6667,
+   "out_end": 22.5667,
+   "src_t": 21.65,
+   "support": "Even if they judge you,",
+   "hero": ""
+  },
+  {
+   "k": 13,
+   "out_start": 22.5667,
+   "out_end": 23.8333,
+   "src_t": 22.57,
+   "support": "not you.",
+   "hero": "THEY'RE THE|JOKER"
+  },
+  {
+   "k": 14,
+   "out_start": 23.8333,
+   "out_end": 27.5333,
+   "src_t": 23.83,
+   "support": "Point two: don't jump from machine to machine",
+   "hero": "LIKE TARZAN"
+  },
+  {
+   "k": 15,
+   "out_start": 27.5333,
+   "out_end": 28.7333,
+   "src_t": 27.55,
+   "support": "Go in with a",
+   "hero": "GAME PLAN"
+  },
+  {
+   "k": 16,
+   "out_start": 28.7333,
+   "out_end": 29.7,
+   "src_t": 28.75,
+   "support": "Learn the basic movements:",
+   "hero": ""
+  },
+  {
+   "k": 17,
+   "out_start": 29.7,
+   "out_end": 31.5,
+   "src_t": 29.69,
+   "support": "*squats, hinges, pressing,*",
+   "hero": ""
+  },
+  {
+   "k": 18,
+   "out_start": 31.5,
+   "out_end": 33.4333,
+   "src_t": 31.5,
+   "support": "*pulling* and *elbow movements.*",
+   "hero": ""
+  },
+  {
+   "k": 19,
+   "out_start": 33.4333,
+   "out_end": 35.5333,
+   "src_t": 33.42,
+   "support": "No idea what those are?",
+   "hero": ""
+  },
+  {
+   "k": 20,
+   "out_start": 35.5333,
+   "out_end": 36.8,
+   "src_t": 35.54,
+   "support": "Comment",
+   "hero": "MOVEMENTS"
+  },
+  {
+   "k": 21,
+   "out_start": 36.8,
+   "out_end": 38.3,
+   "src_t": 36.8,
+   "support": "and I'll send you a *free guide.*",
+   "hero": ""
+  },
+  {
+   "k": 22,
+   "out_start": 38.3,
+   "out_end": 40.5333,
+   "src_t": 38.3,
+   "support": "I know you're desperate for a *transformation,*",
+   "hero": ""
+  },
+  {
+   "k": 23,
+   "out_start": 40.5333,
+   "out_end": 43.6333,
+   "src_t": 40.52,
+   "support": "but don't push every exercise to",
+   "hero": "FAILURE"
+  },
+  {
+   "k": 24,
+   "out_start": 43.6333,
+   "out_end": 45.2333,
+   "src_t": 43.62,
+   "support": "First, learn good",
+   "hero": "TECHNIQUE"
+  },
+  {
+   "k": 25,
+   "out_start": 45.2333,
+   "out_end": 47.0667,
+   "src_t": 45.22,
+   "support": "then try to *progress.*",
+   "hero": ""
+  },
+  {
+   "k": 26,
+   "out_start": 47.0667,
+   "out_end": 50.3333,
+   "src_t": 47.06,
+   "support": "Last point: don't add every exercise to your routine.",
+   "hero": ""
+  },
+  {
+   "k": 27,
+   "out_start": 50.3333,
+   "out_end": 53.8,
+   "src_t": 50.33,
+   "support": "For each muscle group, do",
+   "hero": "6\u201310|WEEKLY SETS"
+  },
+  {
+   "k": 28,
+   "out_start": 53.8,
+   "out_end": 55.2333,
+   "src_t": 53.81,
+   "support": "Keep your training",
+   "hero": "SIMPLE"
+  },
+  {
+   "k": 29,
+   "out_start": 55.2333,
+   "out_end": 57.1,
+   "src_t": 55.23,
+   "support": "Don't overcomplicate it, bro.",
+   "hero": ""
+  },
+  {
+   "k": 30,
+   "out_start": 57.1,
+   "out_end": 60.0333,
+   "src_t": 57.1,
+   "support": "You won't get the results you expect",
+   "hero": "IN 3 MONTHS"
+  },
+  {
+   "k": 31,
+   "out_start": 60.0333,
+   "out_end": 63.9333,
+   "src_t": 60.04,
+   "support": "Learning the training *fundamentals* alone takes at least",
+   "hero": "1\u20131.5 YEARS"
+  },
+  {
+   "k": 32,
+   "out_start": 63.9333,
+   "out_end": 66.4,
+   "src_t": 63.95,
+   "support": "Focus on getting those *perfect.*",
+   "hero": ""
+  },
+  {
+   "k": 33,
+   "out_start": 66.4,
+   "out_end": 68.3,
+   "src_t": 66.41,
+   "support": "And share this reel with friends who are",
+   "hero": ""
+  },
+  {
+   "k": 34,
+   "out_start": 68.3,
+   "out_end": 71.2667,
+   "src_t": 68.29,
+   "support": "desperate for a *transformation.*",
+   "hero": ""
+  }
+ ],
+ "sfx": [
+  [
+   "sfx2/click",
+   12.3667,
+   0.35
+  ],
+  [
+   "sfx2/pop",
+   12.9667,
+   0.3
+  ],
+  [
+   "sfx2/badumtss",
+   22.5667,
+   0.3
+  ],
+  [
+   "sfx2/pop",
+   23.8333,
+   0.3
+  ],
+  [
+   "sfx2/whoosh",
+   25.4,
+   0.375
+  ],
+  [
+   "sfx2/correct",
+   27.8667,
+   0.35
+  ],
+  [
+   "sfx2/message",
+   35.5667,
+   0.375
+  ],
+  [
+   "sfx2/pop",
+   38.3,
+   0.3
+  ],
+  [
+   "sfx2/pop",
+   47.0667,
+   0.3
+  ],
+  [
+   "sfx2/digits",
+   51.9667,
+   0.3
+  ]
+ ]
+}

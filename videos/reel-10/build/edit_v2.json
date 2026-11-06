@@ -1,0 +1,339 @@
+{
+ "_comment": "Reel 10 — R03 (Terrace): Diwali sweets. Terrace brief: captions in the black bars (artistic fonts), stock photos instead of b-roll/graphics, zooms inside the picture band, pleasant analytic bed, minimal SFX, subtle cute motion only.",
+ "title": "Diwali sweets — Reel 10",
+ "theme": "terrace",
+ "speed": 1.0,
+ "source_video": "assets/footage.mp4",
+ "source_audio": "assets/voice.wav",
+ "pacing": {
+  "pad": 0.0,
+  "inner_pad": 0.0,
+  "keep_pause": 999
+ },
+ "tail_hold": 0.3,
+ "takes": [
+  {
+   "id": "ALL",
+   "s": 0.0,
+   "e": 55.63,
+   "keep": true,
+   "ta": "Pre-cut by creator.",
+   "why": "Edited by Ron; no cuts."
+  }
+ ],
+ "caption_left": [],
+ "caption_top": [],
+ "beats": [
+  {
+   "t": 0.0,
+   "support": "Mysore pak, adhirasam, laddu this Deepavali —"
+  },
+  {
+   "t": 2.02,
+   "support": "eat it all, then start the diet after,",
+   "hero": "RIGHT?",
+   "hero_t": 4.48,
+   "fx": "pop",
+   "hero_first": false,
+   "until": 4.95
+  },
+  {
+   "t": 5.0,
+   "support": "If that's your mindset,"
+  },
+  {
+   "t": 6.62,
+   "support": "don't",
+   "hero": "SKIP THIS",
+   "hero_t": 7.28,
+   "fx": "pop",
+   "hero_first": false,
+   "until": 8.05
+  },
+  {
+   "t": 8.12,
+   "support": "Whatever the festival,"
+  },
+  {
+   "t": 9.3,
+   "support": "even fit people gain a little weight after it.",
+   "until": 12.7
+  },
+  {
+   "t": 12.8,
+   "support": "That's",
+   "hero": "NORMAL",
+   "hero_t": 13.02,
+   "fx": "underline",
+   "hero_first": false,
+   "until": 13.55
+  },
+  {
+   "t": 13.58,
+   "support": "The good news? According to a study,"
+  },
+  {
+   "t": 15.68,
+   "support": "after the festival, participants gained only about"
+  },
+  {
+   "t": 17.66,
+   "support": "of fat.",
+   "hero": "400 GRAMS",
+   "hero_t": 17.66,
+   "fx": "pop",
+   "until": 20.1
+  },
+  {
+   "t": 20.19,
+   "support": "But what do most people do?"
+  },
+  {
+   "t": 21.33,
+   "support": "The moment the scale goes up, they panic"
+  },
+  {
+   "t": 23.51,
+   "support": "and drop all the good lifestyle choices they'd made.",
+   "until": 27.4
+  },
+  {
+   "t": 27.44,
+   "support": "To avoid that,"
+  },
+  {
+   "t": 28.46,
+   "support": "cut down your",
+   "hero": "TREAT CHOICES",
+   "hero_t": 29.42,
+   "fx": "underline",
+   "hero_first": false,
+   "until": 30.8
+  },
+  {
+   "t": 30.84,
+   "support": "Don't grab every sweet you see —"
+  },
+  {
+   "t": 32.7,
+   "support": "put your",
+   "hero": "PROTEIN FIRST",
+   "hero_t": 32.9,
+   "fx": "pop",
+   "hero_first": false,
+   "until": 34.15
+  },
+  {
+   "t": 34.2,
+   "support": "It keeps you fuller for longer.",
+   "until": 36.05
+  },
+  {
+   "t": 36.09,
+   "support": "After a big meal, take a",
+   "hero": "10–15 MIN WALK",
+   "hero_t": 37.35,
+   "fx": "pop",
+   "hero_first": false,
+   "until": 38.28
+  },
+  {
+   "t": 38.31,
+   "support": "It brings your cravings down."
+  },
+  {
+   "t": 39.81,
+   "support": "And most importantly,"
+  },
+  {
+   "t": 40.73,
+   "support": "don't stress over these small fluctuations."
+  },
+  {
+   "t": 43.65,
+   "support": "Get",
+   "hero": "BACK ON TRACK",
+   "hero_t": 43.83,
+   "fx": "underline",
+   "hero_first": false,
+   "until": 45.5
+  },
+  {
+   "t": 45.54,
+   "support": "A festival is just one day,"
+  },
+  {
+   "t": 46.82,
+   "support": "but its effect can last for months.",
+   "until": 48.2
+  },
+  {
+   "t": 48.23,
+   "support": "For more health tips like this,"
+  },
+  {
+   "t": 50.4,
+   "support": "*follow me*,"
+  },
+  {
+   "t": 51.23,
+   "support": "and share this with the friend who's already wondering"
+  },
+  {
+   "t": 52.97,
+   "support": "what to do about their diet this Deepavali.",
+   "hero": "SHARE IT",
+   "hero_t": 55.07,
+   "fx": "pop",
+   "hero_first": false
+  }
+ ],
+ "gfx": [
+  {
+   "type": "endcard",
+   "t": 50.3,
+   "until": 52.2,
+   "mini": true,
+   "follow_t": 50.6
+  }
+ ],
+ "fx": [],
+ "camera": [
+  {
+   "t": 0.0,
+   "frame": "W"
+  },
+  {
+   "t": 0.0,
+   "move": "push",
+   "amount": 1.1,
+   "dur": 4.9,
+   "origin": "50% 50%"
+  },
+  {
+   "t": 5.067,
+   "move": "cut"
+  },
+  {
+   "t": 5.1,
+   "move": "push",
+   "amount": 1.1,
+   "dur": 3.0,
+   "origin": "50% 50%"
+  },
+  {
+   "t": 8.12,
+   "move": "reset",
+   "dur": 3.4
+  },
+  {
+   "t": 12.8,
+   "move": "push",
+   "amount": 1.1,
+   "dur": 4.8,
+   "origin": "50% 50%"
+  },
+  {
+   "t": 17.66,
+   "move": "reset",
+   "dur": 2.4
+  },
+  {
+   "t": 20.19,
+   "move": "push",
+   "amount": 1.1,
+   "dur": 4.8,
+   "origin": "50% 50%"
+  },
+  {
+   "t": 27.44,
+   "move": "reset",
+   "dur": 3.2
+  },
+  {
+   "t": 30.84,
+   "move": "push",
+   "amount": 1.1,
+   "dur": 3.3,
+   "origin": "50% 50%"
+  },
+  {
+   "t": 34.2,
+   "move": "reset",
+   "dur": 1.85
+  },
+  {
+   "t": 36.09,
+   "move": "push",
+   "amount": 1.1,
+   "dur": 3.6,
+   "origin": "50% 50%"
+  },
+  {
+   "t": 39.81,
+   "move": "reset",
+   "dur": 3.7
+  },
+  {
+   "t": 43.65,
+   "move": "push",
+   "amount": 1.1,
+   "dur": 1.85,
+   "origin": "50% 50%"
+  },
+  {
+   "t": 45.54,
+   "move": "reset",
+   "dur": 2.6
+  },
+  {
+   "t": 48.23,
+   "move": "push",
+   "amount": 1.1,
+   "dur": 2.9,
+   "origin": "50% 50%"
+  },
+  {
+   "t": 51.23,
+   "move": "reset",
+   "dur": 4.2
+  }
+ ],
+ "custom": {
+  "html": "build/custom.html",
+  "js": "build/custom.js"
+ },
+ "music_volume": 1.0,
+ "auto_sfx": false,
+ "sfx_cues": [
+  {
+   "t": 0.05,
+   "name": "sfx2/popsoft",
+   "vol": 0.3,
+   "why": "photo: sweets plate"
+  },
+  {
+   "t": 1.6,
+   "name": "sfx2/popsoft",
+   "vol": 0.25,
+   "why": "photo: laddoo"
+  },
+  {
+   "t": 6.62,
+   "name": "sfx/swoosh",
+   "vol": 0.2,
+   "why": "don't skip"
+  },
+  {
+   "t": 32.9,
+   "name": "sfx2/popsoft",
+   "vol": 0.25,
+   "why": "photo: eggs"
+  }
+ ],
+ "flags": [
+  "Ron says participants gained 'almost 400 grams of fat'. The study (Yanovski et al., NEJM 2000) measured body weight: +0.37 kg over the holiday season. Captions keep his words; the sticker shows the measured weight.",
+  "No Pexels photos of Mysore pak or adhirasam exist; the opening uses a festive sweets plate and laddoos (correctly labelled only as sweets/laddoo).",
+  "v2: stock photos only where they matter (Pexels 8819769 sweets plate, 18488302 laddoo, 806457 eggs); weight-gain part uses silent hand-drawn doodles instead."
+ ]
+}

@@ -1,0 +1,77 @@
+{
+  "_comment": "Reusable visual identity for fitness reels. Edit values here, not in build_v2.py.",
+  "canvas": {
+    "w": 1080,
+    "h": 1920,
+    "fps": 30
+  },
+  "safe": {
+    "top": 230,
+    "bottom": 1530,
+    "left": 72,
+    "right": 150
+  },
+  "color": {
+    "white": "#FFFFFF",
+    "yellow": "#FFE11A",
+    "pink": "#FF2E88",
+    "ink": "#101012",
+    "plate": "rgba(12,12,14,0.62)",
+    "muted": "rgba(255,255,255,0.55)"
+  },
+  "font": {
+    "family": "Poppins",
+    "support": 600,
+    "label": 800,
+    "hero": 900
+  },
+  "size": {
+    "hero_max": 150,
+    "hero_min": 72,
+    "hero_width": 820,
+    "support": 50,
+    "support_with_hero": 44,
+    "secondary": 30
+  },
+  "motion": {
+    "enter_ease": "expo.out",
+    "settle_ease": "back.out(1.6)",
+    "exit_ease": "power2.in",
+    "enter_dur": 0.32,
+    "exit_dur": 0.18,
+    "word_stagger": 0.045,
+    "word_rise": 26
+  },
+  "camera": {
+    "W": 1.0,
+    "M": 1.09,
+    "C": 1.2
+  },
+  "grade": {
+    "contrast": 1.0,
+    "saturate": 1.0
+  },
+  "audio": {
+    "clip_fade": 0.02,
+    "lufs_target": -14,
+    "true_peak": -1.0,
+    "voice_gain": 0.6
+  },
+  "handle": "@ron_tamil",
+  "end_card_text": "Follow for more fitness tips",
+  "layout": {
+    "gfx_top": 250,
+    "chips_top": 440,
+    "_comment": "Reel 04: head top \u2248 y 600-640. Tracker y 250-420, chips y 440-560; left column below the board (board bottom \u2248 y 1130)."
+  },
+  "caption_shadow": "0 0 2px rgba(0,0,0,0.95), 0 0 1px rgba(0,0,0,0.95), 0 3px 10px rgba(0,0,0,0.8), 0 0 22px rgba(0,0,0,0.45)",
+  "hero_shadow": "0 0 3px rgba(0,0,0,0.95), 0 4px 14px rgba(0,0,0,0.75), 0 0 30px rgba(0,0,0,0.4)",
+  "shade": "linear-gradient(to bottom, rgba(0,0,0,0.18) 0%, rgba(0,0,0,0) 20%, rgba(0,0,0,0) 56%, rgba(0,0,0,0.38) 70%, rgba(0,0,0,0.5) 82%, rgba(0,0,0,0.4) 100%)",
+  "avatar": "assets/avatar.jpg",
+  "left_captions": {
+    "left": 64,
+    "width": 500,
+    "top": 1240,
+    "hero_width": 480
+  }
+}

@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>Ozempic off patent: motion sample</title>
+    <script src="assets/gsap.min.js"></script>
+    <style>
+      @font-face { font-family: "Poppins"; font-weight: 600; src: url("assets/fonts/poppins-latin-600-normal.woff2") format("woff2"); }
+      @font-face { font-family: "Poppins"; font-weight: 800; src: url("assets/fonts/poppins-latin-800-normal.woff2") format("woff2"); }
+      @font-face { font-family: "Poppins"; font-weight: 900; src: url("assets/fonts/poppins-latin-900-normal.woff2") format("woff2"); }
+      :root { --red: #E10600; --white: #FFFFFF; --ink: #0B0B0C; --plate: rgba(255,255,255,0.06); }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1080px; height: 1920px; overflow: hidden; background: var(--ink); }
+      #root { position: relative; width: 1080px; height: 1920px; overflow: hidden; font-family: "Poppins", sans-serif; background: var(--ink); color: var(--white); }
+      #bg { position: absolute; inset: 0; background:
+              radial-gradient(70% 45% at 50% 42%, rgba(225,6,0,0.20), rgba(225,6,0,0) 70%),
+              repeating-linear-gradient(90deg, rgba(255,255,255,0.035) 0 1px, transparent 1px 90px),
+              repeating-linear-gradient(0deg, rgba(255,255,255,0.035) 0 1px, transparent 1px 90px); }
+      #glow { position: absolute; inset: 0; background: radial-gradient(60% 40% at 50% 45%, rgba(225,6,0,0.55), rgba(225,6,0,0) 70%); opacity: 0; }
+      #shake { position: absolute; inset: 0; }
+      .scene { position: absolute; inset: 0; }
+      .center { position: absolute; left: 0; right: 0; display: flex; flex-direction: column; align-items: center; text-align: center; }
+      .kick { font-weight: 800; font-size: 38px; letter-spacing: 0.14em; text-transform: uppercase; }
+      .kick b { color: var(--red); }
+      .price { font-weight: 900; font-size: 210px; letter-spacing: -0.04em; line-height: 1; font-variant-numeric: tabular-nums; }
+      .unit { font-weight: 600; font-size: 40px; opacity: 0.8; }
+      .strike { position: absolute; left: 90px; right: 90px; top: 50%; height: 0; overflow: visible; }
+      .strike path { fill: none; stroke: var(--red); stroke-width: 18; stroke-linecap: round; stroke-dasharray: 1; }
+      #lock { position: absolute; left: 140px; top: 640px; width: 800px; height: 800px; }
+      .stamp { display: inline-block; padding: 14px 40px 8px; background: var(--red); color: var(--white); font-weight: 900; font-size: 112px;
+               letter-spacing: -0.02em; line-height: 1; border-radius: 16px; transform: rotate(-4deg); box-shadow: 0 20px 60px rgba(225,6,0,0.45); }
+      .newprice { font-weight: 900; font-size: 230px; letter-spacing: -0.04em; line-height: 1; color: var(--red); text-shadow: 0 10px 50px rgba(225,6,0,0.4); }
+      .src { position: absolute; left: 0; right: 0; bottom: 260px; text-align: center; font-weight: 600; font-size: 26px; opacity: 0.55; letter-spacing: 0.02em; }
+      canvas.t3 { position: absolute; display: block; }
+      .lab { font-weight: 900; font-size: 92px; letter-spacing: -0.02em; line-height: 1; }
+      .sub { font-weight: 600; font-size: 40px; opacity: 0.85; }
+      .sub b { color: var(--red); font-weight: 800; }
+      .flow { position: absolute; left: 150px; top: 600px; width: 780px; }
+      .flow .h { font-weight: 800; font-size: 34px; letter-spacing: 0.14em; color: var(--red); margin-bottom: 30px; }
+      .fbox { position: relative; height: 760px; }
+      .fsvg { position: absolute; left: 0; top: 0; overflow: visible; }
+      .fsvg path { fill: none; stroke: var(--white); stroke-width: 7; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 1; }
+      .node { position: absolute; left: 0; width: 780px; height: 170px; display: flex; align-items: center; gap: 26px; padding: 0 34px;
+              border: 4px solid rgba(255,255,255,0.85); border-radius: 26px; background: rgba(11,11,12,0.8); }
+      .node i { font-style: normal; flex: none; width: 76px; height: 76px; border-radius: 16px; background: var(--white); color: var(--ink);
+                display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 44px; }
+      .node div { display: flex; flex-direction: column; }
+      .node b { font-weight: 900; font-size: 52px; line-height: 1.05; text-transform: uppercase; letter-spacing: -0.01em; }
+      .node span { font-weight: 600; font-size: 32px; opacity: 0.75; }
+      .node.hot { background: var(--red); border-color: var(--red); box-shadow: 0 18px 60px rgba(225,6,0,0.45); }
+      .node.hot i { color: var(--red); }
+      .node.hot span { opacity: 0.9; }
+      .bl { position: absolute; top: 1410px; width: 360px; text-align: center; }
+      .bl b { display: block; font-weight: 800; font-size: 34px; letter-spacing: 0.12em; }
+      .bl span { display: block; font-weight: 900; font-size: 76px; letter-spacing: -0.03em; line-height: 1.05; font-variant-numeric: tabular-nums; }
+      .bl.r b, .bl.r span { color: var(--red); }
+      .verdict { font-weight: 900; font-size: 150px; letter-spacing: -0.04em; line-height: 1; }
+      .verdict em { font-style: normal; color: var(--red); }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="15" data-width="1080" data-height="1920" data-fps="30">
+      <div id="bg"></div>
+      <div id="glow"></div>
+      <div id="shake">
+
+        <!-- 1 HOOK: curiosity (price) -->
+        <div id="s1" class="scene clip" data-start="0" data-duration="5.6" data-track-index="10">
+          <div id="s1top" class="center" style="top: 560px">
+            <div class="kick">Weight-loss shot · <b>India</b></div>
+          </div>
+          <div id="s1price" class="center" style="top: 650px">
+            <div style="position: relative">
+              <div class="price" id="p1">₹0</div>
+              <svg class="strike" viewBox="0 0 900 40" preserveAspectRatio="none" style="height: 40px; margin-top: -20px">
+                <path id="strike" d="M10 30 L 890 10" pathLength="1" />
+              </svg>
+            </div>
+            <div class="unit" id="p1u">a month · Wegovy, before 20 Mar 2026</div>
+          </div>
+        </div>
+
+        <!-- 1 HOOK: pattern interrupt (padlock opens) -->
+        <video id="lockv" class="clip" src="assets/inserts/patent-unlock.webm" data-start="2.6" data-duration="2.2" data-media-start="0"
+               data-track-index="11" muted playsinline style="position: absolute; left: 140px; top: 640px; width: 800px; height: 800px"></video>
+        <div id="s2" class="scene clip" data-start="2.6" data-duration="3.0" data-track-index="12">
+          <div class="center" style="top: 1400px"><div class="stamp" id="stamp">OFF PATENT</div></div>
+        </div>
+        <div id="s2b" class="scene clip" data-start="4.35" data-duration="1.25" data-track-index="13">
+          <div class="center" style="top: 820px">
+            <div class="kick">Generic, from</div>
+            <div class="newprice" id="p2">₹1,290</div>
+            <div class="unit">a month</div>
+          </div>
+        </div>
+
+        <!-- 2 VALUE: what the drug is (Three.js pen) -->
+        <div id="s3" class="scene clip" data-start="5.6" data-duration="2.8" data-track-index="14">
+          <canvas id="pen" class="t3" width="1000" height="760" style="left: 40px; top: 520px; width: 1000px; height: 760px"></canvas>
+          <div class="center" style="top: 1260px">
+            <div class="lab" id="s3l">SEMAGLUTIDE</div>
+            <div class="sub" id="s3s" style="margin-top: 14px">the drug inside <b>Ozempic</b> &amp; <b>Wegovy</b></div>
+          </div>
+        </div>
+
+        <!-- 3 WHAT HAPPENED: GSAP flowchart -->
+        <div id="s4" class="scene clip" data-start="8.4" data-duration="3.4" data-track-index="15">
+          <div class="flow">
+            <div class="h" id="fh">WHAT HAPPENED</div>
+            <div class="fbox">
+              <svg class="fsvg" width="780" height="760" viewBox="0 0 780 760">
+                <path id="fc0" d="M390 182 L390 268 M374 252 L390 268 L406 252" pathLength="1" />
+                <path id="fc1" d="M390 477 L390 563 M374 547 L390 563 L406 547" pathLength="1" />
+              </svg>
+              <div class="node" id="fn0" style="top: 0"><i>1</i><div><b>Patent ends</b><span>20 March 2026</span></div></div>
+              <div class="node" id="fn1" style="top: 295px"><i>2</i><div><b>7+ companies launch</b><span>generic semaglutide</span></div></div>
+              <div class="node hot" id="fn2" style="top: 590px"><i>3</i><div><b>Prices crash</b><span>up to ~90% lower</span></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4 PAYOFF: Three.js bars + verdict -->
+        <div id="s5" class="scene clip" data-start="11.8" data-duration="3.2" data-track-index="16">
+          <div class="center" style="top: 430px"><div class="verdict" id="vd"><em id="pct">0%</em> LESS</div>
+            <div class="sub" id="vds" style="margin-top: 10px">lowest generic vs lowest Wegovy price</div></div>
+          <canvas id="bars" class="t3" width="900" height="760" style="left: 90px; top: 660px; width: 900px; height: 760px"></canvas>
+          <div class="bl" id="bl0" style="left: 175px"><b>BRAND</b><span id="b0v">₹10,850</span></div>
+          <div class="bl r" id="bl1" style="left: 545px"><b>GENERIC</b><span id="b1v">₹1,290</span></div>
+          <div class="src" id="src">Sources: Business Today, 20–21 Mar 2026 · prices per month, India</div>
+        </div>
+      </div>
+
+      <!-- sound: synthesised riser + bed; the rest from Ron's library -->
+      <audio id="a_riser" src="assets/sfx/riser.wav" data-start="0" data-duration="2.6" data-track-index="2" data-volume="0.55"></audio>
+      <audio id="a_bed" src="assets/sfx/bed.wav" data-start="0" data-duration="15" data-track-index="3" data-volume="0.35"></audio>
+      <audio id="a_dig" src="assets/sfx/digits.wav" data-start="0.35" data-duration="0.6" data-track-index="4" data-volume="0.35"></audio>
+      <audio id="a_thump1" src="assets/sfx/thump.wav" data-start="2.6" data-duration="0.35" data-track-index="5" data-volume="0.8"></audio>
+      <audio id="a_wh1" src="assets/sfx/whoosh.wav" data-start="2.55" data-duration="0.431" data-track-index="6" data-volume="0.5"></audio>
+      <audio id="a_thump2" src="assets/sfx/thump.wav" data-start="3.3" data-duration="0.35" data-track-index="7" data-volume="0.6"></audio>
+      <audio id="a_pop" src="assets/sfx/popsoft.wav" data-start="4.38" data-duration="0.45" data-track-index="5" data-volume="0.5"></audio>
+      <audio id="a_sw1" src="assets/sfx/swoosh.wav" data-start="5.55" data-duration="0.42" data-track-index="6" data-volume="0.45"></audio>
+      <audio id="a_t0" src="assets/sfx/tick.wav" data-start="8.6" data-duration="0.05" data-track-index="4" data-volume="0.5"></audio>
+      <audio id="a_t1" src="assets/sfx/tick.wav" data-start="9.45" data-duration="0.05" data-track-index="5" data-volume="0.5"></audio>
+      <audio id="a_t2" src="assets/sfx/tick.wav" data-start="10.3" data-duration="0.05" data-track-index="7" data-volume="0.6"></audio>
+      <audio id="a_sw2" src="assets/sfx/swoosh.wav" data-start="11.75" data-duration="0.42" data-track-index="6" data-volume="0.45"></audio>
+      <audio id="a_rise" src="assets/sfx/rise.wav" data-start="12.0" data-duration="0.5" data-track-index="4" data-volume="0.4"></audio>
+      <audio id="a_thump3" src="assets/sfx/thump.wav" data-start="12.7" data-duration="0.35" data-track-index="5" data-volume="0.55"></audio>
+    </div>
+
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      const IN = "expo.out", SETTLE = "back.out(1.7)", OUT = "power2.in";
+      // 1 hook: red glow breathes faster as the riser climbs
+      tl.fromTo("#s1top", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.35, ease: IN }, 0.05);
+      tl.fromTo("#s1price", { opacity: 0, scale: 0.85 }, { opacity: 1, scale: 1, duration: 0.45, ease: IN }, 0.2);
+      tl.fromTo("#p1u", { opacity: 0 }, { opacity: 0.8, duration: 0.3 }, 1.0);
+      tl.fromTo("#glow", { opacity: 0 }, { opacity: 0.25, duration: 0.6, ease: "sine.inOut", yoyo: true, repeat: 1 }, 0.6);
+      tl.to("#glow", { opacity: 0.8, duration: 1.0, ease: "power2.in" }, 1.6);
+      tl.fromTo("#s1price", { scale: 1 }, { scale: 1.06, duration: 1.0, ease: "power1.in", immediateRender: false }, 1.6);
+      // 1 turn: strike, slam, shake
+      tl.fromTo("#strike", { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 0.18, ease: "power3.out" }, 2.6);
+      tl.to("#glow", { opacity: 0.15, duration: 0.5, ease: "power2.out" }, 2.62);
+      tl.to("#s1price", { scale: 0.55, y: -150, opacity: 0.45, duration: 0.4, ease: "power3.out" }, 2.8);
+      tl.to("#s1top", { opacity: 0, duration: 0.2 }, 2.8);
+      tl.fromTo("#shake", { x: 0, y: 0 }, { keyframes: [{ x: -14, y: 6, duration: 0.04 }, { x: 12, y: -8, duration: 0.04 }, { x: -6, y: 4, duration: 0.04 }, { x: 0, y: 0, duration: 0.05 }] }, 2.6);
+      tl.fromTo("#stamp", { opacity: 0, scale: 1.8, rotation: -14 }, { opacity: 1, scale: 1, rotation: -4, duration: 0.25, ease: "power4.in" }, 3.1);
+      tl.fromTo("#shake", { x: 0, y: 0 }, { keyframes: [{ x: 8, y: -6, duration: 0.04 }, { x: -8, y: 5, duration: 0.04 }, { x: 0, y: 0, duration: 0.05 }], immediateRender: false }, 3.35);
+      tl.fromTo("#lockv", { opacity: 1 }, { opacity: 0, duration: 0.2, immediateRender: false }, 4.15);
+      tl.fromTo("#s2b", { opacity: 0, scale: 1.4 }, { opacity: 1, scale: 1, duration: 0.3, ease: SETTLE }, 4.35);
+      tl.to(["#s1price", "#s2", "#s2b"], { opacity: 0, y: -40, duration: 0.2, ease: OUT }, 5.4);
+      // 2 value: pen + label
+      tl.fromTo("#s3l", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.4, ease: IN }, 5.95);
+      tl.fromTo("#s3s", { opacity: 0, y: 20 }, { opacity: 0.85, y: 0, duration: 0.4, ease: IN }, 6.2);
+      tl.to("#s3", { opacity: 0, duration: 0.2, ease: OUT }, 8.2);
+      // 3 flowchart
+      tl.fromTo("#fh", { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.3, ease: IN }, 8.45);
+      [[8.6, null], [9.45, "#fc0"], [10.3, "#fc1"]].forEach(([t, c], n) => {
+        if (c) tl.fromTo(c, { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 0.3, ease: "power2.inOut" }, t - 0.25);
+        tl.fromTo("#fn" + n, { opacity: 0, scale: 0.75 }, { opacity: 1, scale: 1, duration: 0.35, ease: SETTLE }, t);
+      });
+      tl.fromTo("#fn2", { scale: 1 }, { scale: 1.06, duration: 0.14, yoyo: true, repeat: 1, ease: "sine.inOut", immediateRender: false }, 10.7);
+      tl.to("#s4 .flow", { opacity: 0, y: 30, duration: 0.2, ease: OUT }, 11.6);
+      // 4 payoff
+      tl.fromTo("#vd", { opacity: 0, scale: 1.3 }, { opacity: 1, scale: 1, duration: 0.3, ease: SETTLE }, 12.7);
+      tl.fromTo("#vds", { opacity: 0 }, { opacity: 0.85, duration: 0.3 }, 12.9);
+      tl.fromTo("#bl0", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.3, ease: IN }, 12.0);
+      tl.fromTo("#bl1", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.3, ease: IN }, 12.3);
+      tl.fromTo("#src", { opacity: 0 }, { opacity: 0.55, duration: 0.4 }, 13.0);
+      tl.to("#shake", { opacity: 0, duration: 0.5, ease: "power1.in" }, 14.5);
+      tl.set({}, {}, 15);
+      window.__timelines["main"] = tl;
+    </script>
+    <script type="module">
+      import * as THREE from "./assets/three/three.module.min.js";
+      const RED = new THREE.Color("#E10600"), WHITE = new THREE.Color("#f4f4f6"), INK = new THREE.Color("#141416");
+      const clamp = (x) => Math.min(Math.max(x, 0), 1);
+      const ease = (x) => 1 - Math.pow(1 - clamp(x), 3);
+      const back = (x) => { x = clamp(x); const c = 1.7; return 1 + (c + 1) * Math.pow(x - 1, 3) + c * Math.pow(x - 1, 2); };
+      const mat = (color, r = 0.4, m = 0.2) => new THREE.MeshStandardMaterial({ color, roughness: r, metalness: m });
+      function stage(id, w, h, cam) {
+        const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById(id), alpha: true, antialias: true, preserveDrawingBuffer: true });
+        renderer.setPixelRatio(1); renderer.setSize(w, h, false); renderer.setClearColor(0, 0);
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(30, w / h, 0.1, 50);
+        camera.position.set(...cam); camera.lookAt(0, 0, 0);
+        scene.add(new THREE.HemisphereLight(0xffffff, 0x200606, 1.5));
+        const key = new THREE.DirectionalLight(0xfff3ea, 2.6); key.position.set(3, 4, 5); scene.add(key);
+        const rim = new THREE.DirectionalLight(0xff4a3a, 2.0); rim.position.set(-4, 1, -4); scene.add(rim);
+        return { renderer, scene, camera };
+      }
+      // injection pen built from simple shapes (generic, no brand design)
+      const P = stage("pen", 1000, 760, [0, 0.4, 9]);
+      const pen = new THREE.Group();
+      const add = (geo, m, x) => { const o = new THREE.Mesh(geo, m); o.rotation.z = Math.PI / 2; o.position.x = x; pen.add(o); return o; };
+      add(new THREE.CylinderGeometry(0.42, 0.42, 3.4, 64), mat(WHITE, 0.35), 0);
+      add(new THREE.CylinderGeometry(0.44, 0.44, 0.5, 64), mat(RED, 0.4), -0.55);          // dose window band
+      add(new THREE.CylinderGeometry(0.46, 0.46, 1.3, 64), mat(INK, 0.5), -2.35);          // cap
+      add(new THREE.CylinderGeometry(0.36, 0.42, 0.25, 64), mat(INK, 0.5), 1.82);           // shoulder
+      add(new THREE.CylinderGeometry(0.34, 0.34, 0.5, 48), mat(RED, 0.45), 2.2);            // dose dial
+      add(new THREE.CylinderGeometry(0.2, 0.2, 0.18, 32), mat(INK, 0.5), 2.54);             // button
+      for (let k = 0; k < 10; k++) { const r = add(new THREE.BoxGeometry(0.06, 0.5, 0.74), mat(INK, 0.5), 2.2); r.rotation.x = k * Math.PI / 10; } // dial grip ridges
+      const clip = new THREE.Mesh(new THREE.BoxGeometry(1.0, 0.12, 0.16), mat(INK, 0.4)); clip.position.set(-2.3, 0.5, 0); pen.add(clip); // pocket clip
+      const win = new THREE.Mesh(new THREE.BoxGeometry(0.7, 0.26, 0.1), mat(new THREE.Color("#2a2a2e"), 0.15, 0.1)); win.position.set(0.55, 0, 0.42); pen.add(win); // dose window
+      pen.scale.setScalar(0.85);
+      P.scene.add(pen);
+      // price bars: brand (white) vs generic (red)
+      const B = stage("bars", 900, 760, [0, 1.6, 9.5]);
+      const barG = new THREE.Group(); barG.position.y = -1.6; B.scene.add(barG);
+      const bars = [[10850, WHITE, -1.55], [1290, RED, 1.55]].map(([v, c, x]) => {
+        const m = new THREE.Mesh(new THREE.BoxGeometry(1.5, 1, 1.5), mat(c, 0.45, 0.1));
+        m.position.x = x; m.userData.h = 3.4 * v / 10850; barG.add(m); return m;
+      });
+      const fmt = (n) => "₹" + Math.round(n).toLocaleString("en-IN");
+      function renderAt(T) {
+        // hook counter: ₹0 → ₹10,850 over 0.35–1.0 s
+        document.getElementById("p1").textContent = fmt(10850 * ease((T - 0.35) / 0.65));
+        // pen: 5.2–8.4 s
+        const tp = T - 5.6;
+        if (tp > -0.1 && tp < 3.0) {
+          const s = Math.max(0.85 * back(tp / 0.6), 0.001);
+          pen.scale.setScalar(s);
+          pen.rotation.set(0.15 + 0.08 * Math.sin(tp * 1.4), -1.2 + 1.35 * ease(tp / 1.0) + 0.12 * tp, 0.12 - 0.1 * ease(tp / 1.0));
+          pen.position.y = 0.15 * Math.sin(tp * 2.0);
+          P.renderer.render(P.scene, P.camera);
+        }
+        // bars + percentage: 11.8–15 s
+        const tb = T - 11.8;
+        if (tb > -0.1 && tb < 3.3) {
+          barG.rotation.y = -0.35 + 0.08 * tb;
+          bars.forEach((m, i) => { const k = ease((tb - 0.2 - i * 0.3) / 0.6); m.scale.y = Math.max(0.001, m.userData.h * k); m.position.y = m.scale.y / 2; });
+          B.renderer.render(B.scene, B.camera);
+          document.getElementById("pct").textContent = Math.round(88 * ease((tb - 0.9) / 0.6)) + "%";
+        }
+      }
+      window.addEventListener("hf-seek", (e) => renderAt(e.detail.time));
+      renderAt(window.__hfThreeTime || 0);
+    </script>
+  </body>
+</html>

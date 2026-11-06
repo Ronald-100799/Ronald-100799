@@ -1,0 +1,644 @@
+{
+ "_comment": "Reel 08 — R01 (Desk): ₹1,290 Ozempic. Full edit, desk_red theme. Movie clips 7.433–11.667 and 32.733–34.333 left as is (no grade, no captions, no graphics, raw audio).",
+ "title": "Ozempic ₹1,300 — Reel 08",
+ "theme": "desk_red",
+ "speed": 1.0,
+ "source_video": "assets/footage.mp4",
+ "source_audio": "assets/voice.wav",
+ "pacing": {
+  "pad": 0.0,
+  "inner_pad": 0.0,
+  "keep_pause": 999
+ },
+ "tail_hold": 0.3,
+ "takes": [
+  {
+   "id": "ALL",
+   "s": 0.0,
+   "e": 77.966,
+   "keep": true,
+   "ta": "Pre-cut by creator.",
+   "why": "Edited by Ron; no cuts."
+  }
+ ],
+ "caption_left": [],
+ "beats": [
+  {
+   "t": 0.0,
+   "support": "If you're trying to *lose weight*…"
+  },
+  {
+   "t": 1.62,
+   "support": "you don't need the gym, a diet, anything."
+  },
+  {
+   "t": 3.68,
+   "support": "Just *one injection* a week is enough."
+  },
+  {
+   "t": 5.4,
+   "support": "And that injection costs just ₹1,300.",
+   "until": 7.4
+  },
+  {
+   "t": 11.67,
+   "support": "Before you book a doctor's appointment,"
+  },
+  {
+   "t": 13.14,
+   "support": "watch this video till the end.",
+   "hero": "WATCH THIS",
+   "hero_t": 13.32,
+   "fx": "pop"
+  },
+  {
+   "t": 14.52,
+   "support": "Celebrities, social media —"
+  },
+  {
+   "t": 16.06,
+   "support": "why is there so much *hype*?"
+  },
+  {
+   "t": 17.42,
+   "support": "What's in it? So I",
+   "hero": "RESEARCHED IT",
+   "hero_t": 18.36,
+   "fx": "underline",
+   "until": 19.18,
+   "hero_first": false
+  },
+  {
+   "t": 19.2,
+   "support": "From this March, the *Ozempic* molecule"
+  },
+  {
+   "t": 20.84,
+   "support": "has gone *off patent*."
+  },
+  {
+   "t": 21.78,
+   "support": "In India, a drug now starts at ₹1,300."
+  },
+  {
+   "t": 24.9,
+   "support": "Does it work, bro?"
+  },
+  {
+   "t": 26.1,
+   "support": "Yes.",
+   "hero": "IT WORKS",
+   "hero_t": 26.16,
+   "fx": "plate",
+   "until": 26.93,
+   "hero_first": false
+  },
+  {
+   "t": 26.95,
+   "support": "In the STEP 1 trial, participants"
+  },
+  {
+   "t": 28.67,
+   "support": "lost *15%* of their body weight."
+  },
+  {
+   "t": 31.13,
+   "support": "So should we shut down the gym?",
+   "hero": "SHUT THE GYM?",
+   "hero_t": 31.61,
+   "fx": "plate",
+   "until": 32.7
+  },
+  {
+   "t": 34.34,
+   "support": "The ads won't tell you"
+  },
+  {
+   "t": 35.01,
+   "support": "these *3 things* you need to know.",
+   "until": 36.95
+  },
+  {
+   "t": 37.0,
+   "support": "And the last one",
+   "hero": "CHANGES THE|WHOLE TRIAL",
+   "hero_t": 38.96,
+   "fx": "mask",
+   "hero_first": false
+  },
+  {
+   "t": 40.78,
+   "support": "One: it's a",
+   "hero": "PRESCRIPTION DRUG",
+   "hero_t": 41.24,
+   "fx": "plate",
+   "hero_first": false
+  },
+  {
+   "t": 41.98,
+   "support": "India's Health Ministry says"
+  },
+  {
+   "t": 43.52,
+   "support": "don't take it without a doctor's prescription.",
+   "until": 46.0
+  },
+  {
+   "t": 46.06,
+   "support": "Two: *nausea* and *diarrhoea*"
+  },
+  {
+   "t": 47.78,
+   "support": "are common side effects of this drug.",
+   "until": 49.35,
+   "hero": "SIDE EFFECTS",
+   "hero_t": 48.46,
+   "fx": "underline",
+   "hero_first": false
+  },
+  {
+   "t": 49.4,
+   "support": "Three: people in this trial also made"
+  },
+  {
+   "t": 51.12,
+   "support": "*activity changes* and *diet changes*.",
+   "until": 53.9
+  },
+  {
+   "t": 53.96,
+   "support": "The scale will show your weight dropping,"
+  },
+  {
+   "t": 55.58,
+   "support": "but nobody asks how much *muscle* you kept.",
+   "until": 57.75
+  },
+  {
+   "t": 57.8,
+   "support": "That's where",
+   "hero": "RESISTANCE|TRAINING",
+   "hero_t": 58.24,
+   "fx": "plate",
+   "hero_first": false,
+   "until": 59.66
+  },
+  {
+   "t": 59.68,
+   "support": "and *diet* become very important."
+  },
+  {
+   "t": 60.52,
+   "support": "If you're curious about it,"
+  },
+  {
+   "t": 61.78,
+   "support": "talk to a good",
+   "hero": "DOCTOR",
+   "hero_t": 62.16,
+   "fx": "plate",
+   "hero_first": false
+  },
+  {
+   "t": 63.12,
+   "support": "Don't try it just because"
+  },
+  {
+   "t": 63.92,
+   "support": "you saw the ads and the *hype*.",
+   "until": 65.95
+  },
+  {
+   "t": 65.99,
+   "support": "What really gives you healthy, *sustained results*"
+  },
+  {
+   "t": 68.39,
+   "support": "is a good lifestyle change and healthy choices.",
+   "until": 70.85
+  },
+  {
+   "t": 70.95,
+   "support": "And friends who'd want to know about this?"
+  },
+  {
+   "t": 73.19,
+   "support": "Share this research with them.",
+   "hero": "SHARE IT",
+   "hero_t": 73.65,
+   "fx": "pop",
+   "until": 74.4,
+   "hero_first": false
+  },
+  {
+   "t": 74.45,
+   "support": "For more on training and nutrition like this,"
+  },
+  {
+   "t": 76.85,
+   "support": "*follow me*."
+  }
+ ],
+ "gfx": [
+  {
+   "type": "endcard",
+   "t": 76.8,
+   "until": 77.95,
+   "mini": true,
+   "follow_t": 77.25
+  }
+ ],
+ "fx": [],
+ "camera": [
+  {
+   "t": 0.0,
+   "frame": "W"
+  },
+  {
+   "t": 0.0,
+   "move": "push",
+   "amount": 1.08,
+   "dur": 3.6,
+   "origin": "50% 34%"
+  },
+  {
+   "t": 7.433,
+   "move": "cut"
+  },
+  {
+   "t": 11.67,
+   "move": "push",
+   "amount": 1.07,
+   "dur": 2.8,
+   "origin": "50% 34%"
+  },
+  {
+   "t": 14.5,
+   "move": "reset",
+   "dur": 2.4
+  },
+  {
+   "t": 17.42,
+   "move": "push",
+   "amount": 1.1,
+   "dur": 1.8,
+   "origin": "50% 34%"
+  },
+  {
+   "t": 19.5,
+   "move": "cut"
+  },
+  {
+   "t": 24.9,
+   "move": "push",
+   "amount": 1.07,
+   "dur": 1.2,
+   "origin": "50% 34%"
+  },
+  {
+   "t": 26.1,
+   "move": "punch",
+   "amount": 1.14,
+   "dur": 0.25,
+   "origin": "50% 34%"
+  },
+  {
+   "t": 27.3,
+   "move": "cut"
+  },
+  {
+   "t": 31.11,
+   "move": "push",
+   "amount": 1.12,
+   "dur": 1.6,
+   "origin": "50% 34%"
+  },
+  {
+   "t": 32.733,
+   "move": "cut"
+  },
+  {
+   "t": 36.95,
+   "move": "push",
+   "amount": 1.12,
+   "dur": 3.8,
+   "origin": "50% 34%"
+  },
+  {
+   "t": 40.78,
+   "move": "reset",
+   "dur": 1.6
+  },
+  {
+   "t": 42.6,
+   "move": "push",
+   "amount": 1.07,
+   "dur": 3.3,
+   "origin": "50% 34%"
+  },
+  {
+   "t": 46.0,
+   "move": "reset",
+   "dur": 1.2
+  },
+  {
+   "t": 47.3,
+   "move": "push",
+   "amount": 1.08,
+   "dur": 2.0,
+   "origin": "50% 34%"
+  },
+  {
+   "t": 49.8,
+   "move": "cut"
+  },
+  {
+   "t": 53.92,
+   "move": "push",
+   "amount": 1.07,
+   "dur": 3.8,
+   "origin": "50% 34%"
+  },
+  {
+   "t": 57.8,
+   "move": "punch",
+   "amount": 1.13,
+   "dur": 0.3,
+   "origin": "50% 34%"
+  },
+  {
+   "t": 59.7,
+   "move": "reset",
+   "dur": 1.8
+  },
+  {
+   "t": 61.78,
+   "move": "push",
+   "amount": 1.1,
+   "dur": 1.3,
+   "origin": "50% 34%"
+  },
+  {
+   "t": 63.1,
+   "move": "reset",
+   "dur": 2.8
+  },
+  {
+   "t": 66.0,
+   "move": "push",
+   "amount": 1.07,
+   "dur": 4.8,
+   "origin": "50% 34%"
+  },
+  {
+   "t": 70.9,
+   "move": "reset",
+   "dur": 1.5
+  },
+  {
+   "t": 72.5,
+   "move": "push",
+   "amount": 1.07,
+   "dur": 1.9,
+   "origin": "50% 34%"
+  },
+  {
+   "t": 74.45,
+   "move": "reset",
+   "dur": 3.0
+  }
+ ],
+ "custom": {
+  "html": "build/custom.html",
+  "js": "build/custom.js",
+  "module": "build/custom.mjs"
+ },
+ "music_volume": 1.0,
+ "auto_sfx": false,
+ "sfx_cues": [
+  {
+   "t": 0.18,
+   "name": "sfx2/popsoft",
+   "vol": 0.3,
+   "why": "WEIGHT LOSS plate"
+  },
+  {
+   "t": 1.62,
+   "name": "sfx/thump",
+   "vol": 0.35,
+   "why": "GYM struck"
+  },
+  {
+   "t": 2.18,
+   "name": "sfx/thump",
+   "vol": 0.35,
+   "why": "DIET struck"
+  },
+  {
+   "t": 3.6,
+   "name": "sfx/swoosh",
+   "vol": 0.35,
+   "why": "dissolve into block 1"
+  },
+  {
+   "t": 4.83,
+   "name": "sfx/riser",
+   "vol": 0.5,
+   "why": "riser into the price + movie turn"
+  },
+  {
+   "t": 5.62,
+   "name": "sfx2/digits",
+   "vol": 0.3,
+   "why": "price counter"
+  },
+  {
+   "t": 6.22,
+   "name": "sfx/thump",
+   "vol": 0.7,
+   "why": "₹1,300 slam"
+  },
+  {
+   "t": 14.9,
+   "name": "sfx/rise",
+   "vol": 0.35,
+   "why": "hype meter fills"
+  },
+  {
+   "t": 19.12,
+   "name": "sfx/swoosh",
+   "vol": 0.35,
+   "why": "dissolve into block 2"
+  },
+  {
+   "t": 20.84,
+   "name": "sfx/thump",
+   "vol": 0.7,
+   "why": "OFF PATENT stamp"
+  },
+  {
+   "t": 21.7,
+   "name": "sfx/swoosh",
+   "vol": 0.22,
+   "why": "scene: price in India"
+  },
+  {
+   "t": 22.2,
+   "name": "sfx/swoosh",
+   "vol": 0.35,
+   "why": "brand price struck"
+  },
+  {
+   "t": 22.9,
+   "name": "sfx2/popsoft",
+   "vol": 0.35,
+   "why": "generic price"
+  },
+  {
+   "t": 26.16,
+   "name": "sfx2/popsoft",
+   "vol": 0.4,
+   "why": "IT WORKS"
+  },
+  {
+   "t": 26.87,
+   "name": "sfx/swoosh",
+   "vol": 0.35,
+   "why": "dissolve into block 3"
+  },
+  {
+   "t": 27.7,
+   "name": "sfx/rise",
+   "vol": 0.35,
+   "why": "bars grow"
+  },
+  {
+   "t": 28.67,
+   "name": "sfx/thump",
+   "vol": 0.6,
+   "why": "−15%"
+  },
+  {
+   "t": 31.6,
+   "name": "sfx/swoosh",
+   "vol": 0.35,
+   "why": "SHUT THE GYM?"
+  },
+  {
+   "t": 34.333,
+   "name": "sfx/thump",
+   "vol": 0.45,
+   "why": "cut in: 3 things"
+  },
+  {
+   "t": 35.15,
+   "name": "sfx/tick",
+   "vol": 0.5,
+   "why": "slot 1"
+  },
+  {
+   "t": 35.35,
+   "name": "sfx/tick",
+   "vol": 0.5,
+   "why": "slot 2"
+  },
+  {
+   "t": 35.55,
+   "name": "sfx/tick",
+   "vol": 0.55,
+   "why": "slot 3"
+  },
+  {
+   "t": 38.18,
+   "name": "sfx/riser",
+   "vol": 0.45,
+   "why": "tension into point 1"
+  },
+  {
+   "t": 40.78,
+   "name": "sfx/thump",
+   "vol": 0.7,
+   "why": "1: prescription"
+  },
+  {
+   "t": 49.3,
+   "name": "sfx/swoosh",
+   "vol": 0.35,
+   "why": "dissolve into block 5"
+  },
+  {
+   "t": 50.0,
+   "name": "sfx/tick",
+   "vol": 0.5,
+   "why": "node: injection"
+  },
+  {
+   "t": 51.2,
+   "name": "sfx/tick",
+   "vol": 0.5,
+   "why": "node: activity"
+  },
+  {
+   "t": 52.3,
+   "name": "sfx/tick",
+   "vol": 0.5,
+   "why": "node: diet"
+  },
+  {
+   "t": 53.1,
+   "name": "sfx/thump",
+   "vol": 0.5,
+   "why": "= −15%"
+  },
+  {
+   "t": 54.1,
+   "name": "sfx2/popsoft",
+   "vol": 0.3,
+   "why": "fact card: lean mass"
+  },
+  {
+   "t": 56.32,
+   "name": "sfx2/popsoft",
+   "vol": 0.4,
+   "why": "MUSCLE ?"
+  },
+  {
+   "t": 57.8,
+   "name": "sfx/thump",
+   "vol": 0.35,
+   "why": "RESISTANCE TRAINING punch-in"
+  },
+  {
+   "t": 63.26,
+   "name": "sfx/thump",
+   "vol": 0.3,
+   "why": "ADS struck"
+  },
+  {
+   "t": 64.08,
+   "name": "sfx/thump",
+   "vol": 0.3,
+   "why": "HYPE struck"
+  },
+  {
+   "t": 66.1,
+   "name": "sfx2/popsoft",
+   "vol": 0.3,
+   "why": "fact card: regain"
+  },
+  {
+   "t": 73.65,
+   "name": "sfx2/popsoft",
+   "vol": 0.35,
+   "why": "SHARE IT"
+  }
+ ],
+ "flags": [
+  "Ron says ₹1,300; the cheapest generic at launch was ₹1,290/month (Natco; Business Today, 20 Mar 2026). Graphics show ₹1,290 where a source line is shown.",
+  "Ron says 'a single injection a week is enough' as the hype claim being questioned; captions translate it as said.",
+  "STEP 1 (Wilding et al., NEJM 2021): −14.9% vs −2.4% at 68 weeks, with lifestyle intervention in both groups.",
+  "Health Ministry advisory (March 2026): GLP-1 drugs only with a doctor's prescription (ThePrint; AFP via Khaleej Times).",
+  "Background music: original analytic beat bed (tools/analytic_bed.py, D minor, 104 bpm), ducked under the voice and muted in the movie clips.",
+  "Added facts (checked): STEP 1 body-composition substudy, lean mass −9.7%; STEP 1 extension (Wilding et al., Diabetes Obes Metab 2022): ~2/3 of lost weight regained within a year of stopping (11.6 of 17.3 points)."
+ ]
+}

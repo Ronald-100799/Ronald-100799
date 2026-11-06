@@ -1,0 +1,184 @@
+{
+ "_comment": "Reel 05 — CAPTIONS ONLY. Creator's own cut, B-roll and meme audio kept. No captions over meme audio (4.80–7.27, 42.67–44.60).",
+ "speed": 1.0,
+ "source_video": "assets/footage.mp4",
+ "source_audio": "assets/voice.wav",
+ "pacing": {
+  "pad": 0.0,
+  "inner_pad": 0.0,
+  "keep_pause": 999
+ },
+ "tail_hold": 0.0,
+ "takes": [
+  {
+   "id": "ALL",
+   "s": 0.0,
+   "e": 58.1,
+   "keep": true,
+   "ta": "Pre-cut by creator.",
+   "why": "Captions-only request."
+  }
+ ],
+ "caption_left": [],
+ "beats": [
+  {
+   "t": 0.0,
+   "support": "*Burger, fried rice, cake…*"
+  },
+  {
+   "t": 1.3,
+   "support": "eating them on a *cheat meal,*"
+  },
+  {
+   "t": 2.4,
+   "support": "how do these influencers stay",
+   "hero": "JACKED?",
+   "hero_t": 3.74,
+   "fx": "pop",
+   "hero_first": false,
+   "until": 4.8
+  },
+  {
+   "t": 7.27,
+   "support": "I'll tell you the *secret.*"
+  },
+  {
+   "t": 8.05,
+   "support": "First, they know exactly how many *calories* they need that day."
+  },
+  {
+   "t": 11.53,
+   "support": "If you don't know how to estimate your",
+   "hero": "MAINTENANCE|CALORIES",
+   "hero_t": 12.51,
+   "fx": "plate",
+   "hero_first": false
+  },
+  {
+   "t": 14.91,
+   "support": "I've linked a reel — *check it out.*"
+  },
+  {
+   "t": 16.6,
+   "support": "And if you're in a *deficit* for fat loss,"
+  },
+  {
+   "t": 18.96,
+   "support": "a cheat meal doesn't mean eating *as much as you want, whenever you want.*"
+  },
+  {
+   "t": 21.76,
+   "support": "Within your",
+   "hero": "CALORIE BUDGET",
+   "hero_t": 22.06,
+   "fx": "mask",
+   "hero_first": false
+  },
+  {
+   "t": 23.0,
+   "support": "you can eat some foods *rarely,* in *moderation.*"
+  },
+  {
+   "t": 24.85,
+   "support": "For example, going out for dinner with *family or friends?*"
+  },
+  {
+   "t": 28.09,
+   "support": "Save the *majority of your calories* for that dinner."
+  },
+  {
+   "t": 30.51,
+   "support": "That day, focus on *full hydration*"
+  },
+  {
+   "t": 32.19,
+   "support": "and",
+   "hero": "HIGH-VOLUME|FOODS",
+   "hero_t": 32.49,
+   "fx": "plate",
+   "hero_first": false
+  },
+  {
+   "t": 34.2,
+   "support": "and hit your *protein goal.*"
+  },
+  {
+   "t": 35.82,
+   "support": "Damn…"
+  },
+  {
+   "t": 36.44,
+   "support": "I thought I could eat *cheat* daily, bro!"
+  },
+  {
+   "t": 38.64,
+   "support": "If that worked, the uncle next door would"
+  },
+  {
+   "t": 40.2,
+   "support": "drink a *quarter daily* and still be *jacked,* bro!",
+   "until": 42.67
+  },
+  {
+   "t": 44.6,
+   "support": "Always remember:"
+  },
+  {
+   "t": 45.6,
+   "support": "to reach your goals, you have to",
+   "hero": "BALANCE|SOCIAL LIFE",
+   "hero_t": 47.04,
+   "fx": "underline",
+   "hero_first": false
+  },
+  {
+   "t": 48.52,
+   "support": "That's why it's",
+   "hero": "CHEAT MEALS",
+   "hero_t": 49.06,
+   "fx": "plate",
+   "hero_first": false
+  },
+  {
+   "t": 50.3,
+   "support": "— not *cheat days.*"
+  },
+  {
+   "t": 51.45,
+   "support": "A cheat meal shouldn't become a",
+   "hero": "CHEAT MONTH",
+   "hero_t": 52.05,
+   "fx": "pop",
+   "hero_first": false
+  },
+  {
+   "t": 52.75,
+   "support": "in the name of completing your *protein goal.*"
+  },
+  {
+   "t": 54.5,
+   "support": "Share this reel with the friend who eats a *shawarma*"
+  },
+  {
+   "t": 56.6,
+   "support": "and *follow* me."
+  }
+ ],
+ "gfx": [],
+ "fx": [],
+ "camera": [
+  {
+   "t": 0.0,
+   "frame": "W"
+  }
+ ],
+ "flags": [
+  "0:34 '…protein goal complete பண்ணிருவான்' was hard to hear; captioned 'and hit your protein goal'.",
+  "0:40 'கோட்டர் அடிச்சு' captioned as 'drink a quarter daily' (quarter bottle of liquor) — change if you meant something else.",
+  "0:52.7 ASR heard 'routine goal'; captioned 'protein goal' from context.",
+  "0:54.5 shawarma line: ASR wording around 'daily' unclear; captioned 'the friend who eats a shawarma'.",
+  "No captions over the movie meme (0:04.8–0:07.3) or the 'hehehe' clip (0:42.7–0:44.6)."
+ ],
+ "auto_sfx": false,
+ "sfx_cues": []
+}

@@ -1,0 +1,59 @@
+{
+ "source": "assets/footage.mp4",
+ "gap_keep": 0.12,
+ "max_gap": 0.30,
+ "ranges": [
+  {"s":7.39,"e":26.81,"cards":[
+    ["If you're stuck in a skinny fat body type,","don't skip this video."],
+    ["There are two main reasons","for being skinny fat."],
+    ["Number one:","lack of resistance training."],
+    ["Doing more cardio or sports","won't improve your body composition."],
+    ["Instead, you need to focus","on building muscle."]]},
+  {"s":46.31,"e":54.17,"cards":[
+    ["Train to increase your strength,","and your muscle building improves,"],
+    ["and your body composition","improves along with it."]]},
+  {"s":70.79,"e":83.07,"cards":[
+    ["Focus on building muscle and your","body composition improves,"],
+    ["and you'll gain","more confidence."],
+    ["My suggestion: follow a","3–4 day workout split per week."],
+    ["It gives you plenty","of time to recover."]]},
+  {"s":91.30,"e":94.27,"cards":[
+    ["Also, don't forget","progressive overload every week."]]},
+  {"s":100.29,"e":111.87,"cards":[
+    ["Add compound lifts","to your workout."],
+    ["Bench press, squat, deadlift —","lifts like these."],
+    ["They let you activate and target","more muscle groups at once."]]},
+  {"s":123.43,"e":132.61,"cards":[
+    ["Reason number two:","poor diet."],
+    ["Too much processed and","sugary food in your diet"],
+    ["means you can't build muscle, and your","body composition won't improve."]]},
+  {"s":184.07,"e":190.75,"cards":[
+    ["Instead of processed and","sugary foods,"],
+    ["focus on","protein-rich whole foods."]]},
+  {"s":206.98,"e":212.99,"cards":[
+    ["Protein-rich whole foods help","your muscle building"],
+    ["and your","hormonal balance."]]},
+  {"s":225.00,"e":230.65,"cards":[
+    ["Good fat sources like nuts","also help your hormonal balance."]]},
+  {"s":239.08,"e":244.16,"cards":[
+    ["If you're skinny fat, knowing your","maintenance calories is key."]]},
+  {"s":262.34,"e":270.94,"cards":[
+    ["If you're above 15% body fat,","eat 100–200 calories"],
+    ["below your","maintenance calories."]]},
+  {"s":284.80,"e":298.46,"cards":[
+    ["If you're below 15% body fat, eat at","maintenance or a small surplus —"],
+    ["about 100 calories","above your maintenance."],
+    ["That helps you build muscle","without gaining much fat."]]},
+  {"s":316.07,"e":324.73,"cards":[
+    ["One last important thing:","if you're skinny fat,"],
+    ["patience is everything.","Stick with this for the long run."]]},
+  {"s":332.67,"e":336.00,"cards":[
+    ["If you're impatient, you'll get","demotivated and give up."]]},
+  {"s":342.05,"e":349.79,"cards":[
+    ["So lower your expectations,","focus on progressive overload"],
+    ["and your diet, and you'll","definitely get results."]]},
+  {"s":355.91,"e":363.74,"cards":[
+    ["For more useful fitness tips,","hit follow."],
+    ["If you liked this video,","drop a like. Thank you!"]]}
+ ]
+}

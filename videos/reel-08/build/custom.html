@@ -1,0 +1,156 @@
+      <style>
+        .blk { position: absolute; inset: 0; overflow: hidden; }
+        .blk .bgx { position: absolute; inset: 0; background-color: #0B0B0C; background-image:
+            radial-gradient(70% 42% at 50% 38%, rgba(225,6,0,0.24), rgba(225,6,0,0) 70%),
+            repeating-linear-gradient(90deg, rgba(255,255,255,0.035) 0 1px, transparent 1px 90px),
+            repeating-linear-gradient(0deg, rgba(255,255,255,0.035) 0 1px, transparent 1px 90px); }
+        .blk .glow { position: absolute; inset: 0; background: radial-gradient(60% 40% at 50% 40%, rgba(225,6,0,0.6), rgba(225,6,0,0) 70%); opacity: 0; }
+        .scn { position: absolute; inset: 0; opacity: 0; }
+        .cc { position: absolute; left: 0; right: 0; display: flex; flex-direction: column; align-items: center; text-align: center; color: #fff; font-family: "Poppins", sans-serif; }
+        .kk { font-weight: 800; font-size: 40px; letter-spacing: 0.14em; text-transform: uppercase; color: #fff; }
+        .kk b { color: #E10600; }
+        .big { font-weight: 900; font-size: 200px; letter-spacing: -0.04em; line-height: 1; font-variant-numeric: tabular-nums; }
+        .big.r { color: #E10600; text-shadow: 0 10px 50px rgba(225,6,0,0.4); }
+        .mid { font-weight: 900; font-size: 104px; letter-spacing: -0.03em; line-height: 1; text-transform: uppercase; }
+        .sm { font-weight: 600; font-size: 36px; opacity: 0.85; }
+        .src { position: absolute; left: 40px; right: 40px; top: 1235px; text-align: center; font-family: "Poppins", sans-serif; font-weight: 600; font-size: 24px; color: rgba(255,255,255,0.6); }
+        .stamp { display: inline-block; padding: 14px 40px 8px; background: #E10600; color: #fff; font-weight: 900; font-size: 108px; letter-spacing: -0.02em;
+                 line-height: 1; border-radius: 16px; transform: rotate(-4deg); box-shadow: 0 20px 60px rgba(225,6,0,0.45); font-family: "Poppins", sans-serif; }
+        .chip { display: inline-flex; align-items: center; gap: 14px; padding: 10px 28px; border-radius: 16px; background: rgba(11,11,12,0.78); border: 3px solid rgba(255,255,255,0.85);
+                color: #fff; font-family: "Poppins", sans-serif; font-weight: 900; font-size: 66px; letter-spacing: -0.01em; text-transform: uppercase; position: relative; }
+        .chip.r { background: #E10600; border-color: #E10600; }
+        .chip .x { position: absolute; left: -10px; right: -10px; top: 50%; height: 12px; margin-top: -6px; background: #E10600; border-radius: 6px; transform-origin: left center; transform: scaleX(0); rotate: -6deg; z-index: 2; box-shadow: 0 2px 10px rgba(0,0,0,0.5); }
+        .band { position: absolute; left: 0; right: 0; top: 150px; display: flex; justify-content: center; gap: 22px; }
+        .strike { position: absolute; left: -16px; right: -16px; top: 52%; height: 16px; background: #E10600; border-radius: 8px; transform: scaleX(0); rotate: -5deg; transform-origin: left center; }
+        .meter { width: 640px; height: 34px; border-radius: 17px; border: 3px solid rgba(255,255,255,0.85); background: rgba(11,11,12,0.7); overflow: hidden; }
+        .meter i { display: block; height: 100%; width: 100%; background: linear-gradient(90deg, #ff6a5a, #E10600); transform-origin: left; transform: scaleX(0); }
+        .paper { width: 880px; background: #f4f2ee; color: #121214; border-radius: 10px; padding: 34px 40px 30px; text-align: left; box-shadow: 0 30px 80px rgba(0,0,0,0.6); font-family: "Poppins", sans-serif; }
+        .paper .j { font-weight: 800; font-size: 24px; letter-spacing: 0.08em; color: #E10600; text-transform: uppercase; }
+        .paper .t { font-weight: 800; font-size: 44px; line-height: 1.12; margin: 10px 0 12px; }
+        .paper .a { font-weight: 600; font-size: 24px; color: #4a4a50; }
+        .paper .hl { margin-top: 18px; padding: 12px 16px; border-left: 8px solid #E10600; background: rgba(225,6,0,0.08); font-weight: 600; font-size: 27px; line-height: 1.3; }
+        .paper .hl b { color: #E10600; }
+        .slots { display: flex; gap: 26px; }
+        .slot { width: 220px; height: 220px; border-radius: 30px; border: 5px solid rgba(255,255,255,0.85); display: flex; align-items: center; justify-content: center;
+                font-family: "Poppins", sans-serif; font-weight: 900; font-size: 130px; color: #fff; background: rgba(11,11,12,0.6); }
+        .slot.r { border-color: #E10600; color: #E10600; }
+        .pts { position: absolute; left: 0; right: 0; top: 140px; display: flex; flex-direction: column; align-items: center; gap: 14px; }
+        .pts .row { display: flex; gap: 16px; }
+        .pts .tile { width: 96px; height: 96px; border-radius: 20px; display: flex; align-items: center; justify-content: center; font-family: "Poppins", sans-serif;
+                     font-weight: 900; font-size: 58px; background: rgba(11,11,12,0.72); color: rgba(255,255,255,0.55); border: 3px solid rgba(255,255,255,0.35); }
+        .pts .lab { position: relative; height: 60px; width: 1000px; }
+        .pts .lab div { position: absolute; left: 0; right: 0; text-align: center; font-family: "Poppins", sans-serif; font-weight: 900; font-size: 46px; color: #fff; text-transform: uppercase;
+                        text-shadow: 0 0 3px rgba(0,0,0,0.95), 0 4px 14px rgba(0,0,0,0.75); opacity: 0; }
+        .vcol { display: flex; flex-direction: column; align-items: center; gap: 18px; }
+        .node { padding: 16px 26px; border-radius: 22px; border: 4px solid rgba(255,255,255,0.85); background: rgba(11,11,12,0.8); font-family: "Poppins", sans-serif;
+                font-weight: 900; font-size: 46px; color: #fff; text-transform: uppercase; line-height: 1.05; text-align: center; }
+        .node.r { background: #E10600; border-color: #E10600; }
+        .op { font-family: "Poppins", sans-serif; font-weight: 900; font-size: 72px; color: #E10600; }
+        .fact { position: absolute; left: 70px; right: 70px; top: 140px; padding: 22px 30px 20px; border-radius: 22px; background: rgba(11,11,12,0.82);
+                border-left: 12px solid #E10600; font-family: "Poppins", sans-serif; color: #fff; box-shadow: 0 18px 50px rgba(0,0,0,0.45); }
+        .fact .fk { font-weight: 800; font-size: 28px; letter-spacing: 0.12em; color: #E10600; text-transform: uppercase; }
+        .fact .fl { font-weight: 800; font-size: 48px; line-height: 1.12; margin-top: 6px; }
+        .fact .fl b { color: #E10600; }
+        .fact .fs { font-weight: 600; font-size: 22px; color: rgba(255,255,255,0.6); margin-top: 10px; }
+        canvas.t3 { position: absolute; display: block; }
+      </style>
+
+      <!-- overlays while Ron talks (top band) -->
+      <div id="oA" class="clip" data-start="0" data-duration="1.62" data-track-index="30" style="position:absolute;inset:0">
+        <div class="band"><div class="chip r" id="oAc">WEIGHT LOSS</div></div>
+      </div>
+      <div id="oB" class="clip" data-start="1.62" data-duration="2.04" data-track-index="31" style="position:absolute;inset:0">
+        <div class="band"><div class="chip" id="oB0">GYM<i class="x"></i></div><div class="chip" id="oB1">DIET<i class="x"></i></div></div>
+      </div>
+      <div id="oF" class="clip" data-start="14.5" data-duration="2.9" data-track-index="34" style="position:absolute;inset:0">
+        <div class="cc" style="top:130px;gap:16px">
+          <div style="display:flex;gap:16px"><div class="chip" id="oF0" style="font-size:40px">CELEBRITIES</div><div class="chip" id="oF1" style="font-size:40px">SOCIAL MEDIA</div></div>
+          <div style="display:flex;align-items:center;gap:20px"><div class="mid" style="font-size:64px;color:#E10600;text-shadow:0 0 3px #000,0 4px 14px rgba(0,0,0,0.7)">HYPE</div><div class="meter"><i id="oFm"></i></div></div>
+        </div>
+      </div>
+      <div id="oP" class="clip" data-start="36.93" data-duration="12.43" data-track-index="40" style="position:absolute;inset:0">
+        <div class="pts"><div class="row"><div class="tile" id="pt0">1</div><div class="tile" id="pt1">2</div><div class="tile" id="pt2">3</div></div>
+          <div class="lab"><div id="pl0">PRESCRIPTION ONLY</div><div id="pl1">SIDE EFFECTS</div></div></div>
+      </div>
+      <div id="oQ" class="clip" data-start="54.1" data-duration="3.6" data-track-index="44" style="position:absolute;inset:0">
+        <div class="fact" id="oQc"><div class="fk">STEP 1 · body scans</div><div class="fl">Lean mass fell too: <b>−9.7%</b></div><div class="fs">STEP 1 body-composition substudy, 2021</div></div>
+      </div>
+      <div id="oT" class="clip" data-start="63.1" data-duration="2.85" data-track-index="46" style="position:absolute;inset:0">
+        <div class="band"><div class="chip" id="oT0">ADS<i class="x"></i></div><div class="chip" id="oT1">HYPE<i class="x"></i></div></div>
+      </div>
+      <div id="oU" class="clip" data-start="66.1" data-duration="4.7" data-track-index="47" style="position:absolute;inset:0">
+        <div class="fact" id="oUc"><div class="fk">Stopped the shot?</div><div class="fl">About <b>⅔ of the lost weight</b> came back within a year</div><div class="fs">STEP 1 extension · Wilding et al., Diabetes Obes Metab 2022</div></div>
+      </div>
+
+      <!-- BLOCK 1 · 3.66–7.433 · semaglutide pen → price (hard cut into the movie clip) -->
+      <div id="bk1" class="clip blk" data-start="3.66" data-duration="3.773" data-track-index="50">
+        <div class="bgx"></div><div class="glow" id="bk1g"></div>
+        <div class="scn" id="s1a">
+          <canvas id="penCv" class="t3" width="1000" height="700" style="left:40px;top:330px;width:1000px;height:700px"></canvas>
+          <div class="cc" style="top:240px"><div class="kk"><b>SEMAGLUTIDE</b></div><div class="sm" style="margin-top:6px">the drug in Ozempic &amp; Wegovy</div></div>
+          <div class="cc" style="top:1010px"><div class="mid" id="s1aw">ONE SHOT A <span style="color:#E10600">WEEK</span></div></div>
+        </div>
+        <div class="scn" id="s1b">
+          <div class="cc" style="top:520px"><div class="kk">AND THE PRICE?</div></div>
+          <div class="cc" style="top:610px"><div class="big r" id="cDp">₹0</div></div>
+          <div class="cc" style="top:840px"><div class="sm" id="cDs">cheapest generic at launch: ₹1,290 / month</div></div>
+          <div class="src" id="cDsrc">Business Today, 20 Mar 2026 · India</div>
+        </div>
+      </div>
+
+      <!-- BLOCK 2 · 19.18–24.88 · off patent (Remotion padlock) → price in India -->
+      <div id="bk2" class="clip blk" data-start="19.18" data-duration="5.7" data-track-index="51">
+        <div class="bgx"></div>
+        <div class="scn" id="s2a">
+          <div class="cc" style="top:250px"><div class="kk">THE <b>OZEMPIC</b> MOLECULE</div><div class="sm" style="margin-top:8px">semaglutide</div></div>
+          <div class="cc" style="top:1040px"><div class="stamp" id="cHst">OFF PATENT</div><div class="sm" id="cHd" style="margin-top:26px">India · 20 March 2026</div></div>
+        </div>
+        <div class="scn" id="s2b">
+          <div class="cc" style="top:330px"><div class="kk">IN <b>INDIA</b> · PER MONTH</div></div>
+          <div class="cc" style="top:420px"><div style="position:relative;display:inline-block"><div class="mid" id="cIb" style="font-size:120px;opacity:0.9">₹10,850</div><i class="strike" id="cIx"></i></div>
+            <div class="sm" style="margin-top:6px" id="cIbl">brand (Wegovy), lowest dose</div></div>
+          <div class="cc" style="top:720px"><div class="big r" id="cIg" style="font-size:230px">₹1,290</div><div class="sm" id="cIgl">generic semaglutide, from</div></div>
+          <div class="src">Business Today, 20–21 Mar 2026</div>
+        </div>
+      </div>
+      <video id="cHv" class="clip" src="assets/inserts/patent-unlock.webm" data-start="20.17" data-duration="1.59" data-media-start="0" data-track-index="52" muted playsinline
+             style="position:absolute;left:190px;top:380px;width:700px;height:700px"></video>
+
+      <!-- BLOCK 3 · 26.93–31.11 · the STEP 1 study -->
+      <div id="bk3" class="clip blk" data-start="26.93" data-duration="4.18" data-track-index="53">
+        <div class="bgx"></div>
+        <div class="scn" id="s3a">
+          <div class="cc" style="top:200px"><div class="paper" id="cKp">
+            <div class="j">N Engl J Med 2021 · 384:989–1002</div>
+            <div class="t">Once-Weekly Semaglutide in Adults with Overweight or Obesity</div>
+            <div class="a">Wilding et al. · STEP 1 · 1,961 adults · 68 weeks</div>
+            <div class="hl">Semaglutide 2.4 mg weekly: <b>−14.9%</b> body weight vs −2.4% placebo<br />(both groups also got lifestyle support)</div>
+          </div></div>
+          <canvas id="barsCv" class="t3" width="900" height="560" style="left:90px;top:690px;width:900px;height:560px"></canvas>
+          <div id="cKl0" class="cc" style="top:1195px;left:90px;right:auto;width:450px"><div class="mid" style="font-size:66px;color:#E10600" id="cKv0">−0%</div></div>
+          <div id="cKl1" class="cc" style="top:1195px;left:540px;right:auto;width:450px"><div class="mid" style="font-size:66px">−2.4%</div></div>
+        </div>
+      </div>
+
+      <!-- BLOCK 4 · 34.333–36.93 · 3 things the ads won't tell you -->
+      <div id="bk4" class="clip blk" data-start="34.333" data-duration="2.597" data-track-index="54">
+        <div class="bgx"></div>
+        <div class="scn" id="s4a">
+          <div class="cc" style="top:330px"><div class="kk" id="cMk">WHAT THE <b>ADS</b> WON'T TELL YOU</div></div>
+          <div class="cc" style="top:470px"><div class="slots"><div class="slot" id="cM0">1</div><div class="slot" id="cM1">2</div><div class="slot r" id="cM2">3</div></div></div>
+          <div class="cc" style="top:800px"><div class="mid" id="cMt"><span style="color:#E10600">3</span> THINGS</div></div>
+        </div>
+      </div>
+
+      <!-- BLOCK 5 · 49.36–53.92 · 3: what the trial actually did -->
+      <div id="bk5" class="clip blk" data-start="49.36" data-duration="4.56" data-track-index="55">
+        <div class="bgx"></div>
+        <div class="scn" id="s5a">
+          <div class="cc" style="top:280px"><div class="kk"><b>3</b> · WHAT THE TRIAL ACTUALLY DID</div></div>
+          <div class="cc" style="top:420px"><div class="vcol">
+            <div class="node" id="cP0">SEMAGLUTIDE</div><div class="op" id="cPo0">+</div>
+            <div class="node" id="cP1">ACTIVITY CHANGES</div><div class="op" id="cPo1">+</div>
+            <div class="node" id="cP2">DIET CHANGES</div><div class="op" id="cPo2">=</div>
+            <div class="node r" id="cP3" style="font-size:64px">−15% WEIGHT</div></div></div>
+        </div>
+      </div>
